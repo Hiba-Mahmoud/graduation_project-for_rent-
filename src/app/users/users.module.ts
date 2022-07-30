@@ -11,7 +11,11 @@ import { RenterComponent } from './component/renter/renter.component';
     RenterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+
+  ],
+  exports:[
+    OwnerComponent
   ]
 })
 export class UsersModule { }

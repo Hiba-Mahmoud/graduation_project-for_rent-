@@ -20,7 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FavouriteComponent,
     CreditCardComponent,
     AddCreditCardComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -28,6 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     MaterialModule,
     NgbModule,
+    
 
 
   ],
