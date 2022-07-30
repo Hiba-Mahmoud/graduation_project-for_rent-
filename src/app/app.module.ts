@@ -10,6 +10,7 @@ import { AddCreditCardComponent } from './userActions/component/add-credit-card/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FavouriteComponent,
     CreditCardComponent,
     AddCreditCardComponent,
+    HomeComponent,
 
   ],
   imports: [
