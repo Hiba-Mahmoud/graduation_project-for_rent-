@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreditCardComponent } from './credit-card.component';
+import { AddProperityComponent } from './add-properity.component';
 
-describe('CreditCardComponent', () => {
-  let component: CreditCardComponent;
-  let fixture: ComponentFixture<CreditCardComponent>;
+describe('AddProperityComponent', () => {
+  let component: AddProperityComponent;
+  let fixture: ComponentFixture<AddProperityComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreditCardComponent ]
+      declarations: [ AddProperityComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CreditCardComponent);
+    fixture = TestBed.createComponent(AddProperityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
