@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AddProperityComponent } from './components/add-properity/add-properity.component';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { SharedModule} from './shared/shared.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { UsersModule } from './users/users.module';
     AccountComponent,
     HomeComponent,
     AddProperityComponent,
+  
 
   ],
   imports: [
@@ -27,8 +29,9 @@ import { UsersModule } from './users/users.module';
     MaterialModule,
     NgbModule,
     AuthModule,
-    UsersModule
+    UsersModule,
 
+    SharedModule
 
 
   ],
