@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
+import { SharedModule } from './shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { HomeComponent } from './home/home.component';
     CreditCardComponent,
     AddCreditCardComponent,
     HomeComponent,
+   
 
   ],
   imports: [
@@ -30,7 +33,8 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MaterialModule,
     NgbModule,
-    
+    SharedModule,
+    FontAwesomeModule,
 
 
   ],
