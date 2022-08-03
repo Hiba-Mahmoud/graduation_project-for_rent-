@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PropertyComponent } from './property.component';
+import { MailConfirmComponent } from './mail-confirm.component';
 
-describe('PropertyComponent', () => {
-  let component: PropertyComponent;
-  let fixture: ComponentFixture<PropertyComponent>;
+describe('MailConfirmComponent', () => {
+  let component: MailConfirmComponent;
+  let fixture: ComponentFixture<MailConfirmComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PropertyComponent ]
+      declarations: [ MailConfirmComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PropertyComponent);
+    fixture = TestBed.createComponent(MailConfirmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

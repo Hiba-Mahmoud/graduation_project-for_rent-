@@ -16,11 +16,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from './component/header/header.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 
 import {MatMenuModule} from '@angular/material/menu';
 import { SearchComponent } from './component/search/search.component';
+import { SettingsComponent } from './component/settings/settings.component';
+import { EditpasswordComponent } from './component/editpassword/editpassword.component';
+import { EditpersonaldataComponent } from './component/editpersonaldata/editpersonaldata.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatRadioModule} from '@angular/material/radio';
@@ -28,6 +30,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -39,9 +42,12 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
     CartComponent,
     CartDetailsComponent,
     FooterComponent,
-    HeaderComponent,
-    SidebarComponent,
     SearchComponent,
+    SidebarComponent,
+    SettingsComponent,
+    EditpasswordComponent,
+    EditpersonaldataComponent
+
 
  
   ],
@@ -70,11 +76,15 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     CartComponent,
     CartDetailsComponent,
-     HeaderComponent,
      SidebarComponent,
-     SearchComponent
+     SearchComponent,
+    SettingsComponent,
+    EditpasswordComponent,
+    EditpersonaldataComponent
 
-    
-  ]
+   
+  ],
+ 
 })
+
 export class SharedModule { }

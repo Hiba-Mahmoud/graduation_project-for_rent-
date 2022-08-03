@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { RemmberMeComponent } from './component/remmber-me/remmber-me.component';
+import { MailConfirmComponent } from './component/mail-confirm/mail-confirm.component';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -10,10 +12,16 @@ import { RemmberMeComponent } from './component/remmber-me/remmber-me.component'
   declarations: [
     LoginComponent,
     RegisterComponent,
-    RemmberMeComponent
+    RemmberMeComponent,
+    MailConfirmComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
+  ],
+  exports:[
+    MailConfirmComponent
+
   ]
 })
 export class AuthModule { }
