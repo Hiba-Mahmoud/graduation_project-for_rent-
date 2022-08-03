@@ -5,19 +5,22 @@ import { AppComponent } from './app.component';
 import { AccountComponent } from './account/account.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { AddProperityComponent } from './components/add-properity/add-properity.component';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-
-
+import { ListAllOwnerProperitiesComponent } from './components/list-all-owner-properities/list-all-owner-properities.component';
+import { UpdateProperityAdvertisingComponent } from './components/update-properity-advertising/update-properity-advertising.component';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
     AccountComponent,
     HomeComponent,
     AddProperityComponent,
+    ListAllOwnerProperitiesComponent,
+    UpdateProperityAdvertisingComponent,
+
 
   ],
   imports: [
@@ -25,9 +28,10 @@ import { UsersModule } from './users/users.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NgbModule,
     AuthModule,
-    UsersModule
+    UsersModule,
+    SharedModule
+
 
 
 
