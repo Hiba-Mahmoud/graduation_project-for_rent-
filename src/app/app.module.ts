@@ -11,6 +11,7 @@ import { AddProperityComponent } from './components/add-properity/add-properity.
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { SharedModule} from './shared/shared.module';
+import { UserfavouritesComponent } from './components/userfavourites/userfavourites.component';
 
 
 @NgModule({
@@ -19,8 +20,8 @@ import { SharedModule} from './shared/shared.module';
     AccountComponent,
     HomeComponent,
     AddProperityComponent,
-  
-
+    UserfavouritesComponent,
+    
   ],
   imports: [
     BrowserModule,
