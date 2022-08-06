@@ -166,6 +166,11 @@ body {
     -o-transition: all 0.5s ease-in-out;
     background: #FE6F41;
     caret-color:#FE6F41;
+    display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  /* padding-top: 40px;
+  padding-bottom: 40px; */
   
   }
   .send:hover {
@@ -176,14 +181,4 @@ body {
   .hov:hover {
     background: #FE6F41;
     color: #FE6F41;
-  }
-
-  .custom-file-input.selected:lang(en)::after {
-    content: "" !important;
-  }
-  .custom-file {
-    overflow: hidden;
-  }
-  .custom-file-input {
-    white-space: nowrap;
   }
