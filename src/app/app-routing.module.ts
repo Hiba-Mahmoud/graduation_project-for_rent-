@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddAdminComponent } from './admin/component/add-admin/add-admin.component';
 import { AdminsComponent } from './admin/component/admins/admins.component';
+import { AdverRequestsComponent } from './admin/component/adver-requests/adver-requests.component';
 import { OwnersComponent } from './admin/component/owners/owners.component';
 import { RentersComponent } from './admin/component/renters/renters.component';
 import { LoginComponent } from './auth/component/login/login.component';
@@ -44,6 +46,12 @@ const routes: Routes = [
   },
   {
     path: 'allOwners', component: OwnersComponent
+  },
+  {
+    path: 'requests', component:AdverRequestsComponent
+  },
+  {
+    path: 'addAdmin', component: AddAdminComponent
   },
  // end admin routes
   // {
