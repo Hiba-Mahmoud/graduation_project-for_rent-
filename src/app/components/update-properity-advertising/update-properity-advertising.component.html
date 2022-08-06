@@ -1,63 +1,65 @@
-<section class="get-in-touch" dir="rtl">
-  <h1 class="title">انشر إعلانك</h1>
-  <form class="contact-form row">
-    <div class="form-field col-lg-12">
-      <input id="message" class="input-text js-input" type="text" required />
-      <label class="label" dir="rtl" for="message">اسم الاعلان</label>
+
+
+
+<div class="container mt-5">
+  <form dir="rtl" class="w-100">
+    <div class="mb-3">
+      <label for="title" class="form-label">اسم الاعلان</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        id="title"
+        aria-describedby="passwordHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description">الوصف</label>
+      <textarea
+        class="form-control"
+        name="description"
+        id="description"
+        rows="3"
+      ></textarea>
     </div>
 
-    <div class="form-field col-lg-12">
-      <!-- <input id="" class="input-text js-input" type="text-area" required /> -->
-      <textarea
-        id="discription"
-        name="discription"
-        rows="10"
-        class="teaxtarea js-input"
-        cols="50"
-      >
-      </textarea>
-      <label class="label" for="discription">الوصف</label>
+    <div class="row mb-3">
+      <div class="col-sm-12 col-md-6">
+        <label for="price" class="form-label">السعر</label>
+        <input type="number" name="price" class="form-control" id="price" />
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <label for="level" class="form-label">الطابق</label>
+        <input type="number" name="level" class="form-control" id="level" />
+      </div>
     </div>
-    <div class="form-field col-lg-6">
-      <input
-        id="bedroomnum"
-        name="bedroomnum"
-        class="input-text js-input"
-        type="number"
-        required
-      />
-      <label class="label" for="bedroomnum">عدد الغرف</label>
-    </div>
-    <div class="form-field col-lg-6">
-      <input
-        id="price"
-        class="input-text js-input"
-        name="price"
-        type="number"
-        required
-      />
-      <label class="label" for="price">ثمن الايجار</label>
-    </div>
-    <div class="form-field col-lg-6">
-      <input
-        id="bathroomnum"
-        class="input-text js-input"
-        type="number"
-        required
-      />
-      <label class="label" for="bathroomnum">عدد الحمامات</label>
-    </div>
-    <div class="form-field col-lg-6">
-      <input id="bednum" class="input-text js-input" type="number" required />
-      <label class="label" for="bednum">عدد السرائر </label>
-    </div>
-    <div class="form-field col-lg-6">
-      <input id="level" class="input-text js-input" type="number" required />
-      <label class="label" for="level">الطابق</label>
+    <div class="row mb-3">
+      <div class="col-sm-12 col-md-4">
+        <label for="bedroom-num" class="form-label">عدد الغرف</label>
+        <input
+          type="number"
+          name="bedroom-num"
+          class="form-control"
+          id="bedroom-num"
+        />
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <label for="bathroom-num" class="form-label">عدد الحمامات</label>
+        <input
+          type="number"
+          name="bathroom-num"
+          class="form-control"
+          id="bathroom-num"
+        />
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <label for="beds-num" class="form-label">عدد السرائر</label>
+        <input type="number" name="beds-num" class="beds-num" id="beds-num" />
+      </div>
     </div>
 
     <div class="row mt-3 mb-4">
-      <div class="col-ms-12 col-md-6 mb-4">
+      <div class="col-ms-12 col-md-6">
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">مفروش</h4>
@@ -86,23 +88,86 @@
         </div>
       </div>
     </div>
-    <div class="mb-3">
-      <label for="formFile" class="form-label">الصور</label>
 
-      <input
-        type="file"
-        name="formFile"
-        class="form-control"
-        accept="image/x-png,image/gif,image/jpeg"
-      />
+    <div class="row mb-3">
+      <div class="col-sm-12">
+        <label for="address" class="form-label">العنوان</label>
+        <input type="text" name="address" class="form-control" id="address" />
+      </div>
     </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-3">
+        <div class="file-field">
+          <div class="z-depth-1-half mb-4">
+            <img [src]="url"
+              class="img-fluid w-100"
+              alt="example placeholder"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+              <label></label>
+              <!-- <span>Choose file</span> -->
+              <input type="file"  #input (change)="uploadImage($event)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        <div class="file-field">
+          <div class="z-depth-1-half mb-4">
+            <img
+              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+              class="img-fluid w-100"
+              alt="example placeholder"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+              <span>اختر صورة </span>
+              <input type="file"  value="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        <div class="file-field">
+          <div class="z-depth-1-half mb-4">
+            <img
+              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+              class="img-fluid w-100"
+              alt="example placeholder"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+              <span>اختر صورة</span>
+              <input type="file" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-3">
+        <div class="file-field">
+          <div class="z-depth-1-half mb-4">
+            <img
+              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+              class="img-fluid w-100"
+              alt="example placeholder"
+            />
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+              <span>اختر صورة</span>
+              <input type="file" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="text-center mt-5">
-      <input class="send " type="submit" value="submit" />
+      <input class="send" type="submit" value="submit" />
     </div>
-
-    <!-- <div class="form-field col-lg-12">
-      <input class="submit-btn" type="submit" value="Submit" />
-    </div> -->
   </form>
-</section>
-
+</div>

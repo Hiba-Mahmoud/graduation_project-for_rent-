@@ -1,237 +1,62 @@
 
-.get-in-touch {
-  max-width: 800px;
-  margin: 50px auto;
+
+
+.apply-page-header {
+
+  background-image: url("../../../assets/17828.jpg") ;
+  background:#353535;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
   position: relative;
-
-}
-.get-in-touch .title {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 3.2em;
-  font-family: cairo;
-  line-height: 48px;
-  padding-bottom: 48px;
-     color: #383838;
-    background: #FE6F41;
-    background: -moz-linear-gradient(left,#f4524d  0%,#383838 100%) !important;
-    background: -webkit-linear-gradient(left,#f4524d  0%,#383838 100%) !important;
-    background: linear-gradient(to right,#f4524d  0%,#383838  100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+  z-index: 2;
 }
 
-.contact-form .form-field {
-  position: relative;
-  margin: 32px 0;
-}
-.teaxtarea{
-  display: block;
-  width: 100%;
-  height: 100px;
-  border-width: 0 0 2px 0;
-  border-color: #383838;
-  /* border-color: #5543ca; */
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 400;
-}
-.contact-form .input-text {
-  display: block;
-  width: 100%;
-  height: 36px;
-  border-width: 0 0 2px 0;
-  border-color: #383838;
-  /* border-color: #5543ca; */
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 400;
-}
-.teaxtarea:focus{
-  outline: none;
-}
-.contact-form .input-text:focus  {
-  outline: none;
-}
-.contact-form .input-text:focus + .label,
-.contact-form .input-text.not-empty + .label {
-  -webkit-transform: translateY(-24px);
-          transform: translateY(-24px);
-}
-.contact-form .label {
-  position: absolute;
-  left: 20px;
-  bottom: 11px;
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 400;
-  color: #FE6F41;
-  cursor: text;
-  transition: -webkit-transform .2s ease-in-out;
-  transition: transform .2s ease-in-out;
-  transition: transform .2s ease-in-out,
-  -webkit-transform .2s ease-in-out;
-}
-.contact-form .submit-btn {
-  display: inline-block;
-  background-color: #000;
-   background-image: linear-gradient(125deg,#FE6F41,#383838);
-   color: #fff;
-   text-transform: uppercase;
-   letter-spacing: 2px;
-   font-size: 16px;
-   padding: 8px 16px;
-   border: none;
-   width:200px;
-   cursor: pointer;
-   transition:all 0.5s ease-in-out ;
-  }
-  .contact-form .submit-btn:hover{
-  background-image: linear-gradient(125deg,#383838,#FE6F41);
-
-}
-
-
-label
-{
-  width:90%;
-  direction: rtl;
+.apply-page-header-title-container {
+  padding: 10px;
+  margin-top: 150px;
+  margin-bottom: 50px;
   display: flex;
-  font-family: cairo;
-  align-items: flex-start;
-  justify-content:start !important;
-  text-align:right;
-}
-
-----------------
-/* radio  */
-body {
-  background-color: #FE6F41
-}
-
-
-.mt-100{
-  margin-top: 100px;
-}
-
-.card {
-  position: relative;
-  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 2px solid #383838;
-  border-radius: 0;
-  font-family: cairo;
-
-}
-
-.card .card-body {
-  padding: 1.25rem 1.75rem;
-  margin-bottom: 1.875rem;
-}
-
-.card-body {
-  /* flex: 1 1 auto; */
-  padding: 1.25rem;
-  font-family: cairo;
-
-}
-
-.card .card-title {
-  color: #FE6F41;
-  margin-bottom: 0.625rem;
+  gap: 10px;
   text-transform: capitalize;
-  font-size: 0.995rem;
-  font-weight: 700;
-  font-family: cairo;
-
-  font-family:cairo;
 }
 
-.card .card-description {
-  margin-bottom: 1.875rem;
-  font-weight: 400;
-  font-family: cairo;
-  color: #76838f
+.apply-page-header-title-container h2 {
+  padding: 15px;
+  font-size: 35px;
+  color: #fff;
 }
 
-p {
-  font-size: 0.875rem;
-  margin-bottom: .5rem;
-  line-height: 1.5rem
+.apply-page-header-title-container p {
+  font-size: 14px;
 }
 
-
-
-
-
-/*Radio buttons*/
-
-
-input[type="radio"] {
-display: none;
+.apply-page-row-two {
+  background: #ffffff;
+  position: relative;
+  z-index: 2;
 }
 
-input[type="radio"] + label:before {
-content: "";
-display: inline-block;
-width: 25px;
-height: 25px;
-padding: 2px;
-margin-left: 6px;
-margin-bottom: 6px;
-background-clip: content-box;
-border: 2px solid #512DA8;
-background-color: #e7e6e7;
-border-radius: 50%;
-}
-
-input[type="radio"]:checked + label:before {
-background-color: #512DA8;
-}
-
-label {
-
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
+.apply-page-row-two-contaier {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: 65% 30%;
+  gap: 70px;
 }
 
 
-/* ----------- */
-.mat-radio-button ~ .mat-radio-button {
-  margin-right: 16px;
-  border-color:rgb(66, 134, 244);
-  /* border-color:rgb(66, 134, 244); */
-  font-family: cairo;
 
 
-}
 
-.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
-  border-color:rgb(66, 134, 244);
-}
 
-.mat-radio-button.mat-accent .mat-radio-inner-circle{
-  color:rgb(66, 134, 244);
-  background-color:rgb(66, 134, 244) ;
-}
 
-.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-  font-family: cairo;
-    background-color:rgb(255, 37, 37,.26);
-}
+
 /* ----------------------------------------- */
-.form-control {
-  color:#383838;
-  background-color: #383838 !important;
-}
-/* ----------------------
- */
+
  .send {
   width:100%;
   padding: 15px 20px;
@@ -251,12 +76,47 @@ justify-content: flex-start;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
-  background: #fe6f41;
+  background:  #353535;
   caret-color: #fe6f41;
 }
 .send:hover {
-  background: #353535;
+  background: #fe6f41;
   color: #fff;
 }
+
+h2 {
+  text-align: center;
+  color: black;
+  padding-top: 20px;
+}
+
+form {
+  width: 50%;
+  margin: auto;
+  border: 3px solid #f1f1f1;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+input[type=radio]{
+  width: 20%;
+}
+
+
+
+
+
+
+
 
 

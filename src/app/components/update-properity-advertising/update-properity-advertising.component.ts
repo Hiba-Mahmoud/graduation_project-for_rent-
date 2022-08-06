@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-properity-advertising.component.css']
 })
 export class UpdateProperityAdvertisingComponent implements OnInit {
-
+url;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  uploadImage(event) {
+    let reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload = (event)=>{
+      this.url =event.target.result;
+    }
   }
 
 }

@@ -1,0 +1,12 @@
+footer{
+   
+        background: #494545;
+
+       
+}
+footer a:hover{
+        color: #FE6F41;
+}
+.link{
+        cursor: pointer;
+}

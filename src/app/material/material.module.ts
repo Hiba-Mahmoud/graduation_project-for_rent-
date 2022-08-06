@@ -68,7 +68,9 @@ const materials =[
   MatGridListModule,
   MatRadioModule,
   MatDatepickerModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatFormFieldModule,
+  MatInputModule
 ]
 
 @NgModule({
