@@ -35,7 +35,11 @@ import { AdverRequestsComponent } from './component/adver-requests/adver-request
   ],
   exports : [
     AdminsComponent,
-    AddAdminComponent
+    AddAdminComponent,
+   OwnersComponent,
+   RentersComponent,
+   AddAdminComponent,
+
   ]
 })
 export class AdminModule { }
