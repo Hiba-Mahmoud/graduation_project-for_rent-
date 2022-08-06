@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-
+import { Component ,ViewChild } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,4 +12,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   
   title = 'forRent';
+  
+
+  constructor() {}
+
+ 
 }

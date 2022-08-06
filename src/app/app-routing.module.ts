@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminsComponent } from './admin/component/admins/admins.component';
+import { OwnersComponent } from './admin/component/owners/owners.component';
+import { RentersComponent } from './admin/component/renters/renters.component';
 import { LoginComponent } from './auth/component/login/login.component';
 import { RegisterComponent } from './auth/component/register/register.component';
 import { AddProperityComponent } from './components/add-properity/add-properity.component';
@@ -11,9 +14,7 @@ import { NotFoundComponent } from './shared/component/not-found/not-found.compon
 import { OwnerComponent } from './users/component/owner/owner.component';
 
 const routes: Routes = [
-  {
-    path: "", redirectTo: 'home', pathMatch: 'full'
-  },
+
   {
     path: "home", component: HomeComponent
   },
@@ -26,13 +27,24 @@ const routes: Routes = [
   {
     path: "details", component: CartDetailsComponent
   },
-  { path: 'owner', component:OwnerComponent },
+  { path: 'owner', component: OwnerComponent },
   { path: 'addProperity', component: AddProperityComponent },
 
-  {path:'editpassword',component:EditpasswordComponent},
+  { path: 'editpassword', component: EditpasswordComponent },
   {
-    path:'editpersonaldata',component:EditpersonaldataComponent },
-     
+    path: 'editpersonaldata', component: EditpersonaldataComponent
+  },
+   //start admin routes
+  {
+    path: 'allAdmins', component: AdminsComponent
+  },
+  {
+    path: 'allRenters', component: RentersComponent
+  },
+  {
+    path: 'allOwners', component: OwnersComponent
+  },
+ // end admin routes
   // {
   //   path:'userfavourites',component:UserfavouritesComponent },
   // { path: 'ListAllOwnerProperitiesComponent', component: ListAllOwnerProperitiesComponent },

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './component/navbar/navbar.component';
 
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { CartComponent } from './component/cart/cart.component';
@@ -16,7 +15,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { SidebarComponent } from './component/sidebar/sidebar.component';
 
 import {MatMenuModule} from '@angular/material/menu';
 import { SearchComponent } from './component/search/search.component';
@@ -36,14 +34,12 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    NavbarComponent,
   
     NotFoundComponent,
     CartComponent,
     CartDetailsComponent,
     FooterComponent,
     SearchComponent,
-    SidebarComponent,
     SettingsComponent,
     EditpasswordComponent,
     EditpersonaldataComponent
@@ -73,10 +69,8 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
   ],
   exports :[
     FooterComponent,
-    NavbarComponent,
     CartComponent,
     CartDetailsComponent,
-     SidebarComponent,
      SearchComponent,
     SettingsComponent,
     EditpasswordComponent,

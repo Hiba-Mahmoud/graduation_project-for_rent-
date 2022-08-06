@@ -12,6 +12,8 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { SharedModule  } from './shared/shared.module';
 import { MaterialModule } from './material/material.module';
+import { AdminModule } from './admin/admin.module';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { MaterialModule } from './material/material.module';
     HomeComponent,
    
     AddProperityComponent,
+         HeaderComponent,
   
 
   ],
@@ -32,7 +35,8 @@ import { MaterialModule } from './material/material.module';
     AuthModule,
     UsersModule,
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    AdminModule
 
   ],
   providers: [],

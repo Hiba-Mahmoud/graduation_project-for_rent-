@@ -1,0 +1,122 @@
+
+
+ <mat-toolbar class=" fixed-top">
+  
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light ">
+     
+          <div class="container-fluid">
+    
+            <a class="navbar-brand" routerLink="home">سكن</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="تبديل التنقل">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" routerLink="home">الصفحة الرئيسية</a>
+                </li>
+               
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" routerLink="home">التعريف</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link "><mat-icon matBadge="15"  matBadgeColor="warn">notifications</mat-icon></a>
+                </li>
+                
+              </ul>
+              <form class="d-flex">
+                <button class="btn mx-1" type="submit">تسجيل </button>
+                <button class="btn mx-1" type="submit"> دخول</button>
+                <button class="btn mx-1" type="submit">خروج</button>
+      
+              </form>
+            </div>
+          </div>
+        </nav>
+
+         <!-- <mat-toolbar-row class="mt-5">
+           <button class="navbar-toggler  mt-0 d-md-none collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+          mat-icon-button
+          *ngIf="sidenav.mode === 'over'"
+          (click)="sidenav.toggle()"
+        >
+          <mat-icon *ngIf="!sidenav.opened"> apps </mat-icon>
+          <mat-icon *ngIf="sidenav.opened"> apps </mat-icon>
+        </button> 
+        </mat-toolbar-row> -->
+  
+  </mat-toolbar>
+
+
+
+  <mat-sidenav-container class="mt-5 p-3" >
+    <mat-sidenav #sidenav="matSidenav" mode="side"   opened>
+      <img
+        class="avatar mat-elevation-z8"
+        src="https://source.unsplash.com/c_GmwfHBDzk/200x200"
+      />
+  
+      <h2 class="name">رامي علي</h2>
+      
+  
+      <mat-divider></mat-divider>
+      <ul class="nav flex-column">
+         
+        <li class="nav-item">
+          <a class="nav-link" routerLink="allAdmins">
+            <span data-feather="file"></span>
+            المستأجرين
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="shopping-cart"></span>
+            الملاك
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="users"></span>
+            المسؤولين
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="bar-chart-2"></span>
+            الاعلانات
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span data-feather="layers"></span>
+            المحظورين
+          </a>
+        </li>
+      </ul>
+
+     
+  
+      <mat-divider></mat-divider>
+  
+     
+    </mat-sidenav>
+    <mat-sidenav-content >
+      <button class="navbar-toggler  mt-0 d-md-none collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()"
+    >
+      <mat-icon *ngIf="!sidenav.opened"> apps </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> apps </mat-icon>
+      قائمه
+    </button> 
+      <div class="content text-center">
+     
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
+
