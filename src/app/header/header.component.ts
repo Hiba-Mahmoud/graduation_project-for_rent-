@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   }
   ngAfterViewInit() {
     this.observer
-      .observe(['(max-width: 800px)'])
+      .observe(['(max-width: 766px)'])
      
       .subscribe((res) => {
         if (res.matches) {

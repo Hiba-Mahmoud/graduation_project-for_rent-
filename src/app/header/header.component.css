@@ -10,7 +10,6 @@ mat-sidenav {
   right: 0;
   z-index: 1000;
   display: block;
-  
   margin: 16px;
   width: 200px;
   border-right: none;
@@ -31,22 +30,15 @@ mat-sidenav {
   margin: 16px;
   margin-left: 2px;
   padding: 16px;
-  overflow-y: hidden;
+  
   /*display: flex;
-    justify-content: center;
-    align-items: center;
-                     */
-  ;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+                       */  ;
+
 }
 
-mat-sidenav-container {
-  height: 100vh;
-  overflow-y: hidden;
-}
+
 
 .menu-button {
   width: 100%;

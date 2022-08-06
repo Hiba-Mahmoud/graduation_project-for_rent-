@@ -14,6 +14,7 @@ import { SharedModule  } from './shared/shared.module';
 import { MaterialModule } from './material/material.module';
 import { AdminModule } from './admin/admin.module';
 import { HeaderComponent } from './header/header.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HeaderComponent } from './header/header.component';
    
     AddProperityComponent,
          HeaderComponent,
+         CommentsComponent,
   
 
   ],

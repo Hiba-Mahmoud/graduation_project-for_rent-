@@ -2,10 +2,10 @@
   <form class="example-form ">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>بحث</mat-label>
-      <input matInput placeholder="ادخل الاسم "  #name (keyup)="findByName(name)">
+      <input matInput   #name (keyup)="findByName(name)">
     </mat-form-field>
 </form>
-    <div class="mat-elevation-z8 mt-2  m-auto bg-danger  ">
+    <div class="mat-elevation-z8 mt-2  m-auto table-responsive table-responsive-sm ">
         <table mat-table [dataSource]="dataSource"  matSort  class="m-auto border border-5 table w-100 ">
       
           <!-- Position Column -->
@@ -22,7 +22,7 @@
       
           <!-- Weight Column -->
           <ng-container  matColumnDef="position" matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header > البريد الالكتروني </th>
+            <th mat-header-cell *matHeaderCellDef > البريد الالكتروني </th>
             <td mat-cell *matCellDef="let element"> {{element.email}} </td>
           </ng-container>
       

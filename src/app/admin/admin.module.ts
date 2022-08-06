@@ -11,6 +11,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MaterialModule } from '../material/material.module';
 import { MatSortModule } from '@angular/material/sort';
+import { AdverRequestsComponent } from './component/adver-requests/adver-requests.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MatSortModule } from '@angular/material/sort';
     OwnersComponent,
     RentersComponent,
     AdminsComponent,
-    AddAdminComponent
+    AddAdminComponent,
+    AdverRequestsComponent
   ],
   imports: [
     CommonModule,

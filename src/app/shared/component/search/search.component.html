@@ -1,46 +1,46 @@
-<div class="container my-5 py-5">
-<mat-card  class="container mt-5 w-75 ">
-    <div class="row  search">
-      <div class="col-sm-6 col-lg-2">
-        <mat-form-field >
-          <input type="search"matInput [matAutocomplete]="auto"
-           placeholder="الموقع"  >
+
+  <mat-card class="container-fluid   ">
+    <div class="row  d-flex flex-wrap align-items-lg-center  justify-content-center">
+      <div class="col-sm-4 col-lg-4 col-md-3  m-1 p-1">
+        <form class="location " appearance="fill">
+          <input type="text" class="text-center"  placeholder="الموقع" [formControl]="control" [matAutocomplete]="auto">
           <mat-autocomplete #auto="matAutocomplete">
-            <mat-select>
-                <mat-option *ngFor="let food of options" [value]="">
-                  {{food}}
-                </mat-option>
-              </mat-select>
+            <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
+              {{street}}
+            </mat-option>
           </mat-autocomplete>
-        </mat-form-field>
-        </div>
-        <div class="col-sm-6 col-lg-2">
-        <mat-form-field>
-          <input type="search"matInput [matAutocomplete]="auto"  placeholder="النوع" >
-          <mat-autocomplete #types="matAutocomplete">
-          <mat-option *ngFor="let type of options" [value]="auto">
-            {{type}}
-          </mat-option>
+        </form>
+      </div>
+      <div class="col-sm-4 col-lg-4 col-md-3 m-1 p-1">
+        <form class="location" appearance="fill">
+          <input type="text" class="text-center"  placeholder="النوع" [formControl]="control" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
+              {{street}}
+            </mat-option>
           </mat-autocomplete>
-        </mat-form-field>  
+        </form>
       </div>
-      <div class="col-sm-6 col-lg-2">
-      <mat-form-field>
-        <input type="text"matInput 
-        
-        
-          placeholder="عدد الغرف">
-      </mat-form-field>  
+      <div class="col-sm-4 col-lg-4 col-md-3 m-1 p-1">
+        <form class="location" appearance="fill">
+          <input type="text" class="text-center" placeholder="عدد الغرف" [formControl]="control" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
+              {{street}}
+            </mat-option>
+          </mat-autocomplete>
+        </form>
       </div>
-      
     </div>
+
+
+
     <div class="row d-flex justify-content-center mt-4 ">
-    <div    class="col col-md-3 col-lg-2 m-1">
-      <button mat-raised-button >بحث <mat-icon class="field-icon">search</mat-icon> </button>
+      <div class="col col-md-3 col-lg-2 m-1">
+        <button mat-raised-button>بحث <mat-icon class="field-icon">search</mat-icon> </button>
+      </div>
+      <div class="col col-md-3 col-lg-2 m-1">
+        <button mat-raised-button>مسح<mat-icon class="field-icon">filter_alt</mat-icon> </button>
+      </div>
     </div>
-    <div class="col col-md-3 col-lg-2 m-1"  >
-      <button mat-raised-button >مسح<mat-icon class="field-icon">filter_alt</mat-icon> </button>
-    </div>
-  </div>
-</mat-card>
-</div>
+  </mat-card>

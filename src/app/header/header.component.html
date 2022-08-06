@@ -24,26 +24,17 @@
                 </li>
                 
               </ul>
-              <form class="d-flex">
-                <button class="btn mx-1" type="submit">تسجيل </button>
-                <button class="btn mx-1" type="submit"> دخول</button>
-                <button class="btn mx-1" type="submit">خروج</button>
+              <div class="d-flex">
+                <button class="btn mx-1" routerLink="register">تسجيل </button>
+                <button class="btn mx-1" routerLink="login"> دخول</button>
+                <button class="btn mx-1" >خروج</button>
       
-              </form>
+              </div>
             </div>
           </div>
         </nav>
 
-         <!-- <mat-toolbar-row class="mt-5">
-           <button class="navbar-toggler  mt-0 d-md-none collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
-          mat-icon-button
-          *ngIf="sidenav.mode === 'over'"
-          (click)="sidenav.toggle()"
-        >
-          <mat-icon *ngIf="!sidenav.opened"> apps </mat-icon>
-          <mat-icon *ngIf="sidenav.opened"> apps </mat-icon>
-        </button> 
-        </mat-toolbar-row> -->
+         
   
   </mat-toolbar>
 
@@ -55,7 +46,7 @@
         class="avatar mat-elevation-z8"
         src="https://source.unsplash.com/c_GmwfHBDzk/200x200"
       />
-  
+      <mat-icon>camera_alt</mat-icon>
       <h2 class="name">رامي علي</h2>
       
   
@@ -63,34 +54,59 @@
       <ul class="nav flex-column">
          
         <li class="nav-item">
-          <a class="nav-link" routerLink="allAdmins">
+          <a class="nav-link" routerLink="allRenters">
             <span data-feather="file"></span>
             المستأجرين
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" routerLink="allOwners">
             <span data-feather="shopping-cart"></span>
             الملاك
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" routerLink="allAdmins">
             <span data-feather="users"></span>
             المسؤولين
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" routerLink="">
             <span data-feather="bar-chart-2"></span>
             الاعلانات
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" routerLink="">
             <span data-feather="layers"></span>
             المحظورين
           </a>
+        </li>
+      </ul>
+
+     
+  
+      <mat-divider></mat-divider>
+      <ul class="nav flex-column">
+         
+        <li class="nav-item">
+          <a class="nav-link" routerLink="userfavourites">
+            <span data-feather="file"></span>
+            المفضله
+          </a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            الحساب
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a routerLink="" class="link-dark rounded">تعديل البيانات</a></li>
+              <li><a routerLink="" class="link-dark rounded">تعديل كلمة السر</a> </li>
+              
+            </ul>
+          </div>
         </li>
       </ul>
 
@@ -114,6 +130,8 @@
      
         <router-outlet></router-outlet>
       </div>
+      
+
     </mat-sidenav-content>
   </mat-sidenav-container>
 

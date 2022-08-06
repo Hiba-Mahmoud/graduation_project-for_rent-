@@ -14,6 +14,7 @@ import { NotFoundComponent } from './shared/component/not-found/not-found.compon
 import { OwnerComponent } from './users/component/owner/owner.component';
 
 const routes: Routes = [
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
 
   {
     path: "home", component: HomeComponent

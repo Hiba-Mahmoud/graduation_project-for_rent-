@@ -28,7 +28,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
-
+import { CommentsComponent } from './component/comments/comments.component';
 
 
 
@@ -42,7 +42,9 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
     SearchComponent,
     SettingsComponent,
     EditpasswordComponent,
-    EditpersonaldataComponent
+    EditpersonaldataComponent,
+    CommentsComponent
+    
 
 
  
@@ -65,7 +67,8 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule,
-    MatSelectModule 
+    MatSelectModule ,
+
   ],
   exports :[
     FooterComponent,
@@ -74,7 +77,8 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
      SearchComponent,
     SettingsComponent,
     EditpasswordComponent,
-    EditpersonaldataComponent
+    EditpersonaldataComponent,
+    CommentsComponent,
 
    
   ],

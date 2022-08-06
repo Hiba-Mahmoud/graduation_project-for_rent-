@@ -1,7 +1,5 @@
 @media (min-width:1266px){
-    .search{
-      padding-left: 70px !important;
-    }  
+    
   }
   mat-form-field{
       width: 100%;
@@ -13,13 +11,6 @@
   mat-radio-button{
     width: 50% !important;
   }
-  
-  
-  
-    
-  
-  
-  
   
   
   button{
