@@ -20,7 +20,8 @@ import { MaterialModule } from '../material/material.module';
     MaterialModule
   ],
   exports:[
-    MailConfirmComponent
+    MailConfirmComponent,
+    
 
   ]
 })
