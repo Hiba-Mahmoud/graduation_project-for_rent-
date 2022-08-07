@@ -1,7 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {startWith, map} from 'rxjs/operators';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
+
 
 @Component({
   selector: 'app-search',
@@ -10,26 +9,19 @@ import {startWith, map} from 'rxjs/operators';
 })
 export class SearchComponent implements OnInit {
 
-  control = new FormControl('');
-  streets: string[] = ['Champs-Élysées', 'Lombard Street', 'Abbey Road', 'Fifth Avenue'];
-  filteredStreets!: Observable<string[]>;
+  colorControl = new FormControl('primary');
+  fontSizeControl = new FormControl(16, Validators.min(10));
+  options = this._formBuilder.group({
+    color: this.colorControl,
+    fontSize: this.fontSizeControl,
+  });
 
-  constructor() { }
+  constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.filteredStreets = this.control.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
-    );
+  
   }
   
-  private _filter(value: string): string[] {
-    const filterValue = this._normalizeValue(value);
-    return this.streets.filter(street => this._normalizeValue(street).includes(filterValue));
-  }
 
-  private _normalizeValue(value: string): string {
-    return value.toLowerCase().replace(/\s/g, '');
-  }
 
 }

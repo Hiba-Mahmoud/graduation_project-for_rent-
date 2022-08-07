@@ -29,6 +29,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { CommentsComponent } from './component/comments/comments.component';
+import { SideBarComponent } from './component/side-bar/side-bar.component';
 
 
 
@@ -43,7 +44,8 @@ import { CommentsComponent } from './component/comments/comments.component';
     SettingsComponent,
     EditpasswordComponent,
     EditpersonaldataComponent,
-    CommentsComponent
+    CommentsComponent,
+    SideBarComponent,
     
 
 
@@ -79,6 +81,7 @@ import { CommentsComponent } from './component/comments/comments.component';
     EditpasswordComponent,
     EditpersonaldataComponent,
     CommentsComponent,
+    SideBarComponent
 
    
   ],

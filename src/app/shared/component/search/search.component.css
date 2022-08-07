@@ -1,17 +1,5 @@
-@media (min-width:1266px){
-    
-  }
-  mat-form-field{
-      width: 100%;
-    }
-  
-  button{
-    width: 100%;
-  }
-  mat-radio-button{
-    width: 50% !important;
-  }
-  
+
+
   
   button{
     padding: 5px 5px;
@@ -20,7 +8,7 @@
     color: #ffffff;
     font-size: 10px;
     font-weight: 700;
-    
+    width: 11rem;
 }
 button:hover{
     background: #FE6F41;
