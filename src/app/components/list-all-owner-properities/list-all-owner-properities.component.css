@@ -1,61 +1,10 @@
-*{
-  font-family: cairo;
-}
-.container{
-  margin-top:100px;
-}
-
-.counter {
-  display: block;
-  font-size: 32px;
-  font-weight: 700;
-  color: #fbefef;
-  line-height: 28px
-  }
-.counter-box {
-display: block;
-height:150px;
-background: #fe6f41;
-padding: 40px 20px 37px;
-text-align: center;
-transition: all 0.5s ease-in-out;
-cursor: pointer;
-
-}
-.counter-box:hover{
-  background-color: #353535;
-}
-.card-title{
-
-  font-family: cairo;
-}
-
-.counter-box p {
-  font-family: cairo;
-margin: 5px 0 0;
-padding: 0;
-color: #fff;
-font-size: 18px;
-font-weight: 500
-}
-
-.counter-box i {
-font-size: 60px;
-margin: 0 0 15px;
-color: #fff
-}
-
-
-
-.counter-box.colored {
-    background: #fe6f41;
-}
 .send {
   width:100%;
   padding: 15px 20px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 20px;
+  background: var(--secondColor);
   color: #ffff;
   border: none;
   text-transform: uppercase;
@@ -68,10 +17,11 @@ color: #fff
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
-  background: #353535;
+  background: #fe6f41;
+  caret-color: #fe6f41;
 }
 .send:hover {
-  background: #fe6f41;
+  background: #353535;
   color: #fff;
 }
 

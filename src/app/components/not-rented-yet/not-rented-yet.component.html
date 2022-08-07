@@ -1,0 +1,47 @@
+<div class="container">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput #search placeholder="search" (keyup)="findContact(search.value)" >
+  </mat-form-field>
+  <div>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="userId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header=> id. </th>
+        <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> userId </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="body">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> body </th>
+        <td mat-cell *matCellDef="let element"> {{element.body}} </td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> action </th>
+        <td mat-cell *matCellDef="let element"> <a class="btn btn-primary send"> تعديل</a> </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displaycolumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displaycolumns;"></tr>
+    </table>
+
+
+  </div>
+  <mat-paginator  [length]="10" [pageSize]="10" [pageSizeOptions]="[10]" aria-label="select page" showFirstLastButtons>
+</mat-paginator>
+  <div>
+
+  </div>
+</div>

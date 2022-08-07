@@ -34,6 +34,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 
+
 const materials =[
   MatDividerModule,
    CdkTreeModule,
@@ -67,7 +68,9 @@ const materials =[
   MatGridListModule,
   MatRadioModule,
   MatDatepickerModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatFormFieldModule,
+  MatInputModule
 ]
 
 @NgModule({

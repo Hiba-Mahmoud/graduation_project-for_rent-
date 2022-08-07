@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+// import { NavbarComponent } from './component/navbar/navbar.component';
+
 
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { CartComponent } from './component/cart/cart.component';
@@ -16,6 +18,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 
+
 import {MatMenuModule} from '@angular/material/menu';
 import { SearchComponent } from './component/search/search.component';
 import { SettingsComponent } from './component/settings/settings.component';
@@ -25,8 +28,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
-
-
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { CommentsComponent } from './component/comments/comments.component';
 import { SideBarComponent } from './component/side-bar/side-bar.component';
@@ -35,7 +36,7 @@ import { SideBarComponent } from './component/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
-  
+    CartComponent,
     NotFoundComponent,
     CartComponent,
     CartDetailsComponent,
@@ -46,10 +47,10 @@ import { SideBarComponent } from './component/side-bar/side-bar.component';
     EditpersonaldataComponent,
     CommentsComponent,
     SideBarComponent,
-    
 
 
- 
+
+
   ],
   imports: [
     CommonModule,
@@ -69,7 +70,11 @@ import { SideBarComponent } from './component/side-bar/side-bar.component';
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule,
+
+    MatSelectModule,
+
     MatSelectModule ,
+
 
   ],
   exports :[
@@ -83,9 +88,9 @@ import { SideBarComponent } from './component/side-bar/side-bar.component';
     CommentsComponent,
     SideBarComponent
 
-   
+
   ],
- 
+
 })
 
 export class SharedModule { }

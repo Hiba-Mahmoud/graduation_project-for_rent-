@@ -9,4 +9,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 
 *{
     direction: rtl;
+    font-family: cairo;
+}
+
+.bodyheight
+{
+  height: 100vh;
 }
