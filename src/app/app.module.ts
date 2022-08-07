@@ -18,6 +18,9 @@ import { SharedModule  } from './shared/shared.module';
 import { AboutComponent } from './components/about/about.component';
 import { ListcontactsComponent } from './admin/component/listcontacts/listcontacts.component';
 import { AdminModule } from './admin/admin.module';
+import { PendingComponent } from './components/pending/pending.component';
+import { RentedComponent } from './components/rented/rented.component';
+import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 // import { ListcontactsComponent } from './listcontacts/listcontacts.component';
 
 @NgModule({
@@ -30,6 +33,9 @@ import { AdminModule } from './admin/admin.module';
     ListAllOwnerProperitiesComponent,
     UpdateProperityAdvertisingComponent,
     AboutComponent,
+    PendingComponent,
+    RentedComponent,
+    NotRentedYetComponent,
     // ListcontactsComponent,
 
 

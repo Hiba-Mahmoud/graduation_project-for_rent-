@@ -14,6 +14,9 @@ import { NotFoundComponent } from './shared/component/not-found/not-found.compon
 import { AboutComponent } from './components/about/about.component';
 import { AdminhomeComponent } from './admin/component/adminhome/adminhome.component';
 import { ListcontactsComponent } from './admin/component/listcontacts/listcontacts.component';
+import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
+import { PendingComponent } from './components/pending/pending.component';
+import { RentedComponent } from './components/rented/rented.component';
 
 const routes: Routes = [
   {
@@ -45,6 +48,9 @@ const routes: Routes = [
   { path: 'adminhome', component:AdminhomeComponent},
   { path: 'all-contacts', component:ListcontactsComponent},
 
+  { path:"notrented", component:NotRentedYetComponent},
+  { path:"pending", component:PendingComponent},
+  { path:"rented", component:RentedComponent},
   // {
   //   path:'userfavourites',component:UserfavouritesComponent },
   // { path: 'ListAllOwnerProperitiesComponent', component: ListAllOwnerProperitiesComponent },
