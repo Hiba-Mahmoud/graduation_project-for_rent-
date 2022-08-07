@@ -1,5 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
+
 
 @Component({
   selector: 'app-search',
@@ -7,12 +8,20 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  myControl = new FormControl('');
-  options: string[] = ['One', 'Two', 'Three'];
 
-  constructor() { }
+  colorControl = new FormControl('primary');
+  fontSizeControl = new FormControl(16, Validators.min(10));
+  options = this._formBuilder.group({
+    color: this.colorControl,
+    fontSize: this.fontSizeControl,
+  });
+
+  constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+  
   }
+  
+
 
 }

@@ -22,6 +22,8 @@ import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 // import { ListcontactsComponent } from './listcontacts/listcontacts.component';
+import { HeaderComponent } from './header/header.component';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-ye
     NotRentedYetComponent,
     // ListcontactsComponent,
 
+   HeaderComponent,
+ CommentsComponent,
 
 
   ],
@@ -51,7 +55,7 @@ import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-ye
     HttpClientModule,
     AuthModule,
     UsersModule,
-    SharedModule ,
+    SharedModule,
     MaterialModule,
     AdminModule
 

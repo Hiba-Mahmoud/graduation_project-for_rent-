@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './component/navbar/navbar.component';
+// import { NavbarComponent } from './component/navbar/navbar.component';
+
+
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { CartComponent } from './component/cart/cart.component';
 import { CartDetailsComponent } from './component/cart-details/cart-details.component';
@@ -15,7 +17,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { SidebarComponent } from './component/sidebar/sidebar.component';
+
+
 import {MatMenuModule} from '@angular/material/menu';
 import { SearchComponent } from './component/search/search.component';
 import { SettingsComponent } from './component/settings/settings.component';
@@ -26,23 +29,25 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
-
+import { CommentsComponent } from './component/comments/comments.component';
+import { SideBarComponent } from './component/side-bar/side-bar.component';
 
 
 
 @NgModule({
   declarations: [
-    NavbarComponent,
-
+    CartComponent,
     NotFoundComponent,
     CartComponent,
     CartDetailsComponent,
     FooterComponent,
     SearchComponent,
-    SidebarComponent,
     SettingsComponent,
     EditpasswordComponent,
-    EditpersonaldataComponent
+    EditpersonaldataComponent,
+    CommentsComponent,
+    SideBarComponent,
+
 
 
 
@@ -65,18 +70,23 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule,
-    MatSelectModule
+
+    MatSelectModule,
+
+    MatSelectModule ,
+
+
   ],
   exports :[
     FooterComponent,
-    NavbarComponent,
     CartComponent,
     CartDetailsComponent,
-     SidebarComponent,
      SearchComponent,
     SettingsComponent,
     EditpasswordComponent,
-    EditpersonaldataComponent
+    EditpersonaldataComponent,
+    CommentsComponent,
+    SideBarComponent
 
 
   ],
