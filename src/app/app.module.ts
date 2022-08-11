@@ -12,19 +12,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddProperityComponent } from './components/add-properity/add-properity.component';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import { ListAllOwnerProperitiesComponent } from './components/list-all-owner-properities/list-all-owner-properities.component';
-import { UpdateProperityAdvertisingComponent } from './components/update-properity-advertising/update-properity-advertising.component';
-import { SharedModule  } from './shared/shared.module';
-import { AboutComponent } from './components/about/about.component';
-import { ListcontactsComponent } from './admin/component/listcontacts/listcontacts.component';
+import { SharedModule} from './shared/shared.module';
+import { UserfavouritesComponent } from './components/userfavourites/userfavourites.component';
 import { AdminModule } from './admin/admin.module';
-import { PendingComponent } from './components/pending/pending.component';
-import { RentedComponent } from './components/rented/rented.component';
-import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
-// import { ListcontactsComponent } from './listcontacts/listcontacts.component';
-import { HeaderComponent } from './header/header.component';
-import { CommentsComponent } from './comments/comments.component';
-import { UserfavouritsComponent } from './components/userfavourits/userfavourits.component';
+
 
 @NgModule({
   declarations: [
@@ -33,19 +24,8 @@ import { UserfavouritsComponent } from './components/userfavourits/userfavourits
     HomeComponent,
 
     AddProperityComponent,
-    ListAllOwnerProperitiesComponent,
-    UpdateProperityAdvertisingComponent,
-    AboutComponent,
-    PendingComponent,
-    RentedComponent,
-    NotRentedYetComponent,
-    // ListcontactsComponent,
-
-   HeaderComponent,
- CommentsComponent,
- UserfavouritsComponent,
-
-
+    UserfavouritesComponent,
+    
   ],
   imports: [
     BrowserModule,

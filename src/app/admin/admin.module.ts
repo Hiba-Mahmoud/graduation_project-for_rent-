@@ -9,10 +9,10 @@ import { RentersComponent } from './component/renters/renters.component';
 import { AdminsComponent } from './component/admins/admins.component';
 import { AddAdminComponent } from './component/add-admin/add-admin.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
+// import {MatTableModule} from '@angular/material/table';
+// import {MatPaginatorModule} from '@angular/material/paginator';
 import { MaterialModule } from '../material/material.module';
-import { MatSortModule } from '@angular/material/sort';
+// import { MatSortModule } from '@angular/material/sort';
 import { AdverRequestsComponent } from './component/adver-requests/adver-requests.component';
 
 
@@ -35,10 +35,10 @@ import { AdverRequestsComponent } from './component/adver-requests/adver-request
   imports: [
     CommonModule,
     HttpClientModule,
-    MatTableModule,
-    MatPaginatorModule,
+    // MatTableModule,
+    // MatPaginatorModule,
     MaterialModule,
-    MatSortModule,
+    // MatSortModule,
 
   ],
   exports:[

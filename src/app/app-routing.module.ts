@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SettingsComponent } from './shared/component/settings/settings.component';
+import { EditpasswordComponent } from './shared/component/editpassword/editpassword.component';
+import { EditpersonaldataComponent } from './shared/component/editpersonaldata/editpersonaldata.component';
+import { UserfavouritesComponent } from './components/userfavourites/userfavourites.component';
 
 import { AddProperityComponent } from './components/add-properity/add-properity.component';
 import { ListAllOwnerProperitiesComponent } from './components/list-all-owner-properities/list-all-owner-properities.component';
@@ -14,8 +18,7 @@ import { LoginComponent } from './auth/component/login/login.component';
 import { RegisterComponent } from './auth/component/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { CartDetailsComponent } from './shared/component/cart-details/cart-details.component';
-import { EditpasswordComponent } from './shared/component/editpassword/editpassword.component';
-import { EditpersonaldataComponent } from './shared/component/editpersonaldata/editpersonaldata.component';
+
 import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 import { AboutComponent } from './components/about/about.component';
 import { AdminhomeComponent } from './admin/component/adminhome/adminhome.component';
@@ -23,7 +26,7 @@ import { ListcontactsComponent } from './admin/component/listcontacts/listcontac
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
-import { SettingsComponent } from './shared/component/settings/settings.component';
+
 import { ReportsDetailsComponent } from './admin/component/reports-details/reports-details.component';
 
 const routes: Routes = [
@@ -87,9 +90,10 @@ const routes: Routes = [
 
   {
     path: "**", component: NotFoundComponent
-  }
-];
+  },
 
+]
+ 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
