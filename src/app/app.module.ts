@@ -24,6 +24,7 @@ import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-ye
 // import { ListcontactsComponent } from './listcontacts/listcontacts.component';
 import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
+import { UserfavouritsComponent } from './components/userfavourits/userfavourits.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CommentsComponent } from './comments/comments.component';
 
    HeaderComponent,
  CommentsComponent,
+ UserfavouritsComponent,
 
 
   ],

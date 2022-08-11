@@ -23,10 +23,13 @@ import { ListcontactsComponent } from './admin/component/listcontacts/listcontac
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
+import { SettingsComponent } from './shared/component/settings/settings.component';
+import { ReportsDetailsComponent } from './admin/component/reports-details/reports-details.component';
 
 const routes: Routes = [
   // { path: '',   redirectTo: '/home', pathMatch: 'full' },
-
+  { path:'reports-details',component:ReportsDetailsComponent },
+  { path: 'settings', component:  SettingsComponent},
   {
     path: "", component: HomeComponent
   },
