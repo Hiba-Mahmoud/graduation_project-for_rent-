@@ -12,10 +12,10 @@ export class TokenService {
   }
 
   setToken(token:string){
-    localStorage.setItem('token',token);
+    sessionStorage.setItem('token',token);
   }
   getToken():string{
-    return localStorage.getItem('token');
+    return sessionStorage.getItem('token');
   }
 
   handelId(id:string){
@@ -23,14 +23,14 @@ export class TokenService {
   }
 
   setId(id:string){
-    localStorage.setItem('id',id);
+    sessionStorage.setItem('id',id);
   }
   getId():string{
-    return localStorage.getItem('id');
+    return sessionStorage.getItem('id');
   }
 
   clearLocalStorage(){
-    localStorage.clear();
+    sessionStorage.clear();
 
   }
 }
