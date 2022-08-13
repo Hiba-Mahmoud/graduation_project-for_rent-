@@ -36,9 +36,9 @@ export class LoginComponent implements OnInit {
     return this.http.post('http://127.0.0.1:8000/api/login', this.user).subscribe(
       (response: any) =>{
 
-        this.userId = response.user.id;
-        console.log(this.userId)
-        this.token.handelId(this.userId.toString());
+        this.userId = response.user[0].id;
+        console.log(this.userId.toString())
+        // this.token.handelId(this.userId.toString());
 
         if(response.user.email_verified_at == null){
           this.router.navigateByUrl('/mailverifiy')
@@ -64,17 +64,18 @@ export class LoginComponent implements OnInit {
       },
       (error: any) => {
         this.errMsg = error;
+        console.log(this.errMsg)
         ;
-        if(this.errMsg.error.error.email){
-          document.getElementById('emailerror').textContent = this.errMsg.error.error.email;
+        // if(this.errMsg.error.error.email){
+        //   document.getElementById('emailerror').textContent = this.errMsg.error.error.email;
 
-        };
-        if(this.errMsg.error.error.password){
-          document.getElementById('passwoderror').textContent = this.errMsg.error.error.password;
+        // };
+        // if(this.errMsg.error.error.password){
+        //   document.getElementById('passwoderror').textContent = this.errMsg.error.error.password;
 
-        };
+        // };
 
-        console.log(this.errMsg);
+        // console.log(this.errMsg);
 
       }
     )
