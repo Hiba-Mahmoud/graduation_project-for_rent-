@@ -5,8 +5,8 @@
       <input matInput placeholder="Enter Name"  #name (keyup)="findByName(name)">
     </mat-form-field>
 </form>
-    <div class="mat-elevation mt-2  m-auto ">
-        <table mat-table [dataSource]="dataSource"  matSort  class="m-auto border border-5 table  ">
+    <div class="mat-elevation mt-2  m-auto table-responsive">
+        <table mat-table [dataSource]="dataSource"  matSort  class="m-auto border border-5  table ">
       
           <!-- Position Column -->
           <ng-container matColumnDef="id">

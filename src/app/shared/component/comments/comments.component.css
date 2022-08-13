@@ -1,1 +1,94 @@
-body{background: #eee}.date{font-size: 11px}.comment-text{font-size: 12px}.fs-12{font-size: 12px}.shadow-none{box-shadow: none}.name{color: #007bff}.cursor:hover{color: blue}.cursor{cursor: pointer}.textarea{resize: none}
+
+
+
+@media(min-width:568px){
+    .end{
+        margin-left: auto;
+    }
+}
+
+@media(max-width:768px){
+    #post{
+        width: 100%;
+    }
+}
+
+
+
+ 
+
+#post{
+    margin: 10px;
+    padding: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background: #585858;
+    color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+    width: 50%;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+}
+
+#post:hover{
+    background: #FE6F41;
+
+}
+
+
+
+
+.comments{
+    margin-top: 5%;
+    margin-left: 20px;
+}
+
+
+.comment{
+    border: 1px solid rgb(249, 251, 251);
+    height:auto;
+    
+}
+
+.comment h4,.comment span,.darker h4,.darker span{
+    display: inline;
+}
+
+.comment p,.comment span,.darker p,.darker span{
+    color: gray;
+}
+
+h1,h4{
+    color: gray;
+    font-weight: bold;
+}
+label{
+    color: rgb(63, 62, 62);
+}
+
+#align-form{
+    margin-top: 20px;
+}
+.form-group p a{
+    color: white;
+}
+
+
+
+
+
+.form-group input,.form-group textarea{
+    border: 1px solid rgb(249, 251, 251);
+    border-radius: 12px;
+}
+
+form{
+    border: 1px solid rgb(249, 251, 251);
+    border-radius: 5px;
+    padding: 20px;
+ }

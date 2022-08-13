@@ -15,7 +15,7 @@ import { MaterialModule } from './material/material.module';
 import { AdminModule } from './admin/admin.module';
 import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +38,8 @@ import { CommentsComponent } from './comments/comments.component';
     UsersModule,
     SharedModule,
     MaterialModule,
-    AdminModule
+    AdminModule,
+    NgxPaginationModule,
 
   ],
   providers: [],

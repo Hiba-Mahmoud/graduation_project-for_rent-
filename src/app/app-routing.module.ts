@@ -28,7 +28,7 @@ const routes: Routes = [
     path: "register", component: RegisterComponent
   },
   {
-    path: "details", component: CartDetailsComponent
+    path: "details/:id", component: CartDetailsComponent
   },
   { path: 'owner', component: OwnerComponent },
   { path: 'addProperity', component: AddProperityComponent },

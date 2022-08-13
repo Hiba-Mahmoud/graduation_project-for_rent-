@@ -5,17 +5,18 @@
 
   <div class="album py-5 ">
     <div class="container">
-
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
-        <app-cart> </app-cart>
 
-        <app-cart> </app-cart>
-        <app-cart> </app-cart>
-       
-       
+        <div class="col " *ngFor="let item of allAdvert | paginate: { itemsPerPage: 9,totalItems:totalNumber, currentPage: page }">
+        <app-cart [advertisment]="item" > </app-cart>
+
       </div>
+    </div> 
+       
     </div>
-  </div> 
+    <pagination-controls previousLabel="السابق" nextLabel="التالي" class="text-center" (pageChange)="page = $event" *ngIf="totalNumber>9"></pagination-controls>
 
+  </div> 
+ 
   <app-footer> </app-footer> 
 

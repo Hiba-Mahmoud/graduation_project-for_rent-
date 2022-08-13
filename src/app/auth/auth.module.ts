@@ -5,8 +5,7 @@ import { RegisterComponent } from './component/register/register.component';
 import { RemmberMeComponent } from './component/remmber-me/remmber-me.component';
 import { MailConfirmComponent } from './component/mail-confirm/mail-confirm.component';
 import { MaterialModule } from '../material/material.module';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,8 @@ import { MaterialModule } from '../material/material.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   exports:[
     MailConfirmComponent,

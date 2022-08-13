@@ -1,20 +1,42 @@
-<div class="container mt-5">
-    <div class="d-flex justify-content-center row">
-        <div class="col-md-8">
-            <div class="d-flex flex-column comment-section">
-                <div class="bg-light p-2">
-                    <div class="d-flex flex-row align-items-start"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
-                    <div class="mt-2 text-right"><button class="btn btn-outline-secondary btn-sm shadow-none" type="button"> comment</button><button class="btn btn-outline-secondary btn-sm ml-1 shadow-none" type="button">Cancel</button></div>
-                </div>
-                <div class="bg-white p-2">
-                    <div class="d-flex flex-row user-info"><img class="rounded-circle" src="https://i.imgur.com/RpzrMR2.jpg" width="40">
-                        <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">Marry Andrews</span></div>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 col-md-6 col-12 pb-4" *ngFor="let review of reviews">
+                <h1>التقييمات :</h1>
+                
+                <div class="comment mt-4 bg-light text-justify float-left">
+                    <div class="d-flex flex-row user-info"><img class="rounded-circle" [src]="review.user.image" width="40">
+                        <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name"><h4>{{review.user.name}}</h4></span></div>
                     </div>
-                    <div class="mt-2">
-                        <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div style=" font-size:xx-large ; color:orange ;" class="form-group">
+                        <ngb-rating [max]="5" [rate]="review.count" [readonly]="true"> </ngb-rating>
                     </div>
+    
+                    <p>{{review.comment}}</p>
                 </div>
+               
+                
+                
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+                <form id="algin-form" class="bg-light mt-5" [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <h4>اترك تعليقك :</h4>
+
+
+                        <textarea formControlName="comment" name="msg" id=""msg cols="30" rows="5" class="form-control" ></textarea>
+                    </div>
+                    <div class="text-danger my-2" *ngIf="commentForm.controls['comment'].touched && commentForm.controls['comment'].invalid">يجب أن يكون أكثر من أربعه أحرف</div>
+                    <div style=" font-size:xx-large ; color:orange ;" class="form-group mt-2">
+                        <ngb-rating [max]="5" [readonly]="false" formControlName="rating"> </ngb-rating>
+                    </div>
+                   <div class="text-danger m-2"  *ngIf="commentForm.controls['comment'].touched && commentForm.controls['rating'].invalid">التقييم مطلوب</div>
+                    <div class="form-group">
+                        <button [disabled]="commentForm.invalid"  type="submit" id="post" class="btn">نشر</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
+</section>
