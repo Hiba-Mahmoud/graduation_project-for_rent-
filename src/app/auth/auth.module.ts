@@ -30,6 +30,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
   ],
   exports:[
     MailConfirmComponent,
+    ForgetPasswordComponent
 
 
   ]
