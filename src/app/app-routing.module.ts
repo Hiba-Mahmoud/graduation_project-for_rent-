@@ -24,6 +24,7 @@ import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-ye
 import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
 import { MailConfirmComponent } from './auth/component/mail-confirm/mail-confirm.component';
+import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -76,7 +77,9 @@ const routes: Routes = [
     path: 'requests', component:AdverRequestsComponent
   },
   {
-    path: 'addAdmin', component: AddAdminComponent
+    path: 'addAdmin', component: AddAdminComponent},
+    {
+    path: 'forgetpassword', component:ForgetPasswordComponent
   },
  // end admin routes
   // {
