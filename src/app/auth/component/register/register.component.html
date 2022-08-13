@@ -193,20 +193,20 @@
                 registeration.controls['password'].errors &&
                 registeration.controls['password'].errors['required']
               "
-              >كلمة المرور مطلوب</strong
+              >برجاء ادخال كلمة المرور</strong
             >
             <strong
               *ngIf="registeration.controls['password'].errors['minlength']"
             >
-              الرقم السرى يجب ان لا يقل عن 6
-            </strong>
+             كلمة المرور لا تقل عن 8 اهرف وارقام
+              </strong>
 
             <strong
               *ngIf="registeration.controls['password'].errors['maxlength']"
-              >الرقم السرى يجب ان لا يزيد عن 20</strong
+              >كلمة المرور يجب ان لا يزيد عن 20 حرفا ورقما</strong
             >
             <small *ngIf="registeration.controls['password'].errors['pattern']">
-              و حرف صقير و رمز الرقم السرى يجب ان يحتوى على حرف كابتال على الاقل</small
+              يجب أن تتكون كلمة المرور الخاصة بك من أكثر من 8 أحرف ، ويجب أن تحتوي على الأقل على حرف كبير واحد ، وحرف صغير واحد ، ورقم واحد ، ورمزا واحد </small
             >
           </div>
           <small id="password"></small>
@@ -240,7 +240,7 @@
                 registeration.controls['gender'].errors['required']
               "
             >
-              Gender is requierd</small
+            الحقل مطلوب</small
             >
           </div>
         </div>
@@ -268,7 +268,7 @@
                 registeration.controls['type'].errors['required']
               "
             >
-              Gender is requierd</small
+              الحقل مطلوب</small
             >
           </div>
         </div>
@@ -278,22 +278,20 @@
             class="send form-group col-md-5 w-100 right"
             type="submit"
             [disabled]="registeration?.invalid"
-           
+
             (click)="sign_up()"
           >
             انشاء حساب
           </button>
         </div>
-        <!-- <div class="form-group col-md-6"> -->
-        <!-- <button class="send form-group col-md-5 left" type="submit">انشاء حساب كمالك</button> -->
-        <!-- </div> -->
+
         <div class="form-label-group">
-          <a href="#" style="width: 100%" class="hov">لدى حساب</a>
+          <a routerLink="/login" style="width: 100%" class="link-dark">لدى حساب</a>
         </div>
       </form>
 
-      {{ registeration.status }}
-      {{ postData | json }}
+      <!-- {{ registeration.status }} -->
+      <!-- {{ postData | json }} -->
     </div>
   </div>
 </div>
