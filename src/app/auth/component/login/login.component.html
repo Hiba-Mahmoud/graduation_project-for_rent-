@@ -54,7 +54,7 @@ Page Content
 
         Invalid Email or Password.
       </div> -->
-      <div class="row d-flex  align-items-center h-100">
+      <div class="row d-flex justify-content-center align-items-center  h-100">
         <div class="col-xl-10">
           <div class="card rounded-3 text-black">
             <div class="row g-0">
@@ -85,7 +85,9 @@ Page Content
                           maximum length
                           is 40</small>
                       </div>
+
                     </div>
+                    <div><p id="emailerror"></p></div>
 
 
                     <div class="form-outline mb-4">
@@ -110,6 +112,7 @@ Page Content
                           is 20</small>
                       </div>
                     </div>
+                    <div><p id="passwoderror"></p></div>
                     <div class="pt-1 mb-4">
                       <button
                         class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" (click)="login()"

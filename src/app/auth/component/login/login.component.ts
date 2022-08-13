@@ -1,3 +1,4 @@
+import { AuthService } from './../../service/auth.service';
 import { TokenService } from './../../service/token.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -14,9 +15,9 @@ export class LoginComponent implements OnInit {
   loginForm:FormGroup;
   user = new IUser;
   errMsg:any;
-  userId: number;
+  userId: any;
 
-  constructor(private fb:FormBuilder,private http:HttpClient,private router:Router,private token:TokenService) { }
+  constructor(private fb:FormBuilder,private http:HttpClient,private router:Router,private token:TokenService,private auth:AuthService) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -34,21 +35,34 @@ export class LoginComponent implements OnInit {
 
     return this.http.post('http://127.0.0.1:8000/api/login', this.user).subscribe(
       (response: any) =>{
-        this.userId = response.user['id']
-        console.log(this.userId)
-        // this.token.handelId(`${this.userData}`);
-        // if(response.user.email_verified_at == null){
-        //   this.router.navigateByUrl('/mailverifiy')
-        // }else{
-        // console.log(response.authorisation.token);
-        // this.token.handeltoken(response.authorisation.token);
 
-        //   this.router.navigateByUrl('/home');
-        // }
+        this.userId = response.user.id;
+        console.log(this.userId)
+        this.token.handelId(this.userId.toString());
+
+        if(response.user.email_verified_at == null){
+          this.router.navigateByUrl('/mailverifiy')
+          
+        }else{
+        console.log(response.authorisation.token);
+        this.token.handeltoken(response.authorisation.token);
+        this.auth.userNavigation(response.user.type)
+
+          // this.router.navigateByUrl('/home');
+        }
       },
       (error: any) => {
         this.errMsg = error;
         ;
+        if(this.errMsg.error.error.email){
+          document.getElementById('emailerror').textContent = this.errMsg.error.error.email;
+
+        };
+        if(this.errMsg.error.error.password){
+          document.getElementById('passwoderror').textContent = this.errMsg.error.error.password;
+
+        };
+
         console.log(this.errMsg);
 
       }

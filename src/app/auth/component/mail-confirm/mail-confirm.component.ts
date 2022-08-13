@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { MoaveDataService } from '../../service/moave-data.service';
 import { confirmMailCode } from '../../classesAndinterfaces/confirmMailCode';
 import { TokenService } from '../../service/token.service';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-mail-confirm',
@@ -18,7 +19,7 @@ export class MailConfirmComponent implements OnInit {
   userId:number;
   errMsg: any;
 
-  constructor(private fb:FormBuilder,private http:HttpClient , private moveData:MoaveDataService,private router:Router,private Token:TokenService) { }
+  constructor(private auth:AuthService,private fb:FormBuilder,private http:HttpClient , private moveData:MoaveDataService,private router:Router,private Token:TokenService) { }
 
   ngOnInit(): void {
     this.succmessage=this.moveData.getmyMethodSubject();
@@ -40,22 +41,23 @@ export class MailConfirmComponent implements OnInit {
       // this.userId= succ.user.id;
       if(succ.success){
       this.Token.handeltoken(succ.token);
+      this.auth.userNavigation(succ.user.type)
 
-    if(succ.user.type =='owner'){
-      this.router.navigate(['/owner']);
+    // if(succ.user.type =='owner'){
+    //   this.router.navigate(['/owner']);
 
-    }else if(succ.user.type =='renter'){
-      this.router.navigate(['/']);
+    // }else if(succ.user.type =='renter'){
+    //   this.router.navigate(['/']);
 
-    }else if (succ.user.type =='admin'){
-      this.router.navigate(['/adminhome']);
+    // }else if (succ.user.type =='admin'){
+    //   this.router.navigate(['/adminhome']);
 
-    }else{
-      this.router.navigate(['/adminhome']);
+    // }else{
+    //   this.router.navigate(['/adminhome']);
 
-    }
+    // }
   }else{
-    
+
 
     document.getElementById('code').textContent = succ.message;
   }
