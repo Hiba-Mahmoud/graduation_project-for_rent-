@@ -1,3 +1,4 @@
+import { TokenService } from './../auth/service/token.service';
 import { Component, OnInit ,ViewChild} from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -12,24 +13,38 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
-  constructor(private observer: BreakpointObserver, private router: Router) { }
+  constructor(private observer: BreakpointObserver, private router: Router , private removeToken:TokenService) { }
 
   ngOnInit(): void {
   }
-  ngAfterViewInit() {
-    this.observer
-      .observe(['(max-width: 766px)'])
-     
-      .subscribe((res) => {
-        if (res.matches) {
-          this.sidenav.mode = 'over';
-          this.sidenav.close();
-        } else {
-          this.sidenav.mode = 'side';
-          this.sidenav.open();
-        }
-      });
+
+  logout(){
+    this.removeToken.clearLocalStorage();
+    this.router.navigateByUrl('/login')
+  }
 
 
-}
+
+
+
+
+
+
+
+//   ngAfterViewInit() {
+//     this.observer
+//       .observe(['(max-width: 766px)'])
+
+//       .subscribe((res) => {
+//         if (res.matches) {
+//           this.sidenav.mode = 'over';
+//           this.sidenav.close();
+//         } else {
+//           this.sidenav.mode = 'side';
+//           this.sidenav.open();
+//         }
+//       });
+
+
+// }
 }

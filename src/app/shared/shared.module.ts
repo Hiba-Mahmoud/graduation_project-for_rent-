@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { NavbarComponent } from './component/navbar/navbar.component';
-
+// import { NavbarComponent } from './component/navbar/navbar.component'
 
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { CartComponent } from './component/cart/cart.component';
@@ -17,8 +16,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-
-
 import {MatMenuModule} from '@angular/material/menu';
 import { SearchComponent } from './component/search/search.component';
 import { SettingsComponent } from './component/settings/settings.component';

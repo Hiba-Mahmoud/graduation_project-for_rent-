@@ -9,10 +9,11 @@
 </div>
 
 <div class="container mt-5">
-  <form dir="rtl" class="w-100">
+  <form dir="rtl" class="w-100" [formGroup]="addproperity" (submit)="onsubmit()">
     <div class="mb-3">
-      <label for="title" class="form-label">اسم الاعلان</label>
+      <label for="title"  class="form-label">اسم الاعلان</label>
       <input
+      formControlName="title"
         type="text"
         class="form-control"
         name="title"
@@ -23,6 +24,7 @@
     <div class="mb-3">
       <label for="description">الوصف</label>
       <textarea
+      formControlName="description"
         class="form-control"
         name="description"
         id="description"
@@ -33,35 +35,37 @@
     <div class="row mb-3">
       <div class="col-sm-12 col-md-6">
         <label for="price" class="form-label">السعر</label>
-        <input type="number" name="price" class="form-control" id="price" />
+        <input type="number" name="price"  formControlName="price"  class="form-control" id="price" />
       </div>
       <div class="col-sm-12 col-md-6">
         <label for="level" class="form-label">الطابق</label>
-        <input type="number" name="level" class="form-control" id="level" />
+        <input type="number" formControlName="level" name="level" class="form-control" id="level" />
       </div>
     </div>
     <div class="row mb-3">
       <div class="col-sm-12 col-md-4">
         <label for="bedroom-num" class="form-label">عدد الغرف</label>
         <input
+        formControlName="bedroomnum"
           type="number"
-          name="bedroom-num"
+          name="bedroomnum"
           class="form-control"
           id="bedroom-num"
         />
       </div>
       <div class="col-sm-12 col-md-4">
-        <label for="bathroom-num" class="form-label">عدد الحمامات</label>
+        <label for="bathroomnum" class="form-label">عدد الحمامات</label>
         <input
+        formControlName="bathroomnum"
           type="number"
-          name="bathroom-num"
+          name="bathroomnum"
           class="form-control"
           id="bathroom-num"
         />
       </div>
       <div class="col-sm-12 col-md-4">
-        <label for="beds-num" class="form-label">عدد السرائر</label>
-        <input type="number" name="beds-num" class="beds-num" id="beds-num" />
+        <label for="bedsnum" class="form-label">عدد السرائر</label>
+        <input type="number" formControlName="bedsnum" name="bedsnum" class="beds-num" id="beds-num" />
       </div>
     </div>
 
@@ -70,9 +74,9 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">مفروش</h4>
-            <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1" color="primary">نعم</mat-radio-button>
-              <mat-radio-button value="2" color="primary">لا</mat-radio-button>
+            <mat-radio-group aria-label="Select an option" >
+              <mat-radio-button  name="furniture" value="1" color="primary">نعم</mat-radio-button>
+              <mat-radio-button name="furniture" value="2" color="primary">لا</mat-radio-button>
             </mat-radio-group>
           </div>
         </div>
@@ -82,12 +86,12 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">النوع</h4>
-            <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1" color="primary">شقة</mat-radio-button>
-              <mat-radio-button value="2" color="primary"
+            <mat-radio-group aria-label="Select an option" >
+              <mat-radio-button name="type" value="1" color="primary">شقة</mat-radio-button>
+              <mat-radio-button name="type" value="2" color="primary"
                 >ستوديو</mat-radio-button
               >
-              <mat-radio-button value="3" color="primary"
+              <mat-radio-button name="type" value="3" color="primary"
                 >غرفة</mat-radio-button
               >
             </mat-radio-group>
@@ -97,12 +101,17 @@
     </div>
 
     <div class="row mb-3">
-      <div class="col-sm-12">
-        <label for="address" class="form-label">العنوان</label>
+      <div class="col-sm-12 col-md-4">
+        <label for="address" class="form-label">المحافظة</label>
+        <input type="text" name="governate" class="form-control" id="address" />
+      </div>
+      <div class="col-sm-12 col-md-8">
+        <label for="address" class="form-label">العنوان بالتفصيل</label>
         <input type="text" name="address" class="form-control" id="address" />
       </div>
+
     </div>
-    <div class="row">
+    <div class="row" formGroupName="Image">
       <div class="col-sm-12 col-md-3">
         <div class="file-field">
           <div class="z-depth-1-half mb-4">
@@ -115,7 +124,7 @@
           <div class="d-flex justify-content-center">
             <div class="btn btn-mdb-color btn-rounded float-left">
               <span>Choose file</span>
-              <input type="file" />
+              <input type="file" formControlName="imageone"  name="imageone" />
             </div>
           </div>
         </div>
@@ -132,7 +141,7 @@
           <div class="d-flex justify-content-center">
             <div class="btn btn-mdb-color btn-rounded float-left">
               <span>اختر صورة </span>
-              <input type="file" />
+              <input type="file"  name="imagtwo" formControlName="imagtwo"/>
             </div>
           </div>
         </div>
@@ -149,7 +158,7 @@
           <div class="d-flex justify-content-center">
             <div class="btn btn-mdb-color btn-rounded float-left">
               <span>اختر صورة</span>
-              <input type="file" />
+              <input type="file" name="imagethree"  formControlName="imagethree"/>
             </div>
           </div>
         </div>
@@ -166,7 +175,7 @@
           <div class="d-flex justify-content-center">
             <div class="btn btn-mdb-color btn-rounded float-left">
               <span>اختر صورة</span>
-              <input type="file" />
+              <input type="file" name="imagefour" formControlName="imagefour"/>
             </div>
           </div>
         </div>
@@ -174,7 +183,8 @@
     </div>
 
     <div class="text-center mt-5">
-      <input class="send" type="submit" value="submit" />
+      <input class="send" type="submit" value="submit"/>
     </div>
   </form>
 </div>
+<p>{{addproperity.value |json}}</p>
