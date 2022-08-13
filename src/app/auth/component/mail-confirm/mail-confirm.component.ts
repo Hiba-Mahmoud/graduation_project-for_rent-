@@ -41,7 +41,20 @@ export class MailConfirmComponent implements OnInit {
       // this.userId= succ.user.id;
       if(succ.success){
       this.Token.handeltoken(succ.token);
-      this.auth.userNavigation(succ.user.type)
+      if(succ.user.type =='owner'){
+        this.router.navigate(['/owner']);
+
+      }else if(succ.user.type =='renter'){
+        this.router.navigate(['/']);
+
+      }else if (succ.user.type =='admin'){
+        this.router.navigate(['/adminhome']);
+
+      }else{
+        this.router.navigate(['/adminhome']);
+
+      }
+      // this.auth.userNavigation(succ.user.type)
 
     // if(succ.user.type =='owner'){
     //   this.router.navigate(['/owner']);

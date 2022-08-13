@@ -54,8 +54,10 @@ export class RegisterComponent implements OnInit {
     this.postData.password_confirmation=this.registeration.value.password;
     // console.log("POST DATAAAAA"+this.postData);
 
+
     this.http.post('http://127.0.0.1:8000/api/register',this.postData).subscribe((succ:any)=>{
       this.userData = succ.user.id;
+      console.log('inside response')
       this.localstorage.handelId(this.userData.toString())
       console.log(this.userData.toString());
       this.moveData.setUserID(this.userData);
@@ -64,7 +66,9 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['/mailverifiy']);
 
     },(error:HttpErrorResponse)=>{
+
       this.errMsg= error.error['error'];
+      console.log(this.errMsg)
       if(this.errMsg.name){
         document.getElementById('name').textContent = this.errMsg.name
 
@@ -84,6 +88,12 @@ export class RegisterComponent implements OnInit {
     })
 
   }
+
+
+
+
+
+
   onsubmit(){
 //  this.router.navigate(['/mailverifiy'])
   }

@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email:['',[Validators.required,Validators.email, Validators.minLength(7), Validators.maxLength(40)]],
-      password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(20)]]
+      password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(20),]]
     })
   }
 
@@ -42,12 +42,23 @@ export class LoginComponent implements OnInit {
 
         if(response.user.email_verified_at == null){
           this.router.navigateByUrl('/mailverifiy')
-          
+
         }else{
         console.log(response.authorisation.token);
         this.token.handeltoken(response.authorisation.token);
-        this.auth.userNavigation(response.user.type)
+        if(response.user.type =='owner'){
+          this.router.navigate(['/owner']);
 
+        }else if(response.user.type =='renter'){
+          this.router.navigate(['/']);
+
+        }else if (response.user.type =='admin'){
+          this.router.navigate(['/adminhome']);
+
+        }else{
+          this.router.navigate(['/adminhome']);
+
+        }
           // this.router.navigateByUrl('/home');
         }
       },
