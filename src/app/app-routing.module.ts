@@ -23,9 +23,10 @@ import { ListcontactsComponent } from './admin/component/listcontacts/listcontac
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
+import { MailConfirmComponent } from './auth/component/mail-confirm/mail-confirm.component';
 
 const routes: Routes = [
-  // { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
 
   {
     path: "", component: HomeComponent
@@ -54,6 +55,7 @@ const routes: Routes = [
   { path: 'adminhome', component:AdminhomeComponent},
   { path: 'all-contacts', component:ListcontactsComponent},
 
+  { path:"mailverifiy", component:MailConfirmComponent},
   { path:"notrented", component:NotRentedYetComponent},
   { path:"pending", component:PendingComponent},
   { path:"rented", component:RentedComponent},

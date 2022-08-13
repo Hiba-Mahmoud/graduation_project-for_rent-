@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,7 +31,6 @@ import { CommentsComponent } from './comments/comments.component';
     AppComponent,
     AccountComponent,
     HomeComponent,
-
     AddProperityComponent,
     ListAllOwnerProperitiesComponent,
     UpdateProperityAdvertisingComponent,
@@ -56,8 +56,8 @@ import { CommentsComponent } from './comments/comments.component';
     AuthModule,
     UsersModule,
     SharedModule,
-    MaterialModule,
-    AdminModule
+    AdminModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
