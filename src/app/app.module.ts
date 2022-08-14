@@ -42,7 +42,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MaterialModule,
     AdminModule,
     NgxPaginationModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
 
   ],
   providers: [],

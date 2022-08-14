@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReportsComponent } from './component/reports/reports.component';
 import { ReportsDetailsComponent } from './component/reports-details/reports-details.component';
+import { AdminhomeComponent } from './component/adminhome/adminhome.component';
+import { ListcontactsComponent } from './component/listcontacts/listcontacts.component';
 import { OwnersComponent } from './component/owners/owners.component';
 import { RentersComponent } from './component/renters/renters.component';
 import { AdminsComponent } from './component/admins/admins.component';
@@ -18,12 +20,18 @@ import { AdverRequestsComponent } from './component/adver-requests/adver-request
   declarations: [
     ReportsComponent,
     ReportsDetailsComponent,
+    AdminhomeComponent,
+    ListcontactsComponent,
     OwnersComponent,
     RentersComponent,
     AdminsComponent,
     AddAdminComponent,
-    AdverRequestsComponent
+    AdverRequestsComponent,
+    AdminsComponent,
+
   ],
+
+
   imports: [
     CommonModule,
     HttpClientModule,
@@ -31,15 +39,28 @@ import { AdverRequestsComponent } from './component/adver-requests/adver-request
     MatPaginatorModule,
     MaterialModule,
     MatSortModule,
-  
+
   ],
-  exports : [
+  exports:[
+    ListcontactsComponent,
+    OwnersComponent,
+    RentersComponent,
     AdminsComponent,
     AddAdminComponent,
-   OwnersComponent,
-   RentersComponent,
-   AddAdminComponent,
+    AdverRequestsComponent,
+    AdminsComponent,
 
-  ]
+
+
+
+  ],
+
 })
 export class AdminModule { }
+// imports: [
+//   CommonModule,
+//   MaterialModule,
+  // HttpClientModule,
+
+
+// ],

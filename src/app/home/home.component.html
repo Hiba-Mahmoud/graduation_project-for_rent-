@@ -1,20 +1,33 @@
 
-
+<!-- <app-sidebar> </app-sidebar> -->
+<!-- <app-search> </app-search> -->
 
 <div *ngIf="!loading">
   <app-search> </app-search>
 
   <div class="album py-5 ">
     <div class="container">
+<<<<<<< HEAD
+=======
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+
+
+>>>>>>> 9751dead1e4152e50868e2590c4e99b2c55b9270
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
 
+<<<<<<< HEAD
         <div class="col " *ngFor="let item of allAdvert | paginate: { itemsPerPage: 9,totalItems:totalNumber, currentPage: page }">
         <app-cart [advertisment]="item" > </app-cart>
 
+   
       </div>
     </div> 
        
     </div>
+<<<<<<< HEAD
     <pagination-controls previousLabel="السابق" nextLabel="التالي" class="text-center" (pageChange)="page = $event" *ngIf="totalNumber>9"></pagination-controls>
 
   </div> 
@@ -29,4 +42,9 @@
 
 
   
+=======
+  </div>
+
+  <app-footer> </app-footer>
+>>>>>>> 9751dead1e4152e50868e2590c4e99b2c55b9270
 

@@ -1,17 +1,31 @@
 *{
   font-family: cairo;
+  box-sizing: border-box;
 }
 .container{
   margin-top:100px;
 }
 
+.counter {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fbefef;
+  line-height: 28px
+  }
 .counter-box {
 display: block;
-height:150px;
+height:160px;
 background: #fe6f41;
 padding: 40px 20px 37px;
 text-align: center;
+transition: all 0.5s ease-in-out;
+cursor: pointer;
+border-radius: 2em;
 
+}
+.counter-box:hover{
+  background-color: #353535;
 }
 .card-title{
 
@@ -33,13 +47,7 @@ margin: 0 0 15px;
 color: #fff
 }
 
-.counter {
-display: block;
-font-size: 32px;
-font-weight: 700;
-color: rgb(138, 138, 138);
-line-height: 28px
-}
+
 
 .counter-box.colored {
     background: #fe6f41;
@@ -48,9 +56,8 @@ line-height: 28px
   width:100%;
   padding: 15px 20px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 20px;
-  background: var(--secondColor);
   color: #ffff;
   border: none;
   text-transform: uppercase;
@@ -63,11 +70,10 @@ line-height: 28px
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
-  background: #fe6f41;
-  caret-color: #fe6f41;
+  background: #353535;
 }
 .send:hover {
-  background: #353535;
+  background: #fe6f41;
   color: #fff;
 }
 
@@ -137,4 +143,42 @@ body {
 .counter-box.colored i,
 .counter-box.colored .counter {
 color: #fff
+}
+
+.height{
+  height:100vh;
+}
+.image{
+  width:100%;
+  height:100%;
+  position:static;
+}
+.cardheight{
+  padding:1%;
+}
+.backcolor
+{
+  background-color: #383838;
+  color:white;
+}
+.backcolor-one
+{
+  background-color: #fe6f41;
+  color:white;
+}
+.backcolor-two
+{
+  background-color: #626E85;
+  color:white;
+}
+.backcolor-three
+{
+  justify-content: center;
+  align-content: center;
+  background-color: #00AF80;
+  color:white;
+}
+a{
+  font-size: 20px;
+  font-weight: 800;
 }

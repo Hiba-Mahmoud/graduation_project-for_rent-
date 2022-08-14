@@ -1,62 +1,297 @@
-
-
 <!-- Page Content -->
 <div class="container">
   <div class="row justify-content-center">
     <!-- Team Member 1 -->
     <div class="col-sm-4 mb-4">
+      <form
+        class="form-signin"
+        dir="rtl"
+        [formGroup]="registeration"
+              >
+        <h1 class="h3 mb-3 fw-normal">انشاء حساب جديد</h1>
 
-<form class="form-signin" dir="rtl"  >
+        <div class="form-label-group hov">
+          <input
+            type="text"
+            name="firstName"
+            id="inputName"
+            class="form-control"
+            placeholder="User name"
+            formControlName="firstName"
+            autofocus
+          />
+          <label for="inputName">الاسم الاول </label>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="
+              registeration.controls['firstName'].errors &&
+              registeration.controls['firstName'].touched
+            "
+          >
+            <strong
+              *ngIf="
+                registeration.controls['firstName'].errors &&
+                registeration.controls['firstName'].errors['required']
+              "
+              >الاسم الاول مطلوب</strong
+            >
+            <strong
+              *ngIf="registeration.controls['firstName'].errors['minlength']"
+              >الاسم الاول يجب الا يقل عن حرفان</strong
+            >
 
-    <h1 class="h3 mb-3 fw-normal">انشاء حساب جديد</h1>
-  
-    <div class="form-label-group hov">
-      <input type="text" id="inputName" class="form-control " placeholder="User name" required autofocus>
-      <label for="inputName">اسم المستخدم</label>
+            <strong
+              *ngIf="registeration.controls['firstName'].errors['maxlength']"
+              >الاسم الاول يجب الا يزيد عن عشرة احرف</strong
+            >
+            <strong
+              *ngIf="registeration.controls['firstName'].errors['pattern']"
+              >الاسم الاول يجب ان يكون عربى</strong
+            >
+          </div>
+          <strong id="name"></strong
+            >
+        </div>
+        <div class="form-label-group hov">
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            class="form-control"
+            placeholder="User name"
+            formControlName="lastName"
+            autofocus
+          />
+          <label for="lastName"> الاسم الاخير</label>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="
+              registeration.controls['lastName'].errors &&
+              registeration.controls['lastName'].touched
+            "
+          >
+            <strong
+              *ngIf="
+                registeration.controls['lastName'].errors &&
+                registeration.controls['lastName'].errors['required']
+              "
+              >الاسم الاول مطلوب</strong
+            >
+            <strong
+              *ngIf="registeration.controls['lastName'].errors['minlength']"
+              >الاسم الاول يجب الا يقل عن حرفان</strong
+            >
+
+            <strong
+              *ngIf="registeration.controls['lastName'].errors['maxlength']"
+              >الاسم الاول يجب الا يزيد عن عشرة احرف</strong
+            >
+            <strong *ngIf="registeration.controls['lastName'].errors['pattern']"
+              >الاسم الاول يجب ان يكون عربى</strong
+            >
+          </div>
+        </div>
+        <small id="name"></small>
+
+        <div class="form-label-group hov">
+          <input
+            type="email"
+            name="email"
+            id="inputEmail"
+            class="form-control"
+            placeholder="Email address"
+            formControlName="email"
+            autofocus
+          />
+          <label for="inputEmail">البريد الالكترونى</label>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="
+              registeration.controls['email'].errors &&
+              registeration.controls['email'].touched
+            "
+          >
+            <strong
+              *ngIf="
+                registeration.controls['email'].errors &&
+                registeration.controls['email'].errors['required']
+              "
+              >الايميل مطلوب</strong
+            >
+            <strong *ngIf="registeration.controls['email'].errors['email']"
+              >ادخل ايميل صحيح</strong
+            >
+
+            <!-- <strong *ngIf=" registeration.controls['email'].errors['pattern']">الاسم الاول يجب ان يكون عربى</strong> -->
+          </div>
+          <small  id="email"></small>
+        </div>
+
+        <div class="form-label-group hov">
+          <input
+            type="text"
+            name="phone"
+            id="inputPhone"
+            class="form-control"
+            placeholder="User phone"
+            formControlName="phone"
+            autofocus
+          />
+          <label for="inputPhone">رقم الموبايل</label>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="
+              registeration.controls['phone'].errors &&
+              registeration.controls['phone'].touched
+            "
+          >
+            <strong
+              *ngIf="
+                registeration.controls['phone'].errors &&
+                registeration.controls['phone'].errors['required']
+              "
+              >رقم الهاتف مطلوب</strong
+            >
+            <strong *ngIf="registeration.controls['phone'].errors['minlength']">
+              رقم الهاتف يجب الا يقل عن 11 رقما</strong
+            >
+
+            <strong *ngIf="registeration.controls['phone'].errors['maxlength']"
+              >رقم الهاتف يجب الا يزيد عن 11 رقما</strong
+            >
+            <strong *ngIf="registeration.controls['phone'].errors['pattern']"
+              >ادخل رقما صحيحا</strong
+            >
+          </div>
+          <strong id="phone"></strong>
+        </div>
+
+        <div class="form-label-group hov">
+          <input
+            type="password"
+            name="password"
+            id="inputPassword"
+            class="form-control"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <label for="inputPassword">كلمة المرور</label>
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="
+              registeration.controls['password'].errors &&
+              registeration.controls['password'].touched
+            "
+          >
+            <strong
+              *ngIf="
+                registeration.controls['password'].errors &&
+                registeration.controls['password'].errors['required']
+              "
+              >برجاء ادخال كلمة المرور</strong
+            >
+            <strong
+              *ngIf="registeration.controls['password'].errors['minlength']"
+            >
+             كلمة المرور لا تقل عن 8 اهرف وارقام
+              </strong>
+
+            <strong
+              *ngIf="registeration.controls['password'].errors['maxlength']"
+              >كلمة المرور يجب ان لا يزيد عن 20 حرفا ورقما</strong
+            >
+            <small *ngIf="registeration.controls['password'].errors['pattern']">
+              يجب أن تتكون كلمة المرور الخاصة بك من أكثر من 8 أحرف ، ويجب أن تحتوي على الأقل على حرف كبير واحد ، وحرف صغير واحد ، ورقم واحد ، ورمزا واحد </small
+            >
+          </div>
+          <small id="password"></small>
+        </div>
+        <!-- <div class="form-label-group hov">
+      <input type="password" name="confirmPassword" id="inputPassword" class="form-control " placeholder="Password" formControlName="confirmPassword" >
+      <label for="inputPassword">تاكيد كلمة المرور</label>
+    </div> -->
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="gender" id="gender">النوع</label>
+          <select
+            formControlName="gender"
+            class="select w-100"
+            style="margin-left: 80px; padding-right: 95px"
+          >
+            <option disabled selected value>النوع</option>
+            <option value="male">ذكر</option>
+            <option value="female">انثى</option>
+          </select>
+          <div
+            *ngIf="
+              registeration.controls['gender'].errors &&
+              registeration.controls['gender'].touched
+            "
+          >
+            <small
+              class="form-text text-dark"
+              *ngIf="
+                registeration.controls['gender'].errors &&
+                registeration.controls['gender'].errors['required']
+              "
+            >
+            الحقل مطلوب</small
+            >
+          </div>
+        </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="type" id="type">تسجيل كـ</label>
+          <select
+            formControlName="type"
+            class="select w-100"
+            style="margin-left: 80px; padding-right: 95px"
+          >
+            <option disabled selected value>تسجيل كـ</option>
+            <option value="owner">مالك</option>
+            <option value="renter">مستاجر</option>
+          </select>
+          <div
+            *ngIf="
+              registeration.controls['type'].errors &&
+              registeration.controls['type'].touched
+            "
+          >
+            <small
+              class="form-text text-dark"
+              *ngIf="
+                registeration.controls['type'].errors &&
+                registeration.controls['type'].errors['required']
+              "
+            >
+              الحقل مطلوب</small
+            >
+          </div>
+        </div>
+
+        <div class="form-group col-sm-12">
+          <button
+            class="send form-group col-md-5 w-100 right"
+            type="submit"
+            [disabled]="registeration?.invalid"
+
+            (click)="sign_up()"
+          >
+            انشاء حساب
+          </button>
+        </div>
+
+        <div class="form-label-group">
+          <a routerLink="/login" style="width: 100%" class="link-dark">لدى حساب</a>
+        </div>
+      </form>
+
+      <!-- {{ registeration.status }} -->
+      <!-- {{ postData | json }} -->
     </div>
-  
-    <div class="form-label-group hov">
-      <input type="email" id="inputEmail" class="form-control " placeholder="Email address" required autofocus>
-      <label for="inputEmail">البريد الالكترونى</label>
-    </div>
-  
-    <div class="form-label-group hov">
-      <input type="number" id="inputPhone" class="form-control " placeholder="User phone" required autofocus>
-      <label for="inputPhone">رقم الموبايل</label>
-    </div>
-  
-    <div class="form-label-group hov">
-      <input type="password" id="inputPassword" class="form-control " placeholder="Password" required>
-      <label for="inputPassword">كلمة المرور</label>
-    </div>
-  
-    <div class="checkbox mb-3">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input hov" type="radio" name="male" id="inlineRadio1" value="male">
-        <label class="form-check-label" for="inlineRadio1">ذكر</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input hov" type="radio" name="female" id="inlineRadio2" value="female">
-        <label class="form-check-label" for="inlineRadio2">أنثى</label>
-      </div>
-    </div>
-  
-    <!-- <div class="form-group col-md-6"> -->
-    <button class="send form-group col-md-5 right" type="submit" >انشاء حساب كمستأجر</button>
-    <!-- </div> -->
-    <!-- <div class="form-group col-md-6"> -->
-     <button class="send form-group col-md-5 left" type="submit">انشاء حساب كمالك</button>
-     <!-- </div> -->
-    <div class="form-label-group">
-      <a href="#" style="width:100%;"  class="hov">لدى حساب</a>
-      </div>
-  
-  </form>
-  
-  
-  
-  
   </div>
-  </div>
-  </div>
-  
+</div>

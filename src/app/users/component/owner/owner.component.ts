@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute,ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-owner',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OwnerComponent implements OnInit {
 
-  constructor() { }
+  constructor( private route: Router) { }
 
   ngOnInit(): void {
   }
 
+  navigate(){
+    this.route.navigate(['notrented'])
+  }
+  pending(){
+    this.route.navigate(['pending'])
+  }
+  rented(){
+    this.route.navigate(['rented'])
+
+  }
 }
