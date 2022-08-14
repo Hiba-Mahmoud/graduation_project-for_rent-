@@ -26,6 +26,7 @@ import { RentedComponent } from './components/rented/rented.component';
 import { MailConfirmComponent } from './auth/component/mail-confirm/mail-confirm.component';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { AuthGuard } from './guard/auth.guard';
+import { MailverifiyGuard } from './guard/mailverifiy.guard';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -34,7 +35,7 @@ const routes: Routes = [
   // auth Routes
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
-  { path:"mailverifiy", component:MailConfirmComponent},
+  { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
   {path: 'forgetpassword', component:ForgetPasswordComponent},
   // shared Routes
   { path: 'editpassword', component: EditpasswordComponent ,canActivate:[AuthGuard]},

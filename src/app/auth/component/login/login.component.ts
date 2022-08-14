@@ -36,9 +36,9 @@ export class LoginComponent implements OnInit {
     return this.http.post('http://127.0.0.1:8000/api/login', this.user).subscribe(
       (response: any) =>{
 
-        this.userId = response.user[0].id;
-        console.log(this.userId.toString())
-        this.token.handelId(this.userId.toString());
+        // this.userId = response.user[0].id;
+        // console.log(this.userId.toString())
+        // this.token.handelId(this.userId.toString());
 
         if(response.user.email_verified_at == null){
           this.router.navigateByUrl('/mailverifiy')

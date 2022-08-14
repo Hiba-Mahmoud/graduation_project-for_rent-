@@ -23,10 +23,10 @@ export class TokenService {
   }
 
   setId(id:string){
-    sessionStorage.setItem('id',id);
+    localStorage.setItem('id',id);
   }
   getId():string{
-    return sessionStorage.getItem('id');
+    return localStorage.getItem('id');
   }
 
   clearLocalStorage(){
