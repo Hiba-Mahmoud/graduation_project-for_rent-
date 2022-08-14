@@ -30,7 +30,7 @@ import { AuthGuard } from './guard/auth.guard';
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
 
-<<<<<<< HEAD
+
   {
     path: "home", component: HomeComponent
   },
@@ -50,34 +50,14 @@ const routes: Routes = [
   {
     path: 'editpersonaldata', component: EditpersonaldataComponent
   },
-   //start admin routes
-  {
-    path: 'allAdmins', component: AdminsComponent
-  },
-  {
-    path: 'allRenters', component: RentersComponent
-  },
-  {
-    path: 'allOwners', component: OwnersComponent
-  },
-  {
-    path: 'requests', component:AdverRequestsComponent
-  },
-  {
-    path: 'addAdmin', component: AddAdminComponent
-  },
-=======
-  {path: "", component: HomeComponent},
-  // auth Routes
-  {path: "login", component: LoginComponent},
-  {path: "register", component: RegisterComponent},
+
+  
   { path:"mailverifiy", component:MailConfirmComponent},
   {path: 'forgetpassword', component:ForgetPasswordComponent},
   // shared Routes
   { path: 'editpassword', component: EditpasswordComponent ,canActivate:[AuthGuard]},
   {path:'editpersonaldata',component:EditpersonaldataComponent ,canActivate:[AuthGuard]},
   // user and admin ahared Routes
-  {path: "details", component: CartDetailsComponent,},
   { path: 'about', component:AboutComponent},
   { path: 'all-owner-properites', component: ListAllOwnerProperitiesComponent },
   // owner Routes
@@ -95,7 +75,7 @@ const routes: Routes = [
   {path: 'allOwners', component: OwnersComponent,canActivate:[AuthGuard]},
   {path: 'requests', component:AdverRequestsComponent,canActivate:[AuthGuard]},
   {path: 'addAdmin', component: AddAdminComponent,canActivate:[AuthGuard]},
->>>>>>> 9751dead1e4152e50868e2590c4e99b2c55b9270
+
  // end admin routes
   // {
   //   path:'userfavourites',component:UserfavouritesComponent },

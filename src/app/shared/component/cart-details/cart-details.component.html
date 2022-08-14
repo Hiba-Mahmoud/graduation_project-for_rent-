@@ -1,6 +1,6 @@
 <div *ngIf="!loading">
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" >
-    <div class="carousel-inner">
+    <div class="carousel-inner mt-5 pt-5">
       <div class="carousel-item active"  *ngFor="let image of images let i = index" [ngClass]="{'active': i == 0 }">
         <img [src]="image.image_name" class="d-block w-100" alt="...">
       </div>
@@ -130,6 +130,6 @@
   <app-footer></app-footer>
 </div>
 <div class="justify-content-center align-items-center" *ngIf="loading">
-  <mat-spinner class="text-center w-50  mt-5 pt-5 "></mat-spinner>
+  <mat-spinner class="text-center w-50  mt-5 pt-5 " style="top:30px ;"></mat-spinner>
 
 </div>
