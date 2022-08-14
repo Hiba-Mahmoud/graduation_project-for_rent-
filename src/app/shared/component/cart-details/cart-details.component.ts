@@ -15,6 +15,7 @@ export class CartDetailsComponent implements OnInit {
   review:any; 
   suggestion:any;
   suggesObgImage:any;
+  loading:boolean=true;
   constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router) {
     this.id=this.route.snapshot.paramMap.get("id")
    }
@@ -29,6 +30,7 @@ export class CartDetailsComponent implements OnInit {
     this.adverId=this.data.id;
     this.review=res.reviews;
     this.suggestion=res.suggestion;
+    this.loading=false;
     // this.suggesObgImage=this.suggestion[0].advertisement_image[0].image_name;
      console.log(this.data[0].advertisement_image[0].image_name);
    })

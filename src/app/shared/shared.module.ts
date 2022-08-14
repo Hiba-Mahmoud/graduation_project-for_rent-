@@ -32,6 +32,7 @@ import { CommentsComponent } from './component/comments/comments.component';
 import { SideBarComponent } from './component/side-bar/side-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatRadioModule,
     MatSelectModule ,
    NgbModule,
-   HttpClientModule 
+   HttpClientModule ,
+   MatProgressSpinnerModule
   ],
   exports :[
     FooterComponent,

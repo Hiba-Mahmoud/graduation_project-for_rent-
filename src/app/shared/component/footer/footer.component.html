@@ -2,17 +2,17 @@
   
 
   <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="container ">
+<div class="container mt-5">
 
   <footer class="text-white text-center text-lg-start" >
     <!-- Grid container -->
-    <div class="container p-4">
+    <div class="container p-1">
       <!--Grid row-->
-      <div class="row mt-4">
+      <div class="row mt-1">
         <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-1 mb-md-0">
           <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-2 mx-auto" style="width: 150px; height: 150px;">
-            <img src="https://mdbootstrap.com/img/Photos/new-templates/animal-shelter/logo.png" height="70" alt=""
+            <img class="rounded-circle" [src]="followUsInfo.logo" height="100%" width="100%" alt="logo picture"
                  loading="lazy" />
           </div>
           
@@ -20,15 +20,15 @@
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-1 mb-md-0">
           
-          <div class="mt-4">
+          <div class="mt-2 m-auto text-center  justify-content-center align-items-center p-3">
             <!-- Facebook -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><fa-icon [icon]="faFacebook"></fa-icon>
+            <a class="btn btn-outline-light btn-floating m-1" (click)="navigateFacebook()"  ><fa-icon [icon]="faFacebook"></fa-icon>
             </a>            
             <!-- Twitter -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><fa-icon [icon]="faTwitter"></fa-icon>
+            <a class="btn btn-outline-light btn-floating m-1" (click)="navigateTwitter()"  ><fa-icon [icon]="faTwitter"></fa-icon>
             </a>
             <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" ><fa-icon [icon]="faSquareInstagram"></fa-icon>
+        <a class="btn btn-outline-light btn-floating m-1" (click)="navigateInstagram()"   ><fa-icon [icon]="faSquareInstagram"></fa-icon>
         </a>
           </div>
         </div>
@@ -39,13 +39,15 @@
 
           <ul class="fa-ul mt-4" style="margin-left: 1.65em;">
             
-            <li class="mb-3">
-              <span class="material-icons">email</span><span class="ms-2">info@example.com</span>
+            <li class="mb-3 text-center">
+              <span>{{followUsInfo.email}} <mat-icon class="mx-2" style="position:relative; top:6px;">email</mat-icon> </span>
+
             </li>
-            <li class="mb-3">
-              <span class="material-icons">phone</span><span class="ms-2">+ 01 234 567 88</span>
+            <li class="mb-3 text-center ">
+              <span>{{followUsInfo.phone}} <mat-icon class="mx-2" style="position:relative; top:5px;">phone</mat-icon></span>
+
             </li>
-          
+            
           </ul>
         </div>
         <!--Grid column-->

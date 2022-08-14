@@ -1,7 +1,8 @@
 
 
 
- <app-search> </app-search>
+<div *ngIf="!loading">
+  <app-search> </app-search>
 
   <div class="album py-5 ">
     <div class="container">
@@ -19,4 +20,13 @@
   </div> 
  
   <app-footer> </app-footer> 
+  
+</div>
+<div class="justify-content-center align-items-center" *ngIf="loading">
+  <mat-spinner class="text-center w-50  mt-5 pt-5 "></mat-spinner>
+
+</div>
+
+
+  
 

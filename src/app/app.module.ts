@@ -16,6 +16,8 @@ import { AdminModule } from './admin/admin.module';
 import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     MaterialModule,
     AdminModule,
     NgxPaginationModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [],
