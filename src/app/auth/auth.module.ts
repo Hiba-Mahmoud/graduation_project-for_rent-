@@ -9,6 +9,7 @@ import { RemmberMeComponent } from './component/remmber-me/remmber-me.component'
 import { MailConfirmComponent } from './component/mail-confirm/mail-confirm.component';
 import { MaterialModule } from '../material/material.module';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { RemembermeComponent } from './rememberme/rememberme.component';
 
 
 
@@ -19,6 +20,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     RemmberMeComponent,
     MailConfirmComponent,
     ForgetPasswordComponent,
+    RemembermeComponent,
   ],
   imports: [
     CommonModule,

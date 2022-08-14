@@ -1,7 +1,7 @@
 import { AuthService } from './../../service/auth.service';
 import { TokenService } from './../../service/token.service';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { IUser } from '../../classesAndinterfaces/registerationData';
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
         this.userId = response.user[0].id;
         console.log(this.userId.toString())
-        // this.token.handelId(this.userId.toString());
+        this.token.handelId(this.userId.toString());
 
         if(response.user.email_verified_at == null){
           this.router.navigateByUrl('/mailverifiy')
@@ -82,6 +82,7 @@ export class LoginComponent implements OnInit {
 
 
   }
+
 
 
 }
