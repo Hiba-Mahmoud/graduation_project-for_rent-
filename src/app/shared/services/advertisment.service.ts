@@ -23,5 +23,25 @@ export class AdvertismentService {
     return  this.http.post(apiUrl+id ,data );
    
   }
+
+  getAllLocations():Observable<any>
+  {
+    let allLocations=this.http.get("http://127.0.0.1:8000/api/city_search");
+    return allLocations;
+  }
+
+  getAllTypes():Observable<any>
+  {
+    let allTypes=this.http.get("http://127.0.0.1:8000/api/type_search");
+    return allTypes;
+  }
+
+  getBedsNumber():Observable<any>
+  {
+    let bedsNumber=this.http.get("http://127.0.0.1:8000/api/bedroom_search");
+    return bedsNumber;
+  }
+
+  
  
 }

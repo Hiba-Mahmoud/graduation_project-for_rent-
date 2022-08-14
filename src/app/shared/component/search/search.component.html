@@ -4,9 +4,9 @@
       <mat-form-field appearance="fill" [color]="colorControl.value">
         <mat-label>الموقع</mat-label>
         <mat-select [formControl]="colorControl">
-          <mat-option value="primary">Primary</mat-option>
-          <mat-option value="accent">Accent</mat-option>
-          <mat-option value="warn">Warn</mat-option>
+          <mat-option *ngFor="let location of allLocations" [value]="location.id">
+            {{location.name}}
+          </mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -14,9 +14,9 @@
       <mat-form-field appearance="fill" [color]="colorControl.value">
         <mat-label>النوع</mat-label>
         <mat-select [formControl]="colorControl">
-          <mat-option value="primary">Primary</mat-option>
-          <mat-option value="accent">Accent</mat-option>
-          <mat-option value="warn">Warn</mat-option>
+          <mat-option *ngFor="let type of allTypes" [value]="type">
+            {{type}}
+          </mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -24,9 +24,9 @@
       <mat-form-field appearance="fill" [color]="colorControl.value">
         <mat-label>عدد الغرف</mat-label>
         <mat-select [formControl]="colorControl">
-          <mat-option value="primary">Primary</mat-option>
-          <mat-option value="accent">Accent</mat-option>
-          <mat-option value="warn">Warn</mat-option>
+          <mat-option *ngFor="let bedsNum of bedsNumber" [value]="bedsNum">
+            {{bedsNum}}
+          </mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -36,7 +36,7 @@
       <div class=" col d-flex justify-content-center m-2">
         <button mat-raised-button>بحث <mat-icon class="field-icon">search</mat-icon> </button>
       </div>
-      <div class="col d-flex justify-content-center m-2">
+      <div class="col d-flex justify-content-center m-2" (click)="clearFilters()">
         <button mat-raised-button>مسح<mat-icon class="field-icon">filter_alt</mat-icon> </button>
       </div>
   

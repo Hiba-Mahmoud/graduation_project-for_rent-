@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
    totalNumber:any;
    page:number=1;
    loading:boolean=true;
+  
   constructor(private advertismentService:AdvertismentService) { }
 
   ngOnInit(): void {
@@ -22,4 +23,10 @@ export class HomeComponent implements OnInit {
         console.log(this.totalNumber);
      })
   }
+
+
 }
+
+
+
+
