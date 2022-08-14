@@ -57,7 +57,8 @@ import { CommentsComponent } from './comments/comments.component';
     UsersModule,
     SharedModule,
     AdminModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
 
   ],
   providers: [],
