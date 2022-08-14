@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 
 import { AddProperityComponent } from './components/add-properity/add-properity.component';
 import { ListAllOwnerProperitiesComponent } from './components/list-all-owner-properities/list-all-owner-properities.component';
@@ -25,62 +25,39 @@ import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
 import { MailConfirmComponent } from './auth/component/mail-confirm/mail-confirm.component';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
 
-  {
-    path: "", component: HomeComponent
-  },
-  {
-    path: "login", component: LoginComponent
-  },
-  {
-    path: "register", component: RegisterComponent
-  },
-  {
-    path: "details", component: CartDetailsComponent
-  },
-  { path: 'owner', component: OwnerComponent },
-  { path: 'addProperity', component: AddProperityComponent },
-
-  { path: 'editpassword', component: EditpasswordComponent },
-  {
-
-    path:'editpersonaldata',component:EditpersonaldataComponent },
-    { path: 'OwnerComponent', component: OwnerComponent },
-  { path: 'AddProperityComponent', component: AddProperityComponent },
-  { path: 'ListAllOwnerProperities', component: ListAllOwnerProperitiesComponent },
-  { path: 'UpdateProperityAdvertising', component: UpdateProperityAdvertisingComponent },
-  { path: 'about', component:AboutComponent},
-  { path: 'adminhome', component:AdminhomeComponent},
-  { path: 'all-contacts', component:ListcontactsComponent},
-
+  {path: "", component: HomeComponent},
+  // auth Routes
+  {path: "login", component: LoginComponent},
+  {path: "register", component: RegisterComponent},
   { path:"mailverifiy", component:MailConfirmComponent},
-  { path:"notrented", component:NotRentedYetComponent},
-  { path:"pending", component:PendingComponent},
-  { path:"rented", component:RentedComponent},
-{
-    path: 'editpersonaldata', component: EditpersonaldataComponent
-  },
-   //start admin routes
-  {
-    path: 'allAdmins', component: AdminsComponent
-  },
-  {
-    path: 'allRenters', component: RentersComponent
-  },
-  {
-    path: 'allOwners', component: OwnersComponent
-  },
-  {
-    path: 'requests', component:AdverRequestsComponent
-  },
-  {
-    path: 'addAdmin', component: AddAdminComponent},
-    {
-    path: 'forgetpassword', component:ForgetPasswordComponent
-  },
+  {path: 'forgetpassword', component:ForgetPasswordComponent},
+  // shared Routes
+  { path: 'editpassword', component: EditpasswordComponent ,canActivate:[AuthGuard]},
+  {path:'editpersonaldata',component:EditpersonaldataComponent ,canActivate:[AuthGuard]},
+  // user and admin ahared Routes
+  {path: "details", component: CartDetailsComponent,},
+  { path: 'about', component:AboutComponent},
+  { path: 'all-owner-properites', component: ListAllOwnerProperitiesComponent },
+  // owner Routes
+  { path: 'owner', component: OwnerComponent,canActivate:[AuthGuard] },
+  { path: 'addProperity', component: AddProperityComponent,canActivate:[AuthGuard] },
+  { path: 'UpdateProperityAdvertising', component: UpdateProperityAdvertisingComponent,canActivate:[AuthGuard] },
+  { path:"notrented", component:NotRentedYetComponent,canActivate:[AuthGuard]},
+  { path:"pending", component:PendingComponent,canActivate:[AuthGuard]},
+  { path:"rented", component:RentedComponent,canActivate:[AuthGuard]},
+  //start admin routes
+  { path: 'adminhome', component:AdminhomeComponent,canActivate:[AuthGuard]},
+  { path: 'all-contacts', component:ListcontactsComponent,canActivate:[AuthGuard]},
+  {path: 'allAdmins', component: AdminsComponent,canActivate:[AuthGuard]},
+  {path: 'allRenters', component: RentersComponent,canActivate:[AuthGuard]},
+  {path: 'allOwners', component: OwnersComponent,canActivate:[AuthGuard]},
+  {path: 'requests', component:AdverRequestsComponent,canActivate:[AuthGuard]},
+  {path: 'addAdmin', component: AddAdminComponent,canActivate:[AuthGuard]},
  // end admin routes
   // {
   //   path:'userfavourites',component:UserfavouritesComponent },

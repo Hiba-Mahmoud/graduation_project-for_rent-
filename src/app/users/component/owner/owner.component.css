@@ -1,5 +1,6 @@
 *{
   font-family: cairo;
+  box-sizing: border-box;
 }
 .container{
   margin-top:100px;
@@ -7,19 +8,20 @@
 
 .counter {
   display: block;
-  font-size: 32px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #fbefef;
   line-height: 28px
   }
 .counter-box {
 display: block;
-height:150px;
+height:160px;
 background: #fe6f41;
 padding: 40px 20px 37px;
 text-align: center;
 transition: all 0.5s ease-in-out;
 cursor: pointer;
+border-radius: 2em;
 
 }
 .counter-box:hover{
@@ -141,4 +143,42 @@ body {
 .counter-box.colored i,
 .counter-box.colored .counter {
 color: #fff
+}
+
+.height{
+  height:100vh;
+}
+.image{
+  width:100%;
+  height:100%;
+  position:static;
+}
+.cardheight{
+  padding:1%;
+}
+.backcolor
+{
+  background-color: #383838;
+  color:white;
+}
+.backcolor-one
+{
+  background-color: #fe6f41;
+  color:white;
+}
+.backcolor-two
+{
+  background-color: #626E85;
+  color:white;
+}
+.backcolor-three
+{
+  justify-content: center;
+  align-content: center;
+  background-color: #00AF80;
+  color:white;
+}
+a{
+  font-size: 20px;
+  font-weight: 800;
 }
