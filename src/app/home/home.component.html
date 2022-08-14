@@ -1,27 +1,26 @@
 
-<!-- <app-sidebar> </app-sidebar> -->
-<!-- <app-search> </app-search> -->
-
- <app-search> </app-search>
+<div *ngIf="!loading">
+  <app-search> </app-search>
 
   <div class="album py-5 ">
     <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-
-
-
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
-        <app-cart> </app-cart>
 
-        <app-cart> </app-cart>
-        <app-cart> </app-cart>
-
+        <div class="col " *ngFor="let item of allAdvert | paginate: { itemsPerPage: 9,totalItems:totalNumber, currentPage: page }">
+        <app-cart [advertisment]="item" > </app-cart>
 
       </div>
+    </div> 
+       
     </div>
-  </div>
+    <pagination-controls previousLabel="السابق" nextLabel="التالي" class="text-center" (pageChange)="page = $event" *ngIf="totalNumber>9"></pagination-controls>
 
-  <app-footer> </app-footer>
+  </div> 
+ 
+  <app-footer> </app-footer> 
+  
+</div>
+<div class="justify-content-center align-items-center" *ngIf="loading">
+  <mat-spinner class="text-center w-50  mt-5 pt-5 " style="top: 30px;"></mat-spinner>
 
+</div>

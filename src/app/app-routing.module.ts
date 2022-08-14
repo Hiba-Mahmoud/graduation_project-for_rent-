@@ -31,17 +31,40 @@ import { MailverifiyGuard } from './guard/mailverifiy.guard';
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
 
-  {path: "", component: HomeComponent},
+
   // auth Routes
   {path: "login", component: LoginComponent},
   {path: "register", component: RegisterComponent},
   { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
+
+  {
+    path: "home", component: HomeComponent
+  },
+  {
+    path: "login", component: LoginComponent
+  },
+  {
+    path: "register", component: RegisterComponent
+  },
+  {
+    path: "details/:id", component: CartDetailsComponent
+  },
+  { path: 'owner', component: OwnerComponent },
+  { path: 'addProperity', component: AddProperityComponent },
+
+  { path: 'editpassword', component: EditpasswordComponent },
+  {
+    path: 'editpersonaldata', component: EditpersonaldataComponent
+  },
+
+
+  { path:"mailverifiy", component:MailConfirmComponent},
+
   {path: 'forgetpassword', component:ForgetPasswordComponent},
   // shared Routes
   { path: 'editpassword', component: EditpasswordComponent ,canActivate:[AuthGuard]},
   {path:'editpersonaldata',component:EditpersonaldataComponent ,canActivate:[AuthGuard]},
   // user and admin ahared Routes
-  {path: "details", component: CartDetailsComponent,},
   { path: 'about', component:AboutComponent},
   { path: 'all-owner-properites', component: ListAllOwnerProperitiesComponent },
   // owner Routes
@@ -59,6 +82,7 @@ const routes: Routes = [
   {path: 'allOwners', component: OwnersComponent,canActivate:[AuthGuard]},
   {path: 'requests', component:AdverRequestsComponent,canActivate:[AuthGuard]},
   {path: 'addAdmin', component: AddAdminComponent,canActivate:[AuthGuard]},
+
  // end admin routes
   // {
   //   path:'userfavourites',component:UserfavouritesComponent },

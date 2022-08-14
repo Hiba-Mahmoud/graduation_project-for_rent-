@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-properity.component.css']
 })
 export class AddProperityComponent implements OnInit {
- addproperity:FormGroup;
+  addproperity:FormGroup;
   constructor(private formb:FormBuilder) {
 
   }

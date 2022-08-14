@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faLocationPin } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-cart',
@@ -7,6 +7,8 @@ import { faLocationPin } from '@fortawesome/free-solid-svg-icons';
 })
 export class CartComponent implements OnInit {
   faLocationDot=faLocationPin
+  @Input() advertisment:any ;
+
   constructor() { }
 
   ngOnInit(): void {

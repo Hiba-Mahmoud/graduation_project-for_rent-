@@ -28,8 +28,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { CommentsComponent } from './component/comments/comments.component';
 import { SideBarComponent } from './component/side-bar/side-bar.component';
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,10 @@ import { SideBarComponent } from './component/side-bar/side-bar.component';
     MatSelectModule,
 
     MatSelectModule ,
+   NgbModule,
+   HttpClientModule ,
+   MatProgressSpinnerModule,
+
 
 
   ],

@@ -5,10 +5,24 @@ button{
     color: #ffffff;
     font-size: 10px;
     font-weight: 700;
-    
+   
 }
 button:hover{
     background: #FE6F41;
 
 }
  
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.card-body h3 ,p{
+    text-overflow: ellipsis;
+
+      overflow: hidden;
+}
+div {
+    white-space: nowrap;
+    overflow: hidden;
+  }

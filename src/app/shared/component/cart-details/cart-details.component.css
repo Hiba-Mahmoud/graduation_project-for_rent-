@@ -30,3 +30,39 @@
       font-size: 3.5rem;
     }
   }
+
+  .wrapper::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+ 
+  
+  .wrapper::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    /*colorofthescrollthumb*/border-radius: 20px;
+    /*roundnessofthescrollthumb*/border: 1px solid rgb(237, 236, 235);
+      /* creates padding around scroll thumb */  ;
+
+}
+
+
+
+.card-body h3 ,p{
+  text-overflow: ellipsis;
+
+    overflow: hidden;
+}
+div {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.suggestion img{
+  object-position: center;
+  object-fit: cover;
+}
+
+@media screen and (max-width :450px) {
+  .suggestion{
+    margin: auto;
+    width: 360px;
+  }
+}

@@ -13,16 +13,21 @@ Page Content
     Team Member 1
     <div class="col-sm-4 mb-4">
 
+<<<<<<< HEAD
+    <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+     
+=======
     <form dir="rtl">
 
+>>>>>>> 9751dead1e4152e50868e2590c4e99b2c55b9270
       <h1 class="h3 mb-3 fw-normal">من فضلك قم بادخال بياناتك </h1>
 
       <div class="form-floating hov">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" class="form-control"formControlName="email" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">البريد الالكترونى</label>
       </div>
       <div class="form-floating hov">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">كلمة المرور</label>
       </div>
 
@@ -32,12 +37,12 @@ Page Content
           تسجيل ف الكوكي
         </label>
       </div>
-      <button class="send" type="submit">تسجيل الدخول</button>
+      <button class="send" type="submit" [disabled]="!loginForm.valid">تسجيل الدخول</button>
       <br> <br>
       <div class="form-floating ">
         <a href="#"  class="hov2">هل نسيت كلمة المرور؟</a>
         <br>
-        <a href="register.component.html"  class="hov2">ليس لدى حساب</a>
+        <a routerLink="/register" class="hov2">ليس لدى حساب</a>
       </div>
     </form>
 

@@ -1,3 +1,4 @@
+
 import { AuthService } from './../../service/auth.service';
 import { TokenService } from './../../service/token.service';
 import { Router } from '@angular/router';
@@ -12,6 +13,8 @@ import { IUser } from '../../classesAndinterfaces/registerationData';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+
   loginForm:FormGroup;
   user = new IUser;
   errMsg:any;

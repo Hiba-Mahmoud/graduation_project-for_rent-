@@ -1,5 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
+import { AdvertismentService } from '../../services/advertisment.service';
+
 
 
 @Component({
@@ -15,13 +17,39 @@ export class SearchComponent implements OnInit {
     color: this.colorControl,
     fontSize: this.fontSizeControl,
   });
-
-  constructor(private _formBuilder: FormBuilder) { }
+  allLocations:any;
+  allTypes:any;
+  bedsNumber:any;
+  constructor(private _formBuilder: FormBuilder ,private advertismentService:AdvertismentService)  { }
 
   ngOnInit(): void {
+    this.getAllLocations();
+    this.getAllTypes();
+    this.getBedsNumber();
   
   }
+  getAllLocations(){
+    this.advertismentService.getAllLocations().subscribe((res)=>{
+     this.allLocations=res.city_choices;
+  })
+}
+
   
+getAllTypes(){
+  this.advertismentService.getAllTypes().subscribe((res)=>{
+   this.allTypes=res.type_choices;
+})
+}
+
+
+getBedsNumber(){
+  this.advertismentService.getBedsNumber().subscribe((res)=>{
+    this.bedsNumber=res.bedroom_number_choices;
+
+}) 
+
+
+}
 
 
 }
