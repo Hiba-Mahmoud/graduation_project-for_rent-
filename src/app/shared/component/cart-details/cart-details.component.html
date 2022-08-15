@@ -59,10 +59,10 @@
   
   
     <div class="container mt-5  mx-2">
-      <div class="row">
+      <div class="row  justify-content-between">
         
     
-        <div class="col-xs-12 col-sm-3 col-md-3 text-center ">
+        <div class="col-xs-8 col-sm-3 col-md-3 text-center ">
           <img [src]="data.user.image" class="rounded-circle  img-fluid" alt="...">
     
         </div>
@@ -76,6 +76,22 @@
             <mat-list-item role="listitem" *ngIf="data.advertisement_num>1"><a routerLink="">{{data.advertisement_num}} عقارات </a></mat-list-item>
     
           </mat-list>
+        </div>
+        
+        <div class="col-xs-12 col-sm-3 col-md-5 mx-3" style="border: 1px solid ; ">
+          <mat-list role="list " class="mt-4">
+            <mat-list-item role="listitem" ><h3 class="text-bold">سلامتك تهمنا</h3></mat-list-item>
+           <li>قابل البايع في مكان عام زي المترو أو المولات أو محطات البنزين</li>
+            <li>خد حد معاك وانت رايح تقابل اي حد</li>
+            <li>عاين المنتج كويس قبل ما تشتري وتأكد ان سعره مناسب</li>
+  
+            <li >متدفعش او تحول فلوس الا لما تعاين المنتج كويس</li>
+    
+          </mat-list>
+
+          <div class="d-grid gap-5 col-6 mx-auto mt-4 mb-2">
+            <button class="btn payment" type="button">للدفع من خلال الموقع</button>
+          </div>
         </div>
       </div>
     </div>
