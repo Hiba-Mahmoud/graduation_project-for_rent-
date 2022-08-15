@@ -1,6 +1,51 @@
 
 <div *ngIf="!loading">
-  <app-search> </app-search>
+  <div class="container  mt-5 p-5 ">
+    <div class="row  w-75 justify-content-center m-auto ">
+      <div class="col d-flex justify-content-center">
+        <mat-form-field appearance="fill" >
+          <mat-label>الموقع</mat-label>
+          <mat-select  (selectionChange)="getFilterLocation($event)">
+            <mat-option *ngFor="let location of allLocations" [value]="location.id">
+              {{location.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <mat-form-field appearance="fill" >
+          <mat-label>النوع</mat-label>
+          <mat-select (selectionChange)="getFilterType($event)" >
+            <mat-option *ngFor="let type of allTypes" [value]="type">
+              {{type}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <mat-form-field appearance="fill" >
+          <mat-label>عدد الغرف</mat-label>
+          <mat-select (selectionChange)="getFilterBeds($event)" >
+            <mat-option *ngFor="let bedsNum of bedsNumber" [value]="bedsNum">
+              {{bedsNum}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row  w-75 justify-content-center m-auto ">
+    
+        <div class=" col d-flex justify-content-center m-2" (click)="getBySearch()">
+          <button mat-raised-button>بحث <mat-icon class="field-icon">search</mat-icon> </button>
+        </div>
+        <div class="col d-flex justify-content-center m-2" >
+          <button mat-raised-button>مسح<mat-icon class="field-icon">filter_alt</mat-icon> </button>
+        </div>
+    
+  </div>
+    
+  </div>
+    
 
   <div class="album py-5 ">
     <div class="container">

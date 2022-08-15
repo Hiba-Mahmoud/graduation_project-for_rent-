@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdvertismentService {
+  basePath: string;
 
   constructor(private http: HttpClient) { }
   getAll(apiUrl :string):Observable<any>
@@ -42,6 +43,37 @@ export class AdvertismentService {
     return bedsNumber;
   }
 
-  
+
+  getBySearch(param:any):Observable<any>
+  {
+   
+
+    let allDataBySearch=this.http.get("http://127.0.0.1:8000/api/search", { 
+        params: param,
+        withCredentials: false
+
+    }) 
+            return allDataBySearch;
+
+
+  }
+
+
+
+  // getBySearch(location?: number , type?: string , bedsNum?: number ):Observable<any>
+  // {
+   
+  //   let basePath =  "http://127.0.0.1:8000/api/search"; 
+
+  //   let allDataBySearch=this.http.get(this.basePath, { 
+  //       params: {"city_id": location, "bedroom_num": bedsNum ,"type":type},
+  //       withCredentials: false
+
+  //   }) 
+  //           return allDataBySearch;
+
+
+  // }
+
  
 }
