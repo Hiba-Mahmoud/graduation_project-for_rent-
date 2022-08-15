@@ -1,10 +1,12 @@
 
 
-
+label{
+  display:flex;
+}
 .apply-page-header {
 
   background-image: url("../../../assets/17828.jpg") ;
-  background:#353535;
+  background:#FE6F41;
   background-attachment: fixed;
   background-position: top center;
   background-size: cover;

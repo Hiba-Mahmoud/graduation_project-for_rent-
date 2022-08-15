@@ -23,14 +23,22 @@ export class TokenService {
   }
 
   setId(id:string){
-    sessionStorage.setItem('id',id);
+    localStorage.setItem('id',id);
   }
   getId():string{
-    return sessionStorage.getItem('id');
+    return localStorage.getItem('id');
   }
 
   clearLocalStorage(){
     sessionStorage.clear();
+    localStorage.removeItem('token')
 
+  }
+
+  settokenInlocalstorage(token:string){
+    localStorage.setItem('token',token)
+  }
+  gettokenfromLocalstorage():string{
+    return localStorage.getItem('token')
   }
 }

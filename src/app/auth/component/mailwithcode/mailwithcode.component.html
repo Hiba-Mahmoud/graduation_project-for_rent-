@@ -1,0 +1,76 @@
+<section class=" mt-5 gradient-form">
+  <div class="container mt-5 py-5 ">
+
+    <div class="row mt-5 h-100">
+      <div class="col-xl-10">
+        <section class="card rounded-3 text-black">
+          <div class="row justify-content-center g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <h4 class="mt-3 mb-5 pb-1 text-danger header">{{servermsg}} </h4>
+                </div>
+
+                <form [formGroup]="loginForm">
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label d-flex" for="email">البريد الالكترونى</label>
+                    <input type="email" class="form-control" dir="ltr" formControlName="email" name="password"
+                      placeholder="البريد الالكترونى" required />
+                    <div *ngIf="loginForm.controls['email'].errors && (loginForm.controls['email'].touched)">
+                      <small class="form-text text-danger "
+                        *ngIf="loginForm.controls['email'].errors && loginForm.controls['email'].errors ['required']">برجاء ادخال البريد الالكترونى </small>
+                      <small class="form-text text-danger " *ngIf="loginForm.controls['email'].errors['minlength'] ">
+                        البريد الالكترونى غير صحيح
+                      </small>
+                      <small class="form-text text-danger " *ngIf="loginForm.controls['email'].errors['email']">
+                        البريد الالكترونى غير صحيح</small>
+                      <small class="form-text text-danger " *ngIf="loginForm.controls['email'].errors['maxlength']">
+                        البريد الالكترونى غير صحيح</small>
+                    </div>
+
+                  </div>
+                  <div>
+                    <!-- <p id="emailerror"></p> -->
+                    <p id="emailerror">{{emailerror}}</p>
+                  </div>
+
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label d-flex" for="code"> الكود المرسل على البريد الالكترونى</label>
+                    <input type="text" class="form-control" id="code" formControlName="code" placeholder="كلمة المرور"
+                      required name="password" />
+                    <div *ngIf="loginForm.controls['code'].errors && (loginForm.controls['code'].touched)">
+                      <small class="form-text text-danger "
+                        *ngIf="loginForm.controls['code'].errors && loginForm.controls['code'].errors ['required']">برجاء
+                        ادخال الكود</small>
+                      <small class="form-text text-danger " *ngIf="loginForm.controls['code'].errors['minlength'] ">
+                        الكود خاطئ</small>
+                      <small class="form-text text-danger " *ngIf="loginForm.controls['code'].errors['pattern']">
+                        الكود خاطئ</small>
+                      <small class="form-text text-danger " *ngIf="loginForm.controls['code'].errors['maxlength']">
+                      الكود خاطئ
+                      </small>
+                    </div>
+                  </div>
+                  <div>
+                    <!-- <p id="passwoderror"></p> -->
+                    <p id="passwoderror">{{passwoderror}}</p>
+                  </div>
+                 <div class="pt-1 mb-4">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                      (click)="submit()">ارسال </button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  {{loginForm.value|json}}
+</section>
