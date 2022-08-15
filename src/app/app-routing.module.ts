@@ -27,6 +27,8 @@ import { MailConfirmComponent } from './auth/component/mail-confirm/mail-confirm
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { AuthGuard } from './guard/auth.guard';
 import { MailverifiyGuard } from './guard/mailverifiy.guard';
+import { PreventregisterandloginGuard } from './guard/preventregisterandlogin.guard';
+import { CodeVerifyComponent } from './auth/component/code-verify/code-verify.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -41,24 +43,24 @@ const routes: Routes = [
     path: "home", component: HomeComponent
   },
   {
-    path: "login", component: LoginComponent
+    path: "login", component: LoginComponent,canActivate:[PreventregisterandloginGuard]
   },
   {
-    path: "register", component: RegisterComponent
+    path: "register", component: RegisterComponent,canActivate:[PreventregisterandloginGuard]
   },
   {
     path: "details/:id", component: CartDetailsComponent
   },
-  { path: 'owner', component: OwnerComponent },
-  { path: 'addProperity', component: AddProperityComponent },
 
   { path: 'editpassword', component: EditpasswordComponent },
+  { path: 'reset-password-code', component: CodeVerifyComponent },
+
   {
     path: 'editpersonaldata', component: EditpersonaldataComponent
   },
 
 
-  { path:"mailverifiy", component:MailConfirmComponent},
+  { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
 
   {path: 'forgetpassword', component:ForgetPasswordComponent},
   // shared Routes

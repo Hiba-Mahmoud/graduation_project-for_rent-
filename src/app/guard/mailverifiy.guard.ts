@@ -17,7 +17,7 @@ constructor(private route:Router , private token:TokenService){}
 
         return true;
       }else{
-        this.route.navigateByUrl('/')
+        this.route.navigateByUrl('/owner')
         return false;
       }
   }

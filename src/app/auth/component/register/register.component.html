@@ -1,17 +1,16 @@
 <!-- Page Content -->
-<div class="container">
+<div class="container height">
   <div class="row justify-content-center">
     <!-- Team Member 1 -->
-    <div class="col-sm-4 mb-4">
+    <div class="col-sm-8 mb-4">
       <form
-        class="form-signin"
-        dir="rtl"
-        [formGroup]="registeration"
-              >
-        <h1 class="h3 mb-3 fw-normal">انشاء حساب جديد</h1>
-
-        <div class="form-label-group hov">
-          <input
+      class="form-signin formbg"
+      dir="rtl"
+      [formGroup]="registeration"
+      >
+      <h1 class="h3 mb-3 fw-normal">انشاء حساب جديد</h1>
+      <div class="form-label-group hov">
+        <input
             type="text"
             name="firstName"
             id="inputName"
@@ -22,7 +21,7 @@
           />
           <label for="inputName">الاسم الاول </label>
           <div
-            class="alert alert-danger"
+          class="alert alert-danger"
             role="alert"
             *ngIf="
               registeration.controls['firstName'].errors &&
@@ -31,9 +30,8 @@
           >
             <strong
               *ngIf="
-                registeration.controls['firstName'].errors &&
-                registeration.controls['firstName'].errors['required']
-              "
+
+                registeration.controls['firstName'].errors['required']"
               >الاسم الاول مطلوب</strong
             >
             <strong
@@ -50,31 +48,32 @@
               >الاسم الاول يجب ان يكون عربى</strong
             >
           </div>
-          <strong id="name"></strong
-            >
+          <strong id="name"></strong>
+
+
         </div>
         <div class="form-label-group hov">
           <input
-            type="text"
+          type="text"
             name="lastName"
             id="lastName"
             class="form-control"
             placeholder="User name"
             formControlName="lastName"
             autofocus
-          />
+            />
           <label for="lastName"> الاسم الاخير</label>
           <div
-            class="alert alert-danger"
+          class="alert alert-danger"
             role="alert"
             *ngIf="
-              registeration.controls['lastName'].errors &&
-              registeration.controls['lastName'].touched
+            registeration.controls['lastName'].errors &&
+            registeration.controls['lastName'].touched
             "
           >
             <strong
               *ngIf="
-                registeration.controls['lastName'].errors &&
+              registeration.controls['lastName'].errors &&
                 registeration.controls['lastName'].errors['required']
               "
               >الاسم الاول مطلوب</strong
@@ -104,7 +103,7 @@
             placeholder="Email address"
             formControlName="email"
             autofocus
-          />
+            />
           <label for="inputEmail">البريد الالكترونى</label>
           <div
             class="alert alert-danger"
@@ -114,12 +113,12 @@
               registeration.controls['email'].touched
             "
           >
-            <strong
-              *ngIf="
+          <strong
+          *ngIf="
                 registeration.controls['email'].errors &&
                 registeration.controls['email'].errors['required']
               "
-              >الايميل مطلوب</strong
+              >برجاء ادخال البريد الالكترونى</strong
             >
             <strong *ngIf="registeration.controls['email'].errors['email']"
               >ادخل ايميل صحيح</strong
@@ -132,7 +131,7 @@
 
         <div class="form-label-group hov">
           <input
-            type="text"
+          type="text"
             name="phone"
             id="inputPhone"
             class="form-control"
@@ -145,48 +144,50 @@
             class="alert alert-danger"
             role="alert"
             *ngIf="
-              registeration.controls['phone'].errors &&
-              registeration.controls['phone'].touched
+              registeration.controls['phone'].errors
             "
-          >
+            >
             <strong
-              *ngIf="
-                registeration.controls['phone'].errors &&
-                registeration.controls['phone'].errors['required']
-              "
-              >رقم الهاتف مطلوب</strong
+            *ngIf="
+            registeration.controls['phone'].errors &&
+            registeration.controls['phone'].errors['required']
+            "
+            >برجاء ادخال رقم الهاتف</strong
             >
             <strong *ngIf="registeration.controls['phone'].errors['minlength']">
               رقم الهاتف يجب الا يقل عن 11 رقما</strong
-            >
+              >
 
-            <strong *ngIf="registeration.controls['phone'].errors['maxlength']"
+              <strong *ngIf="registeration.controls['phone'].errors['maxlength']"
               >رقم الهاتف يجب الا يزيد عن 11 رقما</strong
-            >
-            <strong *ngIf="registeration.controls['phone'].errors['pattern']"
+              >
+              <strong *ngIf="registeration.controls['phone'].errors['pattern']"
               >ادخل رقما صحيحا</strong
-            >
+              >
+            </div>
+            <strong id="phone"></strong>
           </div>
-          <strong id="phone"></strong>
-        </div>
 
-        <div class="form-label-group hov">
-          <input
+          <div class="form-label-group">
+            <input
             type="password"
             name="password"
             id="inputPassword"
             class="form-control"
             placeholder="Password"
             formControlName="password"
-          />
-          <label for="inputPassword">كلمة المرور</label>
-          <div
+            />
+            <label for="inputPassword">كلمة المرور</label>
+            <!-- registeration.controls['password'].touched -->
+            <div>
+              <p id="password"></p>
+
+            </div>
+            <div
             class="alert alert-danger"
             role="alert"
             *ngIf="
-              registeration.controls['password'].errors &&
-              registeration.controls['password'].touched
-            "
+              registeration.controls['password'].errors             "
           >
             <strong
               *ngIf="
@@ -203,13 +204,13 @@
 
             <strong
               *ngIf="registeration.controls['password'].errors['maxlength']"
-              >كلمة المرور يجب ان لا يزيد عن 20 حرفا ورقما</strong
+              >كلمة المرور يجب ان لا تزيد عن 20 حرفا ورقما</strong
             >
             <small *ngIf="registeration.controls['password'].errors['pattern']">
               يجب أن تتكون كلمة المرور الخاصة بك من أكثر من 8 أحرف ، ويجب أن تحتوي على الأقل على حرف كبير واحد ، وحرف صغير واحد ، ورقم واحد ، ورمزا واحد </small
             >
           </div>
-          <small id="password"></small>
+
         </div>
         <!-- <div class="form-label-group hov">
       <input type="password" name="confirmPassword" id="inputPassword" class="form-control " placeholder="Password" formControlName="confirmPassword" >
@@ -223,22 +224,21 @@
             class="select w-100"
             style="margin-left: 80px; padding-right: 95px"
           >
-            <option disabled selected value>النوع</option>
+          <option disabled selected value>النوع</option>
             <option value="male">ذكر</option>
             <option value="female">انثى</option>
           </select>
           <div
             *ngIf="
-              registeration.controls['gender'].errors &&
-              registeration.controls['gender'].touched
-            "
+              registeration.controls['gender'].errors
+              "
           >
             <small
-              class="form-text text-dark"
-              *ngIf="
-                registeration.controls['gender'].errors &&
-                registeration.controls['gender'].errors['required']
-              "
+            class="form-text text-dark"
+            *ngIf="
+            registeration.controls['gender'].errors &&
+            registeration.controls['gender'].errors['required']
+            "
             >
             الحقل مطلوب</small
             >
@@ -247,9 +247,9 @@
         <div class="form-outline mb-4">
           <label class="form-label" for="type" id="type">تسجيل كـ</label>
           <select
-            formControlName="type"
-            class="select w-100"
-            style="margin-left: 80px; padding-right: 95px"
+          formControlName="type"
+          class="select w-100"
+          style="margin-left: 80px; padding-right: 95px"
           >
             <option disabled selected value>تسجيل كـ</option>
             <option value="owner">مالك</option>
@@ -257,8 +257,7 @@
           </select>
           <div
             *ngIf="
-              registeration.controls['type'].errors &&
-              registeration.controls['type'].touched
+              registeration.controls['type'].errors 
             "
           >
             <small
@@ -266,7 +265,7 @@
               *ngIf="
                 registeration.controls['type'].errors &&
                 registeration.controls['type'].errors['required']
-              "
+                "
             >
               الحقل مطلوب</small
             >
@@ -288,10 +287,14 @@
         <div class="form-label-group">
           <a routerLink="/login" style="width: 100%" class="link-dark">لدى حساب</a>
         </div>
+
+
       </form>
 
-      <!-- {{ registeration.status }} -->
+      {{ registeration.status }}
       <!-- {{ postData | json }} -->
     </div>
   </div>
 </div>
+
+

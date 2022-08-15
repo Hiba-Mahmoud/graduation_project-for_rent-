@@ -24,6 +24,8 @@ export class RegisterComponent implements OnInit {
   errMsg:any;
   // userData:returnDatafromReisteration;
   userData:any;
+  invalidForm:any;
+  validation:any;
   constructor(private localstorage:TokenService,private moveData:MoaveDataService,private fb:FormBuilder,private router:Router,private http:HttpClient) {
 
 
@@ -39,9 +41,11 @@ export class RegisterComponent implements OnInit {
       password:['',[Validators.required,Validators.minLength(8),Validators.maxLength(20),Validators.pattern('(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,16}$' )]],
       gender:['',[Validators.required]],
       type:['',[Validators.required]]})
-  }
+      this.invalidForm=this.registeration.status;
+    }
 
-  sign_up():void{
+    sign_up():void{
+      this.validation=this.invalidForm;
     this.user.firstName =this.registeration.value.firstName
     this.user.lastName =this.registeration.value.lastName
     this.user.name = this.user.getFullName();
@@ -57,11 +61,8 @@ export class RegisterComponent implements OnInit {
 
     this.http.post('http://127.0.0.1:8000/api/register',this.postData).subscribe((succ:any)=>{
       this.userData = succ.user.id;
-      console.log('inside response')
       this.localstorage.handelId(this.userData.toString())
-      console.log(this.userData.toString());
       this.moveData.setUserID(this.userData);
-    console.log(" succcccccccc"+this.userData);
       this.moveData.myMethod(succ.message);
       this.router.navigate(['/mailverifiy']);
 

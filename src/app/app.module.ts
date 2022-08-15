@@ -31,7 +31,7 @@ import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
- 
+
          AppComponent,
          AccountComponent,
          HomeComponent,
@@ -43,21 +43,21 @@ import { CommentsComponent } from './comments/comments.component';
          RentedComponent,
          NotRentedYetComponent,
          // ListcontactsComponent,
-     
+
         HeaderComponent,
       CommentsComponent,
 
-    
+
   ],
   imports: [
-  
+
     FontAwesomeModule,
     NgbModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AuthModule,
+   
     UsersModule,
     HttpClientModule,
     AuthModule,

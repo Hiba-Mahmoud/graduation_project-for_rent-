@@ -166,13 +166,13 @@ body {
     -o-transition: all 0.5s ease-in-out;
     background: #FE6F41;
     caret-color:#FE6F41;
-  
+
   }
   .send:hover {
     background: #353535;
     color: #fff;
   }
-  
+
   .hov:hover {
     background: #FE6F41;
     color: #FE6F41;
@@ -186,4 +186,17 @@ body {
   }
   .custom-file-input {
     white-space: nowrap;
+  }
+  .height{
+    margin-top:5em;
+    /* height:100vh; */
+    background-image: url(src\assets\interior-wall-mockup-with-sofa-cabinet-living-room-with-empty-white-wall-background-3d-rendering.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+  .formbg{
+    background-color: #ffffff;
+    margin-top: 2em;
+    width:100%;
   }

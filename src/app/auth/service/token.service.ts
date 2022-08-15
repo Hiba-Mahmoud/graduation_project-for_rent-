@@ -31,6 +31,14 @@ export class TokenService {
 
   clearLocalStorage(){
     sessionStorage.clear();
+    localStorage.removeItem('token')
 
+  }
+
+  settokenInlocalstorage(token:string){
+    localStorage.setItem('token',token)
+  }
+  gettokenfromLocalstorage():string{
+    return localStorage.getItem('token')
   }
 }

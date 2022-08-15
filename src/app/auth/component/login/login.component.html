@@ -15,7 +15,7 @@ Page Content
 
 <<<<<<< HEAD
     <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-     
+
 =======
     <form dir="rtl">
 
@@ -90,7 +90,8 @@ Page Content
 
                   </div>
                   <div>
-                    <p id="emailerror"></p>
+                    <!-- <p id="emailerror"></p> -->
+                    <p id="emailerror">{{emailerror}}</p>
                   </div>
 
 
@@ -112,10 +113,14 @@ Page Content
                     </div>
                   </div>
                   <div>
-                    <p id="passwoderror"></p>
+                    <!-- <p id="passwoderror"></p> -->
+                    <p id="passwoderror">{{passwoderror}}</p>
                   </div>
-                  <app-remmber-me></app-remmber-me>
-                  <div class="pt-1 mb-4">
+<div>
+  <input type="checkbox" name="rememberMe" formControlNameid="rememberMe"  (change)="onclick($event)">
+  <label>تذكرنى</label>
+  {{loginForm.value.rememberMe}}
+</div>                  <div class="pt-1 mb-4">
                     <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
                       (click)="login()">تسجيل دخول</button>
                   </div>
@@ -132,4 +137,5 @@ Page Content
       </div>
     </div>
   </div>
+  {{loginForm.value|json}}
 </section>
