@@ -10,6 +10,8 @@ import { MaterialModule } from '../material/material.module';
 
 
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { MailwithcodeComponent } from './component/mailwithcode/mailwithcode.component';
+import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 
 
 
@@ -20,6 +22,8 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 
     MailConfirmComponent,
     ForgetPasswordComponent,
+    MailwithcodeComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     CommonModule,

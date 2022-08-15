@@ -29,6 +29,8 @@ import { AuthGuard } from './guard/auth.guard';
 import { MailverifiyGuard } from './guard/mailverifiy.guard';
 import { PreventregisterandloginGuard } from './guard/preventregisterandlogin.guard';
 import { CodeVerifyComponent } from './auth/component/code-verify/code-verify.component';
+import { MailwithcodeComponent } from './auth/component/mailwithcode/mailwithcode.component';
+import { ResetPasswordComponent } from './auth/component/reset-password/reset-password.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -53,7 +55,8 @@ const routes: Routes = [
   },
 
   { path: 'editpassword', component: EditpasswordComponent },
-  { path: 'reset-password-code', component: CodeVerifyComponent },
+  { path: 'reset-password-code', component: MailwithcodeComponent },
+  { path: 'password', component: ResetPasswordComponent },
 
   {
     path: 'editpersonaldata', component: EditpersonaldataComponent

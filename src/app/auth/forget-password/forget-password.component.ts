@@ -31,7 +31,7 @@ export class ForgetPasswordComponent implements OnInit {
     return this.http.post('http://127.0.0.1:8000/api/password/email',this.valueOfEmail).subscribe((response:any)=>{
       console.log(response.message);
       this.Passwd.setResetpswordresponseMsg(response.message);
-      // this.router.navigateByUrl()
+      this.router.navigateByUrl('/reset-password-code')
 
     },
     (error)=>{

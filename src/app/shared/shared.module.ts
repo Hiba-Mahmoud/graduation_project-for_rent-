@@ -88,7 +88,18 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     EditpasswordComponent,
     EditpersonaldataComponent,
     CommentsComponent,
-    SideBarComponent
+    SideBarComponent,
+    CartComponent,
+    NotFoundComponent,
+    CartComponent,
+    CartDetailsComponent,
+    FooterComponent,
+    SearchComponent,
+    SettingsComponent,
+    EditpasswordComponent,
+    EditpersonaldataComponent,
+    CommentsComponent,
+    SideBarComponent,
 
 
   ],
