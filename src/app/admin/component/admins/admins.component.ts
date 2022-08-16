@@ -36,7 +36,7 @@ export class AdminsComponent implements OnInit {
 
   }
   getAll(){
-    this.service.getAll("http://127.0.0.1:8000/api/admin/owners").subscribe(data=>{
+    this.service.getAll("http://127.0.0.1:8000/api/admin/admins").subscribe(data=>{
       this.allData=data.owners;
        this.dataSource = new MatTableDataSource(data.owners);
        this.dataSource.paginator = this.paginator;
