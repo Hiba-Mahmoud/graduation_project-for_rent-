@@ -31,6 +31,7 @@ import { PreventregisterandloginGuard } from './guard/preventregisterandlogin.gu
 import { CodeVerifyComponent } from './auth/component/code-verify/code-verify.component';
 import { MailwithcodeComponent } from './auth/component/mailwithcode/mailwithcode.component';
 import { ResetPasswordComponent } from './auth/component/reset-password/reset-password.component';
+// import{ReportsComponent} from ''
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
