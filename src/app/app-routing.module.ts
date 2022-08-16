@@ -37,9 +37,6 @@ const routes: Routes = [
 
 
   // auth Routes
-  {path: "login", component: LoginComponent},
-  {path: "register", component: RegisterComponent},
-  { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
 
   {
     path: "home", component: HomeComponent
@@ -47,6 +44,7 @@ const routes: Routes = [
   {
     path: "login", component: LoginComponent,canActivate:[PreventregisterandloginGuard]
   },
+  { path:"mailverifiy", component:MailConfirmComponent,canActivate:[PreventregisterandloginGuard]},
   {
     path: "register", component: RegisterComponent,canActivate:[PreventregisterandloginGuard]
   },
@@ -61,6 +59,38 @@ const routes: Routes = [
   {
     path: 'editpersonaldata', component: EditpersonaldataComponent
   },
+
+
+
+//favourit
+//setting
+//dashbord
+//owner
+//add adv
+//update add
+//notification
+//paymentmethod
+//side bar
+//nav bar
+//gard type
+//list all properites owner
+// ===================
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},

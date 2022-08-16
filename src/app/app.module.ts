@@ -13,7 +13,7 @@ import { UsersModule } from './users/users.module';
 import { MaterialModule } from './material/material.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListAllOwnerProperitiesComponent } from './components/list-all-owner-properities/list-all-owner-properities.component';
 import { UpdateProperityAdvertisingComponent } from './components/update-properity-advertising/update-properity-advertising.component';
@@ -26,6 +26,9 @@ import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-ye
 import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
 import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component';
+
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { RouterModule } from '@angular/router'
 
 @NgModule({
   declarations: [
@@ -56,7 +59,10 @@ import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component'
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
 
+
+    RouterModule,
     UsersModule,
     HttpClientModule,
     AuthModule,
@@ -66,7 +72,7 @@ import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component'
     ReactiveFormsModule,
     NgxPaginationModule,
     MatProgressSpinnerModule,
-
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
