@@ -25,6 +25,7 @@ import { RentedComponent } from './components/rented/rented.component';
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,7 @@ import { CommentsComponent } from './comments/comments.component';
     ReactiveFormsModule,
     NgxPaginationModule,
     MatProgressSpinnerModule,
-
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

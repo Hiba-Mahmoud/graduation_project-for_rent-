@@ -91,7 +91,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     CartComponent,
     CartDetailsComponent,
     FooterComponent,
-    SearchComponent,
+
     SettingsComponent,
     EditpasswordComponent,
     EditpersonaldataComponent,
