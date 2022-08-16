@@ -25,6 +25,7 @@ import { RentedComponent } from './components/rented/rented.component';
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
+import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CommentsComponent } from './comments/comments.component';
 
         HeaderComponent,
       CommentsComponent,
+      PaymentmethodComponent,
 
 
   ],
