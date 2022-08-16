@@ -1,4 +1,4 @@
-ng serve
+
 
 <div class="apply-page-header container">
   <section class="apply-page-header-title">
@@ -10,7 +10,7 @@ ng serve
 </div>
 
 <div class="container mt-5">
-  <form dir="rtl" class="w-100" [formGroup]="addproperity" (submit)="onsubmit()">
+  <form dir="rtl" class="w-100" [formGroup]="addproperity" >
     <div class="mb-3">
       <label for="title"  class="form-label">اسم الاعلان</label>
       <input
@@ -21,7 +21,33 @@ ng serve
         id="title"
         aria-describedby="passwordHelp"
       />
+      <div
+          class="alert alert-danger"
+            role="alert"
+            *ngIf="
+            addproperity.controls['title'].errors &&
+            addproperity.controls['title'].touched">
+            <strong
+              *ngIf="addproperity.controls['title'].errors['required']"
+              >برجاء ادخال عنوان مناسب</strong>
+
+            <strong
+              *ngIf="addproperity.controls['title'].errors['minlength']"
+              >الاسم الاول يجب الا يقل عن حرفان</strong>
+
+            <strong
+              *ngIf="addproperity.controls['title'].errors['maxlength']"
+              >الاسم الاول يجب الا يزيد عن عشرة احرف</strong
+            >
+            <strong
+              *ngIf="addproperity.controls['title'].errors['pattern']"
+              >الاسم الاول يجب ان يكون عربى</strong
+            >
+          </div>
     </div>
+
+
+
     <div class="mb-3">
       <label for="description">الوصف</label>
       <textarea
@@ -31,16 +57,67 @@ ng serve
         id="description"
         rows="3"
       ></textarea>
+      <div
+          class="alert alert-danger"
+            role="alert"
+            *ngIf="
+            addproperity.controls['description'].errors &&
+            addproperity.controls['description'].touched">
+            <strong
+              *ngIf="addproperity.controls['description'].errors['required']"
+              >برجاء ادخال عنوان مناسب</strong>
+
+            <strong
+              *ngIf="addproperity.controls['description'].errors['minlength']"
+              >الاسم الاول يجب الا يقل عن حرفان</strong>
+
+            <strong
+              *ngIf="addproperity.controls['description'].errors['maxlength']"
+              >الاسم الاول يجب الا يزيد عن عشرة احرف</strong
+            >
+            <strong
+              *ngIf="addproperity.controls['description'].errors['pattern']"
+              >الاسم الاول يجب ان يكون عربى</strong
+            >
+          </div>
     </div>
 
     <div class="row mb-3">
       <div class="col-sm-12 col-md-6">
         <label for="price" class="form-label">السعر</label>
         <input type="number" name="price"  formControlName="price"  class="form-control" id="price" />
+        <div
+        class="alert alert-danger"
+          role="alert"
+          *ngIf="
+          addproperity.controls['price'].errors &&
+          addproperity.controls['price'].touched">
+          <strong
+            *ngIf="addproperity.controls['price'].errors['required']"
+            >برجاء ادخال السعر </strong>
+          <strong
+            *ngIf="addproperity.controls['price'].errors['pattern']"
+            >السعر ارقام فقط</strong
+          >
+        </div>
       </div>
       <div class="col-sm-12 col-md-6">
         <label for="level" class="form-label">الطابق</label>
         <input type="number" formControlName="level" name="level" class="form-control" id="level" />
+        <div
+        class="alert alert-danger"
+          role="alert"
+          *ngIf="
+          addproperity.controls['level'].errors &&
+          addproperity.controls['level'].touched">
+          <strong
+            *ngIf="addproperity.controls['level'].errors['required']"
+            >برجاء ادخال السعر </strong>
+          <strong
+            *ngIf="addproperity.controls['level'].errors['pattern']"
+            >السعر ارقام فقط</strong
+          >
+        </div>
       </div>
     </div>
     <div class="row mb-3">
@@ -53,6 +130,20 @@ ng serve
           class="form-control"
           id="bedroom-num"
         />
+        <div
+        class="alert alert-danger"
+          role="alert"
+          *ngIf="
+          addproperity.controls['bedroomnum'].errors &&
+          addproperity.controls['bedroomnum'].touched">
+          <strong
+            *ngIf="addproperity.controls['bedroomnum'].errors['required']"
+            >برجاء ادخال السعر </strong>
+          <strong
+            *ngIf="addproperity.controls['bedroomnum'].errors['pattern']"
+            >السعر ارقام فقط</strong
+          >
+        </div>
       </div>
       <div class="col-sm-12 col-md-4">
         <label for="bathroomnum" class="form-label">عدد الحمامات</label>
@@ -63,10 +154,106 @@ ng serve
           class="form-control"
           id="bathroom-num"
         />
+        <div
+        class="alert alert-danger"
+          role="alert"
+          *ngIf="
+          addproperity.controls['bathroomnum'].errors &&
+          addproperity.controls['bathroomnum'].touched">
+          <strong
+            *ngIf="addproperity.controls['bathroomnum'].errors['required']"
+            >برجاء ادخال السعر </strong>
+          <strong
+            *ngIf="addproperity.controls['bathroomnum'].errors['pattern']"
+            >السعر ارقام فقط</strong
+          >
+        </div>
       </div>
       <div class="col-sm-12 col-md-4">
         <label for="bedsnum" class="form-label">عدد السرائر</label>
         <input type="number" formControlName="bedsnum" name="bedsnum" class="beds-num" id="beds-num" />
+        <div
+        class="alert alert-danger"
+          role="alert"
+          *ngIf="
+          addproperity.controls['bedsnum'].errors &&
+          addproperity.controls['bedsnum'].touched">
+          <strong
+            *ngIf="addproperity.controls['bedsnum'].errors['required']"
+            >برجاء ادخال السعر </strong>
+          <strong
+            *ngIf="addproperity.controls['bedsnum'].errors['pattern']"
+            >السعر ارقام فقط</strong
+          >
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-12 col-md-4">
+        <label for="bedroom-num" class="form-label">عدد الغرف</label>
+        <input
+        formControlName="bedroomnum"
+          type="number"
+          name="bedroomnum"
+          class="form-control"
+          id="bedroom-num"
+        />
+        <div
+        class="alert alert-danger"
+          role="alert"
+          *ngIf="
+          addproperity.controls['bedroomnum'].errors &&
+          addproperity.controls['bedroomnum'].touched">
+          <strong
+            *ngIf="addproperity.controls['bedroomnum'].errors['required']"
+            >برجاء ادخال السعر </strong>
+          <strong
+            *ngIf="addproperity.controls['bedroomnum'].errors['pattern']"
+            >السعر ارقام فقط</strong
+          >
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <label for="bathroomnum" class="form-label">المساحة </label>
+        <input
+        formControlName="area"
+          type="number"
+          name="area"
+          class="form-control"
+          id="bathroom-num"
+        />
+        <div
+        class="alert alert-danger"
+          role="alert"
+          *ngIf="
+          addproperity.controls['area'].errors &&
+          addproperity.controls['area'].touched">
+          <strong
+            *ngIf="addproperity.controls['area'].errors['required']"
+            >برجاء ادخال السعر </strong>
+          <strong
+            *ngIf="addproperity.controls['area'].errors['pattern']"
+            >السعر ارقام فقط</strong
+          >
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <label for="bedsnum" class="form-label">عدد السرائر</label>
+        <input type="number" formControlName="bedsnum" name="bedsnum" class="beds-num" id="beds-num" />
+        <div
+        class="alert alert-danger"
+          role="alert"
+          *ngIf="
+          addproperity.controls['bedsnum'].errors &&
+          addproperity.controls['bedsnum'].touched">
+          <strong
+            *ngIf="addproperity.controls['bedsnum'].errors['required']"
+            >برجاء ادخال السعر </strong>
+          <strong
+            *ngIf="addproperity.controls['bedsnum'].errors['pattern']"
+            >السعر ارقام فقط</strong
+          >
+        </div>
       </div>
     </div>
 
@@ -74,28 +261,70 @@ ng serve
       <div class="col-ms-12 col-md-6">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">مفروش</h4>
-            <mat-radio-group aria-label="Select an option" >
-              <mat-radio-button  name="furniture" value="1" color="primary">نعم</mat-radio-button>
-              <mat-radio-button name="furniture" value="2" color="primary">لا</mat-radio-button>
-            </mat-radio-group>
+            <h4 class="card-title"></h4>
+            <div class="form-outline mb-4">
+              <label class="form-label" for="gender" id="gender">مفروش</label>
+              <select
+                formControlName="furniture"
+                class="select w-100"
+                style="margin-left: 80px; padding-right: 95px"
+              >
+              <option disabled selected value>مفروش</option>
+                <option value="yes">نعم</option>
+                <option value="no">لا</option>
+              </select>
+              <div
+                *ngIf="
+                addproperity.controls['furniture'].errors
+                  "
+              >
+                <small
+                class="form-text text-dark"
+                *ngIf="
+                addproperity.controls['furniture'].errors &&
+                addproperity.controls['furniture'].errors['required']
+                "
+                >
+                الحقل مطلوب</small
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
+
       <div class="col-ms-12 col-md-6">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">النوع</h4>
-            <mat-radio-group aria-label="Select an option" >
-              <mat-radio-button name="type" value="1" color="primary">شقة</mat-radio-button>
-              <mat-radio-button name="type" value="2" color="primary"
-                >ستوديو</mat-radio-button
+            <div class="form-outline mb-4">
+              <label class="form-label" for="gender" id="gender">النوع</label>
+              <select
+                formControlName="type"
+                class="select w-100"
+                style="margin-left: 80px; padding-right: 95px"
               >
-              <mat-radio-button name="type" value="3" color="primary"
-                >غرفة</mat-radio-button
+              <option disabled selected value>النوع</option>
+                <option value="apartment">شقة </option>
+                <option value="studio">استديو</option>
+                <option value="room">غرفة</option>
+              </select>
+              <div
+                *ngIf="
+                addproperity.controls['type'].errors
+                  "
               >
-            </mat-radio-group>
+                <small
+                class="form-text text-dark"
+                *ngIf="
+                addproperity.controls['type'].errors &&
+                addproperity.controls['type'].errors['required']
+                "
+                >
+                الحقل مطلوب</small
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -103,16 +332,110 @@ ng serve
 
     <div class="row mb-3">
       <div class="col-sm-12 col-md-4">
-        <label for="address" class="form-label">المحافظة</label>
-        <input type="text" name="governate" class="form-control" id="address" />
+        <div class="form-outline mb-4">
+          <label class="form-label" for="gender" id="gender">المحافظة</label>
+          <select
+            formControlName="governate"
+            class="select w-100"
+            style="margin-left: 80px; padding-right: 95px"
+          >
+          <option disabled selected value>المحافظة</option>
+            <option value="1">القاهرة</option>
+            <option value="2">الاسماعيلية</option>
+            <option value="3">اسوان</option>
+            <option value="4">اسيوط</option>
+            <option value="5">الغردقة</option>
+            <option value="6">دمنهور</option>
+            <option value="7">بنى سويف</option>
+            <option value="8"> بورسعيد</option>
+            <option value="9"> الطور</option>
+            <option value="10"> الجيزة</option>
+            <option value="11"> المنصورة</option>
+            <option value="12"> دمياط</option>
+            <option value="13"> سوهاج</option>
+            <option value="14"> السويس</option>
+            <option value="15"> الزقازيق</option>
+            <option value="16"> العريش</option>
+            <option value="17"> طنطا</option>
+            <option value="18"> الفيوم</option>
+            <option value="19"> بنها</option>
+            <option value="20"> قنا</option>
+            <option value="21"> كفر الشيخ</option>
+            <option value="22"> مرسى مطروح</option>
+            <option value="23"> شبين الكوم</option>
+            <option value="24"> المنيا</option>
+            <option value="25"> الخارجه</option>
+          </select>
+          <div
+            *ngIf="
+            addproperity.controls['governate'].errors
+              "
+          >
+            <small
+            class="form-text text-dark"
+            *ngIf="
+            addproperity.controls['governate'].errors &&
+            addproperity.controls['governate'].errors['required']
+            "
+            >
+            الحقل مطلوب</small
+            >
+          </div>
+        </div>
       </div>
       <div class="col-sm-12 col-md-8">
         <label for="address" class="form-label">العنوان بالتفصيل</label>
-        <input type="text" name="address" class="form-control" id="address" />
+        <input type="text" name="address"  formControlName="address" class="form-control" id="address" />
+        <div
+          class="alert alert-danger"
+            role="alert"
+            *ngIf="
+            addproperity.controls['address'].errors &&
+            addproperity.controls['address'].touched">
+            <strong
+              *ngIf="addproperity.controls['address'].errors['required']"
+              >برجاء ادخال عنوان مناسب</strong>
+
+            <strong
+              *ngIf="addproperity.controls['address'].errors['minlength']"
+              >الاسم الاول يجب الا يقل عن حرفان</strong>
+
+            <strong
+              *ngIf="addproperity.controls['address'].errors['maxlength']"
+              >الاسم الاول يجب الا يزيد عن عشرة احرف</strong
+            >
+            <strong
+              *ngIf="addproperity.controls['address'].errors['pattern']"
+              >الاسم الاول يجب ان يكون عربى</strong
+            >
+          </div>
       </div>
 
     </div>
-    <div class="row" formGroupName="Image">
+    <div class="form-group">
+      <label for="file">File</label>
+      <input
+
+          id="file"
+          type="file"
+          class="form-control"
+          formControlName ='file'
+          multiple="multiple"
+          (change)="onFileChange($event)">
+          <div
+          class="alert alert-danger"
+            role="alert"
+            *ngIf="
+            addproperity.controls['file'].errors &&
+            addproperity.controls['file'].touched">
+            <strong
+              *ngIf="addproperity.controls['file'].errors['required']"
+              >برجاء ادخال عنوان مناسب</strong>
+          </div>
+  </div>
+<!-- {{image_name.value|json}} -->
+  <!-- <img *ngFor='let url of image_name'  src="{{addproperity.value.file}}" height="150" width="200px" style="margin: 3px;"> <br/> -->
+    <!-- <div class="row" formGroupName="Image">
       <div class="col-sm-12 col-md-3">
         <div class="file-field">
           <div class="z-depth-1-half mb-4">
@@ -181,11 +504,11 @@ ng serve
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
+    <!-- <p>{{images.value |json}}</p> -->
     <div class="text-center mt-5">
-      <input class="send" type="submit" value="submit"/>
+      <input class="send" type="submit" value="submit" (click)="onsubmit()"/>
     </div>
   </form>
 </div>
-<p>{{addproperity.value |json}}</p>
