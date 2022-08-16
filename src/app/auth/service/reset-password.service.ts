@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class ResetPasswordService {
 private resetpswordresponseMsg:string;
 private code:string;
+private email:string;
   constructor() { }
 
   setResetpswordresponseMsg(message:string){
@@ -18,10 +19,16 @@ private code:string;
   }
 
   setcode(code:string){
-    this.code = code;
+    sessionStorage.setItem('code',code);
   }
 
   getcode():string{
-    return this.code
+    return sessionStorage.getItem('code')
+  }
+  setemail(email:string){
+    this.email = email;
+  }
+  getEmail():string{
+    return this.email;
   }
 }
