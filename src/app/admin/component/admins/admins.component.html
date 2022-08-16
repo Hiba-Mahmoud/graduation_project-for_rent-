@@ -1,14 +1,12 @@
 
-  <form class="example-form ">
+  <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>بحث</mat-label>
-      <input matInput   #name (keyup)="findByName(name)">
+      <mat-label>Find Admin</mat-label>
+      <input matInput placeholder="Enter Name"  #name (keyup)="findByName(name)">
     </mat-form-field>
 </form>
-
-    <div class="mat-elevation-z8 mt-2  m-auto table-responsive table-responsive-sm " style="overflow-x:auto;">
-
-        <table mat-table [dataSource]="dataSource"  matSort  class="m-auto border border-5 table w-100 ">
+    <div class="mat-elevation mt-2  m-auto table-responsive" *ngIf="length>0 else alter">
+        <table mat-table [dataSource]="dataSource"  matSort  class="m-auto border border-5  table table-bordered ">
       
           <!-- Position Column -->
           <ng-container matColumnDef="id">
@@ -17,34 +15,41 @@
           </ng-container>
       
           <!-- Name Column -->
-          <ng-container matColumnDef="position" matColumnDef="name">
+          <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef mat-sort-header > الاسم</th>
-            <td mat-cell *matCellDef="let element" > {{element.name}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
           </ng-container>
       
           <!-- Weight Column -->
-          <ng-container  matColumnDef="position" matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef > البريد الالكتروني </th>
+          <ng-container matColumnDef="email" class="text-center ">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header > البريد الالكتروني </th>
             <td mat-cell *matCellDef="let element"> {{element.email}} </td>
           </ng-container>
       
           <!-- Symbol Column -->
-          <ng-container  matColumnDef="position" matColumnDef="address">
-            <th mat-header-cell *matHeaderCellDef  > العنوان</th>
-            <td mat-cell *matCellDef="let element"> {{element.address.city}} </td>
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef  > النشاط</th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
           </ng-container>
 
-          <!-- block Column -->
-          <ng-container matColumnDef="block">
-            <th mat-header-cell *matHeaderCellDef> حظر</th>
-            <td mat-cell *matCellDef="let element">  <button  type="button" class="btn btn-secondary m-1"><span class="material-icons">block</span></button> </td>
-
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef  > الهاتف</th>
+            <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
           </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef  > النوع</th>
+            <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+          </ng-container>
+
+         
 
            <!-- delete Column -->
           <ng-container matColumnDef="delete">
             <th mat-header-cell *matHeaderCellDef> حذف</th>
-            <td mat-cell *matCellDef="let element">  <button  type="button" class="btn btn-secondary m-1"><span class="material-icons">delete</span></button> </td>
+            <td mat-cell *matCellDef="let element">  <button  type="button" (click)="delete(element.id)" class="btn  m-1"><span class="material-icons">delete</span></button> </td>
           </ng-container>
          
          
@@ -61,4 +66,22 @@
                       
         </mat-paginator>
       </div>
+
+      <!-- <div class="justify-content-center align-items-center" *ngIf="loading">
+        <mat-spinner class="text-center w-50  mt-5 pt-5 " style="top: 30px;"></mat-spinner>
       
+      </div> -->
+<!-- 
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>'هل تريد تأكيد الحذف ؟' </p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template> -->
+
+
+      
+<ng-template #alter >
+ <h1 class="bg-light text-center">لا يوجد مستأجرين حاليا</h1>
+</ng-template>

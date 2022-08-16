@@ -17,7 +17,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import {MatMenuModule} from '@angular/material/menu';
-import { SearchComponent } from './component/search/search.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { EditpasswordComponent } from './component/editpassword/editpassword.component';
 import { EditpersonaldataComponent } from './component/editpersonaldata/editpersonaldata.component';
@@ -39,7 +38,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     CartComponent,
     CartDetailsComponent,
     FooterComponent,
-    SearchComponent,
     SettingsComponent,
     EditpasswordComponent,
     EditpersonaldataComponent,
@@ -83,12 +81,22 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     FooterComponent,
     CartComponent,
     CartDetailsComponent,
-     SearchComponent,
     SettingsComponent,
     EditpasswordComponent,
     EditpersonaldataComponent,
     CommentsComponent,
-    SideBarComponent
+    SideBarComponent,
+    CartComponent,
+    NotFoundComponent,
+    CartComponent,
+    CartDetailsComponent,
+    FooterComponent,
+
+    SettingsComponent,
+    EditpasswordComponent,
+    EditpersonaldataComponent,
+    CommentsComponent,
+    SideBarComponent,
 
 
   ],

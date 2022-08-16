@@ -6,6 +6,8 @@ export class IUser{
   password:string='';
   gender:string='';
   phone:string='';
+  code:number;
+  password_confirmation:string='';
 
   getFullName() :string{
  return this.firstName+" "+this.lastName;

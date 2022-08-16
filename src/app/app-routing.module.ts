@@ -26,33 +26,75 @@ import { RentedComponent } from './components/rented/rented.component';
 import { MailConfirmComponent } from './auth/component/mail-confirm/mail-confirm.component';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { AuthGuard } from './guard/auth.guard';
+import { MailverifiyGuard } from './guard/mailverifiy.guard';
+import { PreventregisterandloginGuard } from './guard/preventregisterandlogin.guard';
+import { CodeVerifyComponent } from './auth/component/code-verify/code-verify.component';
+import { MailwithcodeComponent } from './auth/component/mailwithcode/mailwithcode.component';
+import { ResetPasswordComponent } from './auth/component/reset-password/reset-password.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
 
 
+  // auth Routes
+
   {
     path: "home", component: HomeComponent
   },
   {
-    path: "login", component: LoginComponent
+    path: "login", component: LoginComponent,canActivate:[PreventregisterandloginGuard]
   },
+  { path:"mailverifiy", component:MailConfirmComponent,canActivate:[PreventregisterandloginGuard]},
   {
-    path: "register", component: RegisterComponent
+    path: "register", component: RegisterComponent,canActivate:[PreventregisterandloginGuard]
   },
   {
     path: "details/:id", component: CartDetailsComponent
   },
-  { path: 'owner', component: OwnerComponent },
-  { path: 'addProperity', component: AddProperityComponent },
 
   { path: 'editpassword', component: EditpasswordComponent },
+  { path: 'reset-password-code', component: MailwithcodeComponent },
+  { path: 'password', component: ResetPasswordComponent },
+
   {
     path: 'editpersonaldata', component: EditpersonaldataComponent
   },
 
-  
-  { path:"mailverifiy", component:MailConfirmComponent},
+
+
+//favourit
+//setting
+//dashbord
+//owner
+//add adv
+//update add
+//notification
+//paymentmethod
+//side bar
+//nav bar
+//gard type
+//list all properites owner
+// ===================
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
+
   {path: 'forgetpassword', component:ForgetPasswordComponent},
   // shared Routes
   { path: 'editpassword', component: EditpasswordComponent ,canActivate:[AuthGuard]},

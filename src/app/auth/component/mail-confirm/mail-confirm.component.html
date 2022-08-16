@@ -12,34 +12,34 @@
               <div class="card-body p-md-5 mx-md-4">
 
 
-                    <h5 class="mb-1" id="succ"> </h5>
-                    <h3 class="mb-1">تفعيل البريدالالكترونى </h3>
-                    <span class="mobile-text">برجاء ادخال كود التفعيل المرسل على البريدالالكترونى</span>
-                    <form action="" [formGroup]="confirmCode">
-                      <div class="d-flex flex-row mt-5">
-                        <input type="text" dir="ltr" class="form-control" formControlName="token" name="token" />
-                        <div id="code"></div>
+                <h5 class="mb-1" id="succ"> </h5>
+                <h3 class="mb-1">تفعيل البريدالالكترونى </h3>
+                <span class="mobile-text">برجاء ادخال كود التفعيل المرسل على البريدالالكترونى</span>
+                <form action="" [formGroup]="confirmCode">
+                  <div class="d-flex flex-row mt-5">
+                    <input type="text" dir="ltr" class="form-control" formControlName="token" name="token" />
+                    <div id="code"></div>
 
 
-                      </div>
-                      <div class="alert alert-danger" role="alert" *ngIf="
+                  </div>
+                  <div class="alert alert-danger" role="alert" *ngIf="
                             confirmCode.controls['token'].errors &&
                                 confirmCode.controls['token'].touched
                                 ">
-                        <strong *ngIf="
+                    <strong *ngIf="
       confirmCode.controls['token'].errors &&
       confirmCode.controls['token'].errors['required']
       ">من فضلك ادخل الكود</strong>
-                        <strong *ngIf="confirmCode.controls['token'].errors['minlength']">كود التفعيل خاطئ                   </strong>
+                    <strong *ngIf="confirmCode.controls['token'].errors['minlength']">كود التفعيل خاطئ </strong>
 
-                        <strong *ngIf="confirmCode.controls['token'].errors['maxlength']">كود التفعيل خاطئ</strong>
-                        <strong *ngIf="confirmCode.controls['token'].errors['pattern']">الرقم غير صحيح</strong>
-                      </div>
-                      <div class="text-center mt-5">
-                        <input class="btn-dark btn" type="submit" value="submit" [disabled]="confirmCode?.invalid"
-                          (click)="onsubmit()" />
-                      </div>
-                    </form>
+                    <strong *ngIf="confirmCode.controls['token'].errors['maxlength']">كود التفعيل خاطئ</strong>
+                    <strong *ngIf="confirmCode.controls['token'].errors['pattern']">الرقم غير صحيح</strong>
+                  </div>
+                  <div class="text-center mt-5">
+                    <input class="btn-dark btn" type="submit" value="submit" [disabled]="confirmCode?.invalid"
+                      (click)="onsubmit()" />
+                  </div>
+                </form>
 
               </div>
             </div>
@@ -49,6 +49,5 @@
     </div>
   </div>
 </section>
-{{confirmCode.value | json}}
-{{confirmCode.status | json}}
+
 <!-- ---------------------------- -->

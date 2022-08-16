@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RemmberMeComponent } from './remmber-me.component';
+import { MailwithcodeComponent } from './mailwithcode.component';
 
-describe('RemmberMeComponent', () => {
-  let component: RemmberMeComponent;
-  let fixture: ComponentFixture<RemmberMeComponent>;
+describe('MailwithcodeComponent', () => {
+  let component: MailwithcodeComponent;
+  let fixture: ComponentFixture<MailwithcodeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RemmberMeComponent ]
+      declarations: [ MailwithcodeComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RemmberMeComponent);
+    fixture = TestBed.createComponent(MailwithcodeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
