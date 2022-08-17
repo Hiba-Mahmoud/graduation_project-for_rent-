@@ -49,14 +49,14 @@ export class CartDetailsComponent implements OnInit {
  }
  makePayment(amount:any,advertisement:any,owner:any) {
    const http=this.http;
-
+   
     const strikeCheckout = (<any>window).StripeCheckout.configure({
       
       key: 'pk_test_51LX8ftH4ooOXAWsbNANhQAaiF9nzIHfUiThsjYEnPP4WQwOW5ylzc1NtWK1qDapTutl291B1FEyjgXDxdyxAsLZh00dL6UnlqH',
       locale: 'auto',
       token: function (stripeToken: any) {
         console.log(stripeToken.id);
-       http.post('http://localhost:8000/api/paymentmethod', {
+       http.post('http://localhost:8000/api/paymentmethod',{
         owner_id: owner,
         adver_id:advertisement,
         price:amount,
@@ -72,14 +72,17 @@ export class CartDetailsComponent implements OnInit {
     
     
         
-      
+
    
   
     strikeCheckout.open({
       name: 'RemoteStack',
       description: 'Payment widgets',
-      amount: amount * 100
+      amount: amount * 100,
+      currency:'LE'
+      
     });
+    
   }
   
   stripePaymentGateway() {
@@ -99,7 +102,7 @@ export class CartDetailsComponent implements OnInit {
           }
         });
       }
-        
+
       window.document.body.appendChild(scr);
     }
   }
