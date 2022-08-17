@@ -17,7 +17,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 // import { RouterModule } from '@angular/router';
 import {MatMenuModule} from '@angular/material/menu';
-import { SearchComponent } from './component/search/search.component';
 import { SettingsComponent } from './component/settings/settings.component';
 import { EditpasswordComponent } from './component/editpassword/editpassword.component';
 import { EditpersonaldataComponent } from './component/editpersonaldata/editpersonaldata.component';
@@ -43,7 +42,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CartComponent,
     CartDetailsComponent,
     FooterComponent,
-    SearchComponent,
     SettingsComponent,
     EditpasswordComponent,
     EditpersonaldataComponent,
@@ -83,7 +81,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     CartComponent,
     CartDetailsComponent,
-     SearchComponent,
     SettingsComponent,
     EditpasswordComponent,
     EditpersonaldataComponent,
@@ -94,7 +91,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CartComponent,
     CartDetailsComponent,
     FooterComponent,
-    SearchComponent,
+
     SettingsComponent,
     EditpasswordComponent,
     EditpersonaldataComponent,

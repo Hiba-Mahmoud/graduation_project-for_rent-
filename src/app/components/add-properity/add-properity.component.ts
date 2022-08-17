@@ -8,8 +8,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 // import { Router } from '@angular/router';
 import { Addadver } from 'src/app/interface/addadvertis';
 import { Component, OnInit } from '@angular/core';
+import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-properity',
@@ -29,7 +29,7 @@ export class AddProperityComponent implements OnInit {
   userData:any;
   invalidForm:any;
   validation:any;
-  constructor(private localstorage:TokenService,private moveData:MoaveDataService,private formb:FormBuilder,private router:Router,private http:HttpClient) {
+  constructor(private localstorage:TokenService,private router:Router,private http:HttpClient, private formb:FormBuilder) {
 
 
 

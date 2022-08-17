@@ -25,11 +25,16 @@ import { RentedComponent } from './components/rented/rented.component';
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
-import { RouterModule } from '@angular/router';
+
+// import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 // import { RouterModule } from '@angular/router';
 // import {}
+// import { ModalModule } from 'ngx-bootstrap/modal';
+
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ActivatedRoute, RouterModule } from '@angular/router'
+
 
 @NgModule({
   declarations: [
@@ -37,6 +42,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
         AppComponent,
         AccountComponent,
         HomeComponent,
+        
         AddProperityComponent,
         ListAllOwnerProperitiesComponent,
         UpdateProperityAdvertisingComponent,
@@ -71,7 +77,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     NgxPaginationModule,
     MatProgressSpinnerModule,
     ModalModule.forRoot(),
-    // RouterModule.forRoot(appRoutes)
+    // RouterModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
