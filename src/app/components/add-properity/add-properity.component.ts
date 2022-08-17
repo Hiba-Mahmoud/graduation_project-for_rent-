@@ -1,12 +1,15 @@
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+// import {  FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+// import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/auth/classesAndinterfaces/registerationData';
 import { registerationData } from 'src/app/auth/classesAndinterfaces/postregisterationdata';
 import { TokenService } from 'src/app/auth/service/token.service';
 import { MoaveDataService } from 'src/app/auth/service/moave-data.service';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { Addadver } from 'src/app/interface/addadvertis';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-properity',
@@ -105,7 +108,7 @@ onsubmit(){
   this.data.append('type',this.addproperity.value.type) ;
   this.data.append('area',this.addproperity.value.area) ;
   this.data.append('city_id',this.addproperity.value.governate) ;
-  
+
   // this.addata.title= this.addproperity.value.title;
   // this.addata.description= this.addproperity.value.description;
   // this.addata.address= this.addproperity.value.address;

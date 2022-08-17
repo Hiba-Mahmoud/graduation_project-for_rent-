@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+// import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,16 +26,20 @@ import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-ye
 import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
 import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+// import { RouterModule } from '@angular/router';
+// import {}
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
 
-         AppComponent,
-         AccountComponent,
-         HomeComponent,
-         AddProperityComponent,
-         ListAllOwnerProperitiesComponent,
-         UpdateProperityAdvertisingComponent,
+        AppComponent,
+        AccountComponent,
+        HomeComponent,
+        AddProperityComponent,
+        ListAllOwnerProperitiesComponent,
+        UpdateProperityAdvertisingComponent,
          AboutComponent,
          PendingComponent,
          RentedComponent,
@@ -50,14 +54,12 @@ import { RouterModule } from '@angular/router';
   imports: [
 
     FontAwesomeModule,
-    NgbModule,
+    NgModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    
-
     RouterModule,
     UsersModule,
     HttpClientModule,
@@ -68,7 +70,8 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     NgxPaginationModule,
     MatProgressSpinnerModule,
-
+    ModalModule.forRoot(),
+    // RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

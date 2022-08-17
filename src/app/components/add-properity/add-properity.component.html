@@ -10,7 +10,7 @@ ng serve
 </div>
 
 <div class="container mt-5">
-  <form dir="rtl" class="w-100" [formGroup]="addproperity" >
+  <form dir="rtl" class="w-100" formGroup="addproperity" >
     <div class="mb-3">
       <label for="title"  class="form-label">اسم الاعلان</label>
       <input
@@ -507,7 +507,6 @@ ng serve
     </div> -->
 
     <!-- <p>{{images.value |json}}</p> -->
-    <p>{{addproperity.value |json}}</p>
     <div class="text-center mt-5">
       <input class="send" type="submit" value="submit" (click)="onsubmit()"/>
     </div>

@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { TokenService } from './../auth/service/token.service';
+// import { Injectable } from '@angular/core';
+// import { ActivatedRouteSnapshot, CanActivate, , RouterStateSnapshot, UrlTree } from '@angular/router';
+import { Observable } from 'rxjs';
+// import { Injectable } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
