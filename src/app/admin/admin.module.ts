@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReportsComponent } from './component/reports/reports.component';
@@ -40,9 +41,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     MatPaginatorModule,
     MaterialModule,
     MatSortModule,
-    ModalModule
+    ModalModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  
+
   exports:[
     ListcontactsComponent,
     OwnersComponent,
