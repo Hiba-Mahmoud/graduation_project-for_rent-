@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Payment } from 'src/app/interface/paymentmethod';
+import { TokenService } from 'src/app/auth/service/token.service';
 import { AdvertismentService } from '../../services/advertisment.service';
-import { CheckoutService } from '../../services/checkout.service';
 
 @Component({
   selector: 'app-cart-details',
@@ -12,8 +11,7 @@ import { CheckoutService } from '../../services/checkout.service';
 })
 export class CartDetailsComponent implements OnInit {
   strikeCheckout:any = null;
-  paymentmethod=new Payment;
-  pay :any;
+  token:string;
   id :any;
   data:any={}
   images:any=[]
@@ -24,7 +22,7 @@ export class CartDetailsComponent implements OnInit {
   loading:boolean=true;
   success: boolean = false
   failure:boolean = false
-  constructor(private route:ActivatedRoute ,private checkout:CheckoutService,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient) {
+  constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient,private localstorage:TokenService) {
     this.id=this.route.snapshot.paramMap.get("id")
    }
 
@@ -49,7 +47,21 @@ export class CartDetailsComponent implements OnInit {
  }
  makePayment(amount:any,advertisement:any,owner:any) {
    const http=this.http;
-   
+   let local=this.localstorage.gettokenfromLocalstorage();
+   let session=this.localstorage.getToken();
+ 
+   if(local){
+     console.log(local)
+     this.token =local;
+   }else if (session){
+     console.log(session)
+     this.token =session;
+ 
+   }
+   const headers = new HttpHeaders({
+ 
+     'Authorization': `Bearer ${this.token}`
+   });
     const strikeCheckout = (<any>window).StripeCheckout.configure({
       
       key: 'pk_test_51LX8ftH4ooOXAWsbNANhQAaiF9nzIHfUiThsjYEnPP4WQwOW5ylzc1NtWK1qDapTutl291B1FEyjgXDxdyxAsLZh00dL6UnlqH',
@@ -61,11 +73,10 @@ export class CartDetailsComponent implements OnInit {
         adver_id:advertisement,
         price:amount,
         token:stripeToken.id,
-      }) .subscribe(
+      },{headers:headers}) .subscribe(
         (data:any)=>{
           console.log(data);
-          if(data.code ==1){
-      }
+         
     });
   }
       });   
@@ -78,9 +89,7 @@ export class CartDetailsComponent implements OnInit {
     strikeCheckout.open({
       name: 'RemoteStack',
       description: 'Payment widgets',
-      amount: amount * 100,
-      currency:'LE'
-      
+      amount: amount * 100,      
     });
     
   }
