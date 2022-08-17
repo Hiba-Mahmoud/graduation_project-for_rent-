@@ -13,7 +13,13 @@ export class TokenInterceptorInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    var token=localStorage.getItem("token");
+    if(localStorage.getItem("token")){
+      var token=localStorage.getItem("token");
+
+    }else if(sessionStorage.getItem("token")){
+      var token=sessionStorage.getItem("token");
+
+    }
     var authRequest= request.clone({
       setHeaders: {
         Authorization: `Bearer ${token}`
