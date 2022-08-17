@@ -31,7 +31,6 @@ import { PreventregisterandloginGuard } from './guard/preventregisterandlogin.gu
 import { CodeVerifyComponent } from './auth/component/code-verify/code-verify.component';
 import { MailwithcodeComponent } from './auth/component/mailwithcode/mailwithcode.component';
 import { ResetPasswordComponent } from './auth/component/reset-password/reset-password.component';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -43,11 +42,11 @@ const routes: Routes = [
     path: "home", component: HomeComponent
   },
   {
-    path: "login", component: LoginComponent,canActivate:[PreventregisterandloginGuard]
+    path: "login", component: LoginComponent
   },
-  { path:"mailverifiy", component:MailConfirmComponent,canActivate:[PreventregisterandloginGuard]},
+  { path:"mailverifiy", component:MailConfirmComponent},
   {
-    path: "register", component: RegisterComponent,canActivate:[PreventregisterandloginGuard]
+    path: "register", component: RegisterComponent
   },
   {
     path: "details/:id", component: CartDetailsComponent
@@ -132,6 +131,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
