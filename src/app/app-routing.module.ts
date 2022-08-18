@@ -44,7 +44,7 @@ const routes: Routes = [
   {
     path: "login", component: LoginComponent
   },
-  { path:"mailverifiy", component:MailConfirmComponent,canActivate:[PreventregisterandloginGuard]},
+  { path:"mailverifiy", component:MailConfirmComponent},
   {
     path: "register", component: RegisterComponent
   },

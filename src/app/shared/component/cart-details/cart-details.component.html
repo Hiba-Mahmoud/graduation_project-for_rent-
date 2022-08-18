@@ -90,7 +90,7 @@
           </mat-list>
 
           <div class="d-grid gap-5 col-6 mx-auto mt-4 mb-2">
-            <button class="btn payment" type="button">للدفع من خلال الموقع</button>
+            <button class="btn payment" type="button" (click)="makePayment(data.price,data.id,data.user_id)">للدفع من خلال الموقع</button>
           </div>
         </div>
       </div>

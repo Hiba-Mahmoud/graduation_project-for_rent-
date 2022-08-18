@@ -25,6 +25,7 @@ import { RentedComponent } from './components/rented/rented.component';
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
+import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { RouterModule } from '@angular/router'
@@ -46,6 +47,7 @@ import { RouterModule } from '@angular/router'
 
         HeaderComponent,
       CommentsComponent,
+      PaymentmethodComponent,
 
 
   ],

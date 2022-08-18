@@ -1,12 +1,15 @@
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+// import {  FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+// import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/auth/classesAndinterfaces/registerationData';
 import { registerationData } from 'src/app/auth/classesAndinterfaces/postregisterationdata';
 import { TokenService } from 'src/app/auth/service/token.service';
 import { MoaveDataService } from 'src/app/auth/service/moave-data.service';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { Addadver } from 'src/app/interface/addadvertis';
+import { Component, OnInit } from '@angular/core';
+import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-properity',
@@ -26,7 +29,7 @@ export class AddProperityComponent implements OnInit {
   userData:any;
   invalidForm:any;
   validation:any;
-  constructor(private localstorage:TokenService,private moveData:MoaveDataService,private formb:FormBuilder,private router:Router,private http:HttpClient) {
+  constructor(private localstorage:TokenService,private router:Router,private http:HttpClient, private formb:FormBuilder) {
 
 
 
