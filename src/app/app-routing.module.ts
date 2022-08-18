@@ -42,11 +42,11 @@ const routes: Routes = [
     path: "home", component: HomeComponent
   },
   {
-    path: "login", component: LoginComponent,canActivate:[PreventregisterandloginGuard]
+    path: "login", component: LoginComponent
   },
   { path:"mailverifiy", component:MailConfirmComponent,canActivate:[PreventregisterandloginGuard]},
   {
-    path: "register", component: RegisterComponent,canActivate:[PreventregisterandloginGuard]
+    path: "register", component: RegisterComponent
   },
   {
     path: "details/:id", component: CartDetailsComponent

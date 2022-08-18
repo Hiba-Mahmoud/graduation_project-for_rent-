@@ -19,15 +19,26 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link ">
-                            <mat-icon matBadge={{count_of_notification}} matBadgeColor="warn" (click)="get_notification()">notifications</mat-icon>
+                            <!-- <mat-icon matBadge={{count_of_notification}} matBadgeColor="warn" (click)="get_notification()">notifications</mat-icon> -->
+                            <li ngbDropdown class="nav-item ">
+                                <div class="nav-link dropdown-toggle" [ngStyle]="{'background-color' : 'transparent' }" (click)="zero()" id=" navbarDropdownMenuLink " ngbDropdownToggle role="button " data-bs-toggle="dropdown " aria-expanded="false ">
+                                    <!-- <i class="bi bi-bell "></i><sup><span
+                                      class="rounded-circle bg-danger text-white ">{{totalNumber}}</span></sup> -->
+                                    <mat-icon matBadge={{totalNumber}} matBadgeColor="warn">notifications</mat-icon>
+                                </div>
+                                <ul class="dropdown drop " ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink ">
+                                    <li *ngFor=" let item of allNotification ">
+                                        <div class="alert alert-success ">{{item}}</div>
+                                    </li>
+                                </ul>
+                            </li>
                         </a>
                     </li>
-
                 </ul>
-                <div class="d-flex">
-                    <button class="btn mx-1" routerLink="register">تسجيل </button>
-                    <button class="btn mx-1" routerLink="login"> دخول</button>
-                    <button class="btn mx-1" (click)="logout()">خروج</button>
+                <div class="d-flex ">
+                    <button class="btn mx-1 " routerLink="register ">تسجيل </button>
+                    <button class="btn mx-1 " routerLink="login "> دخول</button>
+                    <button class="btn mx-1 " (click)="logout() ">خروج</button>
 
                 </div>
             </div>
