@@ -39,6 +39,7 @@ export class RegisterComponent implements OnInit {
       gender:['',[Validators.required]],
       type:['',[Validators.required]]
     })
+    console.log(this.registeration)
       this.invalidForm=this.registeration.status;
     }
 
@@ -57,7 +58,7 @@ export class RegisterComponent implements OnInit {
     // console.log("POST DATAAAAA"+this.postData);
 
 
-    this.http.post('http://127.0.0.1:8000/api/admin/addAdmin',this.postData).subscribe((succ:any)=>{
+    this.http.post('http://127.0.0.1:8000/api/register',this.postData).subscribe((succ:any)=>{
       this.userData = succ.user.id;
       this.localstorage.handelId(this.userData.toString())
       this.moveData.setUserID(this.userData);
@@ -67,7 +68,7 @@ export class RegisterComponent implements OnInit {
     },(error:HttpErrorResponse)=>{
 
       this.errMsg= error.error['error'];
-      console.log(this.errMsg)
+      // console.log(this.errMsg)
       if(this.errMsg.name){
         document.getElementById('name').textContent = this.errMsg.name
 

@@ -52,12 +52,13 @@ export class AddAdminComponent implements OnInit {
     // console.log("POST DATAAAAA"+this.postData);
 
 
-    this.http.post('http://127.0.0.1:8000/api/register',this.postData).subscribe((succ:any)=>{
-      this.userData = succ.user.id;
+    this.http.post('http://127.0.0.1:8000/api/admin/addAdmin',this.postData).subscribe((succ:any)=>{
+      console.log(succ)
+    this.userData = succ.user.id;
       this.localstorage.handelId(this.userData.toString())
       this.moveData.setUserID(this.userData);
-      this.moveData.myMethod(succ.message);
-      this.router.navigate(['/mailverifiy']);
+      this.localstorage.setToken(this.userData.token);
+      this.router.navigateByUrl('/adminhome');
 
     },(error:HttpErrorResponse)=>{
 

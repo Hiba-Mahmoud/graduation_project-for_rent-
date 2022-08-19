@@ -25,7 +25,8 @@
             role="alert"
             *ngIf="
               registeration.controls['firstName'].errors &&
-              registeration.controls['firstName'].touched
+              registeration.controls['firstName'].touched&&
+             registeration.controls['firstName'].status
             "
           >
             <strong
@@ -257,7 +258,7 @@
           </select>
           <div
             *ngIf="
-              registeration.controls['type'].errors 
+              registeration.controls['type'].errors
             "
           >
             <small
