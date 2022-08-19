@@ -45,3 +45,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
   background: #353535 !important;
   color: #fff;
 }
+
+.noData{
+  height:50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.noData p {
+font-size: 2em;
+
+}

@@ -53,6 +53,7 @@ export class PayedproperitiesComponent implements OnInit {
         console.log(data)
         // console.log(data)
         this.dataSource=new MatTableDataSource(data[0]);
+        // this.length= data;
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;
         // console.log(this.dataSource)
