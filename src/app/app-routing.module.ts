@@ -105,7 +105,7 @@ const routes: Routes = [
   // owner Routes
   { path: 'owner', component: OwnerComponent,canActivate:[AuthGuard] },
   { path: 'addProperity', component: AddProperityComponent,canActivate:[AuthGuard] },
-  { path: 'UpdateProperityAdvertising', component: UpdateProperityAdvertisingComponent,canActivate:[AuthGuard] },
+  { path: 'editproperty/:id', component: UpdateProperityAdvertisingComponent,canActivate:[AuthGuard] },
   { path:"notrented", component:NotRentedYetComponent,canActivate:[AuthGuard]},
   { path:"pending", component:PendingComponent,canActivate:[AuthGuard]},
   { path:"rented", component:RentedComponent,canActivate:[AuthGuard]},
