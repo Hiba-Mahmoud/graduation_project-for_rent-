@@ -62,13 +62,14 @@ export class CartDetailsComponent implements OnInit {
  
      'Authorization': `Bearer ${this.token}`
    });
+   console.log(headers);
     const strikeCheckout = (<any>window).StripeCheckout.configure({
       
       key: 'pk_test_51LX8ftH4ooOXAWsbNANhQAaiF9nzIHfUiThsjYEnPP4WQwOW5ylzc1NtWK1qDapTutl291B1FEyjgXDxdyxAsLZh00dL6UnlqH',
       locale: 'auto',
       token: function (stripeToken: any) {
         console.log(stripeToken.id);
-       http.post('http://localhost:8000/api/paymentmethod',{
+       http.post('http://127.0.0.1:8000/api/paymentmethod',{
         owner_id: owner,
         adver_id:advertisement,
         price:amount,
