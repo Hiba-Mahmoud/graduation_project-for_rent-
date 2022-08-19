@@ -23,7 +23,7 @@ export class MailConfirmComponent implements OnInit {
 
   ngOnInit(): void {
     this.succmessage=this.moveData.getmyMethodSubject();
-    document.getElementById('succ').textContent = this.succmessage
+    // document.getElementById('succ').textContent = this.succmessage
     console.log('from mail comp'+this.moveData.getId())
     this.userId = this.moveData.getId();
     this.confirmCode = this .fb.group({

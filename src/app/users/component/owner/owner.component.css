@@ -156,29 +156,113 @@ color: #fff
 .cardheight{
   padding:1%;
 }
-.backcolor
+/* .backcolor
 {
-  background-color: #383838;
+  border-left: 5px solid #E71700;
+  background-color:#fff ;
   color:white;
-}
-.backcolor-one
+} */
+/* .backcolor-one
 {
-  background-color: #fe6f41;
+  border-left: 5px solid #01AB6B;
+  background-color:#fff ;
   color:white;
+} */
+.dash{
+  color:#fff;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  background-color:#383838 ;
 }
-.backcolor-two
+.dash::after{
+  content:'';
+  width:0%;
+  height:0%;
+border:0 solid #fde6de ;
+  position: absolute;
+  top:0;
+  right:0;
+  transition: all 0.5s ease-in-out;
+
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+
+}
+.dash:hover.dash::after{
+  height:100%;
+  width:100%;
+  border-top:5px solid #fde6de ;
+  /* border-bottom:2px solid #fde6de ; */
+
+  color:#383838;
+
+}
+/* .backcolor-two
 {
-  background-color: #626E85;
-  color:white;
+  border-left: 5px solid #005EEC;
+  border-bottom: 5px solid #005EEC;
+
+} */
+
+span{
+  color:#FE6F41;
 }
-.backcolor-three
+/* .backcolor-three
 {
   justify-content: center;
   align-content: center;
-  background-color: #00AF80;
-  color:white;
-}
+  border-left: 5px solid #383838;
+    background-color:#fff ;
+
+} */
 a{
   font-size: 20px;
   font-weight: 800;
+}
+.add{
+  display: block;
+  /* width: 100% !important;; */
+  padding: 30px 20px;
+font-size: 1.5em;
+font-weight: 600;
+text-align: center;
+/* border-radius: 20px; */
+color: #ffff;
+border:none;
+transition: all 0.5s ease-in-out;
+
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+background: #FE6F41 !important;
+caret-color:#FE6F41;
+
+}
+
+
+
+.add:hover {
+background: #353535 !important;
+color: #fff;
+}
+.gradient-form
+{
+  height:100vh;
+  overflow: hidden;
+  background-image: url(src\assets\rmb-coins-stacked-front-housing-model-house-prices-house-buying-real-estate-mortgage-concept.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content-center{
+  justify-content: center;
+  align-items: center;
+
 }

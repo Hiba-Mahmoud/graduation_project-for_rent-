@@ -31,6 +31,7 @@ import { PreventregisterandloginGuard } from './guard/preventregisterandlogin.gu
 import { CodeVerifyComponent } from './auth/component/code-verify/code-verify.component';
 import { MailwithcodeComponent } from './auth/component/mailwithcode/mailwithcode.component';
 import { ResetPasswordComponent } from './auth/component/reset-password/reset-password.component';
+import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -109,6 +110,7 @@ const routes: Routes = [
   { path:"notrented", component:NotRentedYetComponent,canActivate:[AuthGuard]},
   { path:"pending", component:PendingComponent,canActivate:[AuthGuard]},
   { path:"rented", component:RentedComponent,canActivate:[AuthGuard]},
+  { path:"payed-rented", component:PayedproperitiesComponent,canActivate:[AuthGuard]},
   //start admin routes
   { path: 'adminhome', component:AdminhomeComponent,canActivate:[AuthGuard]},
   { path: 'all-contacts', component:ListcontactsComponent,canActivate:[AuthGuard]},

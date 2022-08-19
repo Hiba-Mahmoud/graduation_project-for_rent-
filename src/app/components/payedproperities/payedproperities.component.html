@@ -3,8 +3,8 @@
     <mat-label>Filter</mat-label>
     <input matInput #search placeholder="search" (keyup)="findContact(search.value)" >
   </mat-form-field>
-  <div class="row w-100">
-    <div class="col-sm-12">
+  <div class="row w-100" *ngIf="length>0; else noData" >
+    <div class="col-sm-12"  >
       <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 col-sm-12 table text-center">
         <!-- Position Column -->
         <ng-container matColumnDef="الاعلان">
