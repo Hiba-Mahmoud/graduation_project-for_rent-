@@ -43,6 +43,7 @@ import { PayedproperitiesComponent } from './components/payedproperities/payedpr
          AboutComponent,
          PendingComponent,
          RentedComponent,
+         PayedproperitiesComponent,
          NotRentedYetComponent,
          // ListcontactsComponent,
 
@@ -50,7 +51,6 @@ import { PayedproperitiesComponent } from './components/payedproperities/payedpr
       CommentsComponent,
 
       PaymentmethodComponent,
-      PayedproperitiesComponent,
 
 
   ],
