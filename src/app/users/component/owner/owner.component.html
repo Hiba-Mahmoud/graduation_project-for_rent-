@@ -29,25 +29,35 @@
 </div> -->
 
 <!-- <img src=""> -->
-<div class="container height">
-  <div class="row justify-content-center align-items-center g-0">
-    <!-- <div class="col-sm-12 ">
-      <img class="image" src="assets\real-estate-with-house-model-keys.jpg" alt="">
-    </div> -->
+<div class="container   gradient-form">
+  <div class="row g-0">
+    <div class="col-sm-12 ">
+      <a  routerLink="/addProperity" class="add col-sm-12 ">إضافة اعلان</a>
+
+    </div>
     <div class="col-sm-12 ">
 
       <div class="col-sm-12">
         <div class="container m-0 w-100">
           <div class="row">
-            <div class="col-sm-12 p-3 backcolor col-md-6" (click)="pending()">
-              <span class="counter">2</span>
+            <div class="col-sm-12 p-3 backcolor-one col-md-3 dash" (click)="rented()">
+              <span >{{rentedAds}}</span>
+              <p>العقارات المؤجرة</p>
+            </div>
+            <div class="col-sm-12 p-3 backcolor-two col-md-3 dash " (click)="navigate()">
+              <span >2</span>
+              <p>لم يتم التاجير بعد</p>
+            </div>
+            <div class="col-sm-12 p-3 backcolor col-md-3 dash" (click)="pending()">
+              <span >{{pend}}</span>
               <p>إعلانات لم يتم الموافقه عليها بعد</p>
             </div>
-            <div class="col-sm-12 p-3 backcolor-three col-md-6 justify-content-center align-items-center">
-              <div class="d-flex justify-content-center align-content-center">
+            <div class="col-sm-12 p-3 backcolor-three col-md-3 dash">
 
-                <a routerLink="/addProperity" class="link-light">إضافة اعلان</a>
-              </div>
+                <span >2</span>
+              <p>إعلانات</p>
+                <!-- <a routerLink="/addProperity" class="link-light">إضافة اعلان</a> -->
+
             </div>
           </div>
         </div>
@@ -55,14 +65,14 @@
       <div class="col-sm-12">
         <div class="container m-0 w-100">
           <div class="row">
-            <div class="col-sm-12 p-3 backcolor-one col-md-6" (click)="rented()">
+            <!-- <div class="col-sm-12 p-3 backcolor-one col-md-6 dash" (click)="rented()">
               <span class="counter">2</span>
               <p>العقارات المؤجرة</p>
             </div>
-            <div class="col-sm-12 p-3 backcolor-two col-md-6 " (click)="navigate()">
+            <div class="col-sm-12 p-3 backcolor-two col-md-6 dash " (click)="navigate()">
               <span class="counter">2</span>
               <p>لم يتم التاجير بعد</p>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
