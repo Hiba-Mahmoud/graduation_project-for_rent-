@@ -7,3 +7,18 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.text{
+  text-align: center;
+  font-weight:600;
+  font-size:1.5em;
+  color:#FE6F41;
+  font-family: cairo;
+}
+.para{
+  font-size: 12px;
+  text-align: center;
+  /* line-height: 3; */
+  padding-top: 10px;
+
+
+}
