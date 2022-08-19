@@ -62,7 +62,7 @@ export class AddProperityComponent implements OnInit {
       furniture:['',[Validators.required]],
       type:['',[Validators.required]],
       governate:['',[Validators.required]],
-      address:['',[Validators.required,Validators.pattern('^[\u0621-\u064A0-9 ]+$')]],
+      address:['',[Validators.required,Validators.pattern('')]],
       file:['',[Validators.required]]
     })
       this.invalidForm=this.addproperity.status;
