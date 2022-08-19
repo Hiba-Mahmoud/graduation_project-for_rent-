@@ -14,10 +14,12 @@ export class OwnerComponent implements OnInit {
   token:any;
   pend=0;
   rentedAds=0;
+  NotRented=0;
   constructor(private localsrorage:TokenService, private route: Router,private http:HttpClient ,private owner:OwnerService) { }
   ngOnInit(): void {
     this.getallPending();
     this.  getallrented();
+    this.getallNotRented();
 
   }
   getallPending(){
@@ -26,7 +28,21 @@ export class OwnerComponent implements OnInit {
       let pending ='http://127.0.0.1:8000/api/pending_advertisement';
       this.owner.getPending(pending,header).subscribe(data=>{
         console.log(data.count)
-        // console.log(data)
+        this.pend = data.count
+
+      },error=>{
+        console.log(error)
+      })
+
+  }
+
+  getallNotRented(){
+    let header =this.getToken();
+
+      let pending ='http://127.0.0.1:8000/api/notrented_advertisement';
+      this.owner.getPending(pending,header).subscribe(data=>{
+        console.log(data.count)
+        this.NotRented = data.count;
 
       },error=>{
         console.log(error)
@@ -75,6 +91,10 @@ export class OwnerComponent implements OnInit {
   }
   rented(){
     this.route.navigate(['rented'])
+
+  }
+  payedRending(){
+    this.route.navigate(['payed-rented'])
 
   }
 }

@@ -1,0 +1,11 @@
+.noData{
+  height:50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.noData p {
+font-size: 2em;
+
+}

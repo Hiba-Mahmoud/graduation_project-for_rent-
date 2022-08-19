@@ -27,7 +27,8 @@ import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component'
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { RouterModule } from '@angular/router'
 
         HeaderComponent,
       CommentsComponent,
+      PayedproperitiesComponent,
 
 
   ],

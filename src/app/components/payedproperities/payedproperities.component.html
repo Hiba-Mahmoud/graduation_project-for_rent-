@@ -1,0 +1,63 @@
+<div class="container text-center">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput #search placeholder="search" (keyup)="findContact(search.value)" >
+  </mat-form-field>
+  <div class="row w-100" *ngIf="length>0; else noData" >
+    <div class="col-sm-12"  >
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 col-sm-12 table text-center">
+        <!-- Position Column -->
+        <ng-container matColumnDef="الاعلان">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-6  h5 table-dark  "> الاعلان </th>
+          <td mat-cell *matCellDef="let element" class="col-sm-6 ">
+            <div class="card">
+              <!-- <img src="{{}}" class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title">{{element.title}} </h5>
+                <p class="card-text">{{element.description}}</p>
+                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+              </div>
+              </div>
+
+
+
+
+          </td>
+        </ng-container>
+
+        <!-- Name Column -->
+
+
+
+
+
+        <ng-container matColumnDef="تعديل">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 text-center table-dark h5" scope="row"> تعديل </th>
+          <td mat-cell *matCellDef="let element" class="col-sm-1"> <a class="btn btn-dark send" [routerLink]='["/editproperty",element.id]'> تعديل</a> </td>
+        </ng-container>
+        <ng-container matColumnDef="حذف">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 table-dark  h5"> حذف </th>
+          <td mat-cell *matCellDef="let element">
+
+
+            <a class="btn btn-dark send" (click)="delete(element.id)"> حذف</a> </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displaycolumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displaycolumns;"></tr>
+      </table>
+    </div>
+
+
+  </div>
+  <mat-paginator  [length]="10" [pageSize]="10" [pageSizeOptions]="[10]" aria-label="select page" showFirstLastButtons>
+</mat-paginator>
+  <div>
+
+  </div>
+</div>
+<ng-template #noData>
+  <div class="noData">
+  <p>لايوجد اعلانات مؤجرة </p>
+</div>
+</ng-template>
