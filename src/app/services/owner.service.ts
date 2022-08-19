@@ -22,5 +22,5 @@ getPending(url:string,header:any):Observable<any>
 }
  getadvertismentdetails(url:string,id:any):Observable<any>
 {
-  return this.http.get(url,id)
+  return this.http.get(url+id)
 }}

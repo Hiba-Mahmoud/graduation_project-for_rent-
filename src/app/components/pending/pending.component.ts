@@ -27,32 +27,37 @@ export class PendingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let local=this.localstoage.gettokenfromLocalstorage();
-  let session=this.localstoage.getToken();
-
-  if(local){
-    console.log(local)
-    this.token =local;
-  }else if (session){
-    console.log(session)
-    this.token =session;
-
+    this.getallPending();
   }
-  const headers = new HttpHeaders({
 
-    'Authorization': `Bearer ${this.token}`
-  });
-    let pending ='http://127.0.0.1:8000/api/pending_advertisement';
-    this.owner.getPending(pending,headers).subscribe(data=>{
-      console.log(data)
-      // console.log(data)
-      this.dataSource=new MatTableDataSource(data[0]);
-      this.dataSource.paginator=this.paginator;
-      this.dataSource.sort=this.sort;
-      // console.log(this.dataSource)
-    },error=>{
-      console.log(error)
-    })
+  getallPending(){
+    let local=this.localstoage.gettokenfromLocalstorage();
+    let session=this.localstoage.getToken();
+
+    if(local){
+      console.log(local)
+      this.token =local;
+    }else if (session){
+      console.log(session)
+      this.token =session;
+
+    }
+    const headers = new HttpHeaders({
+
+      'Authorization': `Bearer ${this.token}`
+    });
+      let pending ='http://127.0.0.1:8000/api/pending_advertisement';
+      this.owner.getPending(pending,headers).subscribe(data=>{
+        console.log(data)
+        // console.log(data)
+        this.dataSource=new MatTableDataSource(data[0]);
+        this.dataSource.paginator=this.paginator;
+        this.dataSource.sort=this.sort;
+        // console.log(this.dataSource)
+      },error=>{
+        console.log(error)
+      })
+
   }
 
 
@@ -70,6 +75,7 @@ export class PendingComponent implements OnInit {
 
   }
   delete(id:any){
+    if (confirm('هل تريد مسح الاعلان؟')){
     let local=this.localstorage.gettokenfromLocalstorage();
     let session=this.localstorage.getToken();
 
@@ -91,6 +97,8 @@ export class PendingComponent implements OnInit {
     (error)=>{
       console.log(error)
     })
+  }
+    this.getallPending();
 
   }
 

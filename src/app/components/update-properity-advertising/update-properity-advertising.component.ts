@@ -41,6 +41,31 @@ ngOnInit(): void {
     console.log(error)
 
   });
+  this.owner.getadvertismentdetails('http://127.0.0.1:8000/api/edit/advertisement/',this.id).subscribe(res=>{
+    this.advertisment=res.advertisement[0]
+    console.log(this.advertisment)
+    this.addproperity.patchValue({
+      title: this.advertisment.title,
+      description: this.advertisment.description,
+      price:this.advertisment.price,
+      level:this.advertisment.level,
+      bedsnum:this.advertisment.beds_num,
+      bedroomnum:this.advertisment.bedroom_num,
+      bathroomnum:this.advertisment.bathroom_num,
+      area:this.advertisment.area,
+      furniture:this.advertisment.furniture,
+      type:this.advertisment.type,
+      governate:this.advertisment.city_id,
+      address:this.advertisment.address,
+      status:this.advertisment.status,
+      file:this.advertisment.advertisement_image,
+    })
+
+    console.log(this.advertisment.advertisement_image+'inside if')
+  },
+  error=>{
+    console.log(error)
+  })
     //validation
     this.addproperity = this.formb.group({
       title:['',[Validators.required,Validators.minLength(10),Validators.maxLength(200),Validators.pattern('')]],
@@ -56,60 +81,18 @@ ngOnInit(): void {
       status:['',[Validators.required]],
       governate:['',[Validators.required]],
       address:['',[Validators.required,Validators.pattern('^[\u0621-\u064A0-9 ]+$')]],
-      file:['',[Validators.required]]
+      file:['']
     })
+    let x=this.advertisment.advertisement_image;
+    if(x.length != 0){
+
+      console.log('hello')
+    }
+    this.data.append('image_name[]',this.advertisment.advertisement_image)
     // advertisment data
-    console.log(this.id)
-    this.owner.getadvertismentdetails('http://127.0.0.1:8000/api/edit/advertisement/',this.id).subscribe(res=>{
-      this.advertisment=res.advertisement[0]
-      console.log(this.advertisment)
-      this.addproperity.patchValue({
-        title: this.advertisment.title,
-        description: this.advertisment.description,
-        price:this.advertisment.price,
-        level:this.advertisment.level,
-        bedroomnum:this.advertisment.bedroom_num,
-        bathroomnum:this.advertisment.bathroom_num,
-        area:this.advertisment.area,
-        furniture:this.advertisment.furniture,
-        type:this.advertisment.type,
-        governate:this.advertisment.city_id,
-        address:this.advertisment.address,
-        file:this.advertisment.advertisement_image,
-      })
-
-    },
-    error=>{
-      console.log(error)
-    })
-
-    // this.http.get('http://127.0.0.1:8000/api/show/advertisement/2').subscribe(res=>{
-    //   console.log(res);
-    //   this.advertisment=res.advertisement[0]
-    // this.addproperity.patchValue({
-    //         title: this.advertisment.title,
-    //         description: this.advertisment.description,
-    //         price:this.advertisment.price,
-    //         level:this.advertisment.level,
-    //         bedroomnum:this.advertisment.bedroom_num,
-    //         bathroomnum:this.advertisment.bathroom_num,
-    //         area:this.advertisment.area,
-    //         furniture:this.advertisment.furniture,
-    //         type:this.advertisment.type,
-    //         governate:this.advertisment.city_id,
-    //         address:this.advertisment.address,
-    //         file:this.advertisment.advertisement_image,
-    //       })
-    // },
-    // error=>{
-    //   console.log(error)
-    // })
-
 
   }
 
-  //images
-  // data=new FormData();
 
   onFileChange(event:any){
 
@@ -121,26 +104,18 @@ if (event.target.files && event.target.files[0]) {
   for (let i = 0; i < filesAmount; i++) {
     let imagename=event.target.files[i];
     console.log(imagename);
+    if(imagename){
     this.data.append('image_name[]',imagename,imagename.name)
-    // this.image_name.push(imagename);
+  }
     var reader = new FileReader();
-
-          reader.onload = (event:any) => {
-            // console.log(event.target.files +'fillllle');
-            //  this.image_name.push(event.target.result);
-
-            //  this.image_name.patchValue({
-            //     fileSource: this.images
-            //  });
-          }
-
-          // reader.readAsArrayBuffer(event.target.files[i]);
+  }
+  if(this.data.get('image_name[]')){
   }
 }
-// console.log('array'+this.image_name)
 
 
 }
+
 
   //send data
   onsubmit(){
