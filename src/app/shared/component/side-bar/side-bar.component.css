@@ -14,8 +14,11 @@ mat-sidenav {
     border-radius: 10px;
     padding: 16px;
     text-align: center;
-    
-  }
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
   
   .content {
     border-radius: 10px;
@@ -24,7 +27,10 @@ mat-sidenav {
     padding: 2px;
     overflow-x: hidden;
     background-color: white;
-
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
   
   
@@ -80,4 +86,11 @@ mat-sidenav {
   
     color: #131212;
     font-weight: bold;
+  }
+
+  mat-icon{
+    margin-top: 8px;
+    font-weight: normal;
+    font-size: 20px;
+    color: #FE6F41;
   }

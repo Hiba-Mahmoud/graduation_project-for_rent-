@@ -16,6 +16,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { AdverRequestsComponent } from './component/adver-requests/adver-requests.component';
 import { TokenInterceptorInterceptor } from './interceptor/token-interceptor.interceptor';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BlockListComponent } from './component/block-list/block-list.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AddAdminComponent,
     AdverRequestsComponent,
     AdminsComponent,
+    BlockListComponent,
 
   ],
 
@@ -51,7 +53,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AddAdminComponent,
     AdverRequestsComponent,
     AdminsComponent,
-
+    BlockListComponent,
 
 
 

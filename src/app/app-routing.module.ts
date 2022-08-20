@@ -31,6 +31,7 @@ import { PreventregisterandloginGuard } from './guard/preventregisterandlogin.gu
 import { CodeVerifyComponent } from './auth/component/code-verify/code-verify.component';
 import { MailwithcodeComponent } from './auth/component/mailwithcode/mailwithcode.component';
 import { ResetPasswordComponent } from './auth/component/reset-password/reset-password.component';
+import { BlockListComponent } from './admin/component/block-list/block-list.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -42,11 +43,11 @@ const routes: Routes = [
     path: "home", component: HomeComponent
   },
   {
-    path: "login", component: LoginComponent,canActivate:[PreventregisterandloginGuard]
+    path: "login", component: LoginComponent
   },
   { path:"mailverifiy", component:MailConfirmComponent,canActivate:[PreventregisterandloginGuard]},
   {
-    path: "register", component: RegisterComponent,canActivate:[PreventregisterandloginGuard]
+    path: "register", component: RegisterComponent
   },
   {
     path: "details/:id", component: CartDetailsComponent
@@ -117,6 +118,7 @@ const routes: Routes = [
   {path: 'allOwners', component: OwnersComponent,canActivate:[AuthGuard]},
   {path: 'requests', component:AdverRequestsComponent,canActivate:[AuthGuard]},
   {path: 'addAdmin', component: AddAdminComponent,canActivate:[AuthGuard]},
+  {path: 'blockList', component: BlockListComponent,canActivate:[AuthGuard]},
 
  // end admin routes
   // {

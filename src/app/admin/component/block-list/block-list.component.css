@@ -1,0 +1,27 @@
+
+.example-full-width {
+    width: 50%;
+  }
+   th.mat-header-cell{
+    border: none;
+  } 
+  th.mat-sort-header-container {
+    justify-content: center !important;
+    align-items: center;
+  }
+  
+  table{
+    width: 100%;
+    overflow-x: auto;
+    table-layout:auto;
+  }
+  td.mat-cell{
+    padding: 4px;
+  }
+  
+  button{
+    background-color:#FE6F41;
+  
+  }
+
+  

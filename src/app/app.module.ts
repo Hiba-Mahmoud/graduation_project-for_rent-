@@ -23,11 +23,11 @@ import { AdminModule } from './admin/admin.module';
 import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
-import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component'
 
 @NgModule({
   declarations: [
@@ -44,8 +44,8 @@ import { RouterModule } from '@angular/router'
          NotRentedYetComponent,
          // ListcontactsComponent,
 
-        HeaderComponent,
       CommentsComponent,
+         NavbarComponent,
 
 
   ],

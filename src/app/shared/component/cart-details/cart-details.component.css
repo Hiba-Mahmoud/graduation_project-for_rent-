@@ -1,9 +1,13 @@
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
-
+ .owner{
+  max-width: 100%;
+  overflow-x: hidden;
+}
 /* Carousel base class */
 .carousel {
     margin-bottom: 4rem;
+    width: 90vw;
   }
   /* Since positioning the image, we need to help out the caption */
   
@@ -47,7 +51,10 @@
       /* creates padding around scroll thumb */  ;
 
 }
-
+.desc{
+  word-wrap: break-word;
+  white-space: initial;
+}
 
 
 .card-body h3 ,p{
@@ -55,9 +62,10 @@
 
     overflow: hidden;
 }
-div {
+.suggestion {
   white-space: nowrap;
   overflow: hidden;
+  
 }
 .suggestion img{
   object-position: center;

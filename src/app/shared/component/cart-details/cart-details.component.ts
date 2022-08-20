@@ -16,6 +16,7 @@ export class CartDetailsComponent implements OnInit {
   suggestion:any;
   suggesObgImage:any;
   loading:boolean=true;
+  furniture:any;
   constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router) {
     this.id=this.route.snapshot.paramMap.get("id")
    }

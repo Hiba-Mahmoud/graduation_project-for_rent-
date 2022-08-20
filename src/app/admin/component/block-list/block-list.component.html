@@ -1,10 +1,11 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Find Admin</mat-label>
-    <input matInput placeholder="Enter Name"  #name (keyup)="findByName(name)">
-  </mat-form-field>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>بحث</mat-label>
+      <input matInput placeholder="ادخل الاسم"  #name (keyup)="findByName(name)">
+    </mat-form-field>
 </form>
-    <div class="mat-elevation mt-2  m-auto table-responsive" *ngIf="length>0 else alter">
+    <div class="mat-elevation mt-2  m-auto table-responsive" *ngIf="length>0  else alter">
         <table mat-table [dataSource]="dataSource"  matSort  class="m-auto border border-5  table table-bordered ">
       
           <!-- Position Column -->
@@ -43,7 +44,12 @@
             <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
           </ng-container>
 
-         
+          <!-- block Column -->
+          <ng-container matColumnDef="block">
+            <th mat-header-cell *matHeaderCellDef> الغاء الحظر </th>
+            <td mat-cell *matCellDef="let element">  <button  type="button" (click)="block(element.id)" class="btn  m-1"><span class="material-icons">remove_circle</span></button> </td>
+
+          </ng-container>
 
            <!-- delete Column -->
           <ng-container matColumnDef="delete">
@@ -82,5 +88,5 @@
 
       
 <ng-template #alter >
- <h1 class="bg-light text-center">لا يوجد مستأجرين حاليا</h1>
+ <h1 class="bg-light text-center">لا يوجد محظورين حاليا</h1>
 </ng-template>
