@@ -5,7 +5,12 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { NotificationService } from '../srvices/notification.service';
 import Pusher from 'pusher-js';
+
 import { getNumberOfCurrencyDigits } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
+
+
+
 
 
 @Component({
@@ -18,12 +23,12 @@ export class HeaderComponent implements OnInit {
   $dataaa:any;
   
   totalNumber:any=0;
+  id:string;
+  toaster_message:any;
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
-  constructor(private observer: BreakpointObserver, private router: Router , private removeToken:TokenService ,private notification_services:NotificationService) { }
-
-
-
+  constructor(private toastr: ToastrService,private localstorage:TokenService,private observer: BreakpointObserver, private router: Router , private removeToken:TokenService ,private notification_services:NotificationService ) { }
+ 
     async ngOnInit(){
       Pusher.logToConsole = true;
       var pusher = new Pusher('dd3cfafeb7c0b16de8e9', {
@@ -32,9 +37,12 @@ export class HeaderComponent implements OnInit {
       // this.get_notification();
       this.getcountofnot ();
       this.zero();
+     
+     
+      
 
       
-    
+
       
 
       //add advertisement notificaation
@@ -51,7 +59,7 @@ export class HeaderComponent implements OnInit {
 
       //add comment notification
       var channel1 = pusher.subscribe('NewChannel');
-      channel1.bind("CommentNotification", function(data) {
+      await channel1.bind("CommentNotification", function(data) {
        
         this.$dataaa = JSON.stringify(data)
         this.totalNumber = this.totalNumber + 1 ;
@@ -59,28 +67,34 @@ export class HeaderComponent implements OnInit {
         console.log( this.$dataaa);
       });
       //add admin approve notification
-      var channel2 = pusher.subscribe('NewChannel2');
-      channel2.bind("ConfirmOwnerRequestFromAdmin", function(data) {
-        this.$dataaa = JSON.stringify(data)
-        this.totalNumber = this.totalNumber + 1 ;
-        console.log( data);
-        console.log( data.message);
-        console.log( data.time);
-        console.log( data.id);
+      const channel2 = await pusher.subscribe('NewChannel2');
+      await channel2.bind("ConfirmOwnerRequestFromAdmin", (data) =>{
+
+        
+
+        // this.$dataaa = JSON.stringify(data)
+        // this.user_id = data.user_id;
+        //  this.toaster_message = data.message;
+         this.toastr.success( data.message, "لديك اشعار جديد");
+
+        // console.log( data);
+        // console.log( data.message);
+        // console.log( data.time);
+        // console.log( data.user_id);
+        // console.log(this.id);
+       
+        // if( (data.user_id) == (data.user_id)){this.showToasterInfo();}
 
 
 
-        console.log( this.$dataaa);
-        console.log( this.$dataaa.message);
-        console.log( this.$dataaa[0]);
-
+  
 
 
        
 
        
       });
-      
+     
   
     }
 
@@ -119,11 +133,17 @@ export class HeaderComponent implements OnInit {
         });
       
   }
+  //make bell count zero 
   zero(){
     this.totalNumber= 0;
   }
+  //info display of reat time notification 
+ 
 
-
+  toast(){
+    this.toastr.success(this.toaster_message ,"aaa");
+    }
+    
 
 
 

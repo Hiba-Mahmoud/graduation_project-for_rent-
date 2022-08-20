@@ -28,7 +28,13 @@ import { CommentsComponent } from './comments/comments.component';
 import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+import { ToastrModule } from 'ngx-toastr';
+
+
+
 
 @NgModule({
   declarations: [
@@ -73,6 +79,8 @@ import { RouterModule } from '@angular/router'
     NgxPaginationModule,
     MatProgressSpinnerModule,
     ModalModule.forRoot(),
+    CommonModule,
+    ToastrModule.forRoot(), 
   ],
   providers: [],
   bootstrap: [AppComponent]

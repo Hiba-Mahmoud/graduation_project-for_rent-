@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TokenService } from 'src/app/auth/service/token.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 
 
@@ -11,7 +13,16 @@ import { TokenService } from 'src/app/auth/service/token.service';
 export class NotificationService {
   token:string;
 
-  constructor(private http: HttpClient, private localstorage:TokenService) {}
+  constructor(private http: HttpClient, private localstorage:TokenService , private toastr: ToastrService) {}
+  //toaster pusher 
+  toastrSuccessOnTap(title:string,content:string){
+    this.toastr.success(title, content);
+  }
+  showSuccess(title:string,content:string) {
+    this.toastr.success(title, content);
+  }
+  
+  //end toaster
   
   get_All_notification():Observable<any>
   {
