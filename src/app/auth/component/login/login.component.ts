@@ -65,6 +65,8 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('role',response.user.type);
           localStorage.setItem('image',response.user.image);
           localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
+
 
           this.router.navigate(['/owner']);
 
@@ -72,6 +74,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('role',response.user.type);
           localStorage.setItem('image',response.user.image);
           localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
 
           this.router.navigate(['/']);
 
@@ -79,6 +82,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('role',response.user.type);
           localStorage.setItem('image',response.user.image);
           localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
 
           this.router.navigate(['/adminhome']);
 
@@ -86,6 +90,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('role',response.user.type);
           localStorage.setItem('image',response.user.image);
           localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
 
           this.router.navigate(['/adminhome']);
 

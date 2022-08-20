@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TokenService } from 'src/app/auth/service/token.service';
+import { AuthGuard } from 'src/app/guard/auth.guard';
 import { AdvertismentService } from '../../services/advertisment.service';
 
 @Component({
@@ -20,18 +21,22 @@ export class CartDetailsComponent implements OnInit {
   suggestion:any;
   suggesObgImage:any;
   loading:boolean=true;
+  isLogin!:boolean;
 
   furniture:any;
  
   success: boolean = false;
   failure:boolean = false;
 
-  constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient,private localstorage:TokenService) {
+  constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient
+    ,private _AuthGuard:AuthGuard,private localstorage:TokenService) {
     this.id=this.route.snapshot.paramMap.get("id")
     
    }
 
   ngOnInit(): void {
+    this.checkLogin();
+
     this.getAdvertismentById();
     this.stripePaymentGateway();
 
@@ -120,5 +125,11 @@ export class CartDetailsComponent implements OnInit {
 
       window.document.body.appendChild(scr);
     }
+  }
+
+  checkLogin(){
+    this._AuthGuard.isLogin.subscribe((res:any)=>{
+      this.isLogin = res
+    })
   }
 }

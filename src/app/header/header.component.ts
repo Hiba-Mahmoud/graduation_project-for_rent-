@@ -4,17 +4,18 @@ import { TokenService } from '../auth/service/token.service';
 import { AuthGuard } from '../guard/auth.guard';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class HeaderComponent implements OnInit {
+
   isLogin!:boolean;
 
 
   name!: string;
   role!: string;
-  image!: string;
+  id!: any;
 
   isAdmin!:boolean;
   isRenter!:boolean;
@@ -27,7 +28,7 @@ export class NavbarComponent implements OnInit {
 ngOnInit(): void {
     this.checkLogin();
     this.name = localStorage.getItem('name');
-    this.image = localStorage.getItem('image');
+    this.id = localStorage.getItem('id');
     this.role = localStorage.getItem('role');
 
     if(this.role == 'admin'){

@@ -60,7 +60,6 @@
       <div class="col-sm text-center">
         <img [src]="data.user.image" class="rounded-circle  img-fluid" alt="...">
 
-<<<<<<< HEAD
       </div>
       <div class="col-sm">
         <mat-list role="list " class="mt-4">
@@ -84,18 +83,16 @@
   
         </mat-list>
         <div class="d-grid gap-5 col-6 mx-auto mt-4 mb-2">
-          <button class="btn payment" type="button">للدفع من خلال الموقع</button>
+          <button *ngIf="!isLogin"  class="btn payment" routerLink="/login" type="button">للدفع من خلال الموقع</button>
           
-          <div class="d-grid gap-5 col-6 mx-auto mt-4 mb-2">
-            <button class="btn payment" type="button" (click)="makePayment(data.price,data.id,data.user_id)">للدفع من خلال الموقع</button>
-          </div>
+           <button *ngIf="isLogin" class="btn payment" type="button" (click)="makePayment(data.price,data.id,data.user_id)">للدفع من خلال الموقع</button>
         </div>
 
       </div>
     </div>
   </div>
     <div class="mt-5 mx-2" id="comments">
-      <app-comments [adverId]="adverId" [reviews]="review"></app-comments>
+      <app-comments [adverId]="adverId" [reviews]="review"  [condition]="isLogin"></app-comments>
     
     </div>
   <div class="container suggestion  my-5" *ngIf=" suggestion.length>0">
