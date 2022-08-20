@@ -68,7 +68,7 @@ export class CartDetailsComponent implements OnInit {
       locale: 'auto',
       token: function (stripeToken: any) {
         console.log(stripeToken.id);
-       http.post('http://localhost:8000/api/paymentmethod',{
+       http.post('http://127.0.0.1:8000/api/paymentmethod',{
         owner_id: owner,
         adver_id:advertisement,
         price:amount,
