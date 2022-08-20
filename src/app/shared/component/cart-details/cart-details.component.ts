@@ -62,6 +62,7 @@ export class CartDetailsComponent implements OnInit {
  
      'Authorization': `Bearer ${this.token}`
    });
+   console.log(headers);
     const strikeCheckout = (<any>window).StripeCheckout.configure({
       
       key: 'pk_test_51LX8ftH4ooOXAWsbNANhQAaiF9nzIHfUiThsjYEnPP4WQwOW5ylzc1NtWK1qDapTutl291B1FEyjgXDxdyxAsLZh00dL6UnlqH',
