@@ -10,6 +10,8 @@
 </div>
 
 <div class="container mt-5">
+  <div class="alert alert-danger text-center" *ngIf="isvalid">برجاء ملئ البيانات اولا</div>
+
   <form dir="rtl" class="w-100" [formGroup]="addproperity" >
     <div class="mb-3">
       <label for="title"  class="form-label">اسم الاعلان</label>
@@ -44,6 +46,7 @@
               >الاسم الاول يجب ان يكون عربى</strong
             >
           </div>
+          <div class="alert alert-danger" *ngIf="titleError">{{titleError}}</div>
     </div>
 
 
@@ -226,16 +229,13 @@
 
     </div>
 
-    <div class="row mt-3 mb-4">
-      <div class="col-ms-12 col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title"></h4>
-            <div class="form-outline mb-4">
+    <div class="row mt-3 mb-3">
+
+            <div class="form-outline mb-4 col-ms-12 col-md-6">
               <label class="form-label" for="gender" id="gender">مفروش</label>
               <select
                 formControlName="furniture"
-                class="select w-100"
+                class="select w-100 form-control"
                 style="margin-left: 80px; padding-right: 95px"
               >
               <option disabled selected value>مفروش</option>
@@ -244,7 +244,7 @@
               </select>
               <div
                 *ngIf="
-                addproperity.controls['furniture'].errors
+                addproperity.controls['furniture'].errors&&addproperity.controls['furniture'].touched
                   "
               >
                 <small
@@ -258,19 +258,14 @@
                 >
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
 
-      <div class="col-ms-12 col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <div class="form-outline mb-4">
+
+            <div class="form-outline mb-4 col-ms-12 col-md-6">
               <label class="form-label" for="gender" id="gender">النوع</label>
               <select
                 formControlName="type"
-                class="select w-100"
+                class="select w-100 form-control"
                 style="margin-left: 80px; padding-right: 95px"
               >
               <option disabled selected value>النوع</option>
@@ -280,7 +275,7 @@
               </select>
               <div
                 *ngIf="
-                addproperity.controls['type'].errors
+                addproperity.controls['type'].errors&&addproperity.controls['type'].touched
                   "
               >
                 <small
@@ -295,17 +290,15 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+
 
     <div class="row mb-3">
-      <div class="col-sm-12 col-md-4">
-        <div class="form-outline mb-4">
+      <div class="col-sm-12 col-md-4 mt-2">
+
           <label class="form-label" for="gender" id="gender">المحافظة</label>
           <select
             formControlName="governate"
-            class="select w-100"
+            class="select  form-control"
             style="margin-left: 80px; padding-right: 95px"
           >
           <option disabled selected value>المحافظة</option>
@@ -313,7 +306,8 @@
           </select>
           <div
             *ngIf="
-            addproperity.controls['governate'].errors
+            addproperity.controls['governate'].errors&&
+            addproperity.controls['governate'].touched
               "
           >
             <small
@@ -327,7 +321,7 @@
             الحقل مطلوب</small
             >
           </div>
-        </div>
+
       </div>
       <div class="col-sm-12 col-md-8">
         <label for="address" class="form-label">العنوان بالتفصيل</label>
@@ -355,6 +349,7 @@
               >الاسم الاول يجب ان يكون عربى</strong
             >
           </div>
+
       </div>
 
     </div>
@@ -376,7 +371,7 @@
             addproperity.controls['file'].touched">
             <strong
               *ngIf="addproperity.controls['file'].errors['required']"
-              >برجاء ادخال عنوان مناسب</strong>
+              >برجاء ادخال  صور مناسب</strong>
           </div>
   </div>
 <!-- {{image_name.value|json}} -->

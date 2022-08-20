@@ -9,7 +9,7 @@
         name="title"
         id="title"
         aria-describedby="passwordHelp"
-        value="{{advertisment.title}}"
+
       />
       <div
           class="alert alert-danger"
@@ -46,7 +46,7 @@
         name="description"
         id="description"
         rows="3"
-        value="{{advertisment.description}}"
+
       ></textarea>
       <div
           class="alert alert-danger"
@@ -76,7 +76,7 @@
     <div class="row mb-3">
       <div class="col-sm-12 col-md-4">
         <label for="price" class="form-label">السعر</label>
-        <input type="number" name="price"  formControlName="price" value="{{advertisment.price}}" class="form-control" id="price" />
+        <input type="number" name="price"  formControlName="price"  class="form-control" id="price" />
         <div
         class="alert alert-danger"
           role="alert"
@@ -218,15 +218,13 @@
     </div>
 
     <div class="row mt-3 mb-4">
-      <div class="col-ms-12 col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title"></h4>
-            <div class="form-outline mb-4">
+      <div class="col-ms-12 col-md-4">
+
+
               <label class="form-label" for="gender" id="gender">مفروش</label>
               <select
                 formControlName="furniture"
-                class="select w-100"
+                class="select w-100 form-control"
                 style="margin-left: 80px; padding-right: 95px"
               >
               <option disabled selected value>مفروش</option>
@@ -248,20 +246,17 @@
                 الحقل مطلوب</small
                 >
               </div>
-            </div>
-          </div>
-        </div>
+
       </div>
 
 
-      <div class="col-ms-12 col-md-6">
-        <div class="card">
-          <div class="card-body">
+      <div class="col-ms-12 col-md-4">
+
             <div class="form-outline mb-4">
               <label class="form-label" for="gender" id="gender">النوع</label>
               <select
                 formControlName="type"
-                class="select w-100"
+                class="select w-100 form-control"
                 style="margin-left: 80px; padding-right: 95px"
               >
               <option disabled selected value>النوع</option>
@@ -285,23 +280,22 @@
                 >
               </div>
             </div>
-          </div>
-        </div>
+
       </div>
-      <div class="col-ms-12 col-md-6">
-        <div class="card">
-          <div class="card-body">
+
+
+      <div class="col-ms-12 col-md-4">
+
             <div class="form-outline mb-4">
               <label class="form-label" for="status" id="status">الحاله</label>
               <select
                 formControlName="status"
-                class="select w-100"
+                class="select w-100 form-control"
                 style="margin-left: 80px; padding-right: 95px"
               >
               <option disabled selected value>الحاله</option>
                 <option value="not rented">غير مؤجرة </option>
                 <option value="rented">مؤجرة</option>
-                <!-- <option value="room">غرفة</option> -->
               </select>
               <div
                 *ngIf="
@@ -320,22 +314,20 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </div>
-    <!-- "Method Illuminate\Validation\Validator::validateMime does not exist." -->
 
     <div class="row mb-3">
-      <div class="col-sm-12 col-md-4">
-        <div class="form-outline mb-4">
+      <div class="col-sm-12 col-md-4 mt-2" >
+
           <label class="form-label" for="gender" id="gender">المحافظة</label>
           <select
             formControlName="governate"
-            class="select w-100"
+            class="select w-100 form-control"
             style="margin-left: 80px; padding-right: 95px"
           >
-          <option disabled selected value>المحافظة</option>
-            <option *ngFor="let city of cities" value="{{city.id}}">{{city.name}}</option>
+          <option disabled selected >المحافظة</option>
+          <option *ngFor="let city of cities" value="{{city.id}}">{{city.name}}</option>
+
           </select>
           <div
             *ngIf="
@@ -353,8 +345,9 @@
             الحقل مطلوب</small
             >
           </div>
-        </div>
       </div>
+
+
       <div class="col-sm-12 col-md-8">
         <label for="address" class="form-label">العنوان بالتفصيل</label>
         <input type="text" name="address"  formControlName="address" class="form-control" id="address" />
@@ -384,7 +377,7 @@
       </div>
 
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="file">File</label>
       <input
 
@@ -407,83 +400,119 @@
             <strong
               *ngIf="imageerror[0]"
               >برجاء ادخال صور مناسب</strong>
-  </div>
-<!-- {{image_name.value|json}} -->
-  <!-- <img *ngFor='let url of image_name'  src="{{addproperity.value.file}}" height="150" width="200px" style="margin: 3px;"> <br/> -->
-    <!-- <div class="row" formGroupName="Image">
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="z-depth-1-half mb-4">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-              class="img-fluid w-100"
-              alt="example placeholder"
-            />
-          </div>
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-              <span>Choose file</span>
-              <input type="file" formControlName="imageone"  name="imageone" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="z-depth-1-half mb-4">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-              class="img-fluid w-100"
-              alt="example placeholder"
-            />
-          </div>
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-              <span>اختر صورة </span>
-              <input type="file"  name="imagtwo" formControlName="imagtwo"/>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="z-depth-1-half mb-4">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-              class="img-fluid w-100"
-              alt="example placeholder"
-            />
-          </div>
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-              <span>اختر صورة</span>
-              <input type="file" name="imagethree"  formControlName="imagethree"/>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="z-depth-1-half mb-4">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-              class="img-fluid w-100"
-              alt="example placeholder"
-            />
-          </div>
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-              <span>اختر صورة</span>
-              <input type="file" name="imagefour" formControlName="imagefour"/>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+  </div> -->
 
-    <!-- <p>{{images.value |json}}</p> -->
+  <!-- four images -->
+
+
+
+
     <div class="text-center mt-5">
       <input class="send" type="submit" value="submit" (click)="onsubmit()"/>
+    </div>
+  </form>
+
+
+
+
+
+  <form action="" dir="rtl" class="w-100">
+
+    <div class="row" [formGroup]="images" >
+      <div class="col-sm-12 col-md-3" *ngFor="let image of imageOne ">
+        <div class="file-field">
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+          <label for="image"><img
+            src={{image.image_name}}
+            class="img-fluid w-100"
+            alt="example placeholder"
+            style="width: 100px;height:150px"
+            /></label>
+            <input type="file" formControlName="imageone"   id="image" name="imageone" (change)="onFileChange($event , image.id)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-sm-12 col-md-3">
+        <div class="file-field">
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+          <label for="image"><img
+            src={{imagetwo}}
+            class="img-fluid w-100"
+            alt="example placeholder"
+            /></label>
+            <input type="file" formControlName="imageone"   id="image" name="imageone" (change)="onFileChange($event)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-3">
+        <div class="file-field">
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+          <label for="image"><img
+            src={{imagethree}}
+            class="img-fluid w-100"
+            alt="example placeholder"
+            /></label>
+            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-3">
+        <div class="file-field">
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+          <label for="image"><img
+            src={{imageFour}}
+            class="img-fluid w-100"
+            alt="example placeholder"
+            /></label>
+            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-3" *ngIf="imageFive">
+        <div class="file-field">
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+          <label for="image"><img
+            src={{imageFive}}
+            class="img-fluid w-100"
+            alt="example placeholder"
+            /></label>
+            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </form>
 </div>

@@ -31,6 +31,10 @@ export class AddProperityComponent implements OnInit {
   userData:any;
   invalidForm:any;
   validation:any;
+  isvalid =false;
+  errormsg:any;
+  titleError:any;
+
   constructor(private localstorage:TokenService,private router:Router,private http:HttpClient, private formb:FormBuilder,private owner:OwnerService) {
 
 
@@ -109,7 +113,13 @@ console.log('array'+this.image_name)
 }
 
 onsubmit(){
-  console.log(typeof(this.addproperity.value.price))
+  if(this.addproperity.status === "INVALID"){
+    console.log('hello')
+    this.isvalid = true;
+    console.log(this.isvalid)
+  }else{
+
+    console.log(typeof(this.addproperity.value.price))
   this.data.append('title',this.addproperity.value.title) ;
   this.data.append('description',this.addproperity.value.description) ;
   this.data.append('address',this.addproperity.value.address) ;
@@ -123,18 +133,6 @@ onsubmit(){
   this.data.append('area',this.addproperity.value.area) ;
   this.data.append('city_id',this.addproperity.value.governate) ;
 
-  // this.addata.title= this.addproperity.value.title;
-  // this.addata.description= this.addproperity.value.description;
-  // this.addata.address= this.addproperity.value.address;
-  // this.addata.price= this.addproperity.value.price;
-  // this.addata.bedroom_num= this.addproperity.value.bedroomnum;
-  // this.addata.bathroom_num= this.addproperity.value.bathroomnum;
-  // this.addata.beds_num= this.addproperity.value.bedsnum;
-  // this.addata.level= this.addproperity.value.level;
-  // this.addata.furniture= this.addproperity.value.furniture;
-  // this.addata.type= this.addproperity.value.type;
-  // this.addata.area= this.addproperity.value.area;
-  // this.addata.city_id= this.addproperity.value.governate;
   this.addata.image_name= this.image_name;
   console.log(this.addata)
   let local=this.localstorage.gettokenfromLocalstorage();
@@ -146,20 +144,27 @@ onsubmit(){
   }else if (session){
     console.log(session)
     this.token =session;
-
   }
   const headers = new HttpHeaders({
-
     'Authorization': `Bearer ${this.token}`
   });
+
   this.http.post('http://127.0.0.1:8000/api/advertisement',this.data,{headers:headers}).subscribe((response:any)=>{
     console.log(response)
     this.router.navigateByUrl('/owner')
   },(error:HttpErrorResponse)=>{
     console.log(error)
+    this.errormsg = error.error.error
+    this.titleError=this.errormsg.title[0]
+    console.log(this.errormsg)
+    console.log(this.titleError)
 
   })
 
 }
+
+  }
 }
+
+
 

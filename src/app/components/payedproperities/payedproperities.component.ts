@@ -50,8 +50,8 @@ export class PayedproperitiesComponent implements OnInit {
     });
       let pending ='http://127.0.0.1:8000/api/owner/advertisementrented';
       this.owner.getPending(pending,headers).subscribe(data=>{
-        console.log(data)
-        // console.log(data)
+        console.log(data.count)
+        this.length = data.count;
         this.dataSource=new MatTableDataSource(data[0]);
         // this.length= data;
         this.dataSource.paginator=this.paginator;
