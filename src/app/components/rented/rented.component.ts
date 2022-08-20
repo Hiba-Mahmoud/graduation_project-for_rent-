@@ -15,6 +15,7 @@ import { OwnerService } from 'src/app/services/owner.service';
 })
 export class RentedComponent implements OnInit {
   token:any;
+  length=0;
 
   dataSource=new MatTableDataSource<Icontacts>;
   @ViewChild(MatPaginator)
@@ -49,6 +50,8 @@ export class RentedComponent implements OnInit {
       let pending ='http://127.0.0.1:8000/api/rented_advertisement';
       this.owner.getPending(pending,headers).subscribe(data=>{
         console.log(data)
+        this.length=data[0].length
+
         // console.log(data)
         this.dataSource=new MatTableDataSource(data[0]);
         this.dataSource.paginator=this.paginator;

@@ -1,61 +1,9 @@
-<!--
-
-  Header
-<header class=" text-center  mb-4 ">
-  <div class="container background py-5 mt-5">
-    <h1 class="fw-light text-white">تسجيل الدخول</h1>
-  </div>
-</header>
-
-Page Content
-<div class="container">
-  <div class="row justify-content-center">
-    Team Member 1
-    <div class="col-sm-4 mb-4">
-
-<<<<<<< HEAD
-    <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-=======
-    <form dir="rtl">
-
->>>>>>> 9751dead1e4152e50868e2590c4e99b2c55b9270
-      <h1 class="h3 mb-3 fw-normal">من فضلك قم بادخال بياناتك </h1>
-
-      <div class="form-floating hov">
-        <input type="email" class="form-control"formControlName="email" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">البريد الالكترونى</label>
-      </div>
-      <div class="form-floating hov">
-        <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">كلمة المرور</label>
-      </div>
-
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me" class="hov"> تذكرنى
-          تسجيل ف الكوكي
-        </label>
-      </div>
-      <button class="send" type="submit" [disabled]="!loginForm.valid">تسجيل الدخول</button>
-      <br> <br>
-      <div class="form-floating ">
-        <a href="#"  class="hov2">هل نسيت كلمة المرور؟</a>
-        <br>
-        <a routerLink="/register" class="hov2">ليس لدى حساب</a>
-      </div>
-    </form>
-
-    </div>
-    </div>
-    </div>
- -->
 
 
 
 <section class="h-100 gradient-form">
   <div class="container py-5 h-100">
-   
+
     <div class="row  h-100">
       <div class="col-xl-10">
         <section class="card rounded-3 text-black">
@@ -118,7 +66,7 @@ Page Content
   <label>تذكرنى</label>
   {{loginForm.value.rememberMe}}
 </div>                  <div class="pt-1 mb-4">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 form-control" type="submit"
                       (click)="login()">تسجيل دخول</button>
                   </div>
                   <p class="mb-5 pb-lg-2" style="color: #393f81;">ليس لدى حساب؟ <a routerLink="/register"
@@ -134,5 +82,5 @@ Page Content
       </div>
     </div>
   </div>
-  {{loginForm.value|json}}
+  <!-- {{loginForm.value|json}} -->
 </section>
