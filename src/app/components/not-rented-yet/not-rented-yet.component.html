@@ -1,41 +1,52 @@
-<div class="container">
+<div class="container text-center">
   <mat-form-field>
     <mat-label>Filter</mat-label>
     <input matInput #search placeholder="search" (keyup)="findContact(search.value)" >
   </mat-form-field>
-  <div>
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-      <!-- Position Column -->
-      <ng-container matColumnDef="userId">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header=> id. </th>
-        <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
-      </ng-container>
+  <div class="row w-100">
+    <div class="col-sm-12">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 col-sm-12 table text-center">
+        <!-- Position Column -->
+        <ng-container matColumnDef="الاعلان">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-6  h5 table-dark  "> الاعلان </th>
+          <td mat-cell *matCellDef="let element" class="col-sm-6 ">
+            <div class="card">
+              <!-- <img src="{{}}" class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title">{{element.title}} </h5>
+                <p class="card-text">{{element.description}}</p>
+                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+              </div>
+              </div>
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> userId </th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-      </ng-container>
 
-      <!-- Weight Column -->
-      <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> title </th>
-        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-      </ng-container>
 
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="body">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> body </th>
-        <td mat-cell *matCellDef="let element"> {{element.body}} </td>
-      </ng-container>
-      <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> action </th>
-        <td mat-cell *matCellDef="let element"> <a class="btn btn-primary send"> تعديل</a> </td>
-      </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displaycolumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displaycolumns;"></tr>
-    </table>
+          </td>
+        </ng-container>
+
+        <!-- Name Column -->
+
+
+
+
+
+        <ng-container matColumnDef="تعديل">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 text-center table-dark h5" scope="row"> تعديل </th>
+          <td mat-cell *matCellDef="let element" class="col-sm-1"> <a class="btn btn-dark send" [routerLink]='["/editproperty",element.id]'> تعديل</a> </td>
+        </ng-container>
+        <ng-container matColumnDef="حذف">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 table-dark  h5"> حذف </th>
+          <td mat-cell *matCellDef="let element">
+
+
+            <a class="btn btn-dark send" (click)="delete(element.id)"> حذف</a> </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displaycolumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displaycolumns;"></tr>
+      </table>
+    </div>
 
 
   </div>
@@ -45,3 +56,8 @@
 
   </div>
 </div>
+<ng-template #noData>
+  <div class="noData">
+  <p>لايوجد اعلانات مؤجرة </p>
+</div>
+</ng-template>

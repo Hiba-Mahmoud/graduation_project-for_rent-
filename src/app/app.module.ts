@@ -24,16 +24,20 @@ import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 import { CommentsComponent } from './comments/comments.component';
+import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { RouterModule } from '@angular/router';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list'
+import { MatListModule } from '@angular/material/list';
+
+import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component'
 
 @NgModule({
   declarations: [
@@ -47,11 +51,14 @@ import { MatListModule } from '@angular/material/list'
          AboutComponent,
          PendingComponent,
          RentedComponent,
+         PayedproperitiesComponent,
          NotRentedYetComponent,
          // ListcontactsComponent,
 
       CommentsComponent,
          NavbarComponent,
+
+      PaymentmethodComponent,
 
 
   ],

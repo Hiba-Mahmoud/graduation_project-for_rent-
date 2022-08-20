@@ -1,12 +1,16 @@
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+// import {  FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+// import { Component, OnInit } from '@angular/core';
 import { IUser } from 'src/app/auth/classesAndinterfaces/registerationData';
 import { registerationData } from 'src/app/auth/classesAndinterfaces/postregisterationdata';
 import { TokenService } from 'src/app/auth/service/token.service';
 import { MoaveDataService } from 'src/app/auth/service/moave-data.service';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { Addadver } from 'src/app/interface/addadvertis';
+import { Component, OnInit } from '@angular/core';
+import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { OwnerService } from 'src/app/services/owner.service';
 
 @Component({
   selector: 'app-add-properity',
@@ -21,21 +25,34 @@ export class AddProperityComponent implements OnInit {
   token:string;
   user=new IUser;
   errMsg:any;
+  cities :any;
 
   // userData:returnDatafromReisteration;
   userData:any;
   invalidForm:any;
   validation:any;
-  constructor(private localstorage:TokenService,private moveData:MoaveDataService,private formb:FormBuilder,private router:Router,private http:HttpClient) {
+  constructor(private localstorage:TokenService,private router:Router,private http:HttpClient, private formb:FormBuilder,private owner:OwnerService) {
 
 
 
   }
-
+  // ^[\u0621-\u064A0-9 ]+$
   ngOnInit(): void {
+    let cities='http://127.0.0.1:8000/api/cities';
+    this.owner.getcities(cities).subscribe((response:any)=>{
+      console.log(response)
+      this.cities=response.cities
+      console.log(this.cities[0].id)
+    },(error)=>{
+      console.log(error)
+
+    });
+
+
+    // ------------------------------
     this.addproperity = this.formb.group({
-      title:['',[Validators.required,Validators.minLength(10),Validators.maxLength(100),Validators.pattern('^[\u0621-\u064A0-9 ]+$')]],
-      description:['',[Validators.required,Validators.minLength(100),Validators.maxLength(1000),Validators.pattern('^[\u0621-\u064A0-9 ]+$')]],
+      title:['',[Validators.required,Validators.minLength(10),Validators.maxLength(200),Validators.pattern('')]],
+      description:['',[Validators.required,Validators.minLength(100),Validators.maxLength(1000),Validators.pattern('')]],
       price:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
       level:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
       bedroomnum:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
@@ -45,7 +62,7 @@ export class AddProperityComponent implements OnInit {
       furniture:['',[Validators.required]],
       type:['',[Validators.required]],
       governate:['',[Validators.required]],
-      address:['',[Validators.required,Validators.pattern('^[\u0621-\u064A0-9 ]+$')]],
+      address:['',[Validators.required,Validators.pattern('')]],
       file:['',[Validators.required]]
     })
       this.invalidForm=this.addproperity.status;

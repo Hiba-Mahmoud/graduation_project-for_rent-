@@ -1,20 +1,22 @@
-import { OwnerService } from './../../services/owner.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AdminServiceService } from 'src/app/admin/service/admin-service.service';
 import { Icontacts } from 'src/app/admin/service/contacts';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { TokenService } from 'src/app/auth/service/token.service';
+import { OwnerService } from 'src/app/services/owner.service';
 
 @Component({
-  selector: 'app-pending',
-  templateUrl: './pending.component.html',
-  styleUrls: ['./pending.component.css']
+  selector: 'app-payedproperities',
+  templateUrl: './payedproperities.component.html',
+  styleUrls: ['./payedproperities.component.css']
 })
-export class PendingComponent implements OnInit {
+export class PayedproperitiesComponent implements OnInit {
+
   token:any;
+  length:any;
 
   dataSource=new MatTableDataSource<Icontacts>;
   @ViewChild(MatPaginator)
@@ -22,13 +24,13 @@ export class PendingComponent implements OnInit {
   @ViewChild(MatSort) sort:MatSort;
   displaycolumns:string[]=['الاعلان','حذف','تعديل']
   constructor(private localstorage:TokenService,private AdminService:AdminServiceService ,private http:HttpClient, private owner:OwnerService,private localstoage:TokenService) {
-
-
   }
 
   ngOnInit(): void {
     this.getallPending();
+
   }
+
 
   getallPending(){
     let local=this.localstoage.gettokenfromLocalstorage();
@@ -46,11 +48,12 @@ export class PendingComponent implements OnInit {
 
       'Authorization': `Bearer ${this.token}`
     });
-      let pending ='http://127.0.0.1:8000/api/pending_advertisement';
+      let pending ='http://127.0.0.1:8000/api/owner/advertisementrented';
       this.owner.getPending(pending,headers).subscribe(data=>{
         console.log(data)
         // console.log(data)
         this.dataSource=new MatTableDataSource(data[0]);
+        // this.length= data;
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;
         // console.log(this.dataSource)
@@ -59,8 +62,6 @@ export class PendingComponent implements OnInit {
       })
 
   }
-
-
 
   findContact(value:string){
     this.applyFilter(value);
@@ -74,6 +75,7 @@ export class PendingComponent implements OnInit {
 
 
   }
+
   delete(id:any){
     if (confirm('هل تريد مسح الاعلان؟')){
     let local=this.localstorage.gettokenfromLocalstorage();
