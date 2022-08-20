@@ -1,65 +1,7 @@
 mat-toolbar {
-  background: white;
-  color: gray;
-}
-
-
-
-
-.menu-button {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 1rem;
-
-
-}
-
-.menu-button mat-icon {
-  margin-right: 8px;
-}
-
-.avatar {
-  margin-top: 16px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-
-}
-
-.name {
-  margin-top: 8px;
-  font-weight: normal;
-  color: #FE6F41;
-
-}
-
-.designation {
-  margin-top: 2px;
-  font-size: 0.7rem;
-  color: lightgrey;
-}
-
-mat-divider {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-ul li a {
-
-  color: #8b8383;
-
-}
-
-ul li a:hover {
-
-  color: #131212;
-  font-weight: bold;
-}
-
-/* .content {
-    height: 100vh;
-    overflow-y: hidden;
-} */
+    color: gray;
+  }
+  
+  button{
+    background-color: #FE6F41;
+  }

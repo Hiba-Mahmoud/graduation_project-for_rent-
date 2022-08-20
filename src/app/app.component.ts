@@ -2,6 +2,7 @@ import { Component ,ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { AuthGuard } from './guard/auth.guard';
 
 
 @Component({
@@ -12,9 +13,17 @@ import { Router } from '@angular/router';
 export class AppComponent {
   
   title = 'forRent';
-  
+  isLogin!:boolean;
 
-  constructor() {}
 
- 
+  constructor(private _AuthGuard:AuthGuard) {}
+  ngOnInit(): void {
+    this.checkLogin();
+  }
+
+  checkLogin(){
+    this._AuthGuard.isLogin.subscribe((res:any)=>{
+      this.isLogin = res
+    })
+  }
 }

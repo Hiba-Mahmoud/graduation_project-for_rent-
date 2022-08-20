@@ -1,15 +1,14 @@
 <mat-sidenav-container class="mt-5 p-3" >
-    <mat-sidenav #sidenav="matSidenav" mode="side"   opened>
+    <mat-sidenav #sidenav="matSidenav" mode="side"  opened>
       <img
         class="avatar mat-elevation-z8"
-        src="https://source.unsplash.com/c_GmwfHBDzk/200x200"
-      />
-      <mat-icon>camera_alt</mat-icon>
-      <h2 class="name">رامي علي</h2>
+       [src] ="image"/>
+      <!-- <mat-icon>camera_alt</mat-icon> -->
+      <h2 class="name">{{name}}</h2>
       
   
       <mat-divider></mat-divider>
-      <ul class="nav flex-column">
+      <ul class="nav flex-column" *ngIf="isAdmin ||  isSuperAdmin">
          
         <li class="nav-item">
           <a class="nav-link" routerLink="allRenters">
@@ -23,26 +22,26 @@
             الملاك
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="allAdmins">
+        <li class="nav-item" *ngIf="isSuperAdmin">
+          <a class="nav-link" routerLink="/allAdmins">
             <span data-feather="users"></span>
             المسؤولين
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="addAdmin">
+        <li class="nav-item" *ngIf="isSuperAdmin">
+          <a class="nav-link" routerLink="/addAdmin">
             <span data-feather="users"></span>
           اضافة مسؤول
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="requests">
+          <a class="nav-link" routerLink="/requests">
             <span data-feather="bar-chart-2"></span>
             الاعلانات
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="">
+          <a class="nav-link" routerLink="/blockList">
             <span data-feather="layers"></span>
             المحظورين
           </a>
@@ -54,7 +53,7 @@
       <mat-divider></mat-divider>
       <ul class="nav flex-column">
          
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isRenter">
           <a class="nav-link" routerLink="userfavourites">
             <span data-feather="file"></span>
             المفضله
@@ -66,15 +65,16 @@
           </button>
           <div class="collapse" id="dashboard-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a routerLink="" class="link-dark rounded">تعديل البيانات</a></li>
-              <li><a routerLink="" class="link-dark rounded">تعديل كلمة السر</a> </li>
-              
+              <li><a routerLink="" style="text-decoration: none;" class="link-dark rounded">تعديل البيانات</a></li>
+              <li><a routerLink="" style="text-decoration: none;" class="link-dark rounded">تعديل كلمة السر</a> </li>
+
             </ul>
           </div>
         </li>
       </ul>
 
      
+
   
       <mat-divider></mat-divider>
   
@@ -86,9 +86,11 @@
       *ngIf="sidenav.mode === 'over'"
       (click)="sidenav.toggle()"
     >
+    <span>  قائمة التحكم  <mat-icon *ngIf="!sidenav.opened" class="mx-2" style="position:relative; top:5px;">apps</mat-icon></span>
+<!-- 
       <mat-icon *ngIf="!sidenav.opened"> apps </mat-icon>
-      <mat-icon *ngIf="sidenav.opened"> apps </mat-icon>
-      قائمه
+      <mat-icon *ngIf="sidenav.opened"> apps </mat-icon> -->
+      
     </button> 
       <div class="content ">
      

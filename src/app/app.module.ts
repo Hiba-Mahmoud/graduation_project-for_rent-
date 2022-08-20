@@ -23,13 +23,21 @@ import { AdminModule } from './admin/admin.module';
 import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
-import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
 import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { RouterModule } from '@angular/router';
-import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component'
+
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
+import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
+import { HeaderComponent } from './header/header.component'
 
 @NgModule({
   declarations: [
@@ -47,10 +55,10 @@ import { PayedproperitiesComponent } from './components/payedproperities/payedpr
          NotRentedYetComponent,
          // ListcontactsComponent,
 
-        HeaderComponent,
       CommentsComponent,
 
       PaymentmethodComponent,
+        HeaderComponent,
 
 
   ],
@@ -76,6 +84,12 @@ import { PayedproperitiesComponent } from './components/payedproperities/payedpr
     NgxPaginationModule,
     MatProgressSpinnerModule,
     ModalModule.forRoot(),
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

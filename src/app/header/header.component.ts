@@ -1,9 +1,7 @@
-import { TokenService } from './../auth/service/token.service';
-import { Component, OnInit ,ViewChild} from '@angular/core';
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { TokenService } from '../auth/service/token.service';
+import { AuthGuard } from '../guard/auth.guard';
 
 @Component({
   selector: 'app-header',
@@ -11,40 +9,52 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
-  constructor(private observer: BreakpointObserver, private router: Router , private removeToken:TokenService) { }
 
-  ngOnInit(): void {
-  }
-
-  logout(){
-    this.removeToken.clearLocalStorage();
-    this.router.navigateByUrl('/login')
-  }
+  isLogin!:boolean;
 
 
+  name!: string;
+  role!: string;
+  id!: any;
+
+  isAdmin!:boolean;
+  isRenter!:boolean;
+  isOwner!:boolean;
+  isSuperAdmin!:boolean;
+  constructor( private router: Router ,
+    private removeToken:TokenService,private _AuthGuard:AuthGuard
+  ) { }
+
+ngOnInit(): void {
+    this.checkLogin();
+    this.name = localStorage.getItem('name');
+    this.id = localStorage.getItem('id');
+    this.role = localStorage.getItem('role');
+
+    if(this.role == 'admin'){
+      this.isAdmin=true;
+    }else if(this.role == 'superAdmin'){
+      this.isSuperAdmin=true;
+    }else if(this.role == 'renter'){
+      this.isRenter=true;
+    }else if(this.role == 'owner'){
+      this.isOwner=true;
+    }
+ }
+
+checkLogin(){
+  this._AuthGuard.isLogin.subscribe((res:any)=>{
+    this.isLogin = res
+  })
+}
 
 
+logout(){
+  this.removeToken.clearLocalStorage();
+  this._AuthGuard.isLogin.next(false);
+
+  this.router.navigateByUrl('/login');
+}
 
 
-
-
-
-//   ngAfterViewInit() {
-//     this.observer
-//       .observe(['(max-width: 766px)'])
-
-//       .subscribe((res) => {
-//         if (res.matches) {
-//           this.sidenav.mode = 'over';
-//           this.sidenav.close();
-//         } else {
-//           this.sidenav.mode = 'side';
-//           this.sidenav.open();
-//         }
-//       });
-
-
-// }
 }

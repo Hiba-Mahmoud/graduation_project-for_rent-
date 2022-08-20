@@ -62,15 +62,36 @@ export class LoginComponent implements OnInit {
 
         //navigate
         if(response.user.type =='owner'){
+          localStorage.setItem('role',response.user.type);
+          localStorage.setItem('image',response.user.image);
+          localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
+
+
           this.router.navigate(['/owner']);
 
         }else if(response.user.type =='renter'){
+          localStorage.setItem('role',response.user.type);
+          localStorage.setItem('image',response.user.image);
+          localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
+
           this.router.navigate(['/']);
 
         }else if (response.user.type =='admin'){
+          localStorage.setItem('role',response.user.type);
+          localStorage.setItem('image',response.user.image);
+          localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
+
           this.router.navigate(['/adminhome']);
 
         }else{
+          localStorage.setItem('role',response.user.type);
+          localStorage.setItem('image',response.user.image);
+          localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
+
           this.router.navigate(['/adminhome']);
 
         }

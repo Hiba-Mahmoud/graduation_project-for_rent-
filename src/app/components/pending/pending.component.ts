@@ -15,7 +15,7 @@ import { TokenService } from 'src/app/auth/service/token.service';
 })
 export class PendingComponent implements OnInit {
   token:any;
-
+  length=0;
   dataSource=new MatTableDataSource<Icontacts>;
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
@@ -49,7 +49,7 @@ export class PendingComponent implements OnInit {
       let pending ='http://127.0.0.1:8000/api/pending_advertisement';
       this.owner.getPending(pending,headers).subscribe(data=>{
         console.log(data)
-        // console.log(data)
+        this.length=data[0].length;
         this.dataSource=new MatTableDataSource(data[0]);
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;

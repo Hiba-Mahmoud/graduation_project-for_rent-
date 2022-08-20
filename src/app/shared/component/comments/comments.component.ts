@@ -14,6 +14,7 @@ export class CommentsComponent implements OnInit {
    
   @Input() adverId: any;
   @Input() reviews:any ;
+  @Input() condition:any ;
 
   commentForm=new FormGroup({
     comment :new FormControl('',Validators.minLength(4)),

@@ -1,53 +1,10 @@
-<!-- <form class="form-signin"  >
-
-    <h1 class="h3 mb-3 fw-normal"> اضافة مسؤول جديد</h1>
-
-    <div class="form-label-group hov">
-      <input type="text" id="inputName" class="form-control " placeholder="User name" required autofocus>
-      <label for="inputName">اسم المسؤول</label>
-    </div>
-
-    <div class="form-label-group hov">
-      <input type="email" id="inputEmail" class="form-control " placeholder="Email address" required autofocus>
-      <label for="inputEmail">البريد الالكترونى</label>
-    </div>
-
-    <div class="form-label-group hov">
-      <input type="number" id="inputPhone" class="form-control " placeholder="User phone" required autofocus>
-      <label for="inputPhone">رقم الموبايل</label>
-    </div>
-
-    <div class="form-label-group hov">
-      <input type="password" id="inputPassword" class="form-control " placeholder="Password" required>
-      <label for="inputPassword">كلمة المرور</label>
-    </div>
-
-    <div class="checkbox mb-3">
-      <div class="form-check form-check-inline">
-        <input class="form-check-input hov" type="radio" name="male" id="inlineRadio1" value="male">
-        <label class="form-check-label" for="inlineRadio1">ذكر</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input hov" type="radio" name="female" id="inlineRadio2" value="female">
-        <label class="form-check-label" for="inlineRadio2">أنثى</label>
-      </div>
-    </div>
-
-    <button class="send form-group col-md-5 right" type="submit" >تسجيل</button>
-
-
-  </form> -->
-
-
-  <!-- Page Content -->
-
-
 
 <!-- Page Content -->
 <div class="container height">
   <div class="row justify-content-center">
     <!-- Team Member 1 -->
     <div class="col-sm-8 mb-4">
+      <div class="alret alert-danger" *ngIf="isvalid">برجاء ملئ البانات اولا</div>
       <form
       class="form-signin formbg"
       dir="rtl"
@@ -189,7 +146,8 @@
             class="alert alert-danger"
             role="alert"
             *ngIf="
-              registeration.controls['phone'].errors
+              registeration.controls['phone'].errors&&
+              registeration.controls['phone'].touched
             "
             >
             <strong
@@ -223,7 +181,6 @@
             formControlName="password"
             />
             <label for="inputPassword">كلمة المرور</label>
-            <!-- registeration.controls['password'].touched -->
             <div>
               <p id="password"></p>
 
@@ -232,7 +189,7 @@
             class="alert alert-danger"
             role="alert"
             *ngIf="
-              registeration.controls['password'].errors             "
+              registeration.controls['password'].errors &&  registeration.controls['phone'].touched"
           >
             <strong
               *ngIf="
@@ -257,16 +214,13 @@
           </div>
 
         </div>
-        <!-- <div class="form-label-group hov">
-      <input type="password" name="confirmPassword" id="inputPassword" class="form-control " placeholder="Password" formControlName="confirmPassword" >
-      <label for="inputPassword">تاكيد كلمة المرور</label>
-    </div> -->
+
 
         <div class="form-outline mb-4">
           <label class="form-label" for="gender" id="gender">النوع</label>
           <select
             formControlName="gender"
-            class="select w-100"
+            class="select w-100 form-control"
             style="margin-left: 80px; padding-right: 95px"
           >
           <option disabled selected value>النوع</option>
@@ -275,8 +229,8 @@
           </select>
           <div
             *ngIf="
-              registeration.controls['gender'].invalid&&(registeration.controls['gender'].touched||registeration.controls['gender'].dirty)
-              "
+            registeration.controls['gender'].errors &&
+            registeration.controls['gender'].errors['gender']"
           >
             <small
             class="form-text text-dark"
@@ -292,17 +246,17 @@
           <label class="form-label" for="type" id="type">تسجيل كـ</label>
           <select
           formControlName="type"
-          class="select w-100"
+          class="select w-100 form-control"
           style="margin-left: 80px; padding-right: 95px"
           >
             <option disabled selected value>تسجيل كـ</option>
             <option value="superAdmin">مسؤول</option>
-            <option value="admin">مدير</option>
+            <option value="admin">مسؤول فرعى</option>
           </select>
           <div
             *ngIf="
-              registeration.controls['type'].errors
-            "
+            registeration.controls['type'].errors &&
+            registeration.controls['type'].errors['type']"
           >
             <small
               class="form-text text-dark"
@@ -321,7 +275,7 @@
           <button
             class="send form-group col-md-5 w-100 right"
             type="submit"
-            [disabled]="registeration?.invalid"
+            
 
             (click)="sign_up()"
           >
@@ -332,12 +286,7 @@
         <div class="form-label-group">
           <a routerLink="/login" style="width: 100%" class="link-dark">لدى حساب</a>
         </div>
-
-
       </form>
-
-      {{ registeration.status }}
-      {{ registeration.value | json }}
     </div>
   </div>
 </div>
