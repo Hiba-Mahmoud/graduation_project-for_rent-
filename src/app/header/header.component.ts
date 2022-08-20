@@ -49,50 +49,34 @@ export class HeaderComponent implements OnInit {
 
       var channel3 = pusher.subscribe('NewChannel3');
       channel3.bind("AddAdvertisement", function(data) {
-        this.$dataaa = JSON.stringify(data)
-        this.totalNumber = this.totalNumber + 1 ;
+        //check if is admin
+        this.toastr.success( data.message,"لديك اشعار جديد");
        
         
-        console.log( this.$dataaa);
+        console.log( data);
 
       });
 
       //add comment notification
       var channel1 = pusher.subscribe('NewChannel');
       await channel1.bind("CommentNotification", function(data) {
-       
-        this.$dataaa = JSON.stringify(data)
-        this.totalNumber = this.totalNumber + 1 ;
+
+        //check if is auther of the advertisement 
+
+        this.toastr.success( data.content,"لديك اشعار جديد");
         
-        console.log( this.$dataaa);
+        
+        console.log( data);
       });
+
+
       //add admin approve notification
       const channel2 = await pusher.subscribe('NewChannel2');
       await channel2.bind("ConfirmOwnerRequestFromAdmin", (data) =>{
+        //check if is auther of the advertisement 
+             this.toastr.success( data.message,"لديك اشعار جديد");
+             this.totalNumber++ ;
 
-        
-
-        // this.$dataaa = JSON.stringify(data)
-        // this.user_id = data.user_id;
-        //  this.toaster_message = data.message;
-         this.toastr.success( data.message, "لديك اشعار جديد");
-
-        // console.log( data);
-        // console.log( data.message);
-        // console.log( data.time);
-        // console.log( data.user_id);
-        // console.log(this.id);
-       
-        // if( (data.user_id) == (data.user_id)){this.showToasterInfo();}
-
-
-
-  
-
-
-       
-
-       
       });
      
   

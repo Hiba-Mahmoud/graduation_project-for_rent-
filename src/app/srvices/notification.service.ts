@@ -18,8 +18,8 @@ export class NotificationService {
   toastrSuccessOnTap(title:string,content:string){
     this.toastr.success(title, content);
   }
-  showSuccess(title:string,content:string) {
-    this.toastr.success(title, content);
+  showSuccess(title:string,content:string,time:any) {
+    this.toastr.success(title, content,time);
   }
   
   //end toaster
