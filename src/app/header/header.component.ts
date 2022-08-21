@@ -85,26 +85,30 @@ export class HeaderComponent implements OnInit {
 
       //add advertisement notificaation
 
-      var channel3 = pusher.subscribe('NewChannel3');
-      channel3.bind("AddAdvertisement", function(data) {
+      const channel3 = await pusher.subscribe('NewChannel3');
+     await channel3.bind("AddAdvertisement", function(data) {
         //check if is admin
+        if(this.isAdmin || this.isSuperAdmin){
         this.toastr.success( data.message,"لديك اشعار جديد");
        
         
         console.log( data);
+        }
 
       });
 
       //add comment notification
-      var channel1 = pusher.subscribe('NewChannel');
+      const channel1 = pusher.subscribe('NewChannel');
       await channel1.bind("CommentNotification", function(data) {
 
         //check if is auther of the advertisement 
+        if((this.id == data.user_id ) && (this.isOwner)){
 
         this.toastr.success( data.content,"لديك اشعار جديد");
         
         
         console.log( data);
+        }
       });
 
 
@@ -112,8 +116,9 @@ export class HeaderComponent implements OnInit {
       const channel2 = await pusher.subscribe('NewChannel2');
       await channel2.bind("ConfirmOwnerRequestFromAdmin", (data) =>{
         //check if is auther of the advertisement 
+        if((this.id == data.user_id ) && (this.isOwner)){
              this.toastr.success( data.message,"لديك اشعار جديد");
-             
+        } 
 
       });
      
