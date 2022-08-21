@@ -75,7 +75,7 @@ export class HeaderComponent implements OnInit {
       await channel2.bind("ConfirmOwnerRequestFromAdmin", (data) =>{
         //check if is auther of the advertisement 
              this.toastr.success( data.message,"لديك اشعار جديد");
-             this.totalNumber++ ;
+             
 
       });
      
