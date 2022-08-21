@@ -1,8 +1,8 @@
 
-  <form class="example-form">
+   <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Find Admin</mat-label>
-      <input matInput placeholder="Enter Name"  #name (keyup)="findByName(name)">
+      <mat-label>بحث</mat-label>
+      <input matInput placeholder="ادخل الاسم"  #name (keyup)="findByName(name)">
     </mat-form-field>
 </form>
     <div class="mat-elevation mt-2  m-auto table-responsive" *ngIf="length>0 else alter">

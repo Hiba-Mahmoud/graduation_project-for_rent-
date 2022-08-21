@@ -41,7 +41,10 @@ export class MailwithcodeComponent implements OnInit {
     //sending data
     return this.http.post('http://127.0.0.1:8000/api/password/verify',this.veryfiy).subscribe((response)=>{
       console.log(response['code'])
-      this.reset.setResetpswordresponseMsg(response['code']);
+      this.reset.setResetpswordresponseMsg(response['message']);
+      this.reset.setcode(response['code'])
+      this.reset.setemail(response['data']['email']);
+      console.log(response['data']['email'])
       this.router.navigateByUrl('/password')
       console.log(response)
 

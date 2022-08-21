@@ -38,24 +38,25 @@ import { ReportFormUserComponent } from './components/report-form-user/report-fo
 import { AboutFormComponent } from './admin/component/about-form/about-form.component';
 import { FavouritsComponent } from "./components/favourits/favourits.component";
 
+import { BlockListComponent } from './admin/component/block-list/block-list.component';
+
+import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
 
 
   // auth Routes
-  {path: "login", component: LoginComponent},
-  {path: "register", component: RegisterComponent},
-  { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
 
   {
     path: "home", component: HomeComponent
   },
   {
-    path: "login", component: LoginComponent,canActivate:[PreventregisterandloginGuard]
+    path: "login", component: LoginComponent
   },
+  { path:"mailverifiy", component:MailConfirmComponent},
   {
-    path: "register", component: RegisterComponent,canActivate:[PreventregisterandloginGuard]
+    path: "register", component: RegisterComponent
   },
   {
     path: "details/:id", component: CartDetailsComponent
@@ -68,8 +69,21 @@ const routes: Routes = [
   {
     path: 'editpersonaldata', component: EditpersonaldataComponent
   },
+//favourit
+//setting
+//dashbord
+//owner
+//add adv
+//update add
+//notification
+//paymentmethod
+//side bar
+//nav bar
+//gard type
+//list all properites owner
+// ===================
 
-
+//
   { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
 
   {path: 'forgetpassword', component:ForgetPasswordComponent},
@@ -82,10 +96,11 @@ const routes: Routes = [
   // owner Routes
   { path: 'owner', component: OwnerComponent,canActivate:[AuthGuard] },
   { path: 'addProperity', component: AddProperityComponent,canActivate:[AuthGuard] },
-  { path: 'UpdateProperityAdvertising', component: UpdateProperityAdvertisingComponent,canActivate:[AuthGuard] },
+  { path: 'editproperty/:id', component: UpdateProperityAdvertisingComponent,canActivate:[AuthGuard] },
   { path:"notrented", component:NotRentedYetComponent,canActivate:[AuthGuard]},
   { path:"pending", component:PendingComponent,canActivate:[AuthGuard]},
   { path:"rented", component:RentedComponent,canActivate:[AuthGuard]},
+  { path:"payed-rented", component:PayedproperitiesComponent,canActivate:[AuthGuard]},
   //start admin routes
   { path: 'adminhome', component:AdminhomeComponent,canActivate:[AuthGuard]},
   { path: 'all-contacts', component:ListcontactsComponent,canActivate:[AuthGuard]},
@@ -97,6 +112,7 @@ const routes: Routes = [
   {path: 'reports-details', component: ReportsDetailsComponent,canActivate:[AuthGuard]},
   {path: 'allreports', component: ReportsComponent ,canActivate:[AuthGuard]},
   {path: 'aboutForm', component: AboutFormComponent ,canActivate:[AuthGuard]},
+  {path: 'blockList', component: BlockListComponent,canActivate:[AuthGuard]},
 
   // user routes
   // {

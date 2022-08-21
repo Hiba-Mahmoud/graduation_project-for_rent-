@@ -13,7 +13,10 @@ import { UsersModule } from './users/users.module';
 import { MaterialModule } from './material/material.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 import { NgForm, ReactiveFormsModule } from '@angular/forms';
+
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListAllOwnerProperitiesComponent } from './components/list-all-owner-properities/list-all-owner-properities.component';
 import { UpdateProperityAdvertisingComponent } from './components/update-properity-advertising/update-properity-advertising.component';
@@ -23,10 +26,10 @@ import { AdminModule } from './admin/admin.module';
 import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
-import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
+import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component';
+
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { FormsModule } from '@angular/forms';
 // import { ReportFormComponent } from './components/report-form/report-form.component';
 import { ReportFormUserComponent } from './components/report-form-user/report-form-user.component';
 import { AboutFormComponent } from './admin/component/about-form/about-form.component';
@@ -34,6 +37,17 @@ import { FavouritsComponent } from './components/favourits/favourits.component';
 
 
 
+import { RouterModule } from '@angular/router';
+
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
+import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
+import { HeaderComponent } from './header/header.component'
 
 @NgModule({
   declarations: [
@@ -47,16 +61,19 @@ import { FavouritsComponent } from './components/favourits/favourits.component';
          AboutComponent,
          PendingComponent,
          RentedComponent,
+         PayedproperitiesComponent,
          NotRentedYetComponent,
         //  ListcontactsComponent,
 
-        HeaderComponent,
       CommentsComponent,
       // ReportFormComponent,
       ReportFormUserComponent,
       AboutFormComponent,
       FavouritsComponent,
       
+
+      PaymentmethodComponent,
+        HeaderComponent,
 
 
   ],
@@ -68,7 +85,10 @@ import { FavouritsComponent } from './components/favourits/favourits.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
 
+
+    RouterModule,
     UsersModule,
     HttpClientModule,
     AuthModule,
@@ -81,6 +101,12 @@ import { FavouritsComponent } from './components/favourits/favourits.component';
     ModalModule.forRoot(),
     FormsModule ,     
 
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
