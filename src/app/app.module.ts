@@ -13,7 +13,7 @@ import { UsersModule } from './users/users.module';
 import { MaterialModule } from './material/material.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { ReactiveFormsModule } from '@angular/forms';
+import { NgForm, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListAllOwnerProperitiesComponent } from './components/list-all-owner-properities/list-all-owner-properities.component';
 import { UpdateProperityAdvertisingComponent } from './components/update-properity-advertising/update-properity-advertising.component';
@@ -26,6 +26,14 @@ import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-ye
 import { HeaderComponent } from './header/header.component';
 import { CommentsComponent } from './comments/comments.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { FormsModule } from '@angular/forms';
+// import { ReportFormComponent } from './components/report-form/report-form.component';
+import { ReportFormUserComponent } from './components/report-form-user/report-form-user.component';
+import { AboutFormComponent } from './admin/component/about-form/about-form.component';
+import { FavouritsComponent } from './components/favourits/favourits.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -40,10 +48,15 @@ import { ModalModule } from 'ngx-bootstrap/modal';
          PendingComponent,
          RentedComponent,
          NotRentedYetComponent,
-         // ListcontactsComponent,
+        //  ListcontactsComponent,
 
         HeaderComponent,
       CommentsComponent,
+      // ReportFormComponent,
+      ReportFormUserComponent,
+      AboutFormComponent,
+      FavouritsComponent,
+      
 
 
   ],
@@ -66,6 +79,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     NgxPaginationModule,
     MatProgressSpinnerModule,
     ModalModule.forRoot(),
+    FormsModule ,     
+
   ],
   providers: [],
   bootstrap: [AppComponent]

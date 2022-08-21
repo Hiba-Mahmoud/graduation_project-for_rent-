@@ -60,4 +60,6 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 })
-export class AdminModule { }
+export class AdminModule {
+
+ }

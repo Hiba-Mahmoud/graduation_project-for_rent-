@@ -31,7 +31,13 @@ import { PreventregisterandloginGuard } from './guard/preventregisterandlogin.gu
 import { CodeVerifyComponent } from './auth/component/code-verify/code-verify.component';
 import { MailwithcodeComponent } from './auth/component/mailwithcode/mailwithcode.component';
 import { ResetPasswordComponent } from './auth/component/reset-password/reset-password.component';
-// import{ReportsComponent} from ''
+// import { ReportFormComponent } from './components/report-form/report-form.component';
+import { ReportsComponent } from './admin/component/reports/reports.component';
+import { ReportsDetailsComponent } from './admin/component/reports-details/reports-details.component';
+import { ReportFormUserComponent } from './components/report-form-user/report-form-user.component';
+import { AboutFormComponent } from './admin/component/about-form/about-form.component';
+import { FavouritsComponent } from "./components/favourits/favourits.component";
+
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -88,12 +94,22 @@ const routes: Routes = [
   {path: 'allOwners', component: OwnersComponent,canActivate:[AuthGuard]},
   {path: 'requests', component:AdverRequestsComponent,canActivate:[AuthGuard]},
   {path: 'addAdmin', component: AddAdminComponent,canActivate:[AuthGuard]},
+  {path: 'reports-details', component: ReportsDetailsComponent,canActivate:[AuthGuard]},
+  {path: 'allreports', component: ReportsComponent ,canActivate:[AuthGuard]},
+  {path: 'aboutForm', component: AboutFormComponent ,canActivate:[AuthGuard]},
 
- // end admin routes
+  // user routes
   // {
-  //   path:'userfavourites',component:UserfavouritesComponent },
-  // { path: 'ListAllOwnerProperitiesComponent', component: ListAllOwnerProperitiesComponent },
-  // { path: 'UpdateProperityAdvertisingComponent', component: UpdateProperityAdvertisingComponent },
+  //   path: "report-form", component: ReportFormComponent
+  // },
+  {
+    path: "reportForm", component: ReportFormUserComponent
+  },
+  {
+    path: "fav", component: FavouritsComponent
+  },
+
+
 
   {
     path: "**", component: NotFoundComponent

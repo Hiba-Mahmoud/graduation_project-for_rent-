@@ -1,0 +1,39 @@
+<p>weeeeeeeeeeeeeeeeee</p>
+<div  *ngFor="let adver of adv">
+  now
+  <div class="card shadow-sm m-3" routerLink="">
+
+      
+    <img [src]="adver.advertisement.advertisement_image[0].image_name" height="200px" width="100%" alt="" >
+  <div class="card-body bg-light ">
+    <div class="container">
+      <div class="row ">
+
+        <div class="col px-3 py-2">
+          <div class="d-flex flex-row justify-content-between">
+
+            <p class="mb-2 text-muted">{{adver.advertisement.type}}</p>
+            <div class="d-flex flex-row" >
+              <mat-icon style="font-size:large;">star</mat-icon>
+              <p></p>
+              <p></p>
+            </div>
+
+          </div>
+          <h3 class="mb-0"></h3>
+          <h3 class="mb-0"></h3>
+          <div class="d-flex justify-content-between align-items-center ">
+            <small class="text-muted"> <span class="material-icons   ">location_on</span> </small>
+          </div>
+          <div class=" mt-2">
+            <button type="button" class="btn mx-1 btn-sm btn-outline-warning">تعديل</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+</div>

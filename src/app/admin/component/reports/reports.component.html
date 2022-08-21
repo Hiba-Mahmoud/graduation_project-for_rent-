@@ -1,1 +1,28 @@
-<p>reportsnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn works!</p>
+
+
+<div class="container mt-3">
+    <h2>All Reports</h2>
+    <!-- <p>The .table-striped class adds zebra-stripes to a table:</p>             -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Phone</th>
+          <th>URL</th>
+          <th>action</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let item of reports.reports">
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.url}}</td>
+          <td><button class="btn btn-primary" (click)="showReport(item.id)">Show</button></td>
+          <td><button class="btn btn-danger"  (click)="deleteReport(item.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
