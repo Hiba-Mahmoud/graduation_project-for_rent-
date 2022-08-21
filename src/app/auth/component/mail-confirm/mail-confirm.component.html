@@ -13,12 +13,14 @@
 
 
                 <h5 class="mb-1" id="succ"> </h5>
-                <h3 class="mb-1">تفعيل البريدالالكترونى </h3>
-                <span class="mobile-text">برجاء ادخال كود التفعيل المرسل على البريدالالكترونى</span>
+                <h3 class="mb-1 text">تفعيل البريد الالكترونى </h3>
+                <p class="mb-1 para">نشكرك على اشتراكك معانا,برجاء متابعه بريدك لالكتروني لقد ارسلنا لك رمز التفعيل </p>
                 <form action="" [formGroup]="confirmCode">
-                  <div class="d-flex flex-row mt-5">
+                  <div class="form-label-group mt-4">
+                    <label for="inputPhone" class="mb-2">رمز التفعيل </label>
+
                     <input type="text" dir="ltr" class="form-control" formControlName="token" name="token" />
-                    <div id="code"></div>
+                    <div id="code" class="text-danger"></div>
 
 
                   </div>
@@ -27,16 +29,16 @@
                                 confirmCode.controls['token'].touched
                                 ">
                     <strong *ngIf="
-      confirmCode.controls['token'].errors &&
-      confirmCode.controls['token'].errors['required']
-      ">من فضلك ادخل الكود</strong>
+                      confirmCode.controls['token'].errors &&
+                      confirmCode.controls['token'].errors['required']
+                      ">من فضلك ادخل الكود</strong>
                     <strong *ngIf="confirmCode.controls['token'].errors['minlength']">كود التفعيل خاطئ </strong>
 
                     <strong *ngIf="confirmCode.controls['token'].errors['maxlength']">كود التفعيل خاطئ</strong>
                     <strong *ngIf="confirmCode.controls['token'].errors['pattern']">الرقم غير صحيح</strong>
                   </div>
                   <div class="text-center mt-5">
-                    <input class="btn-dark btn" type="submit" value="submit" [disabled]="confirmCode?.invalid"
+                    <input class="send" type="submit" value="submit" [disabled]="confirmCode?.invalid"
                       (click)="onsubmit()" />
                   </div>
                 </form>

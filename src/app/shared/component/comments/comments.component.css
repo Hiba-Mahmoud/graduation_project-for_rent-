@@ -23,20 +23,18 @@
     padding-top: 2px;
     padding-bottom: 2px;
     text-align: center;
-    background: #585858;
     color: white;
     border-width: 1px;
     border-style: solid;
     border-radius: 13px;
     width: 50%;
-    -webkit-border-radius: 13px;
-    -moz-border-radius: 13px;
-    -ms-border-radius: 13px;
-    -o-border-radius: 13px;
+    background: #FE6F41;
+
+   
 }
 
 #post:hover{
-    background: #FE6F41;
+    background: #585858;
 
 }
 

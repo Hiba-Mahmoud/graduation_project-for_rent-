@@ -1,6 +1,6 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { TokenService } from 'src/app/auth/service/token.service';
 import { IUser } from 'src/app/auth/classesAndinterfaces/registerationData';
 import { registerationData } from 'src/app/auth/classesAndinterfaces/postregisterationdata';
@@ -21,6 +21,8 @@ export class AddAdminComponent implements OnInit {
   userData:any;
   invalidForm:any;
   validation:any;
+  token :any;
+  isvalid=false;
   constructor(private localstorage:TokenService,private moveData:MoaveDataService,private fb:FormBuilder,private router:Router,private http:HttpClient) {
   }
 
@@ -38,7 +40,12 @@ export class AddAdminComponent implements OnInit {
     }
 
     sign_up():void{
-      this.validation=this.invalidForm;
+      if(this.registeration.status === "INVALID"){
+        console.log('hello')
+        this.isvalid = true;
+        console.log(this.isvalid)
+      }else{
+        this.validation=this.invalidForm;
     this.user.firstName =this.registeration.value.firstName
     this.user.lastName =this.registeration.value.lastName
     this.user.name = this.user.getFullName();
@@ -49,20 +56,20 @@ export class AddAdminComponent implements OnInit {
     this.postData.gender=this.registeration.value.gender;
     this.postData.password=this.registeration.value.password;
     this.postData.password_confirmation=this.registeration.value.password;
-    // console.log("POST DATAAAAA"+this.postData);
 
 
-    this.http.post('http://127.0.0.1:8000/api/register',this.postData).subscribe((succ:any)=>{
-      this.userData = succ.user.id;
-      this.localstorage.handelId(this.userData.toString())
-      this.moveData.setUserID(this.userData);
-      this.moveData.myMethod(succ.message);
-      this.router.navigate(['/mailverifiy']);
+    this.http.post('http://127.0.0.1:8000/api/admin/addAdmin',this.postData).subscribe((succ:any)=>{
+      console.log(succ)
+    // this.userData = succ.user.id;
+      // this.localstorage.handelId(this.userData.toString())
+      // this.moveData.setUserID(this.userData);
+      // this.localstorage.setToken(this.userData.token);
+      this.router.navigateByUrl('/adminhome');
 
     },(error:HttpErrorResponse)=>{
 
+      console.log(error)
       this.errMsg= error.error['error'];
-      console.log(this.errMsg)
       if(this.errMsg.name){
         document.getElementById('name').textContent = this.errMsg.name
 
@@ -80,6 +87,11 @@ export class AddAdminComponent implements OnInit {
             console.log("errorsssssssss", this.errMsg
             )
     })
+
+
+
+      }
+   
 
   }
 

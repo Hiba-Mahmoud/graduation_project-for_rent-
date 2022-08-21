@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TokenService } from 'src/app/auth/service/token.service';
+import { AuthGuard } from 'src/app/guard/auth.guard';
 import { AdvertismentService } from '../../services/advertisment.service';
 
 @Component({
@@ -20,13 +21,22 @@ export class CartDetailsComponent implements OnInit {
   suggestion:any;
   suggesObgImage:any;
   loading:boolean=true;
-  success: boolean = false
-  failure:boolean = false
-  constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient,private localstorage:TokenService) {
+  isLogin!:boolean;
+
+  furniture:any;
+ 
+  success: boolean = false;
+  failure:boolean = false;
+
+  constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient
+    ,private _AuthGuard:AuthGuard,private localstorage:TokenService) {
     this.id=this.route.snapshot.paramMap.get("id")
+    
    }
 
   ngOnInit(): void {
+    this.checkLogin();
+
     this.getAdvertismentById();
     this.stripePaymentGateway();
 
@@ -62,13 +72,14 @@ export class CartDetailsComponent implements OnInit {
  
      'Authorization': `Bearer ${this.token}`
    });
+   console.log(headers);
     const strikeCheckout = (<any>window).StripeCheckout.configure({
       
       key: 'pk_test_51LX8ftH4ooOXAWsbNANhQAaiF9nzIHfUiThsjYEnPP4WQwOW5ylzc1NtWK1qDapTutl291B1FEyjgXDxdyxAsLZh00dL6UnlqH',
       locale: 'auto',
       token: function (stripeToken: any) {
         console.log(stripeToken.id);
-       http.post('http://localhost:8000/api/paymentmethod',{
+       http.post('http://127.0.0.1:8000/api/paymentmethod',{
         owner_id: owner,
         adver_id:advertisement,
         price:amount,
@@ -114,5 +125,11 @@ export class CartDetailsComponent implements OnInit {
 
       window.document.body.appendChild(scr);
     }
+  }
+
+  checkLogin(){
+    this._AuthGuard.isLogin.subscribe((res:any)=>{
+      this.isLogin = res
+    })
   }
 }
