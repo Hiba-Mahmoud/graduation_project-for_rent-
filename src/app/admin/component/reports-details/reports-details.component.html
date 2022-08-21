@@ -1,1 +1,49 @@
-<p>reports-details works!</p>
+	<link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	
+	<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+	</script>
+	
+	<script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+	</script>
+	
+	<h1 style="color:green;text-align:center;">
+		Report
+	</h1>
+
+	<div class="container">
+		<div class="card-group">
+
+			<!--bootstrap card with 3 horizontal images-->
+			<div class="row" *ngFor="let item of reportData.report">
+				<div class="card col-md-4">
+					<img class="card-img-top card col-md-4 card-body" 
+					src="{{item.contact_us_file[0].file_name}}">
+				</div>
+
+				<div class="card col-md-4">
+					<!-- <img class="card-img-top" src=
+"https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190705124953/Left-SP2019.png"> -->
+					<div class="card-body">
+						<h3  style="color:green;text-align:center;">بيانات الشكوى</h3>
+						<h4>صاحب الشكوى  : <span class="card-title text-primary">{{item.name}}</span></h4>
+						<h4> ايميل  : <span class="card-title text-primary">{{item.email}}</span></h4>
+						<h4> رقم الموبايل  : <span class="card-title text-primary">{{item.phone}}</span></h4>
+						<h4> العنوان  : <span class="card-title text-primary"><a href="{{item.url}}">{{item.url}}</a></span></h4>
+						<h4>محتوى الشكوى : <p class="card-text">{{item.description}}</p></h4>
+					</div>
+				</div>
+				
+				<div class="card col-md-4">
+					<img class="card-img-top card col-md-4 card-body" 
+					src="{{item.contact_us_file[1].file_name}}">
+				</div>
+			</div>
+		</div>
+	</div>

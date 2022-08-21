@@ -65,4 +65,6 @@ import { BlockListComponent } from './component/block-list/block-list.component'
 
 
 })
-export class AdminModule { }
+export class AdminModule {
+
+ }
