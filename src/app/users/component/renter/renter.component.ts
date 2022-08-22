@@ -98,10 +98,16 @@ getBySearch() {
 }
 
 
-toggleSelected() {
+toggleSelected(id:any) {
   this.selected = !this.selected;
   this.selectedChange.emit(this.selected);
   console.log(this.selected);
+   
+  this.advertismentService.favorite("http://127.0.0.1:8000/api/addFavourite/" ,id).subscribe((res) => {
+           console.log(res);
+
+  })
+
 }
 
 }

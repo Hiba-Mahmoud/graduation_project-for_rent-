@@ -58,8 +58,10 @@ export class AdvertismentService {
 
   }
 
-
-
+  favorite(apiUrl :string ,id:number):Observable<any>
+  {
+   return this.http.post(apiUrl+id ,'');
+  }
 
 
  

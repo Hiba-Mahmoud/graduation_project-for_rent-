@@ -64,7 +64,7 @@
               <img [src]="advertisment.advertisement_image[0].image_name" height="200px" width="100%"
                 alt="{{advertisment.advertisement_image[0].image_name}}">
 
-              <h5 class="favorite " mat-icon-button (click)="toggleSelected()">
+              <h5 class="favorite " mat-icon-button (click)="toggleSelected(advertisment.id)">
 
                 <mat-icon class="selected" *ngIf="selected" aria-label="Example icon-button with a heart icon">
                   favorite
