@@ -43,7 +43,6 @@ export class RenterComponent implements OnInit {
 
       })
   }
-
   getAllLocations() {
     this.advertismentService.getAllLocations().subscribe((res) => {
          this.allLocations = res.cities;
