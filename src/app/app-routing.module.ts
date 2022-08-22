@@ -41,6 +41,12 @@ import { FavouritsComponent } from "./components/favourits/favourits.component";
 import { BlockListComponent } from './admin/component/block-list/block-list.component';
 
 import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
+import { FollowUsComponent } from './admin/component/follow-links/follow-us/follow-us.component';
+import { FollowLinksComponent } from './admin/component/follow-links/follow-links.component';
+import { TeamMembersComponent } from './admin/component/team-members/team-members.component';
+import { AboutPolictyComponent } from './admin/component/about-policty/about-policty.component';
+import { AboutPolictyUpdateComponent } from './admin/component/about-policty-update/about-policty-update.component';
+import {TeamMemberUpdateComponent } from './admin/component/team-members/team-member-update/team-member-update.component';
 import { AcceptedAdsComponent } from './admin/component/accepted-ads/accepted-ads.component';
 import { RejecteddAdsComponent } from './admin/component/rejectedd-ads/rejectedd-ads.component';
 import { PayedAdsComponent } from './admin/component/payed-ads/payed-ads.component';
@@ -118,16 +124,18 @@ const routes: Routes = [
   {path: 'allreports', component: ReportsComponent ,canActivate:[AuthGuard]},
   {path: 'aboutForm', component: AboutFormComponent ,canActivate:[AuthGuard]},
   {path: 'blockList', component: BlockListComponent,canActivate:[AuthGuard]},
+  {path: 'followForm', component: FollowUsComponent,canActivate:[AuthGuard]},
+  {path: 'followShow', component: FollowLinksComponent,canActivate:[AuthGuard]},
+  {path: 'team', component: TeamMembersComponent,canActivate:[AuthGuard]},
+  {path: 'teamUpdate', component: TeamMemberUpdateComponent,canActivate:[AuthGuard]},
+  {path: 'aboutPolicty', component: AboutPolictyComponent,canActivate:[AuthGuard]},
+  {path: 'aboutPolictyUpdate', component: AboutPolictyUpdateComponent,canActivate:[AuthGuard]},
   {path: 'blockList', component: BlockListComponent,canActivate:[AuthGuard]},
   {path: 'accepted-ads', component: AcceptedAdsComponent,canActivate:[AuthGuard]},
   {path: 'rejected-ads', component: RejecteddAdsComponent,canActivate:[AuthGuard]},
   {path: 'payed-ads', component: PayedAdsComponent,canActivate:[AuthGuard]},
 
 
-  // user routes
-  // {
-  //   path: "report-form", component: ReportFormComponent
-  // },
   {
     path: "reportForm", component: ReportFormUserComponent
   },

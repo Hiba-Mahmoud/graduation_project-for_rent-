@@ -128,6 +128,8 @@ export class CartDetailsComponent implements OnInit {
     }
   }
 
+
+
   checkLogin(){
     this._AuthGuard.isLogin.subscribe((res:any)=>{
       this.isLogin = res

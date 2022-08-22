@@ -19,6 +19,12 @@ import { AdverRequestsComponent } from './component/adver-requests/adver-request
 import { TokenInterceptorInterceptor } from './interceptor/token-interceptor.interceptor';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BlockListComponent } from './component/block-list/block-list.component';
+import { FollowUsComponent } from './component/follow-links/follow-us/follow-us.component';
+import { TeamMembersComponent } from './component/team-members/team-members.component';
+import { TeamMemberUpdateComponent } from './component/team-members/team-member-update/team-member-update.component';
+import { FollowLinksComponent } from './component/follow-links/follow-links.component';
+import { AboutPolictyComponent } from './component/about-policty/about-policty.component';
+import { AboutPolictyUpdateComponent } from './component/about-policty-update/about-policty-update.component';
 import { AcceptedAdsComponent } from './component/accepted-ads/accepted-ads.component';
 import { RejecteddAdsComponent } from './component/rejectedd-ads/rejectedd-ads.component';
 import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
@@ -36,6 +42,12 @@ import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
     AdverRequestsComponent,
     AdminsComponent,
     BlockListComponent,
+    FollowUsComponent,
+    TeamMembersComponent,
+    TeamMemberUpdateComponent,
+    FollowLinksComponent,
+    AboutPolictyComponent,
+    AboutPolictyUpdateComponent,
     AcceptedAdsComponent,
     RejecteddAdsComponent,
     PayedAdsComponent,
