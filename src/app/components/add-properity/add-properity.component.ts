@@ -56,7 +56,7 @@ export class AddProperityComponent implements OnInit {
     // ------------------------------
     this.addproperity = this.formb.group({
       title:['',[Validators.required,Validators.minLength(10),Validators.maxLength(200),Validators.pattern('')]],
-      description:['',[Validators.required,Validators.minLength(100),Validators.maxLength(1000),Validators.pattern('')]],
+      description:['',[Validators.required,Validators.minLength(30),Validators.maxLength(1000),Validators.pattern('')]],
       price:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
       level:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
       bedroomnum:['',[Validators.required,Validators.pattern('^[0-9]+$')]],

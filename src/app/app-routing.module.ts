@@ -41,6 +41,9 @@ import { FavouritsComponent } from "./components/favourits/favourits.component";
 import { BlockListComponent } from './admin/component/block-list/block-list.component';
 
 import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
+import { AcceptedAdsComponent } from './admin/component/accepted-ads/accepted-ads.component';
+import { RejecteddAdsComponent } from './admin/component/rejectedd-ads/rejectedd-ads.component';
+import { PayedAdsComponent } from './admin/component/payed-ads/payed-ads.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -113,6 +116,11 @@ const routes: Routes = [
   {path: 'allreports', component: ReportsComponent ,canActivate:[AuthGuard]},
   {path: 'aboutForm', component: AboutFormComponent ,canActivate:[AuthGuard]},
   {path: 'blockList', component: BlockListComponent,canActivate:[AuthGuard]},
+  {path: 'blockList', component: BlockListComponent,canActivate:[AuthGuard]},
+  {path: 'accepted-ads', component: AcceptedAdsComponent,canActivate:[AuthGuard]},
+  {path: 'rejected-ads', component: RejecteddAdsComponent,canActivate:[AuthGuard]},
+  {path: 'payed-ads', component: PayedAdsComponent,canActivate:[AuthGuard]},
+
 
   // user routes
   // {

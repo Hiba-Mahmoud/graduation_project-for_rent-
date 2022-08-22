@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TokenService {
-
+  message:boolean;
   constructor() { }
 
   handeltoken(token:string){
@@ -40,5 +40,12 @@ export class TokenService {
   }
   gettokenfromLocalstorage():string{
     return localStorage.getItem('token')
+  }
+
+  setsuccmessage(resMsg:boolean){
+     this.message=resMsg;
+  }
+  getsuccmessage():boolean{
+    return this.message;
   }
 }

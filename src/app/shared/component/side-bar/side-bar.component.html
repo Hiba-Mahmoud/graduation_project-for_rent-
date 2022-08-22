@@ -11,6 +11,12 @@
       <ul class="nav flex-column" *ngIf="isAdmin ||  isSuperAdmin">
 
         <li class="nav-item">
+          <a class="nav-link" routerLink="adminhome">
+            <span data-feather="file"></span>
+            لوحة التحكم
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" routerLink="allRenters">
             <span data-feather="file"></span>
             المستأجرين
@@ -39,6 +45,24 @@
             <span data-feather="bar-chart-2"></span>
             الاعلانات
           </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/accepted-ads">
+            <span data-feather="bar-chart-2"></span>
+            الاعلانات المقبولة
+         </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/rejected-ads">
+            <span data-feather="bar-chart-2"></span>
+            الاعلانات المرفوضة
+         </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/payed-ads">
+            <span data-feather="bar-chart-2"></span>
+            الاعلانات المدفوعة
+         </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/blockList">
@@ -76,28 +100,42 @@
 
 <!-- owner  -->
       <mat-divider></mat-divider>
-      <!-- <ul class="nav flex-column">
+      <ul class="nav flex-column">
 
         <li class="nav-item" *ngIf="isRenter">
-          <a class="nav-link" routerLink="userfavourites">
+          <a class="nav-link" routerLink="/addProperity">
             <span data-feather="file"></span>
-            المفضله
+            إضافة اعلان
           </a>
         </li>
-        <li class="nav-item">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-            الحساب
-          </button>
-          <div class="collapse" id="dashboard-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a routerLink="" style="text-decoration: none;" class="link-dark rounded">تعديل البيانات</a></li>
-              <li><a routerLink="" style="text-decoration: none;" class="link-dark rounded">تعديل كلمة السر</a> </li>
-
-            </ul>
-          </div>
+        <li class="nav-item" *ngIf="isRenter">
+          <a class="nav-link" routerLink="/notrented">
+            <span data-feather="file"></span>
+          الاعلانات الغير مؤجرة
+          </a>
         </li>
-      </ul> -->
+        <li class="nav-item" *ngIf="isRenter">
+          <a class="nav-link" routerLink="/pending">
+            <span data-feather="file"></span>
+          الاعلانات  المعلقة
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isRenter">
+          <a class="nav-link" routerLink="/rented">
+            <span data-feather="file"></span>
+          العقارات المؤجرة
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isRenter">
+          <a class="nav-link" routerLink="/payed-rented">
+            <span data-feather="file"></span>
+          العقارات المدفوعة
+          </a>
+        </li>
+
+      </ul>
       <mat-divider></mat-divider>
+
 
 
     </mat-sidenav>

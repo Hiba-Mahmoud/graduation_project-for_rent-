@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -18,6 +19,9 @@ import { AdverRequestsComponent } from './component/adver-requests/adver-request
 import { TokenInterceptorInterceptor } from './interceptor/token-interceptor.interceptor';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BlockListComponent } from './component/block-list/block-list.component';
+import { AcceptedAdsComponent } from './component/accepted-ads/accepted-ads.component';
+import { RejecteddAdsComponent } from './component/rejectedd-ads/rejectedd-ads.component';
+import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,9 @@ import { BlockListComponent } from './component/block-list/block-list.component'
     AdverRequestsComponent,
     AdminsComponent,
     BlockListComponent,
+    AcceptedAdsComponent,
+    RejecteddAdsComponent,
+    PayedAdsComponent,
 
   ],
 
@@ -45,7 +52,8 @@ import { BlockListComponent } from './component/block-list/block-list.component'
     MatSortModule,
     ModalModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
 
   exports:[
@@ -57,6 +65,9 @@ import { BlockListComponent } from './component/block-list/block-list.component'
     AdverRequestsComponent,
     AdminsComponent,
     BlockListComponent,
+    AcceptedAdsComponent,
+    RejecteddAdsComponent,
+    PayedAdsComponent,
 
 
 
