@@ -1,0 +1,34 @@
+
+
+<div class="container mt-3">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>فيسبوك</th>
+          <th>{{links.links.facebook}}</th>
+        </tr>
+        <tr>
+            <th>انستجرام</th>
+            <th>{{links.links.instagram}}</th>
+          </tr>
+          <tr>
+            <th>تويتر</th>
+            <th>{{links.links.twitter}}</th>
+          </tr>
+          <tr>
+            <th>ايميل</th>
+            <th>{{links.links.email}}</th>
+          </tr>
+          <tr>
+            <th>فون</th>
+            <th>{{links.links.phone}}</th>
+          </tr>
+          <tr>
+            <th>لوجو</th>
+            <th><img [src]=links.links.logo  width="200px" height="200px" ></th>
+          </tr>
+      </thead>
+    </table>
+    <button class="send" style="width: 100%;height: 42px; padding: 0px;" (click)="updateLinks()">تعديل</button>
+
+  </div>

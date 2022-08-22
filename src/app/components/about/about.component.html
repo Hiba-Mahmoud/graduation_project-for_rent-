@@ -24,19 +24,19 @@
         </div>
       </div>
   
-      <div class="row text-center justify-content-center" *ngFor="let person of teamData.data" >
+      <div class="row text-center justify-content-center "  >
   
-        <div class="col-3" >
+        <div class="col-sm-12 col-md-4 col-lg-3 mb-5" *ngFor="let person of teamData.data" >
           <div class="bg-white rounded shadow-sm py-5 px-4">
             <img src="{{person.image}}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-            <h5 class="mb-0">{{person.name}}</h5><span class="small text-uppercase text-muted">{{person.jopTitle}}</span>
-            <h6 class="mb-0">{{person.jobTitle}}</h6>
-            <ul class="social mb-0 list-inline mt-3">
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+            <h5 class="mb-0">{{person.name}}</h5><span class="small text-uppercase text-muted">{{person.jobTitle}}</span>
+            <!-- <h6 class="mb-0">{{person.jobTitle}}</h6> -->
+            <!-- <ul class="social mb-0 list-inline mt-3"> -->
+              <!-- <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
               <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
               <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
+              <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li> -->
+            <!-- </ul> -->
           </div>
         </div>
   

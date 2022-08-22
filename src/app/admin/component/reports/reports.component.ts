@@ -13,14 +13,13 @@ export class ReportsComponent implements OnInit {
   status ;
   del;
   show_id;
-
   constructor(private obj:AllReportsService ,
      private http:HttpClient , 
      private delObj:DeleteReportService ,
      private route:Router ) { 
     this.getReportsData();
   }
-
+  
   getReportsData(){
     this.obj.getAllReports().subscribe(res=>{
       console.log("res");

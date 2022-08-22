@@ -9,6 +9,9 @@ import { FavouritService } from './services/favourit.service';
 export class FavouritsComponent implements OnInit {
   data : any =[];
   adv : any =[];
+  page: number = 1;
+  totalNumber: any;
+
   // i=0;
   constructor(private fav:FavouritService) { 
     this.getFavData();
@@ -22,6 +25,7 @@ export class FavouritsComponent implements OnInit {
       this.adv=this.data.data;
       console.log("adv is = ");
       console.log(this.adv);
+      this.totalNumber = this.adv.length;
     });
    }
 
