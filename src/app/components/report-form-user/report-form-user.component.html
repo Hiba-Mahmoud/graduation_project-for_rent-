@@ -1,0 +1,86 @@
+<title>Report form</title>
+
+  <body>
+    
+<form class="form-signin" [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="form-label-group">
+        <input type="text" id="inputName" formControlName="name" class="form-control" placeholder="Name" required autofocus >
+        <label for="inputName">اسم المستأجر</label>
+        <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['name'].errors && form.controls['name'].touched" >
+          <strong *ngIf="form.controls['name'].errors['required']">الاسم مطلوب</strong>
+          <strong *ngIf="form.controls['name'].errors['minlength']" >  الاسم  يجب الا يقل عن حرفان</strong>
+          <strong *ngIf="form.controls['name'].errors['maxlength']">  الاسم  يجب الا يزيد عن عشرة احرف</strong>
+          <strong *ngIf="form.controls['name'].errors['pattern']" >   الاسم  يجب ان يكون حروف عربية</strong>
+        </div>       
+      </div>    <small id="name"></small>
+
+  <div class="form-label-group">
+    <input type="email" id="inputEmail" formControlName="email" class="form-control" placeholder="Email address" required autofocus >
+    <label for="inputEmail">البريد الالكترونى</label>
+    <div class="alert alert-danger" role="alert"
+    *ngIf=" form.controls['email'].errors && form.controls['email'].touched">
+    <strong *ngIf="form.controls['email'].errors &&  form.controls['email'].errors['required']">
+    برجاء ادخال البريد الالكترونى</strong >
+    <strong *ngIf="form.controls['email'].errors['email']">ادخل ايميل صحيح</strong>
+  </div>
+  </div> <small id="email"></small>
+
+  <div class="form-label-group">
+    <input type="text" id="inputPhone" formControlName="phone" class="form-control" placeholder="phone" required >
+    <label for="inputPhone">رقم الموبايل</label>
+    <div class="alert alert-danger" role="alert"
+    *ngIf="form.controls['phone'].errors " >
+    <strong 
+    *ngIf="form.controls['phone'].errors && form.controls['phone'].errors['required']">
+    برجاء ادخال رقم الهاتف</strong>
+    <strong *ngIf="form.controls['phone'].errors['minlength']">
+      رقم الهاتف يجب الا يقل عن 11 رقما</strong >
+      <strong *ngIf="form.controls['phone'].errors['maxlength']" >
+        رقم الهاتف يجب الا يزيد عن 11 رقما</strong>
+      <strong *ngIf="form.controls['phone'].errors['pattern']" >
+        ادخل رقما صحيحا</strong >
+    </div>
+  </div> <small id="phone"></small>
+
+  <div class="form-label-group">
+    <input type="text" id="inputPhone" formControlName="url" class="form-control" placeholder="phone" required >
+    <label for="inputPhone"> عنوان ال url</label>
+    <div class="alert alert-danger" role="alert"
+    *ngIf=" form.controls['url'].errors && form.controls['url'].touched">
+    <strong *ngIf="form.controls['url'].errors &&  form.controls['url'].errors['required']">
+    برجاء ادخال البريد الالكترونى</strong >
+    </div >
+  </div> <small id="url"></small>
+
+  <div class="form-label-group">
+    <input type="txtarea" id="inputDescription" formControlName="description" class="form-control" placeholder="Description" required autofocus >
+    <label for="inputDescription">وصف الشكوى</label>
+    <div class="alert alert-danger" role="alert"
+    *ngIf=" form.controls['description'].errors && form.controls['description'].touched">
+    <strong *ngIf="form.controls['description'].errors &&  form.controls['description'].errors['required']">
+    برجاء ادخال الحقل </strong >
+    </div >
+  </div>  <small id="description"></small>
+
+  <div class="custom-file">
+    <label class="custom-file-label" for="customFile">المرفق 1</label>
+    <input type="file" formControlName="image[0]" class="custom-file-input" id="customFile" (change)="uploadFile1($event)">
+  </div>
+  <div class="custom-file">
+    <label class="custom-file-label" for="customFile">المرفق 2</label>
+    <input type="file" formControlName="image[1]" class="custom-file-input" id="customFile" (change)="uploadFile2($event)" >
+  </div>
+  
+  <div class="custom-file">
+   <br>
+  </div>
+  
+  <div>
+  <button class="send" >تقديم الشكوى</button>
+</div>
+</form>
+
+
+    
+  </body>

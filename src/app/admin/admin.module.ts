@@ -76,4 +76,6 @@ import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
 
 
 })
-export class AdminModule { }
+export class AdminModule {
+
+ }
