@@ -47,6 +47,9 @@ import { TeamMembersComponent } from './admin/component/team-members/team-member
 import { AboutPolictyComponent } from './admin/component/about-policty/about-policty.component';
 import { AboutPolictyUpdateComponent } from './admin/component/about-policty-update/about-policty-update.component';
 import {TeamMemberUpdateComponent } from './admin/component/team-members/team-member-update/team-member-update.component';
+import { AcceptedAdsComponent } from './admin/component/accepted-ads/accepted-ads.component';
+import { RejecteddAdsComponent } from './admin/component/rejectedd-ads/rejectedd-ads.component';
+import { PayedAdsComponent } from './admin/component/payed-ads/payed-ads.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -125,6 +128,11 @@ const routes: Routes = [
   {path: 'teamUpdate', component: TeamMemberUpdateComponent,canActivate:[AuthGuard]},
   {path: 'aboutPolicty', component: AboutPolictyComponent,canActivate:[AuthGuard]},
   {path: 'aboutPolictyUpdate', component: AboutPolictyUpdateComponent,canActivate:[AuthGuard]},
+  {path: 'blockList', component: BlockListComponent,canActivate:[AuthGuard]},
+  {path: 'accepted-ads', component: AcceptedAdsComponent,canActivate:[AuthGuard]},
+  {path: 'rejected-ads', component: RejecteddAdsComponent,canActivate:[AuthGuard]},
+  {path: 'payed-ads', component: PayedAdsComponent,canActivate:[AuthGuard]},
+
 
   {
     path: "reportForm", component: ReportFormUserComponent

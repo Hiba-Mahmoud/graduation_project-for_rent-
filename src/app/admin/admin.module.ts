@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -24,6 +25,9 @@ import { TeamMemberUpdateComponent } from './component/team-members/team-member-
 import { FollowLinksComponent } from './component/follow-links/follow-links.component';
 import { AboutPolictyComponent } from './component/about-policty/about-policty.component';
 import { AboutPolictyUpdateComponent } from './component/about-policty-update/about-policty-update.component';
+import { AcceptedAdsComponent } from './component/accepted-ads/accepted-ads.component';
+import { RejecteddAdsComponent } from './component/rejectedd-ads/rejectedd-ads.component';
+import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,9 @@ import { AboutPolictyUpdateComponent } from './component/about-policty-update/ab
     FollowLinksComponent,
     AboutPolictyComponent,
     AboutPolictyUpdateComponent,
+    AcceptedAdsComponent,
+    RejecteddAdsComponent,
+    PayedAdsComponent,
 
   ],
 
@@ -57,7 +64,8 @@ import { AboutPolictyUpdateComponent } from './component/about-policty-update/ab
     MatSortModule,
     ModalModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
 
   exports:[
@@ -69,6 +77,9 @@ import { AboutPolictyUpdateComponent } from './component/about-policty-update/ab
     AdverRequestsComponent,
     AdminsComponent,
     BlockListComponent,
+    AcceptedAdsComponent,
+    RejecteddAdsComponent,
+    PayedAdsComponent,
 
 
 

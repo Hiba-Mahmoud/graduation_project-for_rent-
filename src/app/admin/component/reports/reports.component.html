@@ -6,11 +6,10 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>E-mail</th>
-          <th>Phone</th>
-          <th>URL</th>
-          <th>action</th>
+          <th>الاسم</th>
+          <th>البريد الالكتروني</th>
+          <th>رقم الهاتف</th>
+          <th>الاجراء المتخذ</th>
           <th></th>
         </tr>
       </thead>
@@ -19,9 +18,9 @@
           <td>{{item.name}}</td>
           <td>{{item.email}}</td>
           <td>{{item.phone}}</td>
-          <td>{{item.url}}</td>
-          <td><button class="send" style="width: 79px;height: 42px; padding: 0px;" (click)="showReport(item.id)">Show</button></td>
-          <td><button class="send" style="width: 79px;height: 42px; padding: 0px;"  (click)="deleteReport(item.id)">Delete</button></td>
+
+          <td><button class="send" style="width: 79px;height: 42px; padding: 0px;" (click)="showReport(item.id)">عرض</button></td>
+          <td><button class="send"  style="width: 79px;height: 42px; padding: 0px;" (click)="deleteReport(item.id)">حذف</button></td>
         </tr>
       </tbody>
     </table>
