@@ -34,6 +34,8 @@ export class AddProperityComponent implements OnInit {
   isvalid =false;
   errormsg:any;
   titleError:any;
+  imageUrl=[];
+  showImage=false;
 
   constructor(private localstorage:TokenService,private router:Router,private http:HttpClient, private formb:FormBuilder,private owner:OwnerService) {
 
@@ -70,11 +72,6 @@ export class AddProperityComponent implements OnInit {
       file:['',[Validators.required]]
     })
       this.invalidForm=this.addproperity.status;
-    //  this.images=this.formb.group({
-    //     file: ['',[Validators.required]],
-    //     fileSource: new FormControl('', [Validators.required])
-    //   })
-
 
     }
 
@@ -89,28 +86,87 @@ export class AddProperityComponent implements OnInit {
   console.log(event.target.files[0]['name']);
   if (event.target.files && event.target.files[0]) {
     var filesAmount = event.target.files.length;
-    for (let i = 0; i < filesAmount; i++) {
+    let x = 10;
+    for (let i = 0; i < x; i++) {
+      if(i===9){
+
+        this.showImage=true;
+      }
       let imagename=event.target.files[i];
       console.log(imagename);
       this.data.append('image_name[]',imagename,imagename.name)
+
       // this.image_name.push(imagename);
       var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[i]);
 
             reader.onload = (event:any) => {
-              // console.log(event.target.files +'fillllle');
-              //  this.image_name.push(event.target.result);
+              this.imageUrl.push(event.target.result);
+              console.log(this.imageUrl)
+              // console.log(this.imageUrl +'fillllle');
 
               //  this.image_name.patchValue({
               //     fileSource: this.images
               //  });
             }
 
-            // reader.readAsArrayBuffer(event.target.files[i]);
     }
 }
 console.log('array'+this.image_name)
 
 }
+// onFileChange(event:any){
+//   if (event.target.files && event.target.files[0]) {
+//       let imagename=event.target.files[0];
+//       console.log(imagename);
+//       this.data.append('image_name[]',imagename,imagename.name)
+
+//       // this.image_name.push(imagename);
+//       var reader = new FileReader();
+//       reader.readAsDataURL(event.target.files[0]);
+
+//             reader.onload = (event:any) => {
+//               this.imageUrl=event.target.result;
+//               this.showImage=false;
+//               console.log(this.imageUrl)
+//               // console.log(this.imageUrl +'fillllle');
+
+//               //  this.image_name.patchValue({
+//               //     fileSource: this.images
+//               //  });
+
+
+//     }
+// }
+// console.log('array'+this.image_name)
+
+// }
+// onFiletwo(event){
+//   if (event.target.files && event.target.files[0]) {
+
+//     let imagename=event.target.files[0];
+//     console.log(imagename);
+//     this.data.append('image_name[]',imagename,imagename.name)
+
+//     // this.image_name.push(imagename);
+//     var reader = new FileReader();
+//     reader.readAsDataURL(event.target.files[0]);
+
+//           reader.onload = (event:any) => {
+//             this.imagetwo=event.target.result;
+//             this.showImage=false;
+//             console.log(this.imageUrl)
+//             // console.log(this.imageUrl +'fillllle');
+
+//             //  this.image_name.patchValue({
+//             //     fileSource: this.images
+//             //  });
+
+
+//   }
+// }
+
+// }
 
 onsubmit(){
   if(this.addproperity.status === "INVALID"){
@@ -151,6 +207,8 @@ onsubmit(){
 
   this.http.post('http://127.0.0.1:8000/api/advertisement',this.data,{headers:headers}).subscribe((response:any)=>{
     console.log(response)
+    this.localstorage.setsuccmessage(true)
+
     this.router.navigateByUrl('/owner')
   },(error:HttpErrorResponse)=>{
     console.log(error)

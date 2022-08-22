@@ -298,7 +298,7 @@
           <label class="form-label" for="gender" id="gender">المحافظة</label>
           <select
             formControlName="governate"
-            class="select  form-control"
+            class="select p-2 form-control"
             style="margin-left: 80px; padding-right: 95px"
           >
           <option disabled selected value>المحافظة</option>
@@ -325,7 +325,7 @@
       </div>
       <div class="col-sm-12 col-md-8">
         <label for="address" class="form-label">العنوان بالتفصيل</label>
-        <input type="text" name="address"  formControlName="address" class="form-control" id="address" />
+        <input type="text" name="address"  formControlName="address" class="form-control" id="address"  />
         <div
           class="alert alert-danger"
             role="alert"
@@ -350,13 +350,21 @@
             >
           </div>
 
+
       </div>
 
     </div>
+    <div class="row" >
+      <div class="col-sm-12 col-md-3" *ngFor="let url of imageUrl">
+        <img [src]="url" alt="" style="width:100%;height: 150px;">
+
+      </div>
+    </div>
+
     <div class="form-group">
       <label for="file">File</label>
       <input
-
+      accept="image/png, image/gif, image/jpeg"
           id="file"
           type="file"
           class="form-control"
@@ -373,81 +381,18 @@
               *ngIf="addproperity.controls['file'].errors['required']"
               >برجاء ادخال  صور مناسب</strong>
           </div>
-  </div>
-<!-- {{image_name.value|json}} -->
-  <!-- <img *ngFor='let url of image_name'  src="{{addproperity.value.file}}" height="150" width="200px" style="margin: 3px;"> <br/> -->
-    <!-- <div class="row" formGroupName="Image">
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="z-depth-1-half mb-4">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-              class="img-fluid w-100"
-              alt="example placeholder"
-            />
+          <div *ngIf="showImage else error">
+            فقط 10 صور
           </div>
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-              <span>Choose file</span>
-              <input type="file" formControlName="imageone"  name="imageone" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="z-depth-1-half mb-4">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-              class="img-fluid w-100"
-              alt="example placeholder"
-            />
-          </div>
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-              <span>اختر صورة </span>
-              <input type="file"  name="imagtwo" formControlName="imagtwo"/>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="z-depth-1-half mb-4">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-              class="img-fluid w-100"
-              alt="example placeholder"
-            />
-          </div>
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-              <span>اختر صورة</span>
-              <input type="file" name="imagethree"  formControlName="imagethree"/>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="z-depth-1-half mb-4">
-            <img
-              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-              class="img-fluid w-100"
-              alt="example placeholder"
-            />
-          </div>
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-              <span>اختر صورة</span>
-              <input type="file" name="imagefour" formControlName="imagefour"/>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+          <ng-template #error>
+            فقط 10 صور
 
-    <!-- <p>{{images.value |json}}</p> -->
+          </ng-template>
+  </div>
+
+
+
+
     <div class="text-center mt-5">
       <input class="send" type="submit" value="submit" (click)="onsubmit()"/>
     </div>

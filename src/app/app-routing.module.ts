@@ -44,6 +44,7 @@ import { PayedproperitiesComponent } from './components/payedproperities/payedpr
 import { AcceptedAdsComponent } from './admin/component/accepted-ads/accepted-ads.component';
 import { RejecteddAdsComponent } from './admin/component/rejectedd-ads/rejectedd-ads.component';
 import { PayedAdsComponent } from './admin/component/payed-ads/payed-ads.component';
+import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -89,6 +90,7 @@ const routes: Routes = [
 //
   { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
 
+  {path: 'payed-for-user', component:UserpayedRentedAdsComponent},
   {path: 'forgetpassword', component:ForgetPasswordComponent},
   // shared Routes
   { path: 'editpassword', component: EditpasswordComponent ,canActivate:[AuthGuard]},
