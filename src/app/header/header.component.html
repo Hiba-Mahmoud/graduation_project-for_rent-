@@ -19,13 +19,18 @@
                     <li class="nav-item">
                         <a class="nav-link " *ngIf="!isLogin" aria-current="page" routerLink="/about">التعريف</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " *ngIf="!isLogin" aria-current="page" routerLink="/about">تواصل معنا</a>
+                    </li>
                     <li class="nav-item" *ngIf="isLogin">
                         <a class="nav-link ">
                             <li ngbDropdown class="nav-item ">
                                 <div class="nav-link dropdown-toggle" [ngStyle]="{'background-color' : 'transparent' }" (click)="zero()" id=" navbarDropdownMenuLink " ngbDropdownToggle role="button " data-bs-toggle="dropdown " aria-expanded="false ">
                                     <!-- <i class="bi bi-bell "></i><sup><span
                             class="rounded-circle bg-danger text-white ">{{totalNumber}}</span></sup> -->
-                                    <mat-icon matBadge={{totalNumber}} matBadgeColor="warn">notifications</mat-icon>
+                                    <mat-icon *ngIf="totalNumber>0" matBadge={{totalNumber}} matBadgeColor="warn">notifications</mat-icon>
+                                    <mat-icon *ngIf="totalNumber==0">notifications</mat-icon>
+
                                 </div>
                                 <ul class="dropdown drop " ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink ">
                                     <li *ngFor=" let item of allNotification ">
@@ -37,9 +42,7 @@
                     </li>
                 </ul>
 
-                <li class="nav-item">
-                    <a class="nav-link " *ngIf="!isLogin" aria-current="page" routerLink="/about">تواصل معنا</a>
-                </li>
+
 
 
 

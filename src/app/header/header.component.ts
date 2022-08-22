@@ -86,20 +86,22 @@ export class HeaderComponent implements OnInit {
       //add advertisement notificaation
 
       const channel3 = await pusher.subscribe('NewChannel3');
-     await channel3.bind("AddAdvertisement", function(data) {
-        //check if is admin
-        if(this.isAdmin || this.isSuperAdmin){
-        this.toastr.success( data.message,"لديك اشعار جديد");
+     await channel3.bind("AddAdvertisement", (data) =>{
+      
+      if( (this.isAdmin) || (this.isSuperAdmin)){
+
+      this.toastr.success( data.message,"لديك اشعار جديد");
        
         
         console.log( data);
-        }
+      }
+        
 
       });
 
       //add comment notification
-      const channel1 = pusher.subscribe('NewChannel');
-      await channel1.bind("CommentNotification", function(data) {
+      const channel1 = await pusher.subscribe('NewChannel');
+      await channel1.bind("CommentNotification",(data)=> {
 
         //check if is auther of the advertisement 
         if((this.id == data.user_id ) && (this.isOwner)){
