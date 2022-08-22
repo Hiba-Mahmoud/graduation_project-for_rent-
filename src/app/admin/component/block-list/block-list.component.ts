@@ -35,9 +35,9 @@ export class BlockListComponent implements OnInit {
   }
 
   getAll(){
-    this.service.getAll("http://127.0.0.1:8000/api/admin/owners").subscribe(data=>{
-      this.allData=data.owners;
-       this.dataSource = new MatTableDataSource(data.owners);
+    this.service.getAll("http://127.0.0.1:8000/api/admin/blocks").subscribe(data=>{
+      this.allData=data.blocks;
+       this.dataSource = new MatTableDataSource(data.blocks);
        this.dataSource.paginator = this.paginator;
       this.dataSource.sort=this.sort;
       this.loading=false;

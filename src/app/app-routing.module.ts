@@ -34,6 +34,8 @@ import { ResetPasswordComponent } from './auth/component/reset-password/reset-pa
 import { BlockListComponent } from './admin/component/block-list/block-list.component';
 
 import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
+import { RenterComponent } from './users/component/renter/renter.component';
+import { AllOwnerHistoryComponent } from './shared/component/all-owner-history/all-owner-history.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -55,6 +57,10 @@ const routes: Routes = [
     path: "details/:id", component: CartDetailsComponent
   },
 
+  {
+    path: "allOwnerAdvertisments/:id", component: AllOwnerHistoryComponent
+  },
+
   { path: 'editpassword', component: EditpasswordComponent },
   { path: 'reset-password-code', component: MailwithcodeComponent },
   { path: 'password', component: ResetPasswordComponent },
@@ -62,37 +68,6 @@ const routes: Routes = [
   {
     path: 'editpersonaldata', component: EditpersonaldataComponent
   },
-
-
-
-//favourit
-//setting
-//dashbord
-//owner
-//add adv
-//update add
-//notification
-//paymentmethod
-//side bar
-//nav bar
-//gard type
-//list all properites owner
-// ===================
-
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -105,6 +80,9 @@ const routes: Routes = [
   // user and admin ahared Routes
   { path: 'about', component:AboutComponent},
   { path: 'all-owner-properites', component: ListAllOwnerProperitiesComponent },
+  //renter
+  { path: 'renter', component: RenterComponent,canActivate:[AuthGuard] },
+
   // owner Routes
   { path: 'owner', component: OwnerComponent,canActivate:[AuthGuard] },
   { path: 'addProperity', component: AddProperityComponent,canActivate:[AuthGuard] },
