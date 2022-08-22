@@ -37,7 +37,7 @@ export class RejecteddAdsComponent implements OnInit {
 
   getallaccepted(){
 
-      let pending ='http://127.0.0.1:8000/api/admin/acceptedAdvertisement'
+      let pending ='http://127.0.0.1:8000/api/admin/declinedAdvertisement'
       this.owner.getadmincounters(pending).subscribe(data=>{
         // console.log(data.accepted_advertisement)
         this.length=data.accepted_advertisement.length
