@@ -32,10 +32,11 @@ import { CodeVerifyComponent } from './auth/component/code-verify/code-verify.co
 import { MailwithcodeComponent } from './auth/component/mailwithcode/mailwithcode.component';
 import { ResetPasswordComponent } from './auth/component/reset-password/reset-password.component';
 import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
-
+import { SettingsComponent } from './shared/component/settings/settings.component';
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
 
+  { path: 'settings', component: SettingsComponent },
 
   // auth Routes
 

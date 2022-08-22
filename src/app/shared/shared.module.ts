@@ -97,7 +97,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     EditpersonaldataComponent,
     CommentsComponent,
     SideBarComponent,
-
+    
 
   ],
 

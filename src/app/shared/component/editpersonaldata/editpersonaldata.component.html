@@ -1,23 +1,38 @@
- <html>
-<head>
 
-</head>
-<body>
-    <h2>البيانات الشخصية</h2>
+  <title>Edit form</title>
 
-<form dir="rtl">
-    <div class="mb-3">
-      <label for="exampleInputName" class="form-label">الاسم</label>
-      <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-      
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputImage" class="form-label">الصورة</label>
-      <input type="image" class="form-control" id="exampleInputImage">
-    </div>
     
-  </form>
-</body>
-</html> 
-
-
+  <form class="form-signin" [formGroup]="form" (ngSubmit)="submitForm()" novalidate >
+  
+      <div class="form-label-group">
+          <input type="text" id="name" formControlName="name" class="form-control"
+           placeholder="" required autofocus >
+          <label for="inputName"> الاسم</label>        
+          <div class="alert alert-danger" role="alert"
+            *ngIf="form.controls['name'].errors && form.controls['name'].touched" >
+            <strong *ngIf="form.controls['name'].errors['required']">الاسم مطلوب</strong>
+            <strong *ngIf="form.controls['name'].errors['minlength']" >  الاسم  يجب الا يقل عن حرفان</strong>
+            <strong *ngIf="form.controls['name'].errors['maxlength']">  الاسم  يجب الا يزيد عن عشرة احرف</strong>
+            <strong *ngIf="form.controls['name'].errors['pattern']" >   الاسم  يجب ان يكون حروف عربية</strong>
+          </div>       
+        </div>    
+        <br> <br>
+    <div class="form-label-group">
+         <input type="text" id="phone" formControlName="phone" class="form-control"  required autofocus >
+         <label for="inputPhone">رقم الهاتف </label>
+         <div class="alert alert-danger" role="alert"
+            *ngIf="form.controls['phone'].errors && form.controls['phone'].touched" >
+            <strong *ngIf="form.controls['phone'].errors['required']"> رقم الهاتف مطلوب</strong>
+            <strong *ngIf="form.controls['phone'].errors['minlength']" >  رقم الهاتف  يجب الا يقل عن 11 رقم</strong>
+            <strong *ngIf="form.controls['phone'].errors['maxlength']">  رقم الهاتف  يجب الا يزيد عن عن 11 رقم</strong>
+            <strong *ngIf="form.controls['phone'].errors['pattern']" >  ادخل رقما صحيحا   </strong>
+          </div>
+    </div>
+    <br> <br>
+  
+   
+    <button type="submit" class="send"  [disabled]="!form.valid">تأكيد </button>
+  
+    </form>
+  
+  
