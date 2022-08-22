@@ -1,5 +1,13 @@
 import { NgModule } from '@angular/core';
+<<<<<<< HEAD
 import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
+=======
+import { RouterModule, Routes } from '@angular/router';
+import { SettingsComponent } from './shared/component/settings/settings.component';
+import { EditpasswordComponent } from './shared/component/editpassword/editpassword.component';
+import { EditpersonaldataComponent } from './shared/component/editpersonaldata/editpersonaldata.component';
+import { UserfavouritesComponent } from './components/userfavourites/userfavourites.component';
+>>>>>>> 0fcb2d50a31ec16c4fc660cee278680cb71a7e6d
 
 import { AddProperityComponent } from './components/add-properity/add-properity.component';
 import { ListAllOwnerProperitiesComponent } from './components/list-all-owner-properities/list-all-owner-properities.component';
@@ -14,8 +22,7 @@ import { LoginComponent } from './auth/component/login/login.component';
 import { RegisterComponent } from './auth/component/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { CartDetailsComponent } from './shared/component/cart-details/cart-details.component';
-import { EditpasswordComponent } from './shared/component/editpassword/editpassword.component';
-import { EditpersonaldataComponent } from './shared/component/editpersonaldata/editpersonaldata.component';
+
 import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 import { AboutComponent } from './components/about/about.component';
 import { AdminhomeComponent } from './admin/component/adminhome/adminhome.component';
@@ -23,6 +30,7 @@ import { ListcontactsComponent } from './admin/component/listcontacts/listcontac
 import { NotRentedYetComponent } from './components/not-rented-yet/not-rented-yet.component';
 import { PendingComponent } from './components/pending/pending.component';
 import { RentedComponent } from './components/rented/rented.component';
+<<<<<<< HEAD
 import { MailConfirmComponent } from './auth/component/mail-confirm/mail-confirm.component';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { AuthGuard } from './guard/auth.guard';
@@ -40,6 +48,15 @@ const routes: Routes = [
 
   // auth Routes
 
+=======
+
+import { ReportsDetailsComponent } from './admin/component/reports-details/reports-details.component';
+
+const routes: Routes = [
+  // { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path:'reports-details',component:ReportsDetailsComponent },
+  { path: 'settings', component:  SettingsComponent},
+>>>>>>> 0fcb2d50a31ec16c4fc660cee278680cb71a7e6d
   {
     path: "home", component: HomeComponent
   },
@@ -129,9 +146,10 @@ const routes: Routes = [
 
   {
     path: "**", component: NotFoundComponent
-  }
-];
+  },
 
+]
+ 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

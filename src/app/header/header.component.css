@@ -3,6 +3,22 @@ mat-toolbar {
   color: gray;
 }
 
+<<<<<<< HEAD
+=======
+.content {
+  
+  border-radius: 10px;
+  margin: 2px;
+  margin-left: 2px;
+  padding: 2px;
+  overflow-x: hidden;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;
+                       */  ;
+
+
+>>>>>>> 0fcb2d50a31ec16c4fc660cee278680cb71a7e6d
 
 
 
@@ -57,7 +73,11 @@ ul li a:hover {
 
   color: #131212;
   font-weight: bold;
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> 0fcb2d50a31ec16c4fc660cee278680cb71a7e6d
 
 /* .content {
     height: 100vh;

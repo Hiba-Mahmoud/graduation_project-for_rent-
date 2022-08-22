@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddProperityComponent } from './components/add-properity/add-properity.component';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+<<<<<<< HEAD
 import { MaterialModule } from './material/material.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -30,10 +31,17 @@ import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component'
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { RouterModule } from '@angular/router';
 import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component'
+=======
+import { SharedModule} from './shared/shared.module';
+import { UserfavouritesComponent } from './components/userfavourites/userfavourites.component';
+import { AdminModule } from './admin/admin.module';
+
+>>>>>>> 0fcb2d50a31ec16c4fc660cee278680cb71a7e6d
 
 @NgModule({
   declarations: [
 
+<<<<<<< HEAD
          AppComponent,
          AccountComponent,
          HomeComponent,
@@ -53,6 +61,11 @@ import { PayedproperitiesComponent } from './components/payedproperities/payedpr
       PaymentmethodComponent,
 
 
+=======
+    AddProperityComponent,
+    UserfavouritesComponent,
+    
+>>>>>>> 0fcb2d50a31ec16c4fc660cee278680cb71a7e6d
   ],
   imports: [
 
