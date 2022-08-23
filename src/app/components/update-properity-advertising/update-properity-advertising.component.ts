@@ -182,7 +182,8 @@ export class UpdateProperityAdvertisingComponent implements OnInit {
 
 
   getallImages(){
-    this.owner.getadvertismentdetails('http://127.0.0.1:8000/api/edit/advertisement/', this.id).subscribe(res => {
+    this.owner.getadvertismentdetails('http://127.0.0.1:8000/api/edit/advertisement/', this.id).subscribe({
+      next:res => {
       console.log(res.advertisement[0].user.id+'respoooooooooonse')
       this.advertisment = res.advertisement[0]
       this.addproperity.patchValue({
@@ -212,9 +213,9 @@ export class UpdateProperityAdvertisingComponent implements OnInit {
 
 
     },
-      error => {
+      error:error => {
         console.log(error)
-      })
+      }})
   }
 }
 

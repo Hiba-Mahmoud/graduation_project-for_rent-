@@ -33,11 +33,11 @@
 
         <ng-container matColumnDef="تعديل">
           <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 text-center table-dark h5 p-3" scope="row"> تعديل </th>
-          <td mat-cell *matCellDef="let element" class="col-sm-1 pt-5"> <a class="btn btn-dark send" [routerLink]='["/editproperty",element.id]'> تعديل</a> </td>
+          <td mat-cell *matCellDef="let element" class="col-sm-1 p-2"> <a class="btn btn-dark send" [routerLink]='["/editproperty",element.id]'> تعديل</a> </td>
         </ng-container>
         <ng-container matColumnDef="حذف">
           <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 p-3  table-dark  h5"> حذف </th>
-          <td mat-cell *matCellDef="let element" class=" pt-5 ">
+          <td mat-cell *matCellDef="let element" class=" p-2">
 
 
             <a class="btn btn-dark send" (click)="delete(element.id)"> حذف</a> </td>
