@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   emailerror: any;
   passwoderror: any;
   ischecked: boolean;
+  errorstatus=true;
 
   constructor(
     private fb: FormBuilder,
@@ -120,8 +121,8 @@ export class LoginComponent implements OnInit {
         error: (error: any) => {
           this.errMsg = error;
           console.log(this.errMsg)
-
-        // console.log(this.errMsg)
+          this.errorstatus = error.error.status
+        // console.log(x)
 
         if(this.errMsg.error.error.email){
           this.emailerror= this.errMsg.error.error.email;

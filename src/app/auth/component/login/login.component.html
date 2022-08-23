@@ -11,6 +11,7 @@
                 </div>
 
                 <form [formGroup]="loginForm">
+                  <div *ngIf="!errorstatus"><p class="text-center text-danger">عفوا لقد ادخلت بيانات غير صحيحة</p></div>
                   <div class="form-outline mb-4">
                     <label class="form-label d-flex" for="email"
                       >البريد الالكترونى</label
