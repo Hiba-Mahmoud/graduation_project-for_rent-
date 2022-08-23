@@ -17,21 +17,21 @@ export class CartDetailsComponent implements OnInit {
   data:any={}
   images:any=[]
   adverId:any ;
-  review:any;
+  review:any; 
   suggestion:any;
   suggesObgImage:any;
   loading:boolean=true;
   isLogin!:boolean;
 
   furniture:any;
-
+ 
   success: boolean = false;
   failure:boolean = false;
 
   constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient
     ,private _AuthGuard:AuthGuard,private localstorage:TokenService) {
     this.id=this.route.snapshot.paramMap.get("id")
-
+    
    }
 
   ngOnInit(): void {
@@ -53,28 +53,28 @@ export class CartDetailsComponent implements OnInit {
     // this.suggesObgImage=this.suggestion[0].advertisement_image[0].image_name;
      console.log(this.data[0].advertisement_image[0].image_name);
    })
-
+  
  }
  makePayment(amount:any,advertisement:any,owner:any) {
    const http=this.http;
    let local=this.localstorage.gettokenfromLocalstorage();
    let session=this.localstorage.getToken();
-
+ 
    if(local){
      console.log(local)
      this.token =local;
    }else if (session){
      console.log(session)
      this.token =session;
-
+ 
    }
    const headers = new HttpHeaders({
-
+ 
      'Authorization': `Bearer ${this.token}`
    });
    console.log(headers);
     const strikeCheckout = (<any>window).StripeCheckout.configure({
-
+      
       key: 'pk_test_51LX8ftH4ooOXAWsbNANhQAaiF9nzIHfUiThsjYEnPP4WQwOW5ylzc1NtWK1qDapTutl291B1FEyjgXDxdyxAsLZh00dL6UnlqH',
       locale: 'auto',
       token: function (stripeToken: any) {
@@ -87,24 +87,23 @@ export class CartDetailsComponent implements OnInit {
       },{headers:headers}) .subscribe(
         (data:any)=>{
           console.log(data);
-
+         
     });
   }
-      });
+      });   
+    
+    
+        
 
-
-
-
-
-
+   
+  
     strikeCheckout.open({
       name: 'RemoteStack',
       description: 'Payment widgets',
-      amount: amount * 100,
+      amount: amount * 100,      
     });
-
+    
   }
-
   
   stripePaymentGateway() {
     if(!window.document.getElementById('stripe-script')) {
