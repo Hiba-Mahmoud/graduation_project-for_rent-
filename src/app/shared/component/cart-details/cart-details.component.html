@@ -14,11 +14,12 @@
   
   </div>
   
-  
+
   <mat-card class="mt-2 mx-2 desc">
     <div class="d-flex flex-row" *ngIf="data.reviews_num>0">
       <mat-icon style="font-size:large;">star</mat-icon>
       <p>{{data.reviews_avg}}</p><p>({{data.reviews_num}}) تقييمات</p>
+    
     </div>
     <mat-card-title>{{data.title}}</mat-card-title>
     <h2>{{data.price}}جنيه</h2>
@@ -68,7 +69,7 @@
           <mat-list-item role="listitem">{{data.user.phone}}</mat-list-item>
           <mat-list-item role="listitem">{{data.user.email}}</mat-list-item>
 
-          <mat-list-item role="listitem" *ngIf="data.advertisement_num>1"><a routerLink="/ownerAllAdvertisments">{{data.advertisement_num}} عقارات </a></mat-list-item>
+          <mat-list-item role="listitem" ><a routerLink="/allOwnerAdvertisments/{{data.user.id}}">{{advertNumber}} عقارات </a></mat-list-item>
   
         </mat-list>
       </div>
@@ -111,6 +112,8 @@
                      
                       <p class="mb-2 text-muted">{{item.type}}</p>
                       <div class="d-flex flex-row">
+                        
+           
                         <mat-icon style="font-size:large;">star</mat-icon>
                         <p >{{item.ratings_avg_count}}</p><p>({{item.ratings_count}})</p>
                       </div>
@@ -132,14 +135,13 @@
     </div>
       
      
-   
   </div>
   </div>
   
+  <app-footer> </app-footer>
+
   
   
-  
-  <app-footer></app-footer>
 </div>
 <div class="justify-content-center align-items-center" *ngIf="loading">
   <mat-spinner class="text-center w-50  mt-5 pt-5 " style="top:30px ;"></mat-spinner>

@@ -77,51 +77,66 @@ export class LoginComponent implements OnInit {
             }
 
             //navigate
-            if (response.user.type == 'owner') {
-              localStorage.setItem('role', response.user.type);
-              localStorage.setItem('image', response.user.image);
-              localStorage.setItem('name', response.user.name);
-              localStorage.setItem('id', response.user.id);
+        if(response.user.type =='owner'){
+          localStorage.setItem('role',response.user.type);
+          localStorage.setItem('image',response.user.image);
+          localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
 
-              this.router.navigate(['/owner']);
-            } else if (response.user.type == 'renter') {
-              localStorage.setItem('role', response.user.type);
-              localStorage.setItem('image', response.user.image);
-              localStorage.setItem('name', response.user.name);
-              localStorage.setItem('id', response.user.id);
 
-              this.router.navigate(['/payed-for-user']);
-            } else if (response.user.type == 'admin') {
-              localStorage.setItem('role', response.user.type);
-              localStorage.setItem('image', response.user.image);
-              localStorage.setItem('name', response.user.name);
-              localStorage.setItem('id', response.user.id);
+          this.router.navigate(['/owner']);
 
-              this.router.navigate(['/adminhome']);
-            } else {
-              localStorage.setItem('role', response.user.type);
-              localStorage.setItem('image', response.user.image);
-              localStorage.setItem('name', response.user.name);
-              localStorage.setItem('id', response.user.id);
+        }else if(response.user.type =='renter'){
+          localStorage.setItem('role',response.user.type);
+          localStorage.setItem('image',response.user.image);
+          localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
 
-              this.router.navigate(['/adminhome']);
-            }
+          this.router.navigate(['/renter']);
+
+        }else if (response.user.type =='admin'){
+          localStorage.setItem('role',response.user.type);
+          localStorage.setItem('image',response.user.image);
+          localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
+
+          this.router.navigate(['/adminhome']);
+
+        }else{
+          localStorage.setItem('role',response.user.type);
+          localStorage.setItem('image',response.user.image);
+          localStorage.setItem('name',response.user.name);
+          localStorage.setItem('id',response.user.id);
+
+          this.router.navigate(['/adminhome']);
+
+        }
+
+
+
+
           }
         },
         error: (error: any) => {
           this.errMsg = error;
-          // console.log(this.errMsg)
+          console.log(this.errMsg)
 
-          if (this.errMsg.error.error.email) {
-            this.emailerror = this.errMsg.error.error.email;
-          }
-          if (this.errMsg.error.error.password) {
-            this.passwoderror = this.errMsg.error.error.password;
-          }
+        // console.log(this.errMsg)
 
-          // console.log(this.errMsg);
-        },
-      });
+        if(this.errMsg.error.error.email){
+          this.emailerror= this.errMsg.error.error.email;
+
+        };
+        if(this.errMsg.error.error.password){
+          this.passwoderror = this.errMsg.error.error.password;
+
+        };
+
+        // console.log(this.errMsg);
+
+      }
+    }
+    )
   }
 
   onclick(event: any) {
@@ -130,3 +145,39 @@ export class LoginComponent implements OnInit {
     }
   }
 }
+
+
+
+
+//navigate
+// if (response.user.type == 'owner') {
+//   localStorage.setItem('role', response.user.type);
+//   localStorage.setItem('image', response.user.image);
+//   localStorage.setItem('name', response.user.name);
+//   localStorage.setItem('id', response.user.id);
+
+//   this.router.navigate(['/owner']);
+// } else if (response.user.type == 'renter') {
+//   localStorage.setItem('role', response.user.type);
+//   localStorage.setItem('image', response.user.image);
+//   localStorage.setItem('name', response.user.name);
+//   localStorage.setItem('id', response.user.id);
+
+//   this.router.navigate(['/payed-for-user']);
+// } else if (response.user.type == 'admin') {
+//   localStorage.setItem('role', response.user.type);
+//   localStorage.setItem('image', response.user.image);
+//   localStorage.setItem('name', response.user.name);
+//   localStorage.setItem('id', response.user.id);
+
+//   this.router.navigate(['/adminhome']);
+// } else {
+//   localStorage.setItem('role', response.user.type);
+//   localStorage.setItem('image', response.user.image);
+//   localStorage.setItem('name', response.user.name);
+//   localStorage.setItem('id', response.user.id);
+
+
+//   this.router.navigate(['/adminhome']);
+// }
+// }

@@ -34,6 +34,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AllOwnerHistoryComponent } from './component/all-owner-history/all-owner-history.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     EditpersonaldataComponent,
     CommentsComponent,
     SideBarComponent,
+    AllOwnerHistoryComponent,
 
 
 

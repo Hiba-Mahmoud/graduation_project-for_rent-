@@ -2,7 +2,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-sm-5 col-md-6 col-12 pb-4" *ngFor="let review of reviews">
+            <div class="col-sm-12 col-md-6  pb-4" *ngFor="let review of reviews">
                 <h1>التقييمات :</h1>
                 
                 <div class="comment mt-4 bg-light text-justify float-left">
@@ -29,9 +29,9 @@
                     </div>
                     <div class="text-danger my-2" *ngIf="commentForm.controls['comment'].touched && commentForm.controls['comment'].invalid">يجب أن يكون أكثر من أربعه أحرف</div>
                     <div style=" font-size:xx-large ; color:orange ;" class="form-group mt-2">
-                        <ngb-rating [max]="5" [readonly]="false" formControlName="rating"> </ngb-rating>
+                        <ngb-rating [max]="5" [readonly]="false" formControlName="count"> </ngb-rating>
                     </div>
-                   <div class="text-danger m-2"  *ngIf="commentForm.controls['comment'].touched && commentForm.controls['rating'].invalid">التقييم مطلوب</div>
+                   <div class="text-danger m-2"  *ngIf="commentForm.controls['comment'].touched && commentForm.controls['count'].invalid">التقييم مطلوب</div>
                     <div class="form-group">
                         <button [disabled]="commentForm.invalid"  type="submit" id="post" class="btn">نشر</button>
                     </div>
