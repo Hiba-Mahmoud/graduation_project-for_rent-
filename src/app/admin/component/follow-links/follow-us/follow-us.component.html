@@ -1,0 +1,79 @@
+<title>Report form</title>
+
+    
+<form class="form-signin" [formGroup]="form" (ngSubmit)="submitForm()" novalidate >
+
+    <div class="form-label-group">
+        <input type="text" id="name" formControlName="facebook" class="form-control"
+         placeholder="Name" required autofocus >
+        <label for="inputName">فيسبوك </label>        
+        <!-- <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['name'].errors && form.controls['name'].touched" >
+          <strong *ngIf="form.controls['name'].errors['required']">الاسم مطلوب</strong>
+          <strong *ngIf="form.controls['name'].errors['minlength']" >  الاسم  يجب الا يقل عن حرفان</strong>
+          <strong *ngIf="form.controls['name'].errors['maxlength']">  الاسم  يجب الا يزيد عن عشرة احرف</strong>
+          <strong *ngIf="form.controls['name'].errors['pattern']" >   الاسم  يجب ان يكون حروف عربية</strong>
+        </div>        -->
+      </div>    
+    <div class="form-label-group">
+        <input type="text" id="name" formControlName="instagram" class="form-control"
+         placeholder="Name" required autofocus >
+        <label for="inputName">انستغرام </label>        
+        <!-- <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['name'].errors && form.controls['name'].touched" >
+          <strong *ngIf="form.controls['name'].errors['required']">الاسم مطلوب</strong>
+          <strong *ngIf="form.controls['name'].errors['minlength']" >  الاسم  يجب الا يقل عن حرفان</strong>
+          <strong *ngIf="form.controls['name'].errors['maxlength']">  الاسم  يجب الا يزيد عن عشرة احرف</strong>
+          <strong *ngIf="form.controls['name'].errors['pattern']" >   الاسم  يجب ان يكون حروف عربية</strong>
+        </div>        -->
+      </div>    
+    <div class="form-label-group">
+        <input type="text" id="name" formControlName="twitter" class="form-control"
+         placeholder="Name" required autofocus >
+        <label for="inputName">تويتر </label>        
+        <!-- <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['name'].errors && form.controls['name'].touched" >
+          <strong *ngIf="form.controls['name'].errors['required']">الاسم مطلوب</strong>
+          <strong *ngIf="form.controls['name'].errors['minlength']" >  الاسم  يجب الا يقل عن حرفان</strong>
+          <strong *ngIf="form.controls['name'].errors['maxlength']">  الاسم  يجب الا يزيد عن عشرة احرف</strong>
+          <strong *ngIf="form.controls['name'].errors['pattern']" >   الاسم  يجب ان يكون حروف عربية</strong>
+        </div>        -->
+      </div>    
+    <div class="form-label-group">
+        <input type="text" id="name" formControlName="email" class="form-control"
+         placeholder="Name" required autofocus >
+        <label for="inputName">البريد الالكترونى </label>        
+        <!-- <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['name'].errors && form.controls['name'].touched" >
+          <strong *ngIf="form.controls['name'].errors['required']">الاسم مطلوب</strong>
+          <strong *ngIf="form.controls['name'].errors['minlength']" >  الاسم  يجب الا يقل عن حرفان</strong>
+          <strong *ngIf="form.controls['name'].errors['maxlength']">  الاسم  يجب الا يزيد عن عشرة احرف</strong>
+          <strong *ngIf="form.controls['name'].errors['pattern']" >   الاسم  يجب ان يكون حروف عربية</strong>
+        </div>        -->
+      </div>    
+
+  <div class="form-label-group">
+       <input type="text" id="jobTitle" formControlName="phone" class="form-control"  required autofocus >
+       <label for="inputEmail">رقم الهاتف </label>
+       <!-- <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['jobTitle'].errors && form.controls['jobTitle'].touched" >
+          <strong *ngIf="form.controls['jobTitle'].errors['required']">الوظيفة مطلوبة</strong>
+          <strong *ngIf="form.controls['jobTitle'].errors['minlength']" >  الوظيفة  يجب الا تقل عن حرفان</strong>
+          <strong *ngIf="form.controls['jobTitle'].errors['maxlength']">  الوظيفة  يجب الا تزيد عن عشرة احرف</strong>
+          <strong *ngIf="form.controls['jobTitle'].errors['pattern']" >  الوظيفة  يجب ان تكون حروف</strong>
+        </div> -->
+  </div>
+  <br> <br>
+  
+  <div class="custom-file">
+    <label class="custom-file-label" for="customFile">اللوجو </label>
+    <input type="file" name="logo" class="custom-file-input" id="customFile" (change)="uploadFile1($event)">
+  </div>
+  <br> <br>
+
+
+  <button type="submit" class="send"  >تعديل </button>
+  <button type="submit" class="send"  >رجوع </button>
+
+  </form>
+  <!-- [disabled]="!form.valid" -->

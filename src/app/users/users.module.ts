@@ -4,7 +4,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OwnerComponent } from './component/owner/owner.component';
 import { RenterComponent } from './component/renter/renter.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -15,11 +18,16 @@ import { RenterComponent } from './component/renter/renter.component';
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+      NgxPaginationModule,
+      MatSelectModule,
+      MatButtonToggleModule,
+      MatIconModule
 
   ],
   exports:[
-    OwnerComponent
+    OwnerComponent,
+    RenterComponent
   ]
 })
 export class UsersModule { }

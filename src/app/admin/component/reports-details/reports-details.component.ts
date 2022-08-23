@@ -11,7 +11,11 @@ import {HttpClient} from '@angular/common/http';
 export class ReportsDetailsComponent implements OnInit {
 
   reportData: any = []; 
+  images:any=[];
   shared_id ;
+  loading:boolean=true;
+  url:any;
+
 
   constructor(private obj:ReportShowService , 
     private route:ActivatedRoute , 
@@ -36,7 +40,9 @@ export class ReportsDetailsComponent implements OnInit {
       this.reportData=res;
       console.log("Data is =");
       console.log("this.reports");
-      console.log(this.reportData.report);
+      this.images=this.reportData.report[0].contact_us_file
+      this.url=this.reportData.report[0].url
+      console.log(this.images);
     });
   }
 

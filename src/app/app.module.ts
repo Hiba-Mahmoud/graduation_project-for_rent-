@@ -55,7 +55,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
 import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
-import { HeaderComponent } from './header/header.component'
+import { HeaderComponent } from './header/header.component';
+import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+// import { AcceptedAdsComponent } from './admon/component/accepted-ads/accepted-ads.component';
+// import { RejectedAdsComponent } from './admon/component/rejected-ads/rejected-ads.component';
+// import { PayedAdsComponent } from './admon/component/payed-ads/payed-ads.component'
 
 @NgModule({
   declarations: [
@@ -78,10 +83,12 @@ import { HeaderComponent } from './header/header.component'
       ReportFormUserComponent,
       AboutFormComponent,
       FavouritsComponent,
-      
+
 
       PaymentmethodComponent,
         HeaderComponent,
+        UserpayedRentedAdsComponent,
+
 
 
   ],
@@ -105,13 +112,17 @@ import { HeaderComponent } from './header/header.component'
     AdminModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    NgxSpinnerModule,
     MatProgressSpinnerModule,
     ModalModule.forRoot(),
+
 
     CommonModule,
     ToastrModule.forRoot(), 
 
     FormsModule ,     
+
+    FormsModule ,
 
     LayoutModule,
     MatToolbarModule,

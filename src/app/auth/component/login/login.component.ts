@@ -1,4 +1,3 @@
-
 import { AuthService } from './../../service/auth.service';
 import { TokenService } from './../../service/token.service';
 import { Router } from '@angular/router';
@@ -10,57 +9,75 @@ import { IUser } from '../../classesAndinterfaces/registerationData';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-
-  loginForm:FormGroup;
-  user = new IUser;
-  errMsg:any;
+  loginForm: FormGroup;
+  user = new IUser();
+  errMsg: any;
   userId: any;
-  emailerror:any;
-  passwoderror:any;
-  ischecked:boolean;
+  emailerror: any;
+  passwoderror: any;
+  ischecked: boolean;
+  errorstatus=true;
 
-  constructor(private fb:FormBuilder,private http:HttpClient,private router:Router,private token:TokenService,private auth:AuthService) { }
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+    private token: TokenService,
+    private auth: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      email:['',[Validators.required,Validators.email, Validators.minLength(7), Validators.maxLength(40)]],
-      password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(20),]],
-      rememberMe:[],
-    })
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.email,
+          Validators.minLength(7),
+          Validators.maxLength(40),
+        ],
+      ],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(6),
+          Validators.maxLength(20),
+          Validators.pattern(
+            '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$'
+          ),
+        ],
+      ],
+      rememberMe: [],
+    });
   }
 
   login() {
     //  console.log(this.loginForm.value)
 
+    this.user.email = this.loginForm.value.email;
+    this.user.password = this.loginForm.value.password;
 
-    this.user.email = this.loginForm.value.email
-    this.user.password = this.loginForm.value.password
+    return this.http
+      .post('http://127.0.0.1:8000/api/login', this.user)
+      .subscribe({
+        next: (response: any) => {
+          if (response.user.email_verified_at == null) {
+            this.router.navigateByUrl('/mailverifiy');
+          } else {
+            console.log(response.authorisation.token);
 
+            //session or localstorage store token
+            if (this.ischecked) {
+              this.token.settokenInlocalstorage(response.authorisation.token);
+            } else {
+              this.token.handeltoken(response.authorisation.token);
+            }
 
-
-    return this.http.post('http://127.0.0.1:8000/api/login', this.user).subscribe(
-      (response: any) =>{
-
-
-
-        if(response.user.email_verified_at == null){
-          this.router.navigateByUrl('/mailverifiy')
-
-        }else{
-        console.log(response.authorisation.token);
-
-        //session or localstorage store token
-        if(this.ischecked){
-          this.token.settokenInlocalstorage(response.authorisation.token)
-        }else{
-          this.token.handeltoken(response.authorisation.token);
-        }
-
-        //navigate
+            //navigate
         if(response.user.type =='owner'){
           localStorage.setItem('role',response.user.type);
           localStorage.setItem('image',response.user.image);
@@ -76,7 +93,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('name',response.user.name);
           localStorage.setItem('id',response.user.id);
 
-          this.router.navigate(['/']);
+          this.router.navigate(['/renter']);
 
         }else if (response.user.type =='admin'){
           localStorage.setItem('role',response.user.type);
@@ -95,12 +112,17 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/adminhome']);
 
         }
-          // this.router.navigateByUrl('/home');
-        }
-      },
-      (error: any) => {
-        this.errMsg = error;
-        // console.log(this.errMsg)
+
+
+
+
+          }
+        },
+        error: (error: any) => {
+          this.errMsg = error;
+          console.log(this.errMsg)
+          this.errorstatus = error.error.status
+        // console.log(x)
 
         if(this.errMsg.error.error.email){
           this.emailerror= this.errMsg.error.error.email;
@@ -114,18 +136,49 @@ export class LoginComponent implements OnInit {
         // console.log(this.errMsg);
 
       }
+    }
     )
-
-
   }
 
- onclick(event:any){
-  if(event.target.checked){
-    this.ischecked=true;
+  onclick(event: any) {
+    if (event.target.checked) {
+      this.ischecked = true;
+    }
   }
-
-
-
- }
-
 }
+
+
+
+
+//navigate
+// if (response.user.type == 'owner') {
+//   localStorage.setItem('role', response.user.type);
+//   localStorage.setItem('image', response.user.image);
+//   localStorage.setItem('name', response.user.name);
+//   localStorage.setItem('id', response.user.id);
+
+//   this.router.navigate(['/owner']);
+// } else if (response.user.type == 'renter') {
+//   localStorage.setItem('role', response.user.type);
+//   localStorage.setItem('image', response.user.image);
+//   localStorage.setItem('name', response.user.name);
+//   localStorage.setItem('id', response.user.id);
+
+//   this.router.navigate(['/payed-for-user']);
+// } else if (response.user.type == 'admin') {
+//   localStorage.setItem('role', response.user.type);
+//   localStorage.setItem('image', response.user.image);
+//   localStorage.setItem('name', response.user.name);
+//   localStorage.setItem('id', response.user.id);
+
+//   this.router.navigate(['/adminhome']);
+// } else {
+//   localStorage.setItem('role', response.user.type);
+//   localStorage.setItem('image', response.user.image);
+//   localStorage.setItem('name', response.user.name);
+//   localStorage.setItem('id', response.user.id);
+
+
+//   this.router.navigate(['/adminhome']);
+// }
+// }

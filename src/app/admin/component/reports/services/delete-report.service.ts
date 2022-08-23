@@ -9,7 +9,7 @@ export class DeleteReportService {
   constructor(private http:HttpClient) { }
 
   delRepo(id :number){
-    return this.http.get(this.url+id);
+    return this.http.delete(this.url+id);
           // window.location.reload();
 
   }
