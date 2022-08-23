@@ -249,6 +249,33 @@
           </div>
         </div>
         <div class="form-outline mb-4">
+          <label class="form-label" for="type" id="type"> الدفع من خلال الموقع</label>
+          <select
+          formControlName="payment"
+          class="select w-100 form-control"
+          style="margin-left: 80px; padding-right: 95px"
+          >
+            <option disabled selected value> الدفع </option>
+            <option value="yes">نعم</option>
+            <option value="no">لا</option>
+          </select>
+          <div class="alert alert-danger"
+            *ngIf="
+              registeration.controls['payment'].errors && registeration.controls['payment'].touched
+            "
+          >
+            <small
+              class="form-text text-dark"
+              *ngIf="
+                registeration.controls['payment'].errors &&
+                registeration.controls['payment'].errors['required']
+                "
+            >
+              الحقل مطلوب</small
+            >
+          </div>
+        </div>
+        <div class="form-outline mb-4">
           <label class="form-label" for="type" id="type">تسجيل كـ</label>
           <select
           formControlName="type"
