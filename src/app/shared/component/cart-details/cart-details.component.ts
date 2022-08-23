@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TokenService } from 'src/app/auth/service/token.service';
 import { AuthGuard } from 'src/app/guard/auth.guard';
@@ -27,14 +27,24 @@ export class CartDetailsComponent implements OnInit {
  
   success: boolean = false;
   failure:boolean = false;
+  advertNumber: any;
+
+  selected: boolean;
+  selectedChange = new EventEmitter<boolean>();
 
   constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient
-    ,private _AuthGuard:AuthGuard,private localstorage:TokenService) {
-    this.id=this.route.snapshot.paramMap.get("id")
+
+    ,private _AuthGuard:AuthGuard,private localstorage:TokenService ) {
+    this.id=this.route.snapshot.paramMap.get("id");
     
+    
+
+    
+
    }
 
   ngOnInit(): void {
+    
     this.checkLogin();
 
     this.getAdvertismentById();
@@ -45,16 +55,23 @@ export class CartDetailsComponent implements OnInit {
  getAdvertismentById(){
    this.advertismentService.getAdvertismentById("http://127.0.0.1:8000/api/show/advertisement/",this.id).subscribe((res:any)=>{
     this.data=res.advertisement[0];
-    this.images= this.data.advertisement_image ;
+        this.images= this.data.advertisement_image ;
     this.adverId=this.data.id;
     this.review=res.reviews;
     this.suggestion=res.suggestion;
+    this.advertNumber=res.advertisement_num;
     this.loading=false;
     // this.suggesObgImage=this.suggestion[0].advertisement_image[0].image_name;
-     console.log(this.data[0].advertisement_image[0].image_name);
    })
   
  }
+
+
+//  suggestionNavigate(id:any){
+//   this.router.navigateByUrl('/details/'+id).then();
+  
+
+//  }
  makePayment(amount:any,advertisement:any,owner:any) {
    const http=this.http;
    let local=this.localstorage.gettokenfromLocalstorage();
@@ -134,4 +151,10 @@ export class CartDetailsComponent implements OnInit {
       this.isLogin = res
     })
   }
+
+  // toggleSelected() {
+  //   this.selected = !this.selected;
+  //   this.selectedChange.emit(this.selected);
+  //   console.log(this.selected);
+  // }
 }
