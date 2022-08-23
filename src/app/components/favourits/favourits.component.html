@@ -1,0 +1,42 @@
+<!-- <div  > -->
+  <div class="album py-5 ">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
+
+        <div class="col "
+          *ngFor="let adver of adv | paginate: { itemsPerPage: 9,totalItems:totalNumber, currentPage: page }">
+
+  <div class="card shadow-sm m-3" routerLink="/details/{{adver.advertisement_id}}" >      
+    <img [src]="adver.advertisement.advertisement_image[0].image_name" height="200px" width="100%" alt="" >
+  <div class="card-body bg-light ">
+    <div class="container">
+      <div class="row ">
+
+        <div class="col px-3 py-2">
+          <div class="d-flex flex-row justify-content-between">
+
+            <p class="mb-2 text-muted">{{adver.advertisement.type}}</p>
+            <div class="d-flex flex-row" >
+              <mat-icon style="font-size:large;">star</mat-icon>
+              <p>{{adver.advertisement.bedroom_num}} عدد الغرف</p><br>
+              <p>{{adver.advertisement.bathroom_num}} عدد  التواليت</p>
+            </div>
+
+          </div>
+          <h3 class="mb-0">{{adver.advertisement.title}}</h3>
+          <h3 class="mb-0">{{adver.advertisement.price}}</h3>
+          <div class="d-flex justify-content-between align-items-center ">
+            <small class="text-muted"> <span class="material-icons   ">location_on</span> {{adver.advertisement.address}}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+  </div>
+  </div></div>
+</div>
+
+<!-- </div> -->

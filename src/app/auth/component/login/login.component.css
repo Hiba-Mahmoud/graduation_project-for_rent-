@@ -10,7 +10,14 @@
   }
 
   .gradient-form{
-    margin-bottom: 15%;
+    margin-top:2%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-image: url(src\assets\living-room-interior-wall-mockup-warm-tones-with-pink-armchair-minimal-design-3d-rendering.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   @media (min-width: 768px) {
     .gradient-form {

@@ -13,7 +13,10 @@ import { UsersModule } from './users/users.module';
 import { MaterialModule } from './material/material.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { NgForm, ReactiveFormsModule } from '@angular/forms';
+
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListAllOwnerProperitiesComponent } from './components/list-all-owner-properities/list-all-owner-properities.component';
 import { UpdateProperityAdvertisingComponent } from './components/update-properity-advertising/update-properity-advertising.component';
@@ -27,6 +30,13 @@ import { CommentsComponent } from './comments/comments.component';
 import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+// import { ReportFormComponent } from './components/report-form/report-form.component';
+import { ReportFormUserComponent } from './components/report-form-user/report-form-user.component';
+import { AboutFormComponent } from './admin/component/about-form/about-form.component';
+import { FavouritsComponent } from './components/favourits/favourits.component';
+
+
+
 import { RouterModule } from '@angular/router';
 
 import { LayoutModule } from '@angular/cdk/layout';
@@ -37,7 +47,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
 import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
-import { HeaderComponent } from './header/header.component'
+import { HeaderComponent } from './header/header.component';
+import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
+// import { AcceptedAdsComponent } from './admon/component/accepted-ads/accepted-ads.component';
+// import { RejectedAdsComponent } from './admon/component/rejected-ads/rejected-ads.component';
+// import { PayedAdsComponent } from './admon/component/payed-ads/payed-ads.component'
 
 @NgModule({
   declarations: [
@@ -53,12 +67,19 @@ import { HeaderComponent } from './header/header.component'
          RentedComponent,
          PayedproperitiesComponent,
          NotRentedYetComponent,
-         // ListcontactsComponent,
+        //  ListcontactsComponent,
 
       CommentsComponent,
+      // ReportFormComponent,
+      ReportFormUserComponent,
+      AboutFormComponent,
+      FavouritsComponent,
+      
 
       PaymentmethodComponent,
         HeaderComponent,
+        UserpayedRentedAdsComponent,
+       
 
 
   ],
@@ -84,6 +105,8 @@ import { HeaderComponent } from './header/header.component'
     NgxPaginationModule,
     MatProgressSpinnerModule,
     ModalModule.forRoot(),
+    FormsModule ,     
+
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,

@@ -31,6 +31,12 @@ export class AddProperityComponent implements OnInit {
   userData:any;
   invalidForm:any;
   validation:any;
+  isvalid =false;
+  errormsg:any;
+  titleError:any;
+  imageUrl=[];
+  showImage=false;
+
   constructor(private localstorage:TokenService,private router:Router,private http:HttpClient, private formb:FormBuilder,private owner:OwnerService) {
 
 
@@ -52,7 +58,7 @@ export class AddProperityComponent implements OnInit {
     // ------------------------------
     this.addproperity = this.formb.group({
       title:['',[Validators.required,Validators.minLength(10),Validators.maxLength(200),Validators.pattern('')]],
-      description:['',[Validators.required,Validators.minLength(100),Validators.maxLength(1000),Validators.pattern('')]],
+      description:['',[Validators.required,Validators.minLength(30),Validators.maxLength(1000),Validators.pattern('')]],
       price:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
       level:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
       bedroomnum:['',[Validators.required,Validators.pattern('^[0-9]+$')]],
@@ -66,11 +72,6 @@ export class AddProperityComponent implements OnInit {
       file:['',[Validators.required]]
     })
       this.invalidForm=this.addproperity.status;
-    //  this.images=this.formb.group({
-    //     file: ['',[Validators.required]],
-    //     fileSource: new FormControl('', [Validators.required])
-    //   })
-
 
     }
 
@@ -85,31 +86,96 @@ export class AddProperityComponent implements OnInit {
   console.log(event.target.files[0]['name']);
   if (event.target.files && event.target.files[0]) {
     var filesAmount = event.target.files.length;
-    for (let i = 0; i < filesAmount; i++) {
+    let x = 10;
+    for (let i = 0; i < x; i++) {
+      if(i===9){
+
+        this.showImage=true;
+      }
       let imagename=event.target.files[i];
       console.log(imagename);
       this.data.append('image_name[]',imagename,imagename.name)
+
       // this.image_name.push(imagename);
       var reader = new FileReader();
+      reader.readAsDataURL(event.target.files[i]);
 
             reader.onload = (event:any) => {
-              // console.log(event.target.files +'fillllle');
-              //  this.image_name.push(event.target.result);
+              this.imageUrl.push(event.target.result);
+              console.log(this.imageUrl)
+              // console.log(this.imageUrl +'fillllle');
 
               //  this.image_name.patchValue({
               //     fileSource: this.images
               //  });
             }
 
-            // reader.readAsArrayBuffer(event.target.files[i]);
     }
 }
 console.log('array'+this.image_name)
 
 }
+// onFileChange(event:any){
+//   if (event.target.files && event.target.files[0]) {
+//       let imagename=event.target.files[0];
+//       console.log(imagename);
+//       this.data.append('image_name[]',imagename,imagename.name)
+
+//       // this.image_name.push(imagename);
+//       var reader = new FileReader();
+//       reader.readAsDataURL(event.target.files[0]);
+
+//             reader.onload = (event:any) => {
+//               this.imageUrl=event.target.result;
+//               this.showImage=false;
+//               console.log(this.imageUrl)
+//               // console.log(this.imageUrl +'fillllle');
+
+//               //  this.image_name.patchValue({
+//               //     fileSource: this.images
+//               //  });
+
+
+//     }
+// }
+// console.log('array'+this.image_name)
+
+// }
+// onFiletwo(event){
+//   if (event.target.files && event.target.files[0]) {
+
+//     let imagename=event.target.files[0];
+//     console.log(imagename);
+//     this.data.append('image_name[]',imagename,imagename.name)
+
+//     // this.image_name.push(imagename);
+//     var reader = new FileReader();
+//     reader.readAsDataURL(event.target.files[0]);
+
+//           reader.onload = (event:any) => {
+//             this.imagetwo=event.target.result;
+//             this.showImage=false;
+//             console.log(this.imageUrl)
+//             // console.log(this.imageUrl +'fillllle');
+
+//             //  this.image_name.patchValue({
+//             //     fileSource: this.images
+//             //  });
+
+
+//   }
+// }
+
+// }
 
 onsubmit(){
-  console.log(typeof(this.addproperity.value.price))
+  if(this.addproperity.status === "INVALID"){
+    console.log('hello')
+    this.isvalid = true;
+    console.log(this.isvalid)
+  }else{
+
+    console.log(typeof(this.addproperity.value.price))
   this.data.append('title',this.addproperity.value.title) ;
   this.data.append('description',this.addproperity.value.description) ;
   this.data.append('address',this.addproperity.value.address) ;
@@ -123,18 +189,6 @@ onsubmit(){
   this.data.append('area',this.addproperity.value.area) ;
   this.data.append('city_id',this.addproperity.value.governate) ;
 
-  // this.addata.title= this.addproperity.value.title;
-  // this.addata.description= this.addproperity.value.description;
-  // this.addata.address= this.addproperity.value.address;
-  // this.addata.price= this.addproperity.value.price;
-  // this.addata.bedroom_num= this.addproperity.value.bedroomnum;
-  // this.addata.bathroom_num= this.addproperity.value.bathroomnum;
-  // this.addata.beds_num= this.addproperity.value.bedsnum;
-  // this.addata.level= this.addproperity.value.level;
-  // this.addata.furniture= this.addproperity.value.furniture;
-  // this.addata.type= this.addproperity.value.type;
-  // this.addata.area= this.addproperity.value.area;
-  // this.addata.city_id= this.addproperity.value.governate;
   this.addata.image_name= this.image_name;
   console.log(this.addata)
   let local=this.localstorage.gettokenfromLocalstorage();
@@ -146,20 +200,29 @@ onsubmit(){
   }else if (session){
     console.log(session)
     this.token =session;
-
   }
   const headers = new HttpHeaders({
-
     'Authorization': `Bearer ${this.token}`
   });
+
   this.http.post('http://127.0.0.1:8000/api/advertisement',this.data,{headers:headers}).subscribe((response:any)=>{
     console.log(response)
+    this.localstorage.setsuccmessage(true)
+
     this.router.navigateByUrl('/owner')
   },(error:HttpErrorResponse)=>{
     console.log(error)
+    this.errormsg = error.error.error
+    this.titleError=this.errormsg.title[0]
+    console.log(this.errormsg)
+    console.log(this.titleError)
 
   })
 
 }
+
+  }
 }
+
+
 

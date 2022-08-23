@@ -1,0 +1,22 @@
+
+
+<div class="container mt-3">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>الاسم</th>
+          <th>الوظيفة</th>
+          <th colspan="2">الاجراء المتخذ</th>
+          <!-- <th></th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let item of members.data">
+          <td>{{item.name}}</td>
+          <td>{{item.jobTitle}}</td>
+          <td><button class="send" style="width: 79px;height: 42px; padding: 0px;" (click)="updateMem(item.id)">تعديل</button></td>
+          <td><button class="send"  style="width: 79px;height: 42px; padding: 0px;" (click)="deleteMem(item.id)">حذف</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

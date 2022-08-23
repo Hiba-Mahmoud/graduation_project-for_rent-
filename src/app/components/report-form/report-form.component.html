@@ -1,0 +1,55 @@
+<title>Report form</title>
+
+  <body>
+    
+<form class="form-signin" #reportForms="ngForm" (ngSubmit)="getReportData(reportForms.value)">
+
+    <div class="form-label-group">
+        <input type="text" id="inputName" name="name" class="form-control" placeholder="Name" required autofocus ngModel>
+        <label for="inputName">اسم المستأجر</label>
+      </div>    
+
+  <div class="form-label-group">
+    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus ngModel>
+    <label for="inputEmail">البريد الالكترونى</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" id="inputPhone" name="phone" class="form-control" placeholder="phone" required ngModel>
+    <label for="inputPhone">رقم الموبايل</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" id="inputPhone" name="url" class="form-control" placeholder="phone" required ngModel>
+    <label for="inputPhone"> عنوان ال url</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="txtarea" id="inputDescription" name="description" class="form-control" placeholder="Description" required autofocus ngModel>
+    <label for="inputDescription">وصف الشكوى</label>
+  </div>
+
+  <div class="custom-file">
+    <label class="custom-file-label" for="customFile">المرفق 1</label>
+    <input type="file" name="image[0]" class="custom-file-input" id="customFile" ngModel>
+  </div>
+  <div class="custom-file">
+    <label class="custom-file-label" for="customFile">المرفق 2</label>
+    <input type="file" name="image[1]" class="custom-file-input" id="customFile" ngModel>
+  </div>
+  <!-- <div class="custom-file">
+    <label class="custom-file-label" for="customFile">المرفق 3</label>
+    <input type="file" name="" class="custom-file-input" id="customFile">
+  </div> -->
+  <div class="custom-file">
+   <br>
+  </div>
+  
+  <div>
+  <button class="send" >تقديم الشكوى</button>
+</div>
+</form>
+
+
+    
+  </body>

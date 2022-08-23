@@ -30,4 +30,11 @@ getpendingCount(url:string):Observable<any>
 }
 
 
+
+//admin
+getadmincounters(url:string):Observable<any>
+{
+  return this.http.get(url)
+}
+
 }
