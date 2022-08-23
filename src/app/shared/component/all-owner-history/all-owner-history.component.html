@@ -42,7 +42,7 @@
                   <div class="col px-3 py-2">
                     <div class="d-flex flex-row justify-content-between">
 
-                      <p class="mb-2 text-muted">{{advertisment .type}}</p>
+                      <p class="mb-2 text-muted">{{advertisment .type | type}}</p>
                       <div class="d-flex flex-row" *ngIf="advertisment .ratings_count>0">
                         <mat-icon style="font-size:large;">star</mat-icon>
                         <p>{{advertisment .ratings_avg_count}}</p>

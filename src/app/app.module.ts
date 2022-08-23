@@ -114,6 +114,7 @@ import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/u
     MatIconModule,
     MatListModule,
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

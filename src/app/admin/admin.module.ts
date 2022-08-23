@@ -28,6 +28,7 @@ import { AboutPolictyUpdateComponent } from './component/about-policty-update/ab
 import { AcceptedAdsComponent } from './component/accepted-ads/accepted-ads.component';
 import { RejecteddAdsComponent } from './component/rejectedd-ads/rejectedd-ads.component';
 import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
+import { GenderPipe } from './pipes/gender.pipe';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
     AcceptedAdsComponent,
     RejecteddAdsComponent,
     PayedAdsComponent,
+    GenderPipe,
 
   ],
 
@@ -80,7 +82,7 @@ import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
     AcceptedAdsComponent,
     RejecteddAdsComponent,
     PayedAdsComponent,
-
+   GenderPipe
 
 
   ],
