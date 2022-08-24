@@ -35,7 +35,9 @@ export class ReportsDetailsComponent implements OnInit {
     })
     this.http
     .get('http://127.0.0.1:8000/api/admin/contactUs/show/'+this.shared_id)
-    .subscribe( res=>{
+    .subscribe({
+      next:
+      ( res=>{
       console.log("res i = " , res);
       this.reportData=res;
       console.log("Data is =");
@@ -43,19 +45,10 @@ export class ReportsDetailsComponent implements OnInit {
       this.images=this.reportData.report[0].contact_us_file
       this.url=this.reportData.report[0].url
       console.log(this.images);
-    });
+    })
+  })
   }
 
-  // getReportData(){
-  //   this.obj.getReport(this.shared_id).subscribe(res=>{
-  //     console.log("res");
-  //     console.log(res);
-  //     this.reportData=res;
-  //     console.log("Data is =");
-  //     console.log("this.reports");
-  //     console.log(this.reportData.report);
-  //   });
-  //  }
 
 
 }

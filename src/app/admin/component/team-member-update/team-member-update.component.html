@@ -1,0 +1,66 @@
+<title>teams form</title>
+<form action="" dir="rtl" class="w-100 mb-3 mt-3" style="text-align: center;" [formGroup]="images">
+
+  <div class="custom-file" style="margin-right: 109px;">
+       <label for="image"><img
+         src={{team.image}}
+         class="img-fluid w-100"
+         alt="example placeholder"
+         style="width: 100px;height:150px"
+         /></label>
+         <input type="file" formControlName="image"   id="image" name="image" (change)="onFileChange($event)" style="margin-right: 19px;"/>
+
+         </div>
+   </form>    
+   <hr>
+<form class="form-signin col-6" [formGroup]="form" (ngSubmit)="submitForm()" novalidate >
+
+    <div class="form-label-group">
+        <input type="text" id="name" formControlName="name" class="form-control"
+         placeholder="Name" name="name" required autofocus >
+
+        <label for="inputName">الاسم</label>        
+        <div class="alert alert-danger" role="alert" *ngIf="form.controls['name'].errors && form.controls['name'].touched" >
+          <strong *ngIf="form.controls['name'].errors['required']">برجاء ادخال الاسم</strong>
+          <strong *ngIf="form.controls['name'].errors['minlength']" >  الاسم  يجب الا يقل عن خمسه احرف</strong>
+          <strong *ngIf="form.controls['name'].errors['maxlength']">  الحد الاقصى للحروف هو عشرون حرف</strong>
+          <strong *ngIf="form.controls['name'].errors['pattern']" >   الاسم  يجب ان يكون حروف فقط</strong>
+        </div>       
+      </div>    
+
+  <div class="form-label-group">
+       <input type="text" id="jobTitle" name="jobTitle" formControlName="jobTitle" class="form-control"  required autofocus >
+       <label for="inputEmail">الوظيفة </label>
+       <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['jobTitle'].errors && form.controls['jobTitle'].touched" >
+          <strong *ngIf="form.controls['jobTitle'].errors['required']">برجاء ادخال الوظيفه </strong>
+          <strong *ngIf="form.controls['jobTitle'].errors['minlength']" >  الوظيفة  يجب الا تقل عن عشره احرف</strong>
+          <strong *ngIf="form.controls['jobTitle'].errors['maxlength']">  اقصى عدد للحروف اربعون حرف</strong>
+          <strong *ngIf="form.controls['jobTitle'].errors['pattern']" > الوظيفة يجب ان تكون حروف فقط</strong>
+        </div>
+  </div>
+  <br>
+
+  <!-- <div class="custom-file">
+    <label for="image"><img
+      [src]="team.image"
+      class="img-fluid w-100"
+      id="img"
+      alt="example placeholder"
+      style="width: 100px;height:150px"
+      /></label>
+      <input type="file" formControlName="image" value={{team.image}}  id="image" name="image" (change)="onFileChange($event)" style="margin-top: 17px;"/>
+     
+    </div>
+ <br> <br> -->
+
+  <button type="submit" class="send"  [disabled]="!form.valid">تعديل </button>
+
+</form>
+  
+ 
+ 
+  <!-- <p>Form value: {{ form.value | json }}</p>
+<p>Form status: {{ form.status | json }}</p> -->
+
+  
