@@ -41,14 +41,14 @@ export class UpdateProperityAdvertisingComponent implements OnInit {
     // this.filldata=this.formb.group({});
     //cities
     let cities = 'http://127.0.0.1:8000/api/cities';
-    this.owner.getcities(cities).subscribe((response: any) => {
+    this.owner.getcities(cities).subscribe({next:(response: any) => {
       console.log(response)
       this.cities = response.cities
       console.log(this.cities + "cities")
-    }, (error) => {
+    },error: (error) => {
       console.log(error)
 
-    });
+    }});
 
 
 
@@ -101,18 +101,19 @@ export class UpdateProperityAdvertisingComponent implements OnInit {
     let id = this.advertisment.id
     console.log(id+'الصوررررررررررررر')
     let headers =this.getToken();
-    this.http.post('http://127.0.0.1:8000/api/edit/image/'+id+'/'+imgId , this.data, headers).subscribe((response: any) => {
+    this.http.post('http://127.0.0.1:8000/api/edit/image/'+id+'/'+imgId , this.data, headers).subscribe({next:(response: any) => {
 
       console.log(response.image.image_name)
       this.getallImages();
 
 
-    }, (error: HttpErrorResponse) => {
+    }, error:(error: HttpErrorResponse) => {
       console.log(error)
 
 
 
-    })
+    }
+  })
 
 
   }
@@ -144,10 +145,10 @@ export class UpdateProperityAdvertisingComponent implements OnInit {
     console.log(this.data)
     console.log(id)
     let headers =this.getToken();
-    this.http.post('http://127.0.0.1:8000/api/advertisement/' + id, this.data, headers).subscribe((response: any) => {
+    this.http.post('http://127.0.0.1:8000/api/advertisement/' + id, this.data, headers).subscribe({next:(response: any) => {
       console.log(response)
       this.router.navigateByUrl('/owner')
-    }, (error: HttpErrorResponse) => {
+    }, error:(error: HttpErrorResponse) => {
       console.log(error)
       //       image_name: ['بجب ان تدخل صوره الاعلان هذا الحقل مطلوب ']
       // status:
@@ -157,7 +158,7 @@ export class UpdateProperityAdvertisingComponent implements OnInit {
       this.statuserror = this.errorMsg.status
 
 
-    })
+    }})
 
   }
   getToken():any{
@@ -182,7 +183,8 @@ export class UpdateProperityAdvertisingComponent implements OnInit {
 
 
   getallImages(){
-    this.owner.getadvertismentdetails('http://127.0.0.1:8000/api/edit/advertisement/', this.id).subscribe(res => {
+    this.owner.getadvertismentdetails('http://127.0.0.1:8000/api/edit/advertisement/', this.id).subscribe({
+      next:res => {
       console.log(res.advertisement[0].user.id+'respoooooooooonse')
       this.advertisment = res.advertisement[0]
       this.addproperity.patchValue({
@@ -212,9 +214,9 @@ export class UpdateProperityAdvertisingComponent implements OnInit {
 
 
     },
-      error => {
+      error:error => {
         console.log(error)
-      })
+      }})
   }
 }
 

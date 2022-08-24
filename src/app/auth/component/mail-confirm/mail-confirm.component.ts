@@ -18,6 +18,7 @@ export class MailConfirmComponent implements OnInit {
   code=new confirmMailCode ;
   userId:number;
   errMsg: any;
+  err:any;
 
   constructor(private auth:AuthService,private fb:FormBuilder,private http:HttpClient , private moveData:MoaveDataService,private router:Router,private Token:TokenService) { }
 
@@ -37,51 +38,63 @@ export class MailConfirmComponent implements OnInit {
     confirmmailCode.token=this.confirmCode.value.token;
     console.log(confirmmailCode);
 
-    return this.http.post('http://127.0.0.1:8000/api/verify',confirmmailCode).subscribe((succ:any)=>{
+    return this.http.post('http://127.0.0.1:8000/api/verify',confirmmailCode).subscribe({
+      next:(succ:any)=>{
       // this.userId= succ.user.id;
       if(succ.success){
       this.Token.handeltoken(succ.token);
+
       if(succ.user.type =='owner'){
+        localStorage.setItem('role',succ.user.type);
+        localStorage.setItem('image',succ.user.image);
+        localStorage.setItem('name',succ.user.name);
+        localStorage.setItem('id',succ.user.id);
+
+
         this.router.navigate(['/owner']);
 
       }else if(succ.user.type =='renter'){
-        this.router.navigate(['/']);
+        localStorage.setItem('role',succ.user.type);
+        localStorage.setItem('image',succ.user.image);
+        localStorage.setItem('name',succ.user.name);
+        localStorage.setItem('id',succ.user.id);
+
+        this.router.navigate(['/payed-for-user']);
 
       }else if (succ.user.type =='admin'){
+        localStorage.setItem('role',succ.user.type);
+        localStorage.setItem('image',succ.user.image);
+        localStorage.setItem('name',succ.user.name);
+        localStorage.setItem('id',succ.user.id);
+
         this.router.navigate(['/adminhome']);
 
       }else{
+        localStorage.setItem('role',succ.user.type);
+        localStorage.setItem('image',succ.user.image);
+        localStorage.setItem('name',succ.user.name);
+        localStorage.setItem('id',succ.user.id);
+
         this.router.navigate(['/adminhome']);
 
       }
-      // this.auth.userNavigation(succ.user.type)
 
-    // if(succ.user.type =='owner'){
-    //   this.router.navigate(['/owner']);
-
-    // }else if(succ.user.type =='renter'){
-    //   this.router.navigate(['/']);
-
-    // }else if (succ.user.type =='admin'){
-    //   this.router.navigate(['/adminhome']);
-
-    // }else{
-    //   this.router.navigate(['/adminhome']);
-
-    // }
   }else{
 
 
     document.getElementById('code').textContent = succ.message;
   }
 
-    },(error:HttpErrorResponse)=>{
+    },
+    error:(error:HttpErrorResponse)=>{
       this.errMsg= error.error['error'];
 
-      document.getElementById('code').textContent = this.errMsg
+      // document.getElementById('code').textContent = this.errMsg
+      this.err = this.errMsg
             console.log("errorsssssssss", this.errMsg
             )
-    })
+    }
+  })
   }
 
 }

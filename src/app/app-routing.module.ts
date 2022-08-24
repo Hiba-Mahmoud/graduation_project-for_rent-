@@ -41,6 +41,8 @@ import { BlockListComponent } from './admin/component/block-list/block-list.comp
 
 import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
 import { FollowUsComponent } from './admin/component/follow-us/follow-us.component';
+import { RenterComponent } from './users/component/renter/renter.component';
+import { AllOwnerHistoryComponent } from './shared/component/all-owner-history/all-owner-history.component';
 import { FollowLinksComponent } from './admin/component/follow-links/follow-links.component';
 import { TeamMembersComponent } from './admin/component/team-members/team-members.component';
 import { AboutPolictyComponent } from './admin/component/about-policty/about-policty.component';
@@ -49,6 +51,8 @@ import { AcceptedAdsComponent } from './admin/component/accepted-ads/accepted-ad
 import { RejecteddAdsComponent } from './admin/component/rejectedd-ads/rejectedd-ads.component';
 import { PayedAdsComponent } from './admin/component/payed-ads/payed-ads.component';
 import { AboutPolictyAddComponent } from './admin/component/about-policty-add/about-policty-add.component';
+import {TeamMemberUpdateComponent } from './admin/component/team-member-update/team-member-update.component';
+import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -70,6 +74,10 @@ const routes: Routes = [
     path: "details/:id", component: CartDetailsComponent
   },
 
+  {
+    path: "allOwnerAdvertisments/:id", component: AllOwnerHistoryComponent
+  },
+
   { path: 'editpassword', component: EditpasswordComponent },
   { path: 'reset-password-code', component: MailwithcodeComponent },
   { path: 'password', component: ResetPasswordComponent },
@@ -80,6 +88,7 @@ const routes: Routes = [
 
   { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
 
+  {path: 'payed-for-user', component:UserpayedRentedAdsComponent},
   {path: 'forgetpassword', component:ForgetPasswordComponent},
   // shared Routes
   { path: 'editpassword', component: EditpasswordComponent ,canActivate:[AuthGuard]},
@@ -87,6 +96,9 @@ const routes: Routes = [
   // user and admin ahared Routes
   { path: 'about', component:AboutComponent},
   { path: 'all-owner-properites', component: ListAllOwnerProperitiesComponent },
+  //renter
+  { path: 'renter', component: RenterComponent,canActivate:[AuthGuard] },
+
   // owner Routes
   { path: 'owner', component: OwnerComponent,canActivate:[AuthGuard] },
   { path: 'addProperity', component: AddProperityComponent,canActivate:[AuthGuard] },
@@ -118,6 +130,7 @@ const routes: Routes = [
   {path: 'payed-ads', component: PayedAdsComponent,canActivate:[AuthGuard]},
   {path: 'about-policty-add', component: AboutPolictyAddComponent,canActivate:[AuthGuard]},
 
+  {path:'editteam/:id',component:TeamMemberUpdateComponent,canActivate:[AuthGuard]},
 
   {
     path: "reportForm", component: ReportFormUserComponent

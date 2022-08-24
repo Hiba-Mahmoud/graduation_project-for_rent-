@@ -28,7 +28,9 @@ export class ReportsDetailsComponent implements OnInit {
     })
     this.http
     .get('http://127.0.0.1:8000/api/admin/contactUs/show/'+this.shared_id)
-    .subscribe( res=>{
+    .subscribe({
+      next:
+      ( res=>{
       console.log("res i = " , res);
       this.reportData=res;
       console.log("Data is =");
@@ -36,7 +38,13 @@ export class ReportsDetailsComponent implements OnInit {
       this.images=this.reportData.report[0].contact_us_file
       this.url=this.reportData.report[0].url
       console.log(this.images);
-    });
+    })
+  })
   }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 60afa77885d82258d354f7bc0649b4f96959db36
 }

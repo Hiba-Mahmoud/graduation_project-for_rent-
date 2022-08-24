@@ -21,15 +21,7 @@ export class ReportFormUserComponent implements OnInit {
 
 
   constructor(public fb: FormBuilder, private http: HttpClient , private rout:Router,private _AuthGuard:AuthGuard) {
-    // this.form = this.fb.group({
-    //   name: [''],
-    //   email: [''],
-    //   phone: [''],
-    //   url: [''],
-    //   description: [''],
-    //   avatar1: [null],
-    //   avatar2: [null],
-    // });
+   
   }
   ngOnInit(): void {
     this.checkLogin();
@@ -62,15 +54,9 @@ export class ReportFormUserComponent implements OnInit {
         var reader = new FileReader();
   
               reader.onload = (event:any) => {
-                // console.log(event.target.files +'fillllle');
-                //  this.image_name.push(event.target.result);
-  
-                //  this.image_name.patchValue({
-                //     fileSource: this.images
-                //  });
+                
               }
   
-              // reader.readAsArrayBuffer(event.target.files[i]);
       }
   }
   console.log('array'+this.image)
@@ -89,13 +75,14 @@ export class ReportFormUserComponent implements OnInit {
     
     this.http
       .post('http://127.0.0.1:8000/api/contactUs/store', this.data)
-      .subscribe((succ:any)=>{
+      .subscribe({
+        next:(succ:any)=>{
         console.log("process is = " , succ);
        alert(' لقد تمت اضافة الشكوى الخاصة بك')
           this.rout.navigate(['/home']);
          
   
-      },(error:HttpErrorResponse)=>{
+      },error:(error:HttpErrorResponse)=>{
   
         this.errMsg= error.error['error'];
         console.log(this.errMsg)
@@ -114,6 +101,7 @@ export class ReportFormUserComponent implements OnInit {
   
         document.getElementById('description').textContent = this.errMsg.description
         }
+      }
       })
   
       // .subscribe({

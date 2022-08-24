@@ -20,8 +20,8 @@ export class AdvertismentService {
     return advertisment;
   }
 
-  saveComment(apiUrl :string ,data:any , id:any ){
-    return  this.http.post(apiUrl+id ,data );
+  saveComment(apiUrl :string ,data:any , id:any ,header:any ){
+    return  this.http.post(apiUrl+id ,data ,header);
    
   }
 
@@ -58,8 +58,10 @@ export class AdvertismentService {
 
   }
 
-
-
+  favorite(apiUrl :string ,id:number):Observable<any>
+  {
+   return this.http.post(apiUrl+id ,'');
+  }
 
 
  

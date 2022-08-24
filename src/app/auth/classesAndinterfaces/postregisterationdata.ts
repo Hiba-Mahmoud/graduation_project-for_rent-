@@ -6,6 +6,7 @@ export class registerationData{
   phone:string='';
   gender:string='';
   password:string='';
+  payment:string='';
   password_confirmation:string='';
 
 

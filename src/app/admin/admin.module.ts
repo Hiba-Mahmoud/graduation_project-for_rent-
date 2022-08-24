@@ -28,6 +28,7 @@ import { AcceptedAdsComponent } from './component/accepted-ads/accepted-ads.comp
 import { RejecteddAdsComponent } from './component/rejectedd-ads/rejectedd-ads.component';
 import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
 import { AboutPolictyAddComponent } from './component/about-policty-add/about-policty-add.component';
+import { TeamMemberUpdateComponent } from './component/team-member-update/team-member-update.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,6 @@ import { AboutPolictyAddComponent } from './component/about-policty-add/about-po
     AdverRequestsComponent,
     AdminsComponent,
     BlockListComponent,
-    FollowUsComponent,
     TeamMembersComponent,
     FollowLinksComponent,
     AboutPolictyComponent,
@@ -51,6 +51,7 @@ import { AboutPolictyAddComponent } from './component/about-policty-add/about-po
     RejecteddAdsComponent,
     PayedAdsComponent,
     AboutPolictyAddComponent,
+    TeamMemberUpdateComponent,
 
   ],
 

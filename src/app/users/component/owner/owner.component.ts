@@ -16,8 +16,10 @@ export class OwnerComponent implements OnInit {
   rentedAds=0;
   NotRented=0;
   payedads=0;
+  message=false;
   constructor(private localsrorage:TokenService, private route: Router,private http:HttpClient ,private owner:OwnerService) { }
   ngOnInit(): void {
+   this.message=this.localsrorage.getsuccmessage();
     this.getallPending();
     this.  getallrented();
     this.getallNotRented();

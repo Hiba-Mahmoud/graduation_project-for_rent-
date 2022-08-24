@@ -17,7 +17,7 @@
         <tr  *ngFor="let item of members.data">
           <td>{{item.name}}</td>
           <td>{{item.jobTitle}}</td>
-          <td><button class="send" style="width: 79px;height: 42px; padding: 0px;" (click)="updateMem(item.id)">تعديل</button></td>
+          <td><a class="btn send" style="width: 79px;height: 42px; padding: 7px;" [routerLink]='["/editteam",item.id]'>تعديل</a></td>
           <td><button class="send"  style="width: 79px;height: 42px; padding: 0px;" (click)="deleteMem(item.id)">حذف</button></td>
         </tr>
       </tbody>
