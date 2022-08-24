@@ -78,13 +78,10 @@ const routes: Routes = [
     path: "allOwnerAdvertisments/:id", component: AllOwnerHistoryComponent
   },
 
-  { path: 'editpassword', component: EditpasswordComponent },
   { path: 'reset-password-code', component: MailwithcodeComponent },
   { path: 'password', component: ResetPasswordComponent },
 
-  {
-    path: 'editpersonaldata', component: EditpersonaldataComponent
-  },
+
 
   { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
 

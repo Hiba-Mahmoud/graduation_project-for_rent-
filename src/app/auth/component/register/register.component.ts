@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   user = new IUser();
   postData = new registerationData();
   errMsg: any;
-  // userData:returnDatafromReisteration;
+  role=false;
   userData: any;
   invalidForm: any;
   validation: any;
@@ -76,10 +76,14 @@ export class RegisterComponent implements OnInit {
       ],
       gender: ['', [Validators.required]],
       type: ['', [Validators.required]],
-      payment: ['', [Validators.required]],
+      payment: ['', ],
     });
+
+
     console.log(this.registeration);
     this.invalidForm = this.registeration.status;
+    // this.getRole(this.registeration.value.type);
+
   }
 
   sign_up(): void {
@@ -89,8 +93,9 @@ export class RegisterComponent implements OnInit {
       this.isvalid = true;
       console.log(this.isvalid);
     } else {
-      this.validation = this.invalidForm;
-      this.user.firstName = this.registeration.value.firstName;
+
+      if(this.registeration.value.type == 'owner'){
+        this.user.firstName = this.registeration.value.firstName;
       this.user.lastName = this.registeration.value.lastName;
       this.user.name = this.user.getFullName();
       this.postData.name = this.user.getFullName();
@@ -98,13 +103,63 @@ export class RegisterComponent implements OnInit {
       this.postData.type = this.registeration.value.type;
       this.postData.phone = this.registeration.value.phone;
       this.postData.gender = this.registeration.value.gender;
+      this.postData.type = this.registeration.value.type;
       this.postData.payment = this.registeration.value.payment;
       this.postData.password = this.registeration.value.password;
       this.postData.password_confirmation = this.registeration.value.password;
-      console.log("POST DATAAAAA"+this.postData);
+      // console.log("POST DATAAAAA"+this.postData);
+      console.log("POST DATAAAAA"+this.postData.type);
+       this.sendData(this.postData)
 
-      this.http
-        .post('http://127.0.0.1:8000/api/register', this.postData)
+      }else{
+
+        this.user.firstName = this.registeration.value.firstName;
+        this.user.lastName = this.registeration.value.lastName;
+        this.user.name = this.user.getFullName();
+        this.postData.name = this.user.getFullName();
+        this.postData.email = this.registeration.value.email;
+        this.postData.type = this.registeration.value.type;
+        this.postData.phone = this.registeration.value.phone;
+        this.postData.gender = this.registeration.value.gender;
+        // this.postData.payment = this.registeration.value.payment;
+        this.postData.password = this.registeration.value.password;
+        this.postData.password_confirmation = this.registeration.value.password;
+        console.log("POST DATAAAAA"+this.postData.type);
+         this.sendData(this.postData)
+
+
+
+
+      }
+
+
+
+
+      // this.validation = this.invalidForm;
+
+
+
+    }
+  }
+
+
+  getRole(value:any){
+    console.log(value.target.value)
+if(value.target.value == 'owner'){
+   this.role = true;
+  }
+  else{
+  this.role = false;
+
+}
+  }
+
+
+
+
+sendData(data:any){
+  this.http
+        .post('http://127.0.0.1:8000/api/register', data)
         .subscribe({
           next: (succ: any) => {
             this.userData = succ.user.id;
@@ -130,8 +185,11 @@ export class RegisterComponent implements OnInit {
             console.log('errorsssssssss', this.errMsg);
           },
         });
-    }
-  }
+}
+
+
+
+
 
   onsubmit() {
     //  this.router.navigate(['/mailverifiy'])
