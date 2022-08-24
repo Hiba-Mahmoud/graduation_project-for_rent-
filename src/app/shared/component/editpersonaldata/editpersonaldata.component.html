@@ -77,6 +77,33 @@
       <div class="text-danger">{{ phoneError }}</div>
       <br />
       <br />
+      <div class="form-outline mb-4" *ngIf="isOwner">
+        <label class="form-label" for="type" id="type"> الدفع من خلال الموقع</label>
+        <select
+        formControlName="payment"
+        class="select w-100 form-control"
+        style="margin-left: 80px; padding-right: 95px"
+        >
+          <option disabled selected value> الدفع </option>
+          <option value="yes">نعم</option>
+          <option value="no">لا</option>
+        </select>
+        <div class="alert alert-danger"
+          *ngIf="
+          form.controls['payment'].errors && form.controls['payment'].touched
+          "
+        >
+          <small
+            class="form-text text-dark"
+            *ngIf="
+            form.controls['payment'].errors &&
+            form.controls['payment'].errors['required']
+              "
+          >
+            الحقل مطلوب</small
+          >
+        </div>
+      </div>
 
       <button type="submi " class="send form-control">تأكيد</button>
     </form>

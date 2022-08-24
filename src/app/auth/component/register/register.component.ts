@@ -110,9 +110,7 @@ export class RegisterComponent implements OnInit {
       // console.log("POST DATAAAAA"+this.postData);
       console.log("POST DATAAAAA"+this.postData.type);
        this.sendData(this.postData)
-
       }else{
-
         this.user.firstName = this.registeration.value.firstName;
         this.user.lastName = this.registeration.value.lastName;
         this.user.name = this.user.getFullName();
@@ -126,19 +124,8 @@ export class RegisterComponent implements OnInit {
         this.postData.password_confirmation = this.registeration.value.password;
         console.log("POST DATAAAAA"+this.postData.type);
          this.sendData(this.postData)
-
-
-
-
       }
-
-
-
-
       // this.validation = this.invalidForm;
-
-
-
     }
   }
 

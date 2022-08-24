@@ -20,6 +20,8 @@ export class EditpersonaldataComponent implements OnInit {
   data: any;
   first: any;
   type: any;
+  role:any;
+  isOwner:boolean=false;
 
 
   constructor(public fb: FormBuilder, private http: HttpClient, private router: Router, private user: OwnerService) {
@@ -27,10 +29,13 @@ export class EditpersonaldataComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.role=localStorage.getItem('role');
+    this.getisowner(this.role);
     this.getUserData();
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(20), Validators.pattern('^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z\u06ff ]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\u06ff]*$')]],
       phone: ['', [Validators.required, Validators.pattern("^01[0-2,5]{1}[0-9]{8}$"), Validators.minLength(11), Validators.maxLength(11)]],
+      payment: ['',],
 
     });
   }
@@ -63,6 +68,7 @@ export class EditpersonaldataComponent implements OnInit {
     var formData: any = new FormData();
     formData.append('name', this.form.get('name').value);
     formData.append('phone', this.form.get('phone').value);
+    formData.append('payment', this.form.get('payment').value);
 
     this.http
       .post('http://127.0.0.1:8000/api/profile_setting_name_phone', formData)
@@ -96,16 +102,9 @@ if(this.type =='owner'){
 
 }
 
-
-
-
-
-
-
-
         }, error: (error: HttpErrorResponse) => {
 
-          // console.log(error)
+          console.log(error)
           this.errMsg = error.error.error;
           console.log(this.errMsg)
           if (this.errMsg.name) {
@@ -119,6 +118,16 @@ if(this.type =='owner'){
 
         }
       });
+  }
+
+  getisowner(role:any){
+    if(role == 'owner'){
+    this.isOwner =true;
+  }else{
+      this.isOwner =false;
+
+    }
+
   }
 
 }
