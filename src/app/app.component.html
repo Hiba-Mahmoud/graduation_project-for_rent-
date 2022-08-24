@@ -1,14 +1,10 @@
+<app-header> </app-header>
 
+<div *ngIf="isLogin">
+    <app-side-bar> </app-side-bar>
 
- 
- <app-header> </app-header>
- 
- <div *ngIf="isLogin">
-    <app-side-bar> </app-side-bar>   
+</div>
+<div *ngIf="!isLogin">
+    <router-outlet> </router-outlet>
 
-</div>  
- <div *ngIf="!isLogin">
-    <router-outlet> </router-outlet> 
-
-</div> 
-
+</div>

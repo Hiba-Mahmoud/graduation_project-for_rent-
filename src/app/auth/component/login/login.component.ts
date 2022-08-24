@@ -96,6 +96,7 @@ export class LoginComponent implements OnInit {
 
           this.router.navigate(['/renter']);
 
+
         }else if (response.user.type =='admin'){
           localStorage.setItem('role',response.user.type);
           localStorage.setItem('image',response.user.image);

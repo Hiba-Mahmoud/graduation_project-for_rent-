@@ -31,7 +31,6 @@ import { PreventregisterandloginGuard } from './guard/preventregisterandlogin.gu
 import { CodeVerifyComponent } from './auth/component/code-verify/code-verify.component';
 import { MailwithcodeComponent } from './auth/component/mailwithcode/mailwithcode.component';
 import { ResetPasswordComponent } from './auth/component/reset-password/reset-password.component';
-// import { ReportFormComponent } from './components/report-form/report-form.component';
 import { ReportsComponent } from './admin/component/reports/reports.component';
 import { ReportsDetailsComponent } from './admin/component/reports-details/reports-details.component';
 import { ReportFormUserComponent } from './components/report-form-user/report-form-user.component';
@@ -48,7 +47,7 @@ import { FollowLinksComponent } from './admin/component/follow-links/follow-link
 import { TeamMembersComponent } from './admin/component/team-members/team-members.component';
 import { AboutPolictyComponent } from './admin/component/about-policty/about-policty.component';
 import { AboutPolictyUpdateComponent } from './admin/component/about-policty-update/about-policty-update.component';
-import {TeamMemberUpdateComponent } from './admin/component/team-members/team-member-update/team-member-update.component';
+import {TeamMemberUpdateComponent } from './admin/component/team-member-update/team-member-update.component';
 import { AcceptedAdsComponent } from './admin/component/accepted-ads/accepted-ads.component';
 import { RejecteddAdsComponent } from './admin/component/rejectedd-ads/rejectedd-ads.component';
 import { PayedAdsComponent } from './admin/component/payed-ads/payed-ads.component';
@@ -126,7 +125,7 @@ const routes: Routes = [
   {path: 'accepted-ads', component: AcceptedAdsComponent,canActivate:[AuthGuard]},
   {path: 'rejected-ads', component: RejecteddAdsComponent,canActivate:[AuthGuard]},
   {path: 'payed-ads', component: PayedAdsComponent,canActivate:[AuthGuard]},
-
+  {path:'editteam/:id',component:TeamMemberUpdateComponent,canActivate:[AuthGuard]},
 
   {
     path: "reportForm", component: ReportFormUserComponent
