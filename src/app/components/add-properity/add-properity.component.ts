@@ -160,12 +160,13 @@ export class AddProperityComponent implements OnInit {
           this.spinner.hide();
           console.log(response.type+'typeeeeee')
           console.log(response)
-            this.localstorage.setsuccmessage(true)
+          this.localstorage.setsuccmessage(true)
 
-            this.router.navigateByUrl('/owner')
+          this.router.navigateByUrl('/owner')
 
         },
         error:(error:any)=>{
+          this.spinner.hide();
 
           console.log(error)
             this.errormsg = error.error.error
