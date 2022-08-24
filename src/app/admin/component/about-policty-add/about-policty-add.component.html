@@ -1,6 +1,7 @@
 <title>Report form</title>
+
 <div *ngIf="isvalid"  class="alert alert-danger text-center">من فضلك ادخل البيانات صحيحة</div>
-    
+
 <form class="form-signin" [formGroup]="form" (ngSubmit)="submitForm()" novalidate >
 
     <div class="form-label-group">
@@ -36,7 +37,6 @@
   <br> <br>
 
   <button type="submit" class="send" id="update" >تأكيد </button>
-  <!-- <button type="submit" class="send" id="add" [disabled]="!form.valid">اضافه </button> -->
 
   </form>
   
