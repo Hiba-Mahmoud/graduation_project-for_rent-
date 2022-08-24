@@ -12,6 +12,7 @@ export class UserpayedRentedAdsComponent implements OnInit {
   totalNumber: any;
     page: number = 1;
     token:any;
+    allAdvert:any;
   constructor(private http:HttpClient,private localstorage:TokenService,private user:OwnerService) { }
 
   ngOnInit(): void {
@@ -26,7 +27,8 @@ export class UserpayedRentedAdsComponent implements OnInit {
 
     this.user.getPending(link,header).subscribe((res)=>{
       console.log('ddddddddd')
-     console.log(res)
+     console.log(res.data)
+     this.allAdvert = res.data
     })
 
   }

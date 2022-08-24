@@ -85,7 +85,7 @@ const routes: Routes = [
 
   { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
 
-  {path: 'payed-for-user', component:UserpayedRentedAdsComponent},
+  {path: 'payed-for-user', component:UserpayedRentedAdsComponent,canActivate:[AuthGuard]},
   {path: 'forgetpassword', component:ForgetPasswordComponent},
   // shared Routes
   { path: 'editpassword', component: EditpasswordComponent ,canActivate:[AuthGuard]},
