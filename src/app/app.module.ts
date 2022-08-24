@@ -30,6 +30,16 @@ import { CommentsComponent } from './comments/comments.component';
 import { PaymentmethodComponent } from './paymentmethod/paymentmethod.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
+
+
+import { CommonModule } from '@angular/common';
+
+import { ToastrModule } from 'ngx-toastr';
+
+
+
+
+// import { ReportFormComponent } from './components/report-form/report-form.component';
 import { ReportFormUserComponent } from './components/report-form-user/report-form-user.component';
 import { AboutFormComponent } from './admin/component/about-form/about-form.component';
 import { FavouritsComponent } from './components/favourits/favourits.component';
@@ -48,6 +58,8 @@ import { MatListModule } from '@angular/material/list';
 import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
 import { HeaderComponent } from './header/header.component';
 // import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
+import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 // import { AcceptedAdsComponent } from './admon/component/accepted-ads/accepted-ads.component';
 // import { RejectedAdsComponent } from './admon/component/rejected-ads/rejected-ads.component';
 // import { PayedAdsComponent } from './admon/component/payed-ads/payed-ads.component'
@@ -72,12 +84,14 @@ import { HeaderComponent } from './header/header.component';
       ReportFormUserComponent,
       AboutFormComponent,
       FavouritsComponent,
-      
+
 
       PaymentmethodComponent,
         HeaderComponent,
         // UserpayedRentedAdsComponent,
        
+        UserpayedRentedAdsComponent,
+
 
 
   ],
@@ -101,9 +115,17 @@ import { HeaderComponent } from './header/header.component';
     AdminModule,
     ReactiveFormsModule,
     NgxPaginationModule,
+    NgxSpinnerModule,
     MatProgressSpinnerModule,
     ModalModule.forRoot(),
+
+
+    CommonModule,
+    ToastrModule.forRoot(), 
+
     FormsModule ,     
+
+    FormsModule ,
 
     LayoutModule,
     MatToolbarModule,

@@ -6,6 +6,9 @@ import { IUser } from 'src/app/auth/classesAndinterfaces/registerationData';
 import { registerationData } from 'src/app/auth/classesAndinterfaces/postregisterationdata';
 import { MoaveDataService } from 'src/app/auth/service/moave-data.service';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from "ngx-spinner";
+
+
 
 @Component({
   selector: 'app-add-admin',
