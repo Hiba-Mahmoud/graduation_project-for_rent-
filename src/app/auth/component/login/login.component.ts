@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
           Validators.maxLength(40),
         ],
       ],
+      
       password: [
         '',
         [
@@ -94,6 +95,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('id',response.user.id);
 
           this.router.navigate(['/renter']);
+
 
         }else if (response.user.type =='admin'){
           localStorage.setItem('role',response.user.type);

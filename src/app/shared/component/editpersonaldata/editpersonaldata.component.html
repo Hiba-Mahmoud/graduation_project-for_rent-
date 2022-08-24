@@ -1,23 +1,112 @@
- <html>
-<head>
+<div
+  class="d-flex justify-content-center"
+  style="height: 100vh; margin-top: 70px"
+>
+  <div class="container">
+    <form
+      class="form-signin"
+      [formGroup]="form"
+      (ngSubmit)="submitForm()"
+      novalidate
+    >
+      <div class="form-label-group">
+        <label for="inputName"> الاسم</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          class="form-control"
+          placeholder="الاسم"
+          required
+          autofocus
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="form.controls['name'].errors && form.controls['name'].touched"
+        >
+          <strong *ngIf="form.controls['name'].errors['required']"
+            >الاسم مطلوب</strong
+          >
+          <strong *ngIf="form.controls['name'].errors['minlength']">
+            الاسم يجب الا يقل عن حرفان</strong
+          >
+          <strong *ngIf="form.controls['name'].errors['maxlength']">
+            الاسم يجب الا يزيد عن عشرة احرف</strong
+          >
+          <strong *ngIf="form.controls['name'].errors['pattern']">
+            الاسم حروف عربية او انجليزية فقط</strong
+          >
+        </div>
+      </div>
+      <div class="text-danger">{{ nameError }}</div>
+      <br />
+      <br />
+      <div class="form-label-group">
+        <label for="inputPhone">رقم الهاتف </label>
+        <input
+          type="text"
+          id="phone"
+          formControlName="phone"
+          class="form-control"
+          placeholder="رقم الهاتف"
+          required
+          autofocus
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="
+            form.controls['phone'].errors && form.controls['phone'].touched
+          "
+        >
+          <strong *ngIf="form.controls['phone'].errors['required']">
+            رقم الهاتف مطلوب</strong
+          >
+          <strong *ngIf="form.controls['phone'].errors['minlength']">
+            رقم الهاتف يجب الا يقل عن 11 رقم</strong
+          >
+          <strong *ngIf="form.controls['phone'].errors['maxlength']">
+            رقم الهاتف يجب الا يزيد عن عن 11 رقم</strong
+          >
+          <strong *ngIf="form.controls['phone'].errors['pattern']">
+            ادخل رقما صحيحا
+          </strong>
+        </div>
+      </div>
+      <div class="text-danger">{{ phoneError }}</div>
+      <br />
+      <br />
+      <div class="form-outline mb-4" *ngIf="isOwner">
+        <label class="form-label" for="type" id="type"> الدفع من خلال الموقع</label>
+        <select
+        formControlName="payment"
+        class="select w-100 form-control"
+        style="margin-left: 80px; padding-right: 95px"
+        >
+          <option disabled selected value> الدفع </option>
+          <option value="yes">نعم</option>
+          <option value="no">لا</option>
+        </select>
+        <div class="alert alert-danger"
+          *ngIf="
+          form.controls['payment'].errors && form.controls['payment'].touched
+          "
+        >
+          <small
+            class="form-text text-dark"
+            *ngIf="
+            form.controls['payment'].errors &&
+            form.controls['payment'].errors['required']
+              "
+          >
+            الحقل مطلوب</small
+          >
+        </div>
+      </div>
 
-</head>
-<body>
-    <h2>البيانات الشخصية</h2>
-
-<form dir="rtl">
-    <div class="mb-3">
-      <label for="exampleInputName" class="form-label">الاسم</label>
-      <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
-      
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputImage" class="form-label">الصورة</label>
-      <input type="image" class="form-control" id="exampleInputImage">
-    </div>
-    
-  </form>
-</body>
-</html> 
-
-
+      <button type="submi " class="send form-control">تأكيد</button>
+    </form>
+  </div>
+  <!-- [disabled]="!form.valid" -->
+</div>

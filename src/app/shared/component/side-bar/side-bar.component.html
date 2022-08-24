@@ -3,7 +3,7 @@
       <img
         class="avatar mat-elevation-z8"
        [src] ="image"/>
-       <mat-icon>camera_alt</mat-icon> 
+       <mat-icon>camera_alt</mat-icon>
       <h2 class="name">{{name}}</h2>
 
 
@@ -70,6 +70,18 @@
             المحظورين
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/allreports">
+            <span data-feather="layers"></span>
+            ابلاغات
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/team">
+            <span data-feather="layers"></span>
+            فريقنا
+          </a>
+        </li>
       </ul>
 
 
@@ -111,8 +123,8 @@
       </ul>
       <mat-divider *ngIf="isOwner"></mat-divider>
 
-      
-    
+
+
 
       <mat-divider></mat-divider>
       <ul class="nav flex-column">
@@ -129,8 +141,8 @@
           </button>
           <div class="collapse" id="dashboard-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a routerLink="" style="text-decoration: none;" class="link-dark rounded">تعديل البيانات</a></li>
-              <li><a routerLink="" style="text-decoration: none;" class="link-dark rounded">تعديل كلمة السر</a> </li>
+              <li><a routerLink="/editpersonaldata" style="text-decoration: none;" class="link-dark rounded">تعديل البيانات</a></li>
+              <li><a routerLink="/editpassword" style="text-decoration: none;" class="link-dark rounded">تعديل كلمة السر</a> </li>
 
             </ul>
           </div>

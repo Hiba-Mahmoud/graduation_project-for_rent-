@@ -248,7 +248,38 @@
             >
           </div>
         </div>
+
         <div class="form-outline mb-4">
+          <label class="form-label" for="type" id="type">تسجيل كـ</label>
+          <select
+          formControlName="type"
+          class="select w-100 form-control"
+          style="margin-left: 80px; padding-right: 95px"
+          (change)="getRole($event)"
+          >
+            <option disabled selected value>تسجيل كـ</option>
+            <option value="owner">مالك</option>
+            <option value="renter">مستاجر</option>
+          </select>
+          <div class="alert alert-danger"
+            *ngIf="
+              registeration.controls['type'].errors && registeration.controls['type'].touched
+            "
+          >
+            <small
+              class="form-text text-dark"
+              *ngIf="
+                registeration.controls['type'].errors &&
+                registeration.controls['type'].errors['required']
+                "
+            >
+              الحقل مطلوب</small
+            >
+          </div>
+        </div>
+
+
+        <div class="form-outline mb-4" *ngIf="role">
           <label class="form-label" for="type" id="type"> الدفع من خلال الموقع</label>
           <select
           formControlName="payment"
@@ -269,33 +300,6 @@
               *ngIf="
                 registeration.controls['payment'].errors &&
                 registeration.controls['payment'].errors['required']
-                "
-            >
-              الحقل مطلوب</small
-            >
-          </div>
-        </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="type" id="type">تسجيل كـ</label>
-          <select
-          formControlName="type"
-          class="select w-100 form-control"
-          style="margin-left: 80px; padding-right: 95px"
-          >
-            <option disabled selected value>تسجيل كـ</option>
-            <option value="owner">مالك</option>
-            <option value="renter">مستاجر</option>
-          </select>
-          <div class="alert alert-danger"
-            *ngIf="
-              registeration.controls['type'].errors && registeration.controls['type'].touched
-            "
-          >
-            <small
-              class="form-text text-dark"
-              *ngIf="
-                registeration.controls['type'].errors &&
-                registeration.controls['type'].errors['required']
                 "
             >
               الحقل مطلوب</small

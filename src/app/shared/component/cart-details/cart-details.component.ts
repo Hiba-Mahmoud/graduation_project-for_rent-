@@ -33,17 +33,18 @@ export class CartDetailsComponent implements OnInit {
   selectedChange = new EventEmitter<boolean>();
 
   constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient
+
     ,private _AuthGuard:AuthGuard,private localstorage:TokenService ) {
     this.id=this.route.snapshot.paramMap.get("id");
-    
-    
 
-    
+
+
+
 
    }
 
   ngOnInit(): void {
-    
+
     this.checkLogin();
 
     this.getAdvertismentById();
@@ -53,6 +54,7 @@ export class CartDetailsComponent implements OnInit {
   }
  getAdvertismentById(){
    this.advertismentService.getAdvertismentById("http://127.0.0.1:8000/api/show/advertisement/",this.id).subscribe((res:any)=>{
+    console.log(res)
     this.data=res.advertisement[0];
         this.images= this.data.advertisement_image ;
     this.adverId=this.data.id;
@@ -68,7 +70,7 @@ export class CartDetailsComponent implements OnInit {
 
 //  suggestionNavigate(id:any){
 //   this.router.navigateByUrl('/details/'+id).then();
-  
+
 
 //  }
  makePayment(amount:any,advertisement:any,owner:any) {
@@ -121,7 +123,6 @@ export class CartDetailsComponent implements OnInit {
 
   }
 
-  
   stripePaymentGateway() {
     if(!window.document.getElementById('stripe-script')) {
       const scr = window.document.createElement("script");
