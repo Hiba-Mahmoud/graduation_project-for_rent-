@@ -1,24 +1,20 @@
-<div class="container text-center">
+<div class="container mt-5">
   <mat-form-field>
     <mat-label>Filter</mat-label>
     <input matInput #search placeholder="search" (keyup)="findContact(search.value)" >
   </mat-form-field>
-  <div class="row w-100" *ngIf="length>0 else noData">
-    <div class="col-sm-12">
-      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 col-sm-12 table text-center">
+  <div class="mat-elevation-z8 mt-2  m-auto table-responsive table-responsive-sm" *ngIf="length>0 else noData">
+      <table mat-table [dataSource]="dataSource" matSort class="w-100 m-auto border border-5 table w-100 table-bordered">
         <!-- Position Column -->
         <ng-container matColumnDef="الاعلان">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-6  h5 table-dark  p-3 "> الاعلان </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-6  h5 table-dark  p-3 color"> الاعلان </th>
           <td mat-cell *matCellDef="let element" class="col-sm-6 ">
-            <div class="card">
-              <!-- <img src="{{}}" class="card-img-top" alt="..."> -->
-              <div class="card-body">
-                <h5 class="card-title">{{element.title}} </h5>
-                <p class="card-text">{{element.description}}</p>
-                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-              </div>
-              </div>
 
+              <mat-card class="text-right">
+                <mat-card-title style="font-size: 1.5em; color:#383838">{{ element.title }}	</mat-card-title>
+                  <mat-card-content>{{ element.description }}	</mat-card-content>
+
+               </mat-card>
 
 
 
@@ -31,22 +27,30 @@
 
 
 
-        <ng-container matColumnDef="تعديل">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 text-center table-dark h5 p-3" scope="row"> تعديل </th>
+        <!-- <ng-container matColumnDef="تعديل">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="color col-sm-1 text-center table-dark h5 p-3" scope="row"> تعديل </th>
           <td mat-cell *matCellDef="let element" class="col-sm-1 pt-5"> <a class="btn btn-dark send" [routerLink]='["/editproperty",element.id]'> تعديل</a> </td>
-        </ng-container>
-        <ng-container matColumnDef="حذف">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 p-3  table-dark  h5"> حذف </th>
-          <td mat-cell *matCellDef="let element" class=" pt-5 ">
+        </ng-container> -->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-3 p-3 color table-dark  h5"> الاجراءات المتخذه </th>
+          <td mat-cell *matCellDef="let element" class=" center ">
 
 
-            <a class="btn btn-dark send" (click)="delete(element.id)"> حذف</a> </td>
+            <!-- <a class="btn btn-dark send" (click)="delete(element.id)"> حذف</a> -->
+            <button mat-raised-button class="send m-2" (click)="delete(element.id)">حذف</button>
+            <a mat-raised-button
+            class="send"
+            [routerLink]="['/editproperty', element.id]"
+          >
+            تعديل</a
+          >
+
+          </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displaycolumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displaycolumns;"></tr>
       </table>
-    </div>
 
 
   </div>

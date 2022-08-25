@@ -40,13 +40,17 @@ export class AboutFormComponent implements OnInit {
     formData.append('image', this.form.get('avatar1').value);
     this.http
       .post('http://127.0.0.1:8000/api/admin/team/store', formData)
-      .subscribe((succ:any)=>{
+      .subscribe({
+        next:
+        (succ:any)=>{
         console.log("process is = " , succ);
         
           this.router.navigate(['/adminhome']);
           alert('تمت الاضافه بنجاح');
 
-      },(error:HttpErrorResponse)=>{
+      },
+      error:
+      (error:HttpErrorResponse)=>{
 
         this.errMsg= error.error['error'];
         console.log(this.errMsg)
@@ -56,7 +60,7 @@ export class AboutFormComponent implements OnInit {
         if(this.errMsg.jobTitle){
           document.getElementById('jobTitle').textContent = this.errMsg.jobTitle;  
         }
-       
+      }
       });
   }
 

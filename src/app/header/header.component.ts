@@ -99,17 +99,19 @@ export class HeaderComponent implements OnInit {
 
       });
 
+
       //add comment notification
       const channel1 = await pusher.subscribe('NewChannel');
       await channel1.bind("CommentNotification",(data)=> {
 
-        //check if is auther of the advertisement 
-        if((this.id == data.user_id ) && (this.isOwner)){
+        // check if is auther of the advertisement
+        if((this.id == data.advertisement_owner_id ) && (this.isOwner)){
 
+          console.log(data.advertisement_owner_id);
+          console.log(this.id);
         this.toastr.success( data.content,"لديك اشعار جديد");
         
         
-        console.log( data);
         }
       });
 
@@ -118,6 +120,8 @@ export class HeaderComponent implements OnInit {
       const channel2 = await pusher.subscribe('NewChannel2');
       await channel2.bind("ConfirmOwnerRequestFromAdmin", (data) =>{
         //check if is auther of the advertisement 
+        console.log(data.user_id);
+        console.log(this.id);
         if((this.id == data.user_id ) && (this.isOwner)){
              this.toastr.success( data.message,"لديك اشعار جديد");
         } 

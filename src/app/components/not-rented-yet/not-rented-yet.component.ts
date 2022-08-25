@@ -20,7 +20,7 @@ export class NotRentedYetComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   @ViewChild(MatSort) sort:MatSort;
-  displaycolumns:string[]=['الاعلان','حذف','تعديل']
+  displaycolumns:string[]=['الاعلان','action']
   constructor(private localstorage:TokenService,private AdminService:AdminServiceService ,private http:HttpClient, private owner:OwnerService,private localstoage:TokenService) {
   }
 

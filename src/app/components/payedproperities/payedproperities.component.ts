@@ -22,7 +22,7 @@ export class PayedproperitiesComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   @ViewChild(MatSort) sort:MatSort;
-  displaycolumns:string[]=['الاعلان','حذف','تعديل']
+  displaycolumns:string[]=['الاعلان','المستأجر','حذف',]
   constructor(private localstorage:TokenService,private AdminService:AdminServiceService ,private http:HttpClient, private owner:OwnerService,private localstoage:TokenService) {
   }
 
@@ -49,17 +49,18 @@ export class PayedproperitiesComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
       let pending ='http://127.0.0.1:8000/api/owner/advertisementrented';
-      this.owner.getPending(pending,headers).subscribe(data=>{
-        console.log(data.count)
-        this.length = data.count;
-        this.dataSource=new MatTableDataSource(data[0]);
+      this.owner.getPending(pending,headers).subscribe({next:res=>{
+        console.log(res)
+        this.length = res.count;
+        this.dataSource=new MatTableDataSource(res.data);
         // this.length= data;
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;
         // console.log(this.dataSource)
-      },error=>{
+      },error:error=>{
         console.log(error)
-      })
+      }
+    })
 
   }
 

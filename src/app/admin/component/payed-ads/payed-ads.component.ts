@@ -22,7 +22,7 @@ export class PayedAdsComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   @ViewChild(MatSort) sort:MatSort;
-  displaycolumns:string[]=['الاعلان','حذف','تعديل']
+  displaycolumns:string[]=['الاعلان','المستأجر','تعديل']
   constructor(private router:Router,private localstorage:TokenService,private AdminService:AdminServiceService ,private http:HttpClient, private owner:OwnerService,private localstoage:TokenService) {
   }
 
@@ -38,15 +38,13 @@ export class PayedAdsComponent implements OnInit {
   getallaccepted(){
 
       let pending ='http://127.0.0.1:8000/api/allRented/paymentmethod'
-      this.owner.getadmincounters(pending).subscribe(data=>{
-        // console.log(data.accepted_advertisement)
-        this.length=data.accepted_advertisement.length
+      this.owner.getadmincounters(pending).subscribe((res)=>{
+        console.log(res.data)
+        this.length=res.count
         console.log(this.length)
-        this.dataSource=new MatTableDataSource(data.accepted_advertisement);
+        this.dataSource=new MatTableDataSource(res.data);
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;
-      },error=>{
-        console.log(error)
       })
 
   }

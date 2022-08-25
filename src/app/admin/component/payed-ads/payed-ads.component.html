@@ -13,8 +13,8 @@
             <div class="card justify-content-start">
               <!-- <img src="{{}}" class="card-img-top" alt="..."> -->
               <div class="card-body">
-                <h5 class="card-title" style="font-size: 1.3em;color: #FE6F41 !important;">{{element.title}} </h5>
-                <p class="card-text">{{element.description}}</p>
+                <h5 class="card-title" style="font-size: 1.3em;color: #FE6F41 !important;">{{element.advertisement.title}} </h5>
+                <p class="card-text">{{element.advertisement.description}}</p>
                 <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
               </div>
               </div>
@@ -31,15 +31,17 @@
 
         <!-- [routerLink]='["/editproperty",element.id]' -->
 
+        <ng-container matColumnDef="المستأجر">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1  table-dark h5 p-3" scope="row"> <p style="font-size: 1.2em;display:flex;width:100%;justify-content:center; align-items: center;">المستأجر</p> </th>
+          <td mat-cell *matCellDef="let element" class=""> <p class="" style="font-size:1.2em;height:100%;display:flex;width:100%;justify-content:center;align-items: center;" >{{element.user.name}}</p> </td>
+        </ng-container>
         <ng-container matColumnDef="تعديل">
           <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 text-center table-dark h5 p-3" scope="row"> عرض </th>
-          <td mat-cell *matCellDef="let element" class="col-sm-1 pt-2 "> <a class="btn btn-dark send" (click)="show(element.id)">عرض</a> </td>
+          <td mat-cell *matCellDef="let element" class="col-sm-1 pt-2 "> <a class="btn btn-dark send" (click)="show(element.advertisement.id)">عرض</a> </td>
         </ng-container>
         <!-- <ng-container matColumnDef="حذف">
           <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 p-3  table-dark  h5"> حذف </th>
           <td mat-cell *matCellDef="let element" class=" pt-2 ">
-
-
             <a class="btn btn-dark send  w-50 d-block mr-2" (click)="delete(element.id)"> حذف</a> </td>
         </ng-container> -->
 
