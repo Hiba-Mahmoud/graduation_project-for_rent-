@@ -1,7 +1,9 @@
 <title>teams form</title>
+<div class="container mt-5">
 
-    
-<form class="form-signin" [formGroup]="form" (ngSubmit)="submitForm()" novalidate >
+<div class="alert alert-danger text-center col-5" *ngIf="isvalid" style="margin: auto;">برجاء ملئ البيانات اولا</div>
+
+<form class="form-signin mt-5" [formGroup]="form" (ngSubmit)="submitForm()" novalidate >
 
     <div class="form-label-group">
         <input type="text" id="name" formControlName="name" class="form-control"
@@ -31,14 +33,19 @@
 
   <div class="custom-file">
     <label class="custom-file-label" for="customFile">الصورة الشخصية</label>
-    <input type="file" name="image" class="custom-file-input mx-3" id="customFile" (change)="uploadFile1($event)">
+    <input type="file" 
+    name="image" 
+    class="custom-file-input mx-3" 
+    id="customFile" 
+    (change)="uploadFile1($event)"
+    accept="image/png.image/jpg,image/jpeg">
   </div>
   <br> <br>
 
-  <button type="submit" class="send"  [disabled]="!form.valid">اضافة </button>
+  <button type="submit" class="send" >اضافة </button>
 
   </form>
-  
+  </div>
 <!-- 
   <p>Form value: {{ form.value | json }}</p>
 <p>Form status: {{ form.status | json }}</p> -->
