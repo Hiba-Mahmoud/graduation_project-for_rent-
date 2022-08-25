@@ -1,63 +1,127 @@
-<div class="container text-center">
+<div class="container mt-5">
   <mat-form-field>
     <mat-label>Filter</mat-label>
-    <input matInput #search placeholder="search" (keyup)="findContact(search.value)" >
+    <input
+      matInput
+      #search
+      placeholder="search"
+      (keyup)="findContact(search.value)"
+    />
   </mat-form-field>
-  <div class="row w-100" *ngIf="length>0; else noData" >
-    <div class="col-sm-12"  >
-      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 col-sm-12 table text-center">
+  <div class="mat-elevation-z8 mt-2  m-auto table-responsive table-responsive-sm " *ngIf="length > 0; else noData">
+
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        matSort
+        class="w-100 m-auto border border-5 table w-100 table-bordered"
+      >
         <!-- Position Column -->
         <ng-container matColumnDef="الاعلان">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-6  h5 table-dark  "> الاعلان </th>
-          <td mat-cell *matCellDef="let element" class="col-sm-6 ">
-            <div class="card">
-              <!-- <img src="{{}}" class="card-img-top" alt="..."> -->
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            class="color col-md-5"
+          >
+          <h3  style="font-weight: 800;">الاعلان </h3>
+
+
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-card class="text-right">
+              <mat-card-title style="font-size: 1.5em; color:#383838">{{ element.advertisement.title }}	</mat-card-title>
+                <mat-card-content>{{ element.advertisement.description }}	</mat-card-content>
+
+             </mat-card>
+
+            <!-- <div class="card">
               <div class="card-body">
-                <h5 class="card-title">{{element.title}} </h5>
-                <p class="card-text">{{element.description}}</p>
-                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                <h5 class="card-title">{{ element.advertisement.title }}</h5>
+                <p class="card-text">{{ element.advertisement.description }}</p>
               </div>
-              </div>
-
-
-
-
+            </div>-->
           </td>
         </ng-container>
 
         <!-- Name Column -->
 
 
-
-
-
-        <ng-container matColumnDef="تعديل">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 text-center table-dark h5" scope="row"> تعديل </th>
-          <td mat-cell *matCellDef="let element" class="col-sm-1"> <a class="btn btn-dark send" [routerLink]='["/editproperty",element.id]'> تعديل</a> </td>
-        </ng-container>
+        <!-- <ng-container matColumnDef="تعديل">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            class=""
+            scope="row"
+          >
+            تعديل
+          </th>
+        </ng-container> -->
         <ng-container matColumnDef="حذف">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header class="col-sm-1 table-dark  h5"> حذف </th>
-          <td mat-cell *matCellDef="let element">
+          <th class="color"
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          >
+          <h3 style="font-weight: 800; width:100%;"  >الاجرأت المتخذة</h3>
+        </th>
+        <td mat-cell *matCellDef="let element" class="center">
+          <!-- <a class="btn btn-dark send" (click)="delete(element.advertisement.id)"> حذف</a> -->
+          <button mat-raised-button class="send m-2" (click)="delete(element.advertisement.id)">حذف</button>
 
+          <a mat-raised-button
+            class="send"
+            [routerLink]="['/editproperty', element.advertisement.id]"
+          >
+            تعديل</a
+          >
+        </td>
+        <!-- <td mat-cell *matCellDef="let element" class="col-sm-1">
+          <a mat-raised-button
+            class="send"
+            [routerLink]="['/editproperty', element.advertisement.id]"
+          >
+            تعديل</a
+          >
+        </td> -->
+        </ng-container>
+        <ng-container matColumnDef="المستأجر">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            mat-sort-header
+            class="color"
+            scope="row"
+          >
+          <h3 style="font-weight: 800;text-align: center;" >اسم المستأجر</h3>
+                      </th>
+          <td mat-cell *matCellDef="let element" class="center">
+            <md-content flex layout-padding>
 
-            <a class="btn btn-dark send" (click)="delete(element.id)"> حذف</a> </td>
+              <p >{{element.user.name}}</p>
+            </md-content>
+          </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displaycolumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displaycolumns;"></tr>
+        <tr mat-row *matRowDef="let row; columns: displaycolumns"></tr>
       </table>
-    </div>
-
 
   </div>
-  <mat-paginator  [length]="10" [pageSize]="10" [pageSizeOptions]="[10]" aria-label="select page" showFirstLastButtons>
-</mat-paginator>
-  <div>
 
-  </div>
+  <mat-paginator
+    [length]="10"
+    [pageSize]="10"
+    [pageSizeOptions]="[10]"
+    aria-label="select page"
+    showFirstLastButtons
+  >
+  </mat-paginator>
+  <div></div>
 </div>
 <ng-template #noData>
   <div class="noData">
-  <p>لايوجد اعلانات مؤجرة </p>
-</div>
+    <p>لايوجد اعلانات مؤجرة</p>
+  </div>
 </ng-template>

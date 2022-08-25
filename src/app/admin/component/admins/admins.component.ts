@@ -15,7 +15,7 @@ import { AdminServiceService } from '../../service/admin-service.service';
 })
 export class AdminsComponent implements OnInit {
   dataSource:any
-  displayedColumns: string[] = ['id', 'name', 'email', 'status' ,'phone', 'gender','delete'];
+  displayedColumns: string[] = ['id', 'name', 'email','phone', 'gender','delete'];
   
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
   @ViewChild(MatSort)
@@ -37,8 +37,8 @@ export class AdminsComponent implements OnInit {
   }
   getAll(){
     this.service.getAll("http://127.0.0.1:8000/api/admin/admins").subscribe(data=>{
-      this.allData=data.owners;
-       this.dataSource = new MatTableDataSource(data.owners);
+      this.allData=data.renters;
+       this.dataSource = new MatTableDataSource(data.renters);
        this.dataSource.paginator = this.paginator;
       this.dataSource.sort=this.sort;
       this.loading=false;
