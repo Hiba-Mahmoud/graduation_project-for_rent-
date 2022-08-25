@@ -2,23 +2,7 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-6  pb-4" *ngFor="let review of reviews">
-                <h1>التقييمات :</h1>
-                
-                <div class="comment mt-4 bg-light text-justify float-left">
-                    <div class="d-flex flex-row user-info"><img class="rounded-circle" [src]="review.user.image" width="40">
-                        <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name"><h4>{{review.user.name}}</h4></span></div>
-                    </div>
-                    <div style=" font-size:xx-large ; color:orange ;" class="form-group">
-                        <ngb-rating [max]="5" [rate]="review.count" [readonly]="true"> </ngb-rating>
-                    </div>
-    
-                    <p>{{review.comment}}</p>
-                </div>
-               
-                
-                
-            </div>
+          
             <div class="col-lg-6 col-md-8 col-sm-10 offset-md-1 offset-sm-1 col-12 mt-4"  *ngIf="condition" >
                 <form id="algin-form" class="bg-light mt-5" [formGroup]="commentForm" (ngSubmit)="onSubmit()">
                     <div class="form-group">

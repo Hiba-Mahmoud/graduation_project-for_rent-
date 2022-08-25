@@ -62,7 +62,7 @@
           <div class="card shadow-sm m-3" >
             <div class="photo">
               <img [src]="advertisment.advertisement_image[0].image_name" height="200px" width="100%"
-                alt="{{advertisment.advertisement_image[0].image_name}}">
+                alt="{{advertisment.advertisement_image[0].image_name}}" routerLink="/details/{{advertisment.id}}">
 
               <h5 class="favorite " mat-icon-button (click)="toggleSelected(advertisment.id)">
 
@@ -88,7 +88,7 @@
                       <div class="d-flex flex-row" *ngIf="advertisment .ratings_count>0">
 
                         <mat-icon style="font-size:large;">star</mat-icon>
-                        <p>{{advertisment .ratings_avg_count}}</p>
+                        <p>{{advertisment .ratings_avg_count  | number : '1.1-1'}}</p>
                         <p>({{advertisment .ratings_count}})</p>
                       </div>
 

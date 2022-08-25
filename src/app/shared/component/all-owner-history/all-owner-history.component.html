@@ -3,8 +3,8 @@
 
   <div class="container my-5 owner  w-75 m-auto">
     <div class="row">
-      <div class="col-xsm-4 col-sm-4 col-md-4 text-center rounded-circle bg-info photo ">
-        <img [src]="owner.image" class="rounded-circle  img-fluid" alt="...">
+      <div class=" col-sm-12  col-md-6 text-center rounded-circle  photo ">
+        <img [src]="owner.image" class="rounded-circle avatar img-fluid" alt="...">
 
       </div>
       <div class="col-sm  d-flex justify-content-center flex-column align-items-center mt-5">
@@ -25,7 +25,7 @@
   <div class="album  notRented " *ngIf="totalNumberNotRented>0">
     <div class="line  mt-5 m-auto ">
     </div>
-    <h2 class="text-center mt-3">الاعلانات المتاحه حاليا </h2>
+    <h2 class="text-center mt-3">المعروض حاليا</h2>
     <div class="container m-auto">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
 
@@ -42,11 +42,11 @@
                   <div class="col px-3 py-2">
                     <div class="d-flex flex-row justify-content-between">
 
-                      <p class="mb-2 text-muted">{{advertisment .type | type}}</p>
-                      <div class="d-flex flex-row" *ngIf="advertisment .ratings_count>0">
+                      <p class="mb-2 text-muted">{{advertisment.type | type}}</p>
+                      <div class="d-flex flex-row" *ngIf="advertisment.ratings_count>0">
                         <mat-icon style="font-size:large;">star</mat-icon>
-                        <p>{{advertisment .ratings_avg_count}}</p>
-                        <p>({{advertisment .ratings_count}})</p>
+                        <p>{{advertisment.ratings_avg_count  | number : '1.1-1'}}</p>
+                        <p>({{advertisment.ratings_count}})</p>
                       </div>
 
                     </div>
@@ -75,7 +75,7 @@
 
     <div class="line  mt-5 m-auto ">
     </div>
-    <h2 class="text-center mt-3">اعلانات تم تأجيرها </h2>
+    <h2 class="text-center mt-3"> تم تأجيرها </h2>
 
     <div class="album pt-5 ">
       <div class="container">
