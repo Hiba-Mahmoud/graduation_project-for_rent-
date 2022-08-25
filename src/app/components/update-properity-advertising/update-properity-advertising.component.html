@@ -107,11 +107,11 @@
 
             <strong
               *ngIf="addproperity.controls['title'].errors['minlength']"
-              >الاسم الاول يجب الا يقل عن حرفان</strong>
+              >برجاء ادخال عنوان مناسب</strong>
 
             <strong
               *ngIf="addproperity.controls['title'].errors['maxlength']"
-              >الاسم الاول يجب الا يزيد عن عشرة احرف</strong
+              >برجاء ادخال عنوان مناسب</strong
             >
             <strong
               *ngIf="addproperity.controls['title'].errors['pattern']"
@@ -140,15 +140,15 @@
             addproperity.controls['description'].touched">
             <strong
               *ngIf="addproperity.controls['description'].errors['required']"
-              >برجاء ادخال عنوان مناسب</strong>
+              >برجاء ادخال وصف مناسب</strong>
 
             <strong
               *ngIf="addproperity.controls['description'].errors['minlength']"
-              >الاسم الاول يجب الا يقل عن حرفان</strong>
+              >برجاء ادخال وصف كاف </strong>
 
             <strong
               *ngIf="addproperity.controls['description'].errors['maxlength']"
-              >الاسم الاول يجب الا يزيد عن عشرة احرف</strong
+              >برجاء ادخل وصف مناسب</strong
             >
             <strong
               *ngIf="addproperity.controls['description'].errors['pattern']"
@@ -193,10 +193,10 @@
           addproperity.controls['area'].touched">
           <strong
             *ngIf="addproperity.controls['area'].errors['required']"
-            >برجاء ادخال السعر </strong>
+            >برجاء ادخال المساحة </strong>
           <strong
             *ngIf="addproperity.controls['area'].errors['pattern']"
-            >السعر ارقام فقط</strong
+            >المساحة ارقام فقط</strong
           >
         </div>
       </div>
@@ -211,10 +211,10 @@
           addproperity.controls['level'].touched">
           <strong
             *ngIf="addproperity.controls['level'].errors['required']"
-            >برجاء ادخال السعر </strong>
+            >برجاء ادخال رقم الطابق </strong>
           <strong
             *ngIf="addproperity.controls['level'].errors['pattern']"
-            >السعر ارقام فقط</strong
+            >رقم الطابق ارقام فقط</strong
           >
         </div>
       </div>
@@ -237,10 +237,10 @@
           addproperity.controls['bedroomnum'].touched">
           <strong
             *ngIf="addproperity.controls['bedroomnum'].errors['required']"
-            >برجاء ادخال السعر </strong>
+            >برجاء ادخال عدد الغرف </strong>
           <strong
             *ngIf="addproperity.controls['bedroomnum'].errors['pattern']"
-            >السعر ارقام فقط</strong
+            >عدد الغرف ارقام فقط</strong
           >
         </div>
       </div>
@@ -261,10 +261,10 @@
           addproperity.controls['bathroomnum'].touched">
           <strong
             *ngIf="addproperity.controls['bathroomnum'].errors['required']"
-            >برجاء ادخال السعر </strong>
+            >برجاء ادخال عدد الحمامات </strong>
           <strong
             *ngIf="addproperity.controls['bathroomnum'].errors['pattern']"
-            >السعر ارقام فقط</strong
+            >عدد الحمامات ارقام فقط</strong
           >
         </div>
       </div>
@@ -282,10 +282,10 @@
           addproperity.controls['bedsnum'].touched">
           <strong
             *ngIf="addproperity.controls['bedsnum'].errors['required']"
-            >برجاء ادخال السعر </strong>
+            >برجاء ادخال عدد السرائر </strong>
           <strong
             *ngIf="addproperity.controls['bedsnum'].errors['pattern']"
-            >السعر ارقام فقط</strong
+            >عدد السرائر ارقام فقط</strong
           >
         </div>
       </div>
@@ -302,7 +302,7 @@
     </div>
 
     <div class="row mt-3 mb-4">
-      <div class="col-ms-12 col-md-4">
+      <div class="col-ms-12 {{!(ispending == 'pending')?'col-md-4':'col-md-6'}}">
 
 
               <label class="form-label" for="gender" id="gender">مفروش</label>
@@ -334,7 +334,7 @@
       </div>
 
 
-      <div class="col-ms-12 col-md-4">
+      <div class="col-ms-12 {{!(ispending == 'pending')?'col-md-4':'col-md-6'}}">
 
             <div class="form-outline mb-4">
               <label class="form-label" for="gender" id="gender">النوع</label>
@@ -370,7 +370,7 @@
 
       <div class="col-ms-12 col-md-4">
 
-            <div class="form-outline mb-4">
+            <div class="form-outline mb-4" *ngIf="!(ispending == 'pending')">
               <label class="form-label" for="status" id="status">الحاله</label>
               <select
                 formControlName="status"
