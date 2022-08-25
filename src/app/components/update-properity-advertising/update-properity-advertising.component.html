@@ -1,4 +1,88 @@
 <div class="container mt-5">
+  <form action="" dir="rtl" class="w-100">
+
+    <div class="row" [formGroup]="images" >
+      <div class="col-sm-12 col-md-3" *ngFor="let image of imageOne ">
+        <div class="file-field">
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+          <label for="image"><img
+            src={{image.image_name}}
+            class="img-fluid"
+            style="width:150px;height:110px"
+            alt="example placeholder"
+            /></label>
+            <input type="file" formControlName="imageone" style="display: none;"   id="image" name="imageone" (change)="onFileChange($event , image.id)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-sm-12 col-md-3">
+        <div class="file-field">
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+          <label for="image"><img
+            src={{imagetwo}}
+            class="img-fluid w-100"
+            alt="example placeholder"
+            /></label>
+            <input type="file" formControlName="imageone"   id="image" name="imageone" (change)="onFileChange($event)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-3">
+        <div class="file-field">
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+          <label for="image"><img
+            src={{imagethree}}
+            class="img-fluid w-100"
+            alt="example placeholder"
+            /></label>
+            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-3">
+        <div class="file-field">
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+          <label for="image"><img
+            src={{imageFour}}
+            class="img-fluid w-100"
+            alt="example placeholder"
+            /></label>
+            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-3" *ngIf="imageFive">
+        <div class="file-field">
+          <div class="d-flex justify-content-center">
+            <div class="btn btn-mdb-color btn-rounded float-left">
+          <label for="image"><img
+            src={{imageFive}}
+            class="img-fluid w-100"
+            alt="example placeholder"
+            /></label>
+            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
+            </div>
+          </div>
+        </div>
+      </div>
+ -->
+
+
+    </div>
+  </form>
+
   <form dir="rtl" class="w-100" [formGroup]="addproperity" >
     <div class="mb-3">
       <label for="title"  class="form-label">اسم الاعلان</label>
@@ -416,103 +500,5 @@
 
 
 
-  <form action="" dir="rtl" class="w-100">
 
-    <div class="row" [formGroup]="images" >
-      <div class="col-sm-12 col-md-3" *ngFor="let image of imageOne ">
-        <div class="file-field">
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-          <label for="image"><img
-            src={{image.image_name}}
-            class="img-fluid w-100"
-            alt="example placeholder"
-            style="width: 100px;height:150px"
-            /></label>
-            <input type="file" formControlName="imageone"   id="image" name="imageone" (change)="onFileChange($event , image.id)"/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-          <label for="image"><img
-            src={{imagetwo}}
-            class="img-fluid w-100"
-            alt="example placeholder"
-            /></label>
-            <input type="file" formControlName="imageone"   id="image" name="imageone" (change)="onFileChange($event)"/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-          <label for="image"><img
-            src={{imagethree}}
-            class="img-fluid w-100"
-            alt="example placeholder"
-            /></label>
-            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-          <label for="image"><img
-            src={{imageFour}}
-            class="img-fluid w-100"
-            alt="example placeholder"
-            /></label>
-            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-12 col-md-3" *ngIf="imageFive">
-        <div class="file-field">
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-          <label for="image"><img
-            src={{imageFive}}
-            class="img-fluid w-100"
-            alt="example placeholder"
-            /></label>
-            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
-            </div>
-          </div>
-        </div>
-      </div>
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-  </form>
 </div>
