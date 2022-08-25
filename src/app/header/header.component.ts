@@ -62,8 +62,11 @@ export class HeaderComponent implements OnInit {
   
   
 
-
-
+      // this.get_notification();
+      
+      this.getcountofnot ();
+      this.zero();
+     
 
 
 
@@ -72,10 +75,7 @@ export class HeaderComponent implements OnInit {
       var pusher = new Pusher('dd3cfafeb7c0b16de8e9', {
         cluster: 'eu'
       });
-      // this.get_notification();
-      this.getcountofnot ();
-      this.zero();
-     
+      
      
       
 
@@ -86,32 +86,33 @@ export class HeaderComponent implements OnInit {
       //add advertisement notificaation
 
       const channel3 = await pusher.subscribe('NewChannel3');
-     await channel3.bind("AddAdvertisement", (data) =>{
-      
-      if( (this.isAdmin) || (this.isSuperAdmin)){
+      await channel3.bind("AddAdvertisement", (data) =>{
+        if(this.isLogin){
+        if( (this.isAdmin) || (this.isSuperAdmin)){
 
-      this.toastr.success( data.message,"لديك اشعار جديد");
-       
+        this.toastr.success( data.message,"لديك اشعار جديد");
         
-        console.log( data);
-      }
-        
+          
+          console.log( data);
+        }
+        }
 
-      });
-
+        });
+    
 
       //add comment notification
       const channel1 = await pusher.subscribe('NewChannel');
       await channel1.bind("CommentNotification",(data)=> {
 
-        // check if is auther of the advertisement
+        //check if is auther of the advertisement 
+        if(this.isLogin){
         if((this.id == data.advertisement_owner_id ) && (this.isOwner)){
 
-          console.log(data.advertisement_owner_id);
-          console.log(this.id);
         this.toastr.success( data.content,"لديك اشعار جديد");
         
         
+        console.log( data);
+        }
         }
       });
 
@@ -120,16 +121,15 @@ export class HeaderComponent implements OnInit {
       const channel2 = await pusher.subscribe('NewChannel2');
       await channel2.bind("ConfirmOwnerRequestFromAdmin", (data) =>{
         //check if is auther of the advertisement 
-        console.log(data.user_id);
-        console.log(this.id);
+        if(this.isLogin){
         if((this.id == data.user_id ) && (this.isOwner)){
              this.toastr.success( data.message,"لديك اشعار جديد");
         } 
-
+      }
       });
      
-  
     }
+    
   
   
   
@@ -152,24 +152,7 @@ export class HeaderComponent implements OnInit {
 
   
 
-  get_notification() {
-   
-    //check user 
-    this.notification_services.get_All_notification().subscribe(result => {console.log(result);
-    this.allNotification=result.notification;
-      
-       this.totalNumber=result.count;
-        console.log(this.allNotification);
-        console.log(this.totalNumber);
-       
-    
-    });
-   
-    
-    // get notification from backend in alerts or in any form 
-    //services 
-    //function of services of file of ts 
-  }
+  
   getcountofnot (){
     this.notification_services.get_All_notification().subscribe(result => {console.log(result);
       this.allNotification=result.notification;
@@ -194,7 +177,7 @@ export class HeaderComponent implements OnInit {
     
 
   
- 
+  
 
 }
 
