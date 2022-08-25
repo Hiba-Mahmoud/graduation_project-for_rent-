@@ -30,6 +30,7 @@ import { RejecteddAdsComponent } from './component/rejectedd-ads/rejectedd-ads.c
 import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
 import { GenderPipe } from './pipes/gender.pipe';
 import { TeamMemberUpdateComponent } from './component/team-member-update/team-member-update.component';
+import { PendingDetailsComponent } from './component/pending-details/pending-details.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { TeamMemberUpdateComponent } from './component/team-member-update/team-m
     PayedAdsComponent,
     GenderPipe,
     TeamMemberUpdateComponent,
+    PendingDetailsComponent,
 
   ],
 
@@ -84,8 +86,8 @@ import { TeamMemberUpdateComponent } from './component/team-member-update/team-m
     AcceptedAdsComponent,
     RejecteddAdsComponent,
     PayedAdsComponent,
-   GenderPipe
-
+   GenderPipe,
+   TeamMemberUpdateComponent
 
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorInterceptor, multi: true }]
