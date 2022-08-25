@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TokenService } from 'src/app/auth/service/token.service';
 import { AuthGuard } from 'src/app/guard/auth.guard';
 import { AdvertismentService } from '../../services/advertisment.service';
+import{NgbRating} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-cart-details',
@@ -17,7 +18,7 @@ export class CartDetailsComponent implements OnInit {
   data:any={}
   images:any=[]
   adverId:any ;
-  review:any;
+  reviews:any;
   suggestion:any;
   suggesObgImage:any;
   loading:boolean=true;
@@ -32,6 +33,9 @@ export class CartDetailsComponent implements OnInit {
   selected: boolean;
   selectedChange = new EventEmitter<boolean>();
 
+  starRating=0
+  Rating=5
+  result: any;
   constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient
 
     ,private _AuthGuard:AuthGuard,private localstorage:TokenService ) {
@@ -58,9 +62,10 @@ export class CartDetailsComponent implements OnInit {
     this.data=res.advertisement[0];
         this.images= this.data.advertisement_image ;
     this.adverId=this.data.id;
-    this.review=res.reviews;
+    this.reviews=res.reviews;
     this.suggestion=res.suggestion;
     this.advertNumber=res.advertisement_num;
+    this.result=res;
     this.loading=false;
     // this.suggesObgImage=this.suggestion[0].advertisement_image[0].image_name;
    })
