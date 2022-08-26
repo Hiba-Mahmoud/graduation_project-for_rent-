@@ -27,7 +27,7 @@ export class AboutPolictyComponent implements OnInit {
     });
    }
 
-   deleteReport(rId :number){
+   deletePol(rId :number){
     this.del = rId;
     console.log(this.del);
     this.objDel.delDesc(rId).subscribe(res=>{
@@ -35,11 +35,13 @@ export class AboutPolictyComponent implements OnInit {
           window.location.reload();
  })
    }
-   showReport(sId){
+   updatePol(sId){
     this.show_id = sId;
     console.log(this.show_id);
-    this.route.navigate(['/reports-details'], {queryParams : {data: this.show_id}});
+    this.route.navigate(['/aboutPolictyUpdate'], {queryParams : {data: this.show_id}});
    }
+
+   add(){  this.route.navigate(['/about-policty-add']);  }
 
 
   ngOnInit(): void {

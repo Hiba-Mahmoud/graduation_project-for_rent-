@@ -1,23 +1,12 @@
 <title>Report form</title>
-<div *ngIf="isvalid"  class="alert alert-danger text-center">من فضلك ادخل البيانات صحيحة</div>
-   <!-- ------------------------------------------------------------------------------ -->
-<form action="" dir="rtl" class="w-100 mb-3 mt-3" style="text-align: center;" [formGroup]="images">
 
-  <div class="custom-file" style="margin-right: 109px;">
-       <label for="image">
-        <img src={{about.image}} class="img-fluid w-100" alt="example placeholder" style="width: 100px;height:150px" />
-       </label>
-         <input type="file" formControlName="image"   id="image" name="image" 
-         (change)="onFileChange($event)" style="margin-right: 19px;" 
-         accept="image/png,image/jpg,image/jpeg"/>
-         </div>
-   </form>    
-<!-- ----------------------------------------------------------------------------------- -->
+<div *ngIf="isvalid"  class="alert alert-danger text-center">من فضلك ادخل البيانات صحيحة</div>
+
 <form class="form-signin" [formGroup]="form" (ngSubmit)="submitForm()" novalidate >
 
     <div class="form-label-group">
         <input type="text" id="title" formControlName="title" class="form-control"
-         placeholder="Name" required>
+         placeholder="Name" required autofocus >
         <label for="inputName">العنوان</label>        
         <div class="alert alert-danger" role="alert"
           *ngIf="form.controls['title'].errors && form.controls['title'].touched" >
@@ -29,21 +18,25 @@
       </div>    
 
   <div class="form-label-group">
-       <textarea id="description" formControlName="description" class="form-control" 
-       placeholder="وصف المحتوى"  required ></textarea>
- 
+       <input  type="text" id="description" formControlName="description" class="form-control"  required autofocus >
+       <label for="inputEmail">وصف المحتوى </label>
       <!-- </textarea> -->
        <div class="alert alert-danger" role="alert"
           *ngIf="form.controls['description'].errors && form.controls['description'].touched" >
           <strong *ngIf="form.controls['description'].errors['required']">الوصف مطلوبة</strong>
+          <strong *ngIf="form.controls['description'].errors['maxlength']">  الوصف  يجب الا تزيد عن عشرة احرف</strong>
           <strong *ngIf="form.controls['description'].errors['pattern']" >  الوصف  يجب ان تكون حروف</strong>
         </div>
   </div>
-  <br> 
+  <br> <br>
 
+  <div class="custom-file">
+    <label class="custom-file-label" for="customFile">الصورة </label>
+    <input type="file" name="image" class="custom-file-input" id="customFile" (change)="uploadFile1($event)">
+  </div>
+  <br> <br>
 
   <button type="submit" class="send" id="update" >تأكيد </button>
-  <!-- <button type="submit" class="send" id="add" [disabled]="!form.valid">اضافه </button> -->
 
   </form>
   

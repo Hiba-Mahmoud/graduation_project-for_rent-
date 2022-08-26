@@ -49,6 +49,8 @@ export class TeamMembersComponent implements OnInit {
   console.log(this.up);
   this.route.navigate(['/teamUpdate'], {queryParams : {data: this.up}});
  }
+ 
+ add(){  this.route.navigate(['/aboutForm']);  }
 
   ngOnInit(): void {
   }
