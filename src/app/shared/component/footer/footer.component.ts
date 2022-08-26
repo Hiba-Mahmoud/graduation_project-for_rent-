@@ -25,18 +25,17 @@ export class FooterComponent implements OnInit {
   }
  
   navigateFacebook(){
-    window.location.href=this.followUsInfo.facebook;
+    window.open(this.followUsInfo.facebook,"_blank");
 
   }
 
   navigateTwitter(){
-    window.location.href=this.followUsInfo.twitter;
+    window.open(this.followUsInfo.twitter,"_blank");
 
   }
 
   navigateInstagram(){
-    // window.location.href=this.followUsInfo.instagram;
-    window.location.href=this.followUsInfo.twitter;
+    window.open(this.followUsInfo.instagram,"_blank");
 
 
   }
