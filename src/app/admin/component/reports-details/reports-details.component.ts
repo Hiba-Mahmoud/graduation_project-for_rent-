@@ -42,9 +42,4 @@ export class ReportsDetailsComponent implements OnInit {
   })
   }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 60afa77885d82258d354f7bc0649b4f96959db36
 }

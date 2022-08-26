@@ -19,7 +19,6 @@ export class FollowUsComponent implements OnInit {
      private http: HttpClient ,
      private router:Router,
      private routAct:ActivatedRoute) {
-   //private fb:FormBuilder,private router:Router,private http:HttpClient
   }
 
   ngOnInit(): void {

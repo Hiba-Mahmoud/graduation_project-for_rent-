@@ -19,7 +19,7 @@ import { AdverRequestsComponent } from './component/adver-requests/adver-request
 import { TokenInterceptorInterceptor } from './interceptor/token-interceptor.interceptor';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BlockListComponent } from './component/block-list/block-list.component';
-import { FollowUsComponent } from './component/follow-us/follow-us.component';
+// import { FollowUsComponent } from './component/follow-us/follow-us.component';
 import { TeamMembersComponent } from './component/team-members/team-members.component';
 import { FollowLinksComponent } from './component/follow-links/follow-links.component';
 import { AboutPolictyComponent } from './component/about-policty/about-policty.component';
@@ -29,6 +29,7 @@ import { RejecteddAdsComponent } from './component/rejectedd-ads/rejectedd-ads.c
 import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
 import { AboutPolictyAddComponent } from './component/about-policty-add/about-policty-add.component';
 import { TeamMemberUpdateComponent } from './component/team-member-update/team-member-update.component';
+import { FollowLinksUpdateComponent } from './component/follow-links-update/follow-links-update.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { TeamMemberUpdateComponent } from './component/team-member-update/team-m
     PayedAdsComponent,
     AboutPolictyAddComponent,
     TeamMemberUpdateComponent,
+    FollowLinksUpdateComponent,
 
   ],
 
@@ -83,7 +85,7 @@ import { TeamMemberUpdateComponent } from './component/team-member-update/team-m
     PayedAdsComponent, 
     ReportsComponent,
     ReportsDetailsComponent,
-    FollowUsComponent,
+    // FollowUsComponent,
     TeamMembersComponent,
     FollowLinksComponent,
     AboutPolictyComponent,

@@ -40,7 +40,7 @@ import { FavouritsComponent } from "./components/favourits/favourits.component";
 import { BlockListComponent } from './admin/component/block-list/block-list.component';
 
 import { PayedproperitiesComponent } from './components/payedproperities/payedproperities.component';
-import { FollowUsComponent } from './admin/component/follow-us/follow-us.component';
+// import { FollowUsComponent } from './admin/component/follow-us/follow-us.component';
 import { RenterComponent } from './users/component/renter/renter.component';
 import { AllOwnerHistoryComponent } from './shared/component/all-owner-history/all-owner-history.component';
 import { FollowLinksComponent } from './admin/component/follow-links/follow-links.component';
@@ -53,6 +53,7 @@ import { PayedAdsComponent } from './admin/component/payed-ads/payed-ads.compone
 import { AboutPolictyAddComponent } from './admin/component/about-policty-add/about-policty-add.component';
 import {TeamMemberUpdateComponent } from './admin/component/team-member-update/team-member-update.component';
 import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
+import { FollowLinksUpdateComponent } from './admin/component/follow-links-update/follow-links-update.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -119,7 +120,7 @@ const routes: Routes = [
   {path: 'allreports', component: ReportsComponent ,canActivate:[AuthGuard]},
   {path: 'aboutForm', component: AboutFormComponent ,canActivate:[AuthGuard]},
   {path: 'blockList', component: BlockListComponent,canActivate:[AuthGuard]},
-  {path: 'followForm', component: FollowUsComponent,canActivate:[AuthGuard]},
+  // {path: 'followForm', component: FollowUsComponent,canActivate:[AuthGuard]},
   {path: 'followShow', component: FollowLinksComponent,canActivate:[AuthGuard]},
   {path: 'team', component: TeamMembersComponent,canActivate:[AuthGuard]},
   {path: 'aboutPolicty', component: AboutPolictyComponent,canActivate:[AuthGuard]},
@@ -131,6 +132,7 @@ const routes: Routes = [
   {path: 'about-policty-add', component: AboutPolictyAddComponent,canActivate:[AuthGuard]},
 
   {path:'editteam/:id',component:TeamMemberUpdateComponent,canActivate:[AuthGuard]},
+  {path:'followForm',component:FollowLinksUpdateComponent,canActivate:[AuthGuard]},
 
   {
     path: "reportForm", component: ReportFormUserComponent

@@ -15,8 +15,10 @@ export class AboutFormComponent implements OnInit {
   isvalid=false;
   invalidForm:any;
   
-  constructor(public fb: FormBuilder, private http: HttpClient ,private router:Router) {
-   //private fb:FormBuilder,private router:Router,private http:HttpClient
+  constructor(public fb: FormBuilder,
+     private http: HttpClient ,
+     private router:Router,
+     private formb:FormBuilder) {
   }
 
   ngOnInit(): void {
