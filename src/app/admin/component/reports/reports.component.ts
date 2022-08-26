@@ -34,11 +34,14 @@ export class ReportsComponent implements OnInit {
    deleteReport(rId :number){
     this.del = rId;
     console.log(this.del);
+    if(confirm("هل تريد تأكيد الحذف ؟")){
     this.delObj.delRepo(rId).subscribe(res=>{
       console.log("deleeeeeeeeeeeeeeeeet"); 
-          window.location.reload();
+     this.getReportsData()
+    
  })
    }
+  }
    showReport(sId){
     this.show_id = sId;
     console.log(this.show_id);

@@ -20,6 +20,8 @@ export class TeamMemberUpdateComponent implements OnInit {
   imageOne:any;
   dataall=new FormData();
   images:FormGroup;
+  isvalid = false;
+  invalidForm:any;
   constructor(public fb: FormBuilder, private http: HttpClient ,
     private router:Router,private activeroute: ActivatedRoute ,private owner: OwnerService,private formb:FormBuilder) {
     this.id = this.activeroute.snapshot.paramMap.get('id')
@@ -36,6 +38,8 @@ export class TeamMemberUpdateComponent implements OnInit {
 
       image:[''],
     })
+    this.invalidForm = this.form.status;
+
   }
 
   onFileChange(event:any) {
@@ -75,7 +79,11 @@ export class TeamMemberUpdateComponent implements OnInit {
 
   
   submitForm() {
-
+    if (this.form.status === 'INVALID') {
+      // console.log('hello');
+      this.isvalid = true;
+      // console.log(this.isvalid);
+    }else{
     this.formData.append('name', this.form.value.name);
     this.formData.append('jobTitle', this.form.value.jobTitle);
     let id=this.team.id;
@@ -102,6 +110,7 @@ export class TeamMemberUpdateComponent implements OnInit {
       }
       });
   }
+}
 
   getalldata(){
     this.owner.getadvertismentdetails('http://127.0.0.1:8000/api/edit/team/', this.id)

@@ -21,12 +21,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 .send{
   padding: 10px 10px;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 1.2em;
+  font-weight: 400;
   border-radius: 1px;
   background: var(--secondColor);
   color: #ffff;
   border:none;
+  margin: 2px 2px !important;
   text-transform: uppercase;
   transition: all 0.5s ease-in-out;
   -webkit-border-radius: 20px;
@@ -61,4 +62,9 @@ font-size: 2em;
 .center
 {
   text-align:center;
+}
+
+.color{
+  background-color: rgba(0,0,0,.55);
+  color:#fff;
 }

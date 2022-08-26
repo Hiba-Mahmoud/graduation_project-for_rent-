@@ -12,24 +12,20 @@ import { Router } from '@angular/router';
 export class AboutFormComponent implements OnInit {
   form: FormGroup;
   errMsg : any=[];
-  isvalid=false;
+  isvalid = false;
   invalidForm:any;
-  
-  constructor(public fb: FormBuilder,
-     private http: HttpClient ,
-     private router:Router,
-     private formb:FormBuilder) {
+  constructor(public fb: FormBuilder, private http: HttpClient ,private router:Router) {
+   //private fb:FormBuilder,private router:Router,private http:HttpClient
   }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      name: ['' , [Validators.required,Validators.minLength(4),Validators.maxLength(20),
-        Validators.pattern('^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z\u06ff ]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\u06ff]*$')] ],
-      jobTitle: ['' ,[Validators.required,Validators.minLength(10),Validators.maxLength(40),
-        Validators.pattern('^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z\u06ff ]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\u06ff]*$')]],
+      name: ['' , [Validators.required,Validators.minLength(4),Validators.maxLength(20),Validators.pattern('^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z\u06ff ]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\u06ff]*$')] ],
+      jobTitle: ['' ,[Validators.required,Validators.minLength(10),Validators.maxLength(40),Validators.pattern('^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z\u06ff ]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\u06ff]*$')]],
       avatar1: [null],
     });
-    this.invalidForm=this.form.status;
+    this.invalidForm = this.form.status;
+
   }
 
   uploadFile1(event) {
@@ -42,13 +38,11 @@ export class AboutFormComponent implements OnInit {
   }
 
   submitForm() {
-      console.log(this.isvalid)
-        if(this.form.status === "INVALID"){
-          console.log('hello')
-          this.isvalid = true;
-          console.log("this.isvalid = ",this.isvalid)
-        }
-      else{
+    if (this.form.status === 'INVALID') {
+      // console.log('hello');
+      this.isvalid = true;
+      // console.log(this.isvalid);
+    }else{
     var formData: any = new FormData();
     formData.append('name', this.form.get('name').value);
     formData.append('jobTitle', this.form.get('jobTitle').value);
@@ -60,7 +54,7 @@ export class AboutFormComponent implements OnInit {
         (succ:any)=>{
         console.log("process is = " , succ);
         
-          this.router.navigate(['/adminhome']);
+          this.router.navigate(['/aboutForm']);
           alert('تمت الاضافه بنجاح');
 
       },
@@ -78,5 +72,6 @@ export class AboutFormComponent implements OnInit {
       }
       });
   }
-  }
+}
+
 }

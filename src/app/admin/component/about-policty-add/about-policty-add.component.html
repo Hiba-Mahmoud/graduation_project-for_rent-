@@ -1,6 +1,7 @@
 <title>Report form</title>
+<div class="container mt-5">
 
-<div *ngIf="isvalid"  class="alert alert-danger text-center">من فضلك ادخل البيانات صحيحة</div>
+<div *ngIf="isvalid"  class="alert alert-danger text-center col-5" style="margin: auto;">من فضلك ادخل البيانات صحيحة</div>
 
 <form class="form-signin" [formGroup]="form" (ngSubmit)="submitForm()" novalidate >
 
@@ -32,11 +33,13 @@
 
   <div class="custom-file">
     <label class="custom-file-label" for="customFile">الصورة </label>
-    <input type="file" name="image" class="custom-file-input" id="customFile" (change)="uploadFile1($event)">
+    <input type="file" name="image" class="custom-file-input" id="customFile"
+     (change)="uploadFile1($event)"
+     style="margin-right: 30px;">
   </div>
   <br> <br>
 
   <button type="submit" class="send" id="update" >تأكيد </button>
 
   </form>
-  
+  </div>

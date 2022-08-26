@@ -33,6 +33,7 @@ import { FollowLinksUpdateComponent } from './component/follow-links-update/foll
 import { GenderPipe } from './pipes/gender.pipe';
 // import { TeamMemberUpdateComponent } from './component/team-member-update/team-member-update.component';
 import { PendingDetailsComponent } from './component/pending-details/pending-details.component';
+import { YesOrNoPipe } from 'src/app/shared/pipes/yes-or-no.pipe';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { PendingDetailsComponent } from './component/pending-details/pending-det
     AboutPolictyUpdateComponent,
     // PayedAdsComponent,
    GenderPipe,
-   TeamMemberUpdateComponent
+   TeamMemberUpdateComponent,
+   PendingDetailsComponent
 
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorInterceptor, multi: true }]

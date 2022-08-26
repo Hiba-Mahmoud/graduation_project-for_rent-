@@ -47,16 +47,17 @@ export class PendingComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
       let pending ='http://127.0.0.1:8000/api/pending_advertisement';
-      this.owner.getPending(pending,headers).subscribe(data=>{
+      this.owner.getPending(pending,headers).subscribe({next:data=>{
         console.log(data)
         this.length=data[0].length;
         this.dataSource=new MatTableDataSource(data[0]);
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;
         // console.log(this.dataSource)
-      },error=>{
+      },error:error=>{
         console.log(error)
-      })
+      }}
+      )
 
   }
 
