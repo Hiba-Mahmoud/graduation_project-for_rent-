@@ -86,16 +86,11 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('id',response.user.id);
 
 
-<<<<<<< HEAD
-          this.router.navigate(['/owner'])
-          .then(() => {
-            window.location.reload();
-          });
-=======
+
           this.router.navigate(['/owner']).then(()=>{
             window.location.reload();
           })
->>>>>>> e2fdc2fd2fb941ddfc91c4d721fa30ec788e404d
+
 
         }else if(response.user.type =='renter'){
           localStorage.setItem('role',response.user.type);
@@ -103,17 +98,11 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('name',response.user.name);
           localStorage.setItem('id',response.user.id);
 
-<<<<<<< HEAD
-          this.router.navigate(['/renter'])
-          .then(() => {
-            window.location.reload();
-          });
-=======
+
           this.router.navigate(['/renter']).then(()=>{
             window.location.reload();
           });
 
->>>>>>> e2fdc2fd2fb941ddfc91c4d721fa30ec788e404d
 
         
         }else if (response.user.type =='admin'){
@@ -122,29 +111,18 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('name',response.user.name);
           localStorage.setItem('id',response.user.id);
 
-<<<<<<< HEAD
-          this.router.navigate(['/adminhome'])
-          .then(() => {
-            window.location.reload();
-          });
 
-=======
           this.router.navigate(['/adminhome']).then(()=>{
             window.location.reload();;
           })
->>>>>>> e2fdc2fd2fb941ddfc91c4d721fa30ec788e404d
         }else{
           localStorage.setItem('role',response.user.type);
           localStorage.setItem('image',response.user.image);
           localStorage.setItem('name',response.user.name);
           localStorage.setItem('id',response.user.id);
 
-<<<<<<< HEAD
-          this.router.navigate(['/adminhome'])
-          .then(() => {
-=======
+
           this.router.navigate(['/adminhome']).then(()=>{
->>>>>>> e2fdc2fd2fb941ddfc91c4d721fa30ec788e404d
             window.location.reload();
           });
 
