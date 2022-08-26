@@ -27,8 +27,6 @@
                         <a class="nav-link ">
                             <li ngbDropdown class="nav-item ">
                                 <div class="nav-link dropdown-toggle" [ngStyle]="{'background-color' : 'transparent' }" (click)="zero()" id=" navbarDropdownMenuLink " ngbDropdownToggle role="button " data-bs-toggle="dropdown " aria-expanded="false ">
-                                    <!-- <i class="bi bi-bell "></i><sup><span
-                            class="rounded-circle bg-danger text-white ">{{totalNumber}}</span></sup> -->
                                     <mat-icon *ngIf="totalNumber>0" matBadge={{totalNumber}} matBadgeColor="warn">notifications</mat-icon>
                                     <mat-icon *ngIf="totalNumber==0">notifications</mat-icon>
 
