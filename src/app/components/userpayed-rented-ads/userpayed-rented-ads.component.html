@@ -1,37 +1,103 @@
-<!--
-<div class="container">
-  <div class="card-body bg-light " routerLink="/details/{{advertisment.id}}">
-    <div class="container">
-      <div class="row ">
-
-        <div class="col px-3 py-2">
-          <div class="d-flex flex-row justify-content-between">
-
-            <p class="mb-2 text-muted">{{advertisment .type}}</p>
-            <div class="d-flex flex-row" *ngIf="advertisment .ratings_count>0">
-
-              <mat-icon style="font-size:large;">star</mat-icon>
-              <p>{{advertisment .ratings_avg_count}}</p>
-              <p>({{advertisment .ratings_count}})</p>
+<!-- <div class="album pt-5">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
+      <div class="col" *ngFor="let item of ads">
+        <div *ngIf="let advertisment of item">
+          <div class="card shadow-sm m-3">
+            <div class="photo">
+              <img
+                [src]="advertisment.advertisement_image[0].image_name"
+                height="200px"
+                width="100%"
+                alt="{{ advertisment.advertisement_image[0].image_name }}"
+              />
             </div>
 
-          </div>
-          <h3 class="mb-0 title">{{advertisment .title}}</h3>
-          <h3 class="mb-0 price">{{advertisment .price}}جنيه</h3>
-          <div class="d-flex justify-content-between align-items-center ">
-            <small class="text-muted"> <span class="material-icons   ">location_on</span>
-              {{advertisment.address}}</small>
-          </div>
+            <div
+              class="card-body bg-light"
+              routerLink="/details/{{ advertisment.id }}"
+            >
+              <div class="container">
+                <div class="row">
+                  <div class="col px-3 py-2">
+                    <div class="d-flex flex-row justify-content-between">
+                      <p class="mb-2 text-muted">{{ advertisment.type }}</p>
+                      <div
+                        class="d-flex flex-row"
+                        *ngIf="advertisment.ratings_count > 0"
+                      >
+                        <mat-icon style="font-size: large">star</mat-icon>
+                        <p>{{ advertisment.ratings_avg_count }}</p>
+                        <p>({{ advertisment.ratings_count }})</p>
+                      </div>
+                    </div>
+                    <h3 class="mb-0 title">{{ advertisment.title }}</h3>
+                    <h3 class="mb-0 price">{{ advertisment.price }}جنيه</h3>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <small class="text-muted">
+                        <span class="material-icons">location_on</span>
+                        {{ advertisment.address }}</small
+                      >
+                    </div>
 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-
   </div>
 </div> -->
-<div class="col "
-          *ngFor="let item of allAdvert | paginate: { itemsPerPage: 9,totalItems:totalNumber, currentPage: page }">
-          <app-cart [advertisment]="item"> </app-cart>
 
+<div class="container ">
+  <div class="row">
+    <div class="col" *ngFor="let ads of advertisment">
+     <div class="" *ngFor="let item of ads">
+      <div class="card shadow-sm m-3">
+        <div class="photo">
+          <img
+            [src]="item.advertisement_image[0].image_name"
+            height="200px"
+            width="100%"
+            alt="{{ item.advertisement_image[0].image_name }}"
+          />
         </div>
+
+        <div class="card-body bg-light" routerLink="/details/{{ item.id }}">
+          <div class="container">
+            <div class="row">
+              <div class="col px-3 py-2">
+                <div class="d-flex flex-row justify-content-between">
+                  <p class="mb-2 text-muted">{{ item.type }}</p>
+                  <div
+                    class="d-flex flex-row"
+                    *ngIf="item.ratings_count > 0"
+                  >
+                    <mat-icon style="font-size: large">star</mat-icon>
+                    <p>{{ item.ratings_avg_count }}</p>
+                    <p>({{ item.ratings_count }})</p>
+                  </div>
+                </div>
+
+                <h3 class="mb-0 title">{{ item.title }}</h3>
+                <h3 class="mb-0 price">{{ item.price }}جنيه</h3>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">
+                    <span class="material-icons">location_on</span>
+                    {{ item.address }}</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+
+</div>
