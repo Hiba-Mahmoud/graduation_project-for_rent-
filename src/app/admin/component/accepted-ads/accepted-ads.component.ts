@@ -21,7 +21,7 @@ export class AcceptedAdsComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   @ViewChild(MatSort) sort:MatSort;
-  displaycolumns:string[]=['الاعلان','حذف','تعديل']
+  displaycolumns:string[]=['الاعلان','تعديل']
   constructor(private router:Router,private localstorage:TokenService,private AdminService:AdminServiceService ,private http:HttpClient, private owner:OwnerService,private localstoage:TokenService) {
   }
 
@@ -37,16 +37,17 @@ export class AcceptedAdsComponent implements OnInit {
   getallaccepted(){
 
       let pending ='http://127.0.0.1:8000/api/admin/acceptedAdvertisement'
-      this.owner.getadmincounters(pending).subscribe(data=>{
+      this.owner.getadmincounters(pending).subscribe({next:data=>{
         // console.log(data.accepted_advertisement)
         this.length=data.accepted_advertisement.length
         console.log(this.length)
         this.dataSource=new MatTableDataSource(data.accepted_advertisement);
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;
-      },error=>{
+      },error:
+      error=>{
         console.log(error)
-      })
+      }})
 
   }
 

@@ -27,7 +27,7 @@
 table{
   width: 100%;
   overflow-x: auto;
-  table-layout:auto;
+  /* table-layout:auto; */
 }
 :host ::ng-deep .mat-sort-header-container {
   display: flex;
