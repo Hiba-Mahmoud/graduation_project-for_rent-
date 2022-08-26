@@ -52,6 +52,7 @@ import { AcceptedAdsComponent } from './admin/component/accepted-ads/accepted-ad
 import { RejecteddAdsComponent } from './admin/component/rejectedd-ads/rejectedd-ads.component';
 import { PayedAdsComponent } from './admin/component/payed-ads/payed-ads.component';
 import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
+import { PendingDetailsComponent } from './admin/component/pending-details/pending-details.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -126,6 +127,7 @@ const routes: Routes = [
   {path: 'rejected-ads', component: RejecteddAdsComponent,canActivate:[AuthGuard]},
   {path: 'payed-ads', component: PayedAdsComponent,canActivate:[AuthGuard]},
   {path:'editteam/:id',component:TeamMemberUpdateComponent,canActivate:[AuthGuard]},
+  { path: 'pendingDetails/:id', component:PendingDetailsComponent ,canActivate:[AuthGuard]},
 
   {
     path: "reportForm", component: ReportFormUserComponent

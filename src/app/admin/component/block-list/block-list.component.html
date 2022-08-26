@@ -1,5 +1,5 @@
 
-  <form class="example-form">
+  <form class="example-form  mt-5">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>بحث</mat-label>
       <input matInput placeholder="ادخل الاسم"  #name (keyup)="findByName(name)">
@@ -16,13 +16,13 @@
       
           <!-- Name Column -->
           <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header > الاسم</th>
+            <th mat-header-cell *matHeaderCellDef  > الاسم</th>
             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
           </ng-container>
       
           <!-- Weight Column -->
           <ng-container matColumnDef="email" class="text-center ">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header > البريد الالكتروني </th>
+            <th mat-header-cell *matHeaderCellDef  > البريد الالكتروني </th>
             <td mat-cell *matCellDef="let element"> {{element.email}} </td>
           </ng-container>
 <!--       

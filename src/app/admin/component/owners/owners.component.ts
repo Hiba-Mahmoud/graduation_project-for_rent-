@@ -18,7 +18,7 @@ export class OwnersComponent implements OnInit {
   modalRef: BsModalRef;
 
   dataSource:any
-  displayedColumns: string[] = ['id', 'name', 'email', 'status' ,'phone', 'gender','block','delete'];
+  displayedColumns: string[] = ['id', 'name', 'email', 'phone', 'gender','block','delete'];
   
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
   @ViewChild(MatSort)

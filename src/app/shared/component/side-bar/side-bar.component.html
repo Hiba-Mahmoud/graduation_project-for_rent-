@@ -8,7 +8,7 @@
 
 
       <mat-divider></mat-divider>
-      <ul class="nav flex-column" *ngIf="isAdmin ||  isSuperAdmin">
+      <ul class="nav flex-column">
 
         <li class="nav-item">
           <a class="nav-link" routerLink="adminhome">
@@ -16,13 +16,13 @@
             لوحة التحكم
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="allRenters">
+        <li class="nav-item" *ngIf="  isSuperAdmin">
+          <a class="nav-link" routerLink="allRenters"  >
             <span data-feather="file"></span>
             المستأجرين
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="  isSuperAdmin">
           <a class="nav-link" routerLink="allOwners">
             <span data-feather="shopping-cart"></span>
             الملاك
@@ -64,7 +64,7 @@
             الاعلانات المدفوعة
          </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isSuperAdmin">
           <a class="nav-link" routerLink="/blockList">
             <span data-feather="layers"></span>
             المحظورين
