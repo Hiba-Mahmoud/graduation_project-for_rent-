@@ -94,3 +94,7 @@ mat-sidenav {
     font-size: 20px;
     color: #FE6F41;
   }
+
+  .imgp{
+    cursor: pointer;
+  }

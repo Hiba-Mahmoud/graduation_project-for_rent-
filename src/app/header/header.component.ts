@@ -106,7 +106,9 @@ export class HeaderComponent implements OnInit {
         this.toastr.success( data.message,"لديك اشعار جديد");
         
           
-          console.log( data);
+          console.log( data.user_id);
+          console.log( this.id);
+
         }
         }
 
@@ -130,7 +132,6 @@ export class HeaderComponent implements OnInit {
       });
 
 
-      //add admin approve notification
       const channel2 = await pusher.subscribe('NewChannel2');
       await channel2.bind("ConfirmOwnerRequestFromAdmin", (data) =>{
         //check if is auther of the advertisement 
@@ -149,8 +150,6 @@ export class HeaderComponent implements OnInit {
 
      
     }
-    
-  
   
   
 
