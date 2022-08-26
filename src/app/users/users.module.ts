@@ -8,7 +8,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatIconModule} from '@angular/material/icon';
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import {MatIconModule} from '@angular/material/icon';
       NgxPaginationModule,
       MatSelectModule,
       MatButtonToggleModule,
-      MatIconModule
+      MatIconModule,
+      SharedModule,
 
   ],
   exports:[

@@ -94,3 +94,10 @@ mat-sidenav {
     font-size: 20px;
     color: #FE6F41;
   }
+
+
+
+  .list{
+    font-size: 1rem;
+    font-weight: bold;
+  }
