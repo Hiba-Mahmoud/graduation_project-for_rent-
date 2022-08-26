@@ -56,6 +56,7 @@ import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/u
 import { PendingDetailsComponent } from './admin/component/pending-details/pending-details.component';
 
 import { FollowLinksUpdateComponent } from './admin/component/follow-links-update/follow-links-update.component';
+import { EditPayedAdsforOwnerComponent } from './components/edit-payed-adsfor-owner/edit-payed-adsfor-owner.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -100,8 +101,10 @@ const routes: Routes = [
   { path: 'renter', component: RenterComponent,canActivate:[AuthGuard] },
 
   // owner Routes
+
   { path: 'owner', component: OwnerComponent,canActivate:[AuthGuard] },
   { path: 'addProperity', component: AddProperityComponent,canActivate:[AuthGuard] },
+  { path: 'edit-payed/:id', component: EditPayedAdsforOwnerComponent,canActivate:[AuthGuard] },
   { path: 'editproperty/:id', component: UpdateProperityAdvertisingComponent,canActivate:[AuthGuard] },
   { path:"notrented", component:NotRentedYetComponent,canActivate:[AuthGuard]},
   { path:"pending", component:PendingComponent,canActivate:[AuthGuard]},
