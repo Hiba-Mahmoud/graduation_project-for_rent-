@@ -40,10 +40,10 @@ export class EditpersonaldataComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(2),
+          Validators.minLength(5),
           Validators.maxLength(20),
           Validators.pattern(
-            '^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z\u06ff ]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\u06ff]*$'
+            '^[\u0621-\u064A0-9 ]+$'
           ),
         ],
       ],
