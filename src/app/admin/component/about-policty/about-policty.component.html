@@ -1,12 +1,14 @@
 
 
-<div class="container mt-3">
+<div class="container mt-5">
+  <button type="submit" class="send col-2" style="height: 42px;" id="add" (click)="add()">
+    اضافة محتوى جديد</button>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>عنوان</th>
+          <th>العنوان</th>
           <th>وصف المحتوى</th>
-          <th>لوجو</th>
+          <th>الصورة</th>
           <th colspan="2">الاجراء المتخذ</th>
           <!-- <th></th> -->
         </tr>
@@ -16,8 +18,8 @@
           <td>{{item.title}}</td>
           <td>{{item.description}}</td>
           <td><img [src]=item.image  width="100px" hieght="100px"></td>
-          <td><button class="send" style="width: 79px;height: 42px; padding: 0px;" (click)="showReport(item.id)">تعديل</button></td>
-          <td><button class="send" style="width: 79px;height: 42px; padding: 0px;"  (click)="deleteReport(item.id)">حذف</button></td>
+          <td><button class="send" style="width: 79px;height: 42px; padding: 0px;" (click)="updatePol(item.id)">تعديل</button></td>
+          <td><button class="send" style="width: 79px;height: 42px; padding: 0px;"  (click)="deletePol(item.id)">حذف</button></td>
         </tr>
       </tbody>
     </table>

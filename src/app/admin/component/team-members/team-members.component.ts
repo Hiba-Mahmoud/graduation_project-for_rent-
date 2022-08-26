@@ -39,16 +39,22 @@ export class TeamMembersComponent implements OnInit {
  deleteMem(rId :number){
   this.del = rId;
   console.log(this.del);
+  if(confirm("هل تريد تأكيد الحذف ؟")){
   this.objDel.delMem(rId).subscribe(res=>{
     console.log("deleeeeeeeeeeeeeeeeet"); 
-        window.location.reload(); })
+    this.getMembersData();
+  })
  }
+
+}
 
  updateMem(sId){
   this.up = sId;
   console.log(this.up);
   this.route.navigate(['/teamUpdate'], {queryParams : {data: this.up}});
  }
+ 
+ add(){  this.route.navigate(['/aboutForm']);  }
 
   ngOnInit(): void {
   }

@@ -1,0 +1,72 @@
+<title>Report form</title>
+<div *ngIf="isvalid"  class="alert alert-danger text-center">من فضلك ادخل البيانات صحيحة</div>
+ <!-- ------------------------------------------------------------------------------ -->
+ <form action="" dir="rtl" class="w-100 mb-3 mt-3" style="text-align: center;" [formGroup]="images">
+
+  <div class="custom-file" style="margin-right: 109px;">
+       <label for="logo">
+        <img src={{links.logo}} class="img-fluid w-100" alt="example placeholder" style="width: 100px;height:150px" />
+       </label>
+         <input type="file" formControlName="logo"   id="logo" name="logo" 
+         (change)="onFileChange($event)" style="margin-right: 19px;" 
+         accept="image/png,image/jpg,image/jpeg"/>
+         </div>
+   </form>    
+<!-- ----------------------------------------------------------------------------------- -->
+<form class="form-signin" [formGroup]="form" (ngSubmit)="submitForm()"  >
+
+    <div class="form-label-group">
+        <input type="text" id="facebook" formControlName="facebook" class="form-control"
+         placeholder="facebook" required  >
+        <label for="inputName">فيسبوك </label>        
+        <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['facebook'].errors && form.controls['facebook'].touched" >
+          <strong *ngIf="form.controls['facebook'].errors['required']">برجاء ادخال الرابط</strong>
+          <strong *ngIf="form.controls['facebook'].errors['pattern']" > ادخل الرابط بطريقة صحيحة</strong>
+        </div>       
+      </div>    
+    <div class="form-label-group">
+        <input type="text" id="instagram" formControlName="instagram" class="form-control"
+         placeholder="instagram" required  >
+        <label for="inputName">انستغرام </label>        
+        <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['instagram'].errors && form.controls['instagram'].touched" >
+          <strong *ngIf="form.controls['instagram'].errors['required']">برجاء ادخال الرابط</strong>
+          <strong *ngIf="form.controls['instagram'].errors['pattern']" >   ادخل الرابط بطريقة صحيحة</strong>
+        </div>       
+      </div>    
+    <div class="form-label-group">
+        <input type="text" id="twitter" formControlName="twitter" class="form-control"
+         placeholder="twitter" required  >
+        <label for="inputName">تويتر </label>        
+        <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['twitter'].errors && form.controls['twitter'].touched" >
+          <strong *ngIf="form.controls['twitter'].errors['required']">برجاء ادخال الرابط</strong>
+          <strong *ngIf="form.controls['twitter'].errors['pattern']" >   ادخل الرابط بطريقة صحيحة</strong>
+        </div>       
+      </div>    
+    <div class="form-label-group">
+        <input type="text" id="email" formControlName="email" class="form-control"
+         placeholder="email" required  >
+        <label for="inputName">البريد الالكترونى </label>        
+        <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['email'].errors && form.controls['email'].touched" >
+          <strong *ngIf="form.controls['email'].errors['required']">هذا الحقل مطلوب</strong>
+          <strong *ngIf="form.controls['email'].errors['pattern']" >   ادخل الرابط بطريقة صحيحة</strong>
+        </div>       
+      </div>    
+
+  <div class="form-label-group">
+       <input type="text" id="phone" formControlName="phone" class="form-control"  required  >
+       <label for="phone">رقم الهاتف </label>
+       <div class="alert alert-danger" role="alert"
+          *ngIf="form.controls['phone'].errors && form.controls['phone'].touched" >
+          <strong *ngIf="form.controls['phone'].errors['required']">الرقم مطلوب</strong>
+          <strong *ngIf="form.controls['phone'].errors['minlength']" >  الرقم  يجب الا يقل عن حرفان</strong>
+          <strong *ngIf="form.controls['phone'].errors['maxlength']">  الرقم  يجب الا يزيد عن عشرة احرف</strong>
+          <strong *ngIf="form.controls['phone'].errors['pattern']" >  ادخل الرقم بطريقة صحيحة</strong>
+        </div>
+  </div>
+  <br> <br>
+      <button type="submit" class="send form-control"  >تعديل</button>
+  </form>

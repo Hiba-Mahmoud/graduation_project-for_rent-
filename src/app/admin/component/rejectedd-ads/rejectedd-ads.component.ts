@@ -38,16 +38,17 @@ export class RejecteddAdsComponent implements OnInit {
   getallaccepted(){
 
       let pending ='http://127.0.0.1:8000/api/admin/declinedAdvertisement'
-      this.owner.getadmincounters(pending).subscribe(data=>{
-        // console.log(data.accepted_advertisement)
+      this.owner.getadmincounters(pending).subscribe({next:data=>{
+        console.log(data)
         this.length=data.deslined_advertisement.length
         console.log(this.length)
         this.dataSource=new MatTableDataSource(data.deslined_advertisement);
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;
-      },error=>{
+      },error:error=>{
         console.log(error)
-      })
+      }
+    })
 
   }
 

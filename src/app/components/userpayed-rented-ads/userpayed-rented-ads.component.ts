@@ -12,25 +12,15 @@ export class UserpayedRentedAdsComponent implements OnInit {
   totalNumber: any;
     page: number = 1;
     token:any;
-    allAdvert:any;
-  constructor(private http:HttpClient,private localstorage:TokenService,private user:OwnerService) { }
+    advertisment:any;
+  constructor(private http:HttpClient,private localstorage:TokenService,private user:OwnerService) {
+
+
+  }
 
   ngOnInit(): void {
     this.getToken()
     this.getallPayedAds();
-  }
-
-  getallPayedAds(){
-
-    let header = this.getToken();
-    let link = 'http://127.0.0.1:8000/api/renter/advertisementrented';
-
-    this.user.getPending(link,header).subscribe((res)=>{
-      console.log('ddddddddd')
-     console.log(res.data)
-     this.allAdvert = res.data
-    })
-
   }
 
   getToken():any{
@@ -50,5 +40,21 @@ export class UserpayedRentedAdsComponent implements OnInit {
 
   return headers;
   }
+
+  getallPayedAds(){
+
+    let header = this.getToken();
+    let link = 'http://127.0.0.1:8000/api/renter/advertisementrented';
+
+    this.user.getPending(link,header).subscribe((res)=>{
+      console.log('ddddddddd')
+     console.log(res)
+     console.log( res.allAdvertisements)
+     this.advertisment = res.allAdvertisements
+    })
+
+  }
+
+
 
 }

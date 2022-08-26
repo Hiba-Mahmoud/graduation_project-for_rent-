@@ -1,4 +1,7 @@
 <title>teams form</title>
+<div class="container mt-5">
+
+  <div class="alert alert-danger text-center col-5" *ngIf="isvalid" style="margin: auto;">برجاء ملئ البيانات اولا</div>
 <form action="" dir="rtl" class="w-100 mb-3 mt-3" style="text-align: center;" [formGroup]="images">
 
   <div class="custom-file" style="margin-right: 109px;">
@@ -7,8 +10,14 @@
          class="img-fluid w-100"
          alt="example placeholder"
          style="width: 100px;height:150px"
+      
          /></label>
-         <input type="file" formControlName="image"   id="image" name="image" (change)="onFileChange($event)" style="margin-right: 19px;"/>
+         <input type="file"
+          formControlName="image" 
+            id="image" name="image"
+             (change)="onFileChange($event)" 
+             style="margin-right: 19px;"
+             accept="image/png,image/jpg,image/jpeg"/>
 
          </div>
    </form>    
@@ -41,24 +50,13 @@
   </div>
   <br>
 
-  <!-- <div class="custom-file">
-    <label for="image"><img
-      [src]="team.image"
-      class="img-fluid w-100"
-      id="img"
-      alt="example placeholder"
-      style="width: 100px;height:150px"
-      /></label>
-      <input type="file" formControlName="image" value={{team.image}}  id="image" name="image" (change)="onFileChange($event)" style="margin-top: 17px;"/>
-     
-    </div>
- <br> <br> -->
+  
 
-  <button type="submit" class="send"  [disabled]="!form.valid">تعديل </button>
+  <button type="submit" class="send" >تعديل </button>
 
 </form>
   
- 
+ </div>
  
   <!-- <p>Form value: {{ form.value | json }}</p>
 <p>Form status: {{ form.status | json }}</p> -->
