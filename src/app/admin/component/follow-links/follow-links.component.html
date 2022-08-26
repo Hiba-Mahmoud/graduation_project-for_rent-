@@ -16,19 +16,19 @@
             <th>{{links.links.twitter}}</th>
           </tr>
           <tr>
-            <th>ايميل</th>
+            <th>بريد الكترونى</th>
             <th>{{links.links.email}}</th>
           </tr>
           <tr>
-            <th>فون</th>
+            <th>رقم هاتف</th>
             <th>{{links.links.phone}}</th>
           </tr>
           <tr>
-            <th>لوجو</th>
+            <th>الشعار</th>
             <th><img [src]=links.links.logo  width="200px" height="200px" ></th>
           </tr>
       </thead>
     </table>
-    <button class="send" style="width: 100%;height: 42px; padding: 0px;" (click)="updateLinks()">تعديل</button>
+    <button class="send" style="width: 100%;height: 42px; padding: 0px;" (click)="updateLinks(links.links.id)">تعديل</button>
 
   </div>

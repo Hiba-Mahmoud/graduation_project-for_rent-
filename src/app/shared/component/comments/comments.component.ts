@@ -14,10 +14,8 @@ import {Router} from  '@angular/router' ;
 export class CommentsComponent implements OnInit {
   starRating=0
   Rating=3
-   
-  @Input() adverId: any;
-  @Input() reviews:any ;
-  @Input() condition:any ;
+    adverId: any;
+   reviews:any  ;
 
   token: string;
   commentForm=new FormGroup({

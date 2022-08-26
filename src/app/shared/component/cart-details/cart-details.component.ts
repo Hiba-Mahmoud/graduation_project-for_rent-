@@ -5,6 +5,7 @@ import { TokenService } from 'src/app/auth/service/token.service';
 import { AuthGuard } from 'src/app/guard/auth.guard';
 import { AdvertismentService } from '../../services/advertisment.service';
 import{NgbRating} from '@ng-bootstrap/ng-bootstrap';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cart-details',
@@ -36,12 +37,33 @@ export class CartDetailsComponent implements OnInit {
   starRating=0
   Rating=5
   result: any;
+
+  isAdmin!:boolean;
+  isRenter!:boolean;
+  isOwner!:boolean;
+  isSuperAdmin!:boolean;
+
+  commentForm=new FormGroup({
+    comment :new FormControl('',Validators.minLength(4)),
+    count :new FormControl('',Validators.required),
+
+  })
+  role: string;
+
   constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient
 
     ,private _AuthGuard:AuthGuard,private localstorage:TokenService ) {
     this.id=this.route.snapshot.paramMap.get("id");
 
-
+    if(this.role == 'admin'){
+      this.isAdmin=true;
+    }else if(this.role == 'superAdmin'){
+      this.isSuperAdmin=true;
+    }else if(this.role == 'renter'){
+      this.isRenter=true;
+    }else if(this.role == 'owner'){
+      this.isOwner=true;
+    }
 
 
 
@@ -163,4 +185,37 @@ export class CartDetailsComponent implements OnInit {
   //   this.selectedChange.emit(this.selected);
   //   console.log(this.selected);
   // }
+
+
+  onSubmit(){
+    console.log(this.commentForm.value);
+    let local=this.localstorage.gettokenfromLocalstorage();
+    let session=this.localstorage.getToken();
+  
+    if(local){
+      this.token =local;
+    }else if (session){
+      this.token =session;
+  
+    }
+    const headers = new HttpHeaders({
+ 
+      'Authorization': `Bearer ${this.token}`
+    });
+    console.log(headers);
+
+    this.http.post("http://127.0.0.1:8000/api/rate/store/" +this.adverId,this.commentForm.value ,{ headers: headers }).subscribe((data) => {
+      console.log(data);      
+      // this.router.navigate(['/details/'+this.adverId]);
+
+      
+      this.getAdvertismentById();
+      this.commentForm.reset();
+
+      
+   }
+)
+
+   
+  }
 }
