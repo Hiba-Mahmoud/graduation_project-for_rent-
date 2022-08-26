@@ -8,7 +8,7 @@
 
 
       <mat-divider></mat-divider>
-      <ul class="nav flex-column">
+      <ul class="nav flex-column"  *ngIf="isAdmin ||  isSuperAdmin">
 
         <li class="nav-item">
           <a class="nav-link" routerLink="adminhome">
@@ -82,7 +82,7 @@
             معلومات عنا
           </a>
         </li>
-        
+
         <li class="nav-item">
           <a class="nav-link" routerLink="/team">
             <span data-feather="layers"></span>
