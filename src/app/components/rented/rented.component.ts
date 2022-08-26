@@ -21,7 +21,7 @@ export class RentedComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator;
   @ViewChild(MatSort) sort:MatSort;
-  displaycolumns:string[]=['الاعلان','حذف','تعديل']
+  displaycolumns:string[]=['الاعلان','action']
   constructor(private localstorage:TokenService,private AdminService:AdminServiceService ,private http:HttpClient, private owner:OwnerService,private localstoage:TokenService) {
   }
 
@@ -48,7 +48,7 @@ export class RentedComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
       let pending ='http://127.0.0.1:8000/api/rented_advertisement';
-      this.owner.getPending(pending,headers).subscribe(data=>{
+      this.owner.getPending(pending,headers).subscribe({next:data=>{
         console.log(data)
         this.length=data[0].length
 
@@ -57,9 +57,10 @@ export class RentedComponent implements OnInit {
         this.dataSource.paginator=this.paginator;
         this.dataSource.sort=this.sort;
         // console.log(this.dataSource)
-      },error=>{
+      },error:error=>{
         console.log(error)
-      })
+      }
+    })
 
   }
 

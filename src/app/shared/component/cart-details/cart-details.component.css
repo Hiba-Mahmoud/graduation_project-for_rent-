@@ -4,6 +4,15 @@
   max-width: 100%;
   overflow-x: hidden;
 }
+.title{
+  color:#FE6F41;
+
+}
+.ownerInfo{
+  color:#FE6F41;
+  font-weight: bolder;
+  font-size: larger;
+}
 /* Carousel base class */
 .carousel {
     margin-bottom: 4rem;
@@ -36,6 +45,10 @@
 @media (min-width: 768px) {
     .bd-placeholder-img-lg {
       font-size: 3.5rem;
+    }
+
+    .photo{
+      text-align: center;
     }
   }
 
@@ -77,4 +90,63 @@
     margin: auto;
     width: 360px;
   }
+}
+
+.avatar {
+  margin-top: 16px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+}
+
+.line{
+  height: 3px;
+  width: 80%;
+ background-color: #FE6F41;
+}
+
+h1,h4  ,h3,h2 {
+  color: rgb(112, 109, 109);
+  font-weight: bold;
+}
+
+.decription{
+  
+  overflow-wrap: break-word;
+}
+*{
+  line-height: 1.5em;
+}
+
+
+@media(max-width:768px){
+  #post{
+      width: 100%;
+  }
+}
+
+
+
+
+
+#post{
+  margin: 10px;
+  padding: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 13px;
+  width: 50%;
+  background: #FE6F41;
+
+ 
+}
+
+#post:hover{
+  background: #585858;
+
 }

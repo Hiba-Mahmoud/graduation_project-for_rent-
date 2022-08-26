@@ -30,6 +30,9 @@ import { PayedAdsComponent } from './component/payed-ads/payed-ads.component';
 import { AboutPolictyAddComponent } from './component/about-policty-add/about-policty-add.component';
 import { TeamMemberUpdateComponent } from './component/team-member-update/team-member-update.component';
 import { FollowLinksUpdateComponent } from './component/follow-links-update/follow-links-update.component';
+import { GenderPipe } from './pipes/gender.pipe';
+// import { TeamMemberUpdateComponent } from './component/team-member-update/team-member-update.component';
+import { PendingDetailsComponent } from './component/pending-details/pending-details.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,9 @@ import { FollowLinksUpdateComponent } from './component/follow-links-update/foll
     AboutPolictyAddComponent,
     TeamMemberUpdateComponent,
     FollowLinksUpdateComponent,
+    GenderPipe,
+    // TeamMemberUpdateComponent,
+    PendingDetailsComponent,
 
   ],
 
@@ -90,6 +96,9 @@ import { FollowLinksUpdateComponent } from './component/follow-links-update/foll
     FollowLinksComponent,
     AboutPolictyComponent,
     AboutPolictyUpdateComponent,
+    // PayedAdsComponent,
+   GenderPipe,
+   TeamMemberUpdateComponent
 
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorInterceptor, multi: true }]

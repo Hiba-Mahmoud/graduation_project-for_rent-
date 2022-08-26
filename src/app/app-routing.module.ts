@@ -79,17 +79,14 @@ const routes: Routes = [
     path: "allOwnerAdvertisments/:id", component: AllOwnerHistoryComponent
   },
 
-  { path: 'editpassword', component: EditpasswordComponent },
   { path: 'reset-password-code', component: MailwithcodeComponent },
   { path: 'password', component: ResetPasswordComponent },
 
-  {
-    path: 'editpersonaldata', component: EditpersonaldataComponent
-  },
+
 
   { path:"mailverifiy", component:MailConfirmComponent,canActivate:[MailverifiyGuard]},
 
-  {path: 'payed-for-user', component:UserpayedRentedAdsComponent},
+  {path: 'payed-for-user', component:UserpayedRentedAdsComponent,canActivate:[AuthGuard]},
   {path: 'forgetpassword', component:ForgetPasswordComponent},
   // shared Routes
   { path: 'editpassword', component: EditpasswordComponent ,canActivate:[AuthGuard]},

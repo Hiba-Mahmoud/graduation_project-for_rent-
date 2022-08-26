@@ -1,3 +1,69 @@
-.container{
-  height:100vh;
+
+
+
+
+.demo-table {
+  width: 100%;
 }
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+.color{
+  background-color: rgba(0,0,0,.55);
+  color:#fff;
+}
+table{
+  width: 100%;
+  overflow-x: auto;
+  table-layout:auto;
+}
+:host ::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* .example-full-width {
+  width: 50%;
+}
+ th.mat-header-cell{
+  border: none;
+  text-align: center !important;
+
+}
+th {
+  justify-content: center !important;
+  align-items: center;
+}
+
+
+td.mat-cell{
+  padding: 4px;
+}
+table {
+  width: 100%;
+}
+.title-center {
+  margin: 0 auto;
+}
+
+mat-header-cell {
+  justify-content: center !important;
+  margin: 0 auto;
+} */
+
+/* button{
+  background-color:#FE6F41;
+
+} */

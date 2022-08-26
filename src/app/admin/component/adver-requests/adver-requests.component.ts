@@ -14,7 +14,7 @@ import { AdminServiceService } from '../../service/admin-service.service';
 })
 export class AdverRequestsComponent implements OnInit {
   dataSource:any
-  displayedColumns: string[] = ['id', 'title', 'price','bedroom_num','level','beds_num','bathroom_num', 'description','accept','reject'];
+  displayedColumns: string[] = ['id', 'title' ,'description','accept','reject'];
   
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
   @ViewChild(MatSort)

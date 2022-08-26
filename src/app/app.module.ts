@@ -89,7 +89,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
       PaymentmethodComponent,
         HeaderComponent,
         // UserpayedRentedAdsComponent,
-       
+
         UserpayedRentedAdsComponent,
 
 
@@ -118,15 +118,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     NgxSpinnerModule,
     MatProgressSpinnerModule,
     ModalModule.forRoot(),
-
-
     CommonModule,
-    ToastrModule.forRoot(), 
-
-    FormsModule ,     
-
+    ToastrModule.forRoot(),
     FormsModule ,
-
+    FormsModule ,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -134,6 +129,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatIconModule,
     MatListModule,
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

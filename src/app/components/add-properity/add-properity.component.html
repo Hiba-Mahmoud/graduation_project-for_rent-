@@ -36,11 +36,11 @@
 
             <strong
               *ngIf="addproperity.controls['title'].errors['minlength']"
-              >الاسم الاول يجب الا يقل عن حرفان</strong>
+              >     برجاء ادخال عنوان مناسب </strong>
 
             <strong
               *ngIf="addproperity.controls['title'].errors['maxlength']"
-              >الاسم الاول يجب الا يزيد عن عشرة احرف</strong
+              >برجاء ادخال عنوان مناسب</strong
             >
             <strong
               *ngIf="addproperity.controls['title'].errors['pattern']"
@@ -69,15 +69,15 @@
             addproperity.controls['description'].touched">
             <strong
               *ngIf="addproperity.controls['description'].errors['required']"
-              >برجاء ادخال عنوان مناسب</strong>
+              >برجاء ادخال وصف مناسب</strong>
 
             <strong
               *ngIf="addproperity.controls['description'].errors['minlength']"
-              >عنوان  يجب الا يقل عن عشرة احرف</strong>
+              >الوصف لا يقل عن ثلاثين حرفا</strong>
 
             <strong
               *ngIf="addproperity.controls['description'].errors['maxlength']"
-              >عنوان  يجب الا يزيد عن 200 احرف</strong
+              >الوصف لا يزيد عن الف حرفا</strong
             >
             <strong
               *ngIf="addproperity.controls['description'].errors['pattern']"
@@ -122,10 +122,10 @@
           addproperity.controls['area'].touched">
           <strong
             *ngIf="addproperity.controls['area'].errors['required']"
-            >برجاء ادخال السعر </strong>
+            >برجاء ادخال المساحة </strong>
           <strong
             *ngIf="addproperity.controls['area'].errors['pattern']"
-            >السعر ارقام فقط</strong
+            >المساحة ارقام فقط</strong
           >
         </div>
       </div>
@@ -140,10 +140,10 @@
           addproperity.controls['level'].touched">
           <strong
             *ngIf="addproperity.controls['level'].errors['required']"
-            >برجاء ادخال السعر </strong>
+            >برجاء ادخال رقم الطابق</strong>
           <strong
             *ngIf="addproperity.controls['level'].errors['pattern']"
-            >السعر ارقام فقط</strong
+            >رقم الطابق ارقام فقط</strong
           >
         </div>
       </div>
@@ -166,10 +166,10 @@
           addproperity.controls['bedroomnum'].touched">
           <strong
             *ngIf="addproperity.controls['bedroomnum'].errors['required']"
-            >برجاء ادخال السعر </strong>
+            >برجاء ادخال عدد الغرف </strong>
           <strong
             *ngIf="addproperity.controls['bedroomnum'].errors['pattern']"
-            >السعر ارقام فقط</strong
+            >عدد الغرف ارقام فقط</strong
           >
         </div>
       </div>
@@ -190,10 +190,10 @@
           addproperity.controls['bathroomnum'].touched">
           <strong
             *ngIf="addproperity.controls['bathroomnum'].errors['required']"
-            >برجاء ادخال السعر </strong>
+            >برجاء ادخال عدد الحمامات </strong>
           <strong
             *ngIf="addproperity.controls['bathroomnum'].errors['pattern']"
-            >السعر ارقام فقط</strong
+            > عدد الحمامات ارقام فقط</strong
           >
         </div>
       </div>
@@ -211,10 +211,10 @@
           addproperity.controls['bedsnum'].touched">
           <strong
             *ngIf="addproperity.controls['bedsnum'].errors['required']"
-            >برجاء ادخال السعر </strong>
+            >برجاء ادخال عدد السرائر </strong>
           <strong
             *ngIf="addproperity.controls['bedsnum'].errors['pattern']"
-            >السعر ارقام فقط</strong
+            >عدد السرائر ارقام فقط</strong
           >
         </div>
       </div>
@@ -356,14 +356,14 @@
 
     </div>
     <div class="row" >
-      <div class="col-sm-12 col-md-3" *ngFor="let url of imageUrl">
+      <div class="col-sm-12 mb-2 col-md-3" *ngFor="let url of imageUrl">
         <img [src]="url" alt="" style="width:100%;height: 150px;">
 
       </div>
     </div>
 
     <div class="form-group">
-      <label for="file">File</label>
+      <label for="file">الصور</label>
       <input
       accept="image/png, image/gif, image/jpeg"
           id="file"
@@ -382,13 +382,14 @@
               *ngIf="addproperity.controls['file'].errors['required']"
               >برجاء ادخال  صور مناسب</strong>
           </div>
-          <div *ngIf="showImage else error">
+          <div class="text-danger">{{imgError}}</div>
+          <!-- <div *ngIf="showImage else error">
             فقط 10 صور
           </div>
           <ng-template #error>
             فقط 10 صور
 
-          </ng-template>
+          </ng-template> -->
   </div>
 
 
