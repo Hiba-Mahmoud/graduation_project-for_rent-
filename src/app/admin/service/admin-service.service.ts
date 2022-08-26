@@ -66,4 +66,12 @@ getAll(apiUrl :string):Observable<any>
    {
     return this.http.put(apiUrl+id ,'');
    }
+
+
+   
+  getAdvertismentById(apiUrl :string ,id:any ):Observable<any>
+  {
+    let advertisment=this.http.get(apiUrl +id);
+    return advertisment;
+  }
 }

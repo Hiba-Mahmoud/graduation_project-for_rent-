@@ -3,11 +3,19 @@
 }
  th.mat-header-cell{
   border: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center !important;
+  background-color: black;
+  color: white;
+  font-size: 1.3em;
+  vertical-align: middle !important;
 } 
-th.mat-sort-header-container {
+/* th.mat-sort-header-container {
   justify-content: center !important;
   align-items: center;
-}
+  text-align: center;
+} */
 
 table{
   width: 100%;
@@ -16,9 +24,12 @@ table{
 }
 td.mat-cell{
   padding: 4px;
+  align-items: center;
+text-align: center;
 }
 
 button{
   background-color:#FE6F41;
+  border: none;
 
 }

@@ -53,6 +53,8 @@ import { PayedAdsComponent } from './admin/component/payed-ads/payed-ads.compone
 import { AboutPolictyAddComponent } from './admin/component/about-policty-add/about-policty-add.component';
 import {TeamMemberUpdateComponent } from './admin/component/team-member-update/team-member-update.component';
 import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
+import { PendingDetailsComponent } from './admin/component/pending-details/pending-details.component';
+
 import { FollowLinksUpdateComponent } from './admin/component/follow-links-update/follow-links-update.component';
 
 const routes: Routes = [
@@ -129,6 +131,7 @@ const routes: Routes = [
   {path: 'about-policty-add', component: AboutPolictyAddComponent,canActivate:[AuthGuard]},
 
   {path:'editteam/:id',component:TeamMemberUpdateComponent,canActivate:[AuthGuard]},
+  { path: 'pendingDetails/:id', component:PendingDetailsComponent ,canActivate:[AuthGuard]},
   {path:'followForm',component:FollowLinksUpdateComponent,canActivate:[AuthGuard]},
 
   {

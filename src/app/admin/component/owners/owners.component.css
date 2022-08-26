@@ -7,12 +7,23 @@
 .example-full-width {
   width: 50%;
 }
- th.mat-header-cell{
+th.mat-header-cell{
   border: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center !important;
+  background-color: black;
+  color: white;
+  font-size: 1.3em;
+  text-align: center !important;
+
+  vertical-align: middle !important;
 } 
 th.mat-sort-header-container {
   justify-content: center !important;
   align-items: center;
+  text-align: center !important;
+
 }
 
 table{
@@ -22,9 +33,11 @@ table{
 }
 td.mat-cell{
   padding: 4px;
+  text-align: center !important;
+
 }
 
 button{
   background-color:#FE6F41;
-
+  color: white;
 }

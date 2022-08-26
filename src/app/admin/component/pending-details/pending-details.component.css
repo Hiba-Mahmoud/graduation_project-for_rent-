@@ -1,0 +1,129 @@
+-------------------------------------------------- */
+ .owner{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.title{
+  color:#FE6F41;
+
+}
+.ownerInfo{
+  color:#FE6F41;
+  font-weight: bolder;
+  font-size: larger;
+}
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+    width: 70%;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 32rem;
+  }
+  .carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+  }
+  .carousel-control-prev-icon ,.carousel-control-next-icon {
+
+   background-color:#FE6F41;
+
+}
+
+
+.actions{
+    background-color:#FE6F41;
+    border: none;
+    color: white;
+    
+  
+  }
+
+  .actions:hover{
+    background-color:#585858;
+
+  }
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+
+    .photo{
+      text-align: center;
+    }
+  }
+
+  .wrapper::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+ 
+  
+  .wrapper::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    /*colorofthescrollthumb*/border-radius: 20px;
+    /*roundnessofthescrollthumb*/border: 1px solid rgb(237, 236, 235);
+      /* creates padding around scroll thumb */  ;
+
+}
+.desc{
+  word-wrap: break-word;
+  white-space: initial;
+}
+
+
+.card-body h3 ,p{
+  text-overflow: ellipsis;
+
+    overflow: hidden;
+}
+.suggestion {
+  white-space: nowrap;
+  overflow: hidden;
+  
+}
+.suggestion img{
+  object-position: center;
+  object-fit: cover;
+}
+
+@media screen and (max-width :450px) {
+  .suggestion{
+    margin: auto;
+    width: 360px;
+  }
+}
+
+.avatar {
+  margin-top: 16px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+}
+
+.line{
+  height: 3px;
+  width: 80%;
+ background-color: #FE6F41;
+}
+
+h1,h4  ,h3,h2 {
+  color: rgb(112, 109, 109);
+  font-weight: bold;
+}
+
+.decription{
+  
+  overflow-wrap: break-word;
+}
+*{
+  line-height: 1.5em;
+}
