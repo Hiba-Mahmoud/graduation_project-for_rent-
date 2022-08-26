@@ -30,10 +30,12 @@ export class AboutPolictyComponent implements OnInit {
    deletePol(rId :number){
     this.del = rId;
     console.log(this.del);
+    if(confirm("هل تريد تأكيد الحذف ؟")){
     this.objDel.delDesc(rId).subscribe(res=>{
       console.log("deleeeeeeeeeeeeeeeeet"); 
-          window.location.reload();
+      this.getAboutData();
  })
+}
    }
    updatePol(sId){
     this.show_id = sId;
