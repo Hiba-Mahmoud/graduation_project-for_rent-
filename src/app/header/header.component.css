@@ -39,14 +39,20 @@ mat-divider {
     margin-bottom: 16px;
     background-color: rgba(255, 255, 255, 0.5);
 }
-
+.navbar-brand{
+    font-size: larger;
+    color: #F89406;
+    font-weight: bold;
+    font-style: italic;
+     
+}
 ul li a {
     color: #8b8383;
+font-size: large;
 }
 
 ul li a:hover {
     color: #131212;
-    font-weight: bold;
 }
 
 

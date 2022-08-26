@@ -129,6 +129,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatIconModule,
     MatListModule,
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

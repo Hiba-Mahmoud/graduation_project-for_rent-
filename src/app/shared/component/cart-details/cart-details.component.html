@@ -1,7 +1,7 @@
 <div *ngIf="!loading">
-  <div id="carouselExampleFade" class="carousel slide carousel-fade   m-auto" data-ride="carousel" >
+  <div id="carouselExampleFade" class="carousel slide carousel-fade   m-auto" data-ride="carousel">
     <div class="carousel-inner mt-5 pt-5">
-      <div class="carousel-item active"  *ngFor="let image of images let i = index" [ngClass]="{'active': i == 0 }">
+      <div class="carousel-item active" *ngFor="let image of images let i = index" [ngClass]="{'active': i == 0 }">
         <img [src]="image.image_name" class="d-block w-100" alt="...">
       </div>
     </div>
@@ -11,137 +11,262 @@
     <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </button>
-  
+
   </div>
-  
 
-  <mat-card class="mt-2 mx-2 desc">
-    <div class="d-flex flex-row" *ngIf="data.reviews_num>0">
-      <mat-icon style="font-size:large;">star</mat-icon>
-      <p>{{data.reviews_avg}}</p><p>({{data.reviews_num}}) تقييمات</p>
-    
-    </div>
-    <mat-card-title>{{data.title}}</mat-card-title>
-    <h2>{{data.price}}جنيه</h2>
-  
-    <mat-card-actions>
-      <div class="container">
-        <div class="row mb-3">
-          <div class="col-xs-12 col-md-4 ">
-  
-            <span class="material-icons   mx-3 ">bed</span> <span>عدد الغرف : {{data.bedroom_num}}</span>
-          </div>
-          <div class="col-xs-12 col-md-4">
-            <span class="material-icons  mx-3">bathtub</span><span>عدد حمامات : {{data.bathroom_num}}</span>
-          </div>
-          <div class="col-xs-12 col-md-4">
-            <span class="material-icons  mx-3 ">location_on</span> <span>العنوان : {{data.address}}-{{data.area}}</span>
-          </div>
+
+
+  <div class="row">
+
+    <mat-card class="col-sm-8 col-10 mx-auto mt-5  decription ">
+      <mat-card-title class="title">{{data.title}}</mat-card-title>
+      <h2>{{data.price}}جنيه</h2>
+      <div class="row mt-lg-4">
+        <div class="col-xs-12 col-sm-6  d-flex justify-content-between px-md-5 ">
+          <div><span class="icon-text">عدد الغرف </span> </div>
+          <div> {{data.bedroom_num}}</div>
         </div>
-  
+        <div class="col-xs-12 col-sm-6 d-flex justify-content-between px-md-5 ">
+          <div><span class="icon-text"> عدد السرائر</span></div>
+          <div>{{data.beds_num}}</div>
+        </div>
       </div>
-    </mat-card-actions>
-    <div class="">
-      <h2>تفاصيل العقار :</h2>
-      <div class="mx-3">
-          <h3>عدد السرائر :{{data.beds_num}}</h3>
-          <h3>مفروش  :{{data.furniture}}</h3>
-          <h3>الطابق : {{data.level}}</h3>
-          <p>الوصف : {{data.description}}</p>
-  
+      <div class="row mt-lg-4">
+        <div class="col-xs-12 col-sm-6 d-flex justify-content-between px-md-5 ">
+          <div><span class="icon-text"> عدد الحمامات</span></div>
+          <div>{{data.bathroom_num}}</div>
+        </div>
+        <div class="col-xs-12 col-sm-6  d-flex justify-content-between px-md-5">
+          <div><span class="icon-text"> مفروش</span></div>
+          <div>{{data.furniture | yesOrNo}}</div>
+        </div>
       </div>
-  
-    </div>
-  </mat-card>
-  
-  
-  
-  <div class="container my-5 owner">
-    <div class="row">
-      <div class="col-sm text-center">
-        <img [src]="data.user.image" class="rounded-circle  img-fluid" alt="...">
+
+      <div class="row mt-lg-4">
+        <div class="col-xs-12 col-sm-6 d-flex justify-content-between px-md-5 ">
+          <div><span class="icon-text">الطابق</span></div>
+          <div> {{data.level}}</div>
+        </div>
+        <div class="col-xs-12 col-sm-6   d-flex justify-content-between px-md-5">
+          <div> <span class="icon-text"> المحافظه</span></div>
+          <div>{{data.address}}</div>
+        </div>
 
       </div>
-      <div class="col-sm">
+      <div class="row mt-lg-4">
+        <div class="col-xs-12 col-sm-6 d-flex justify-content-between  px-md-5">
+          <div><span class="icon-text"> المنطقه</span></div>
+          <div>{{data.area}}</div>
+        </div>
+        <div class="col-xs-12 col-sm-6  d-flex justify-content-between px-md-5 ">
+          <div><span class="icon-text"> العنوان</span></div>
+          <div> {{data.address}}</div>
+        </div>
+      </div>
+      <div class="row mt-lg-4">
+
+        <h2 class="ownerInfo">الوصف :</h2>
+        <div class="mx-3">
+          <p>{{data.description}}</p>
+
+        </div>
+
+
+
+      </div>
+
+    </mat-card>
+
+
+  </div>
+
+  <!-- owner -->
+
+
+
+  <div class="container my-5 owner ">
+    <div class="row">
+      <div class="col-sm col-10 mx-auto  photo rounded-circle ">
+        <img [src]="data.user.image" class="rounded-circle avatar img-fluid" alt="...">
+
+      </div>
+      <div class="col-sm col-10 mx-auto  align-items-center text-center">
         <mat-list role="list " class="mt-4">
-          <mat-list-item role="listitem"><h3 class="text-bold">المالك </h3></mat-list-item>
+          <mat-list-item role="listitem">
+            <h3 class="text-bold ownerInfo">المالك </h3>
+          </mat-list-item>
           <mat-list-item role="listitem">{{data.user.name}}</mat-list-item>
           <mat-list-item role="listitem">{{data.user.phone}}</mat-list-item>
           <mat-list-item role="listitem">{{data.user.email}}</mat-list-item>
 
-          <mat-list-item role="listitem" ><a routerLink="/allOwnerAdvertisments/{{data.user.id}}">{{advertNumber}} عقارات </a></mat-list-item>
-  
+          <mat-list-item role="listitem"><a routerLink="/allOwnerAdvertisments/{{data.user.id}}">{{advertNumber}} عقارات
+            </a></mat-list-item>
+
         </mat-list>
       </div>
-      <div class="col-md  col-lg-5 mx-2" style="border: 1px solid ;">
+      <div class="col-md col-10 mx-auto  col-lg-5 mx-2" >
         <mat-list role="list " class="mt-4">
-          <mat-list-item role="listitem" ><h3 class="text-bold">سلامتك تهمنا</h3></mat-list-item>
-         <li>قابل البايع في مكان عام زي المترو أو المولات أو محطات البنزين</li>
+          <mat-list-item role="listitem">
+            <h3 class="text-bold ownerInfo">سلامتك تهمنا </h3>
+          </mat-list-item>
+          <li>قابل البائع في مكان عام زي المترو أو المولات أو محطات البنزين</li>
           <li>خد حد معاك وانت رايح تقابل اي حد</li>
           <li>عاين المنتج كويس قبل ما تشتري وتأكد ان سعره مناسب</li>
 
-          <li >متدفعش او تحول فلوس الا لما تعاين المنتج كويس</li>
-  
+          <li>متدفعش او تحول فلوس الا لما تعاين المنتج كويس</li>
+
         </mat-list>
-        <div class="d-grid gap-5 col-6 mx-auto mt-4 mb-2">
-          <button *ngIf="!isLogin"  class="btn payment" routerLink="/login" type="button">للدفع من خلال الموقع</button>
-          
-           <button *ngIf="isLogin" class="btn payment" type="button" (click)="makePayment(data.price,data.id,data.user_id)">للدفع من خلال الموقع</button>
+        <div class="d-grid gap-5 col-6  mt-4 mb-2">
+          <button *ngIf="!isLogin" class="btn payment" routerLink="/login" type="button">للدفع من خلال الموقع</button>
+
+          <button *ngIf="isLogin "  class="btn payment" type="button"
+            (click)="makePayment(data.price,data.id,data.user_id)">للدفع من خلال الموقع</button>
         </div>
 
       </div>
     </div>
   </div>
-    <div class="mt-5 mx-2" id="comments">
-      <app-comments [adverId]="adverId" [reviews]="review"  [condition]="isLogin"></app-comments>
-    
+
+  <!-- end owner -->
+
+
+  <!-- comments  -->
+  <div class="line  my-5 m-auto ">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm  text-center  ">
+        <h2 style="font-size:2rem ;" class="text-bold ownerInfo">التقييمات </h2>
+
+        <div style=" font-size:xx-large ; color:orange ;" class="form-group mt-2">
+          <ngb-rating [max]="5" [readonly]="true" formControlName="count"> </ngb-rating>
+        </div>
+        <h3 class="my-3 font-bold " style="font-size:3rem ;">{{result.reviews_avg | number : '1.1-1'}}</h3>
+        <h3>متوسط التقييمات </h3>
+        <h3> عدد التقييمات {{result.reviews_num}}</h3>
+      </div>
+
+
+
     </div>
+  </div>
+
+
+
+
+  <div class="mt-2  mx-2 desc">
+    <div class="container">
+      <div class="row">
+        <div class="col-10 col-lg-6 col-md-6 col-sm-10 pb-4" *ngFor="let review of reviews">
+
+
+          <div class="comment mt-5 bg-light text-justify float-left">
+            <div class="d-flex flex-row user-info"><img class="rounded-circle" [src]="review.user.image" width="40">
+              <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">
+                  <h4>{{review.user.name}}</h4>
+                </span></div>
+            </div>
+            <div style=" font-size:xx-large ; color:orange ;" class="form-group">
+              <ngb-rating [max]="5" [rate]="review.count" [readonly]="true"> </ngb-rating>
+            </div>
+
+            <p class="">{{review.comment}}</p>
+
+
+
+
+          </div>
+        </div>
+        <div class="col-sm text-center mt-5"  *ngIf="!isLogin ">
+          <h3>كيف كانت تجربتك ؟</h3>
+          <h3> نود أن نعرف </h3>
+          <button class="btn payment" routerLink="/login" type="button">اكتب تقييمك </button>
+
+        </div>
+
+        
+        <div class="col-lg-6 col-md-6 col-sm-10 offset-md-1 offset-sm-1 col-12 mt-5" *ngIf="isLogin ">
+          <form id="algin-form" class="bg-light " [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                  <h4>اترك تعليقك :</h4>
+
+
+                  <textarea formControlName="comment" name="msg" id=""msg cols="30" rows="5" class="form-control" ></textarea>
+              </div>
+              <div class="text-danger my-2" *ngIf="commentForm.controls['comment'].touched && commentForm.controls['comment'].invalid">يجب أن يكون أكثر من أربعه أحرف</div>
+              <div style=" font-size:xx-large ; color:orange ;" class="form-group mt-2">
+                  <ngb-rating [max]="5" [readonly]="false" formControlName="count"> </ngb-rating>
+              </div>
+             <div class="text-danger m-2"  *ngIf="commentForm.controls['comment'].touched && commentForm.controls['count'].invalid">التقييم مطلوب</div>
+              <div class="form-group">
+                  <button [disabled]="commentForm.invalid"  type="submit" id="post" class="btn">نشر</button>
+              </div>
+          </form>
+      </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!-- end commits   -->
+
+
+  <!-- suggestion -->
   <div class="container suggestion  my-5" *ngIf=" suggestion.length>0">
     <mat-card-title>مقترحات أخرى قد تعجبك :</mat-card-title>
-  
-  <div class="row flex-row flex-nowrap row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 wrapper" style="overflow-x: auto;">
-    <div class=" col " *ngFor="let item of suggestion " >
-      <div class="suggestion bg-light" routerLink="/details/{{item.id}}">
-        <img [src]="item.advertisement_image[0].image_name"  height="150px" class="card-img-top" alt="{{item.advertisement_image[0].image_name}}">
-        <div class="card-body">
-          <div class="container">
-            <div class="row ">
-    
-              <div class="col " > 
-                <div class="d-flex flex-row justify-content-between">
-                     
-                      <p class="mb-2 text-muted">{{item.type}}</p>
-                      <div class="d-flex flex-row">
-                        
-           
-                        <mat-icon style="font-size:large;">star</mat-icon>
-                        <p >{{item.ratings_avg_count}}</p><p>({{item.ratings_count}})</p>
-                      </div>
-                      
+
+    <div class="row flex-row flex-nowrap row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 wrapper"
+      style="overflow-x: auto;">
+      <div class=" col " *ngFor="let item of suggestion ">
+        <div class="suggestion bg-light" routerLink="/details/{{item.id}}">
+          <img [src]="item.advertisement_image[0].image_name" height="150px" class="card-img-top"
+            alt="{{item.advertisement_image[0].image_name}}">
+          <div class="card-body">
+            <div class="container">
+              <div class="row ">
+
+                <div class="col ">
+                  <div class="d-flex flex-row justify-content-between">
+
+                    <p class="mb-2 text-muted">{{item.type}}</p>
+                    <div class="d-flex flex-row">
+
+
+                      <mat-icon style="font-size:large;">star</mat-icon>
+                      <p>{{item.ratings_avg_count}}</p>
+                      <p>({{item.ratings_count}})</p>
+                    </div>
+
+                  </div>
+                  <h3 class="mb-0">{{item.title}}</h3>
+                  <h3 class="mb-0">{{item.price}}جنيه</h3>
+                  <div class="d-flex justify-content-between align-items-center ">
+                    <small class="text-muted"> <span class="material-icons   ">location_on</span>
+                      {{item.address}}</small>
+                  </div>
+
                 </div>
-                <h3 class="mb-0">{{item.title}}</h3>
-                <h3 class="mb-0">{{item.price}}جنيه</h3>
-                <div class="d-flex justify-content-between align-items-center ">
-                  <small class="text-muted"> <span class="material-icons   ">location_on</span> {{item.address}}</small>
-                </div>
-                
               </div>
             </div>
+
           </div>
-          
         </div>
+
       </div>
-     
+
+
     </div>
-      
-     
   </div>
-  </div>
-  
+
+
+  <!-- end suggestion -->
+
   <app-footer> </app-footer>
 
-  
-  
+
+
 </div>
 <div class="justify-content-center align-items-center" *ngIf="loading">
   <mat-spinner class="text-center w-50  mt-5 pt-5 " style="top:30px ;"></mat-spinner>

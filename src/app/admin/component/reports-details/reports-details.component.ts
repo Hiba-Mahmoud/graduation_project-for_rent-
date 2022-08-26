@@ -9,23 +9,16 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./reports-details.component.css']
 })
 export class ReportsDetailsComponent implements OnInit {
-
   reportData: any = []; 
   images:any=[];
   shared_id ;
   loading:boolean=true;
   url:any;
-
-
   constructor(private obj:ReportShowService , 
     private route:ActivatedRoute , 
     private http:HttpClient ) { 
-
     // this.getReportData();
   }
-
- 
-
   ngOnInit(): void {
     
     this.route.queryParams.subscribe((params : any) =>{
@@ -48,7 +41,5 @@ export class ReportsDetailsComponent implements OnInit {
     })
   })
   }
-
-
 
 }

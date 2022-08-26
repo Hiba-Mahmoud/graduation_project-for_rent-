@@ -1,9 +1,12 @@
 <title>Report form</title>
 
   <body>
-    
-<form class="form-signin mt-5" [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
-    <div class="form-label-group">
+<div class="container mt-5">
+
+  <div class="alert alert-danger text-center col-5" *ngIf="isvalid" style="margin: auto;">برجاء ملئ البيانات اولا</div>
+
+<form class="form-signin mt-3" [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+    <div class="form-label-group" *ngIf="!isLogin">
         <input type="text" id="name" formControlName="name" class="form-control" placeholder="Name" required autofocus >
         <label for="inputName">الاسم</label>
         <div class="alert alert-danger" role="alert"
@@ -15,7 +18,7 @@
         </div>       
       </div>  
 
-  <div class="form-label-group">
+  <div class="form-label-group" *ngIf="!isLogin">
     <input type="email" id="email" formControlName="email" class="form-control" placeholder="البريد الالكتروني" required autofocus >
     <label for="inputEmail">البريد الالكترونى</label>
     <div class="alert alert-danger" role="alert"
@@ -25,7 +28,7 @@
   </div>
   </div> 
 
-  <div class="form-label-group">
+  <div class="form-label-group" *ngIf="!isLogin">
     <input type="text" id="phone" formControlName="phone" class="form-control" placeholder="phone" required >
     <label for="inputPhone">رقم الهاتف</label>
     <div class="alert alert-danger" role="alert" *ngIf="form.controls['phone'].errors && form.controls['phone'].touched" >
@@ -37,8 +40,11 @@
   </div> 
 
   <div class="form-label-group">
-    <input type="text" id="url" formControlName="url" class="form-control" placeholder="الرابط" required >
+    <input type="text" id="url" formControlName="url" class="form-control" placeholder="الرابط"  >
     <label for="inputPhone"> الرابط</label>
+    <div class="alert alert-danger" role="alert"*ngIf=" form.controls['url'].errors && form.controls['url'].touched">
+      <strong *ngIf="form.controls['url'].errors['pattern']">برجاء ادخال الرابط بطريقه </strong >
+      </div >
   </div>
 
   <div class="form-label-group">
@@ -51,6 +57,7 @@
   <div class="form-group">
     <input id="file"
         type="file"
+        accept=" image/png,image/jpg, image/jpeg, image/PNG, image/JPG, image/JPEG"
         class="form-control mb-3"
         formControlName ='file'
         multiple="multiple"
@@ -68,5 +75,5 @@
 </form>
 
 
-    
+    </div>
   </body>

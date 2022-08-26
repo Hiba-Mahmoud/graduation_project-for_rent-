@@ -27,7 +27,7 @@ div {
     overflow: hidden;
   }
 
-   span ,.title{
+ mat-icon,  span ,.title{
     color: #FE6F41;
 
   }

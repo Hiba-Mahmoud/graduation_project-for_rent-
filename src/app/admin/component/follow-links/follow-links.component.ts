@@ -26,10 +26,10 @@ export class FollowLinksComponent implements OnInit {
       console.log(this.links.links);
     });
    }
-   updateLinks(){
-    // this.show_id = sId;
-    // console.log(this.show_id);
-    this.route.navigate(['/followForm']);
+   updateLinks(id){
+    this.up_id=id;
+    this.route.navigate(['/followForm'], {queryParams : {data: this.up_id}});
+    // this.route.navigate(['/followForm']);
    }
 
 

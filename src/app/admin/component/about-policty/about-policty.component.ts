@@ -27,19 +27,23 @@ export class AboutPolictyComponent implements OnInit {
     });
    }
 
-   deleteReport(rId :number){
+   deletePol(rId :number){
     this.del = rId;
     console.log(this.del);
+    if(confirm("هل تريد تأكيد الحذف ؟")){
     this.objDel.delDesc(rId).subscribe(res=>{
       console.log("deleeeeeeeeeeeeeeeeet"); 
-          window.location.reload();
+      this.getAboutData();
  })
+}
    }
-   showReport(sId){
+   updatePol(sId){
     this.show_id = sId;
     console.log(this.show_id);
-    this.route.navigate(['/reports-details'], {queryParams : {data: this.show_id}});
+    this.route.navigate(['/aboutPolictyUpdate'], {queryParams : {data: this.show_id}});
    }
+
+   add(){  this.route.navigate(['/about-policty-add']);  }
 
 
   ngOnInit(): void {

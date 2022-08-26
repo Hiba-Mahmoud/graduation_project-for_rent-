@@ -35,6 +35,8 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AllOwnerHistoryComponent } from './component/all-owner-history/all-owner-history.component';
+import { YesOrNoPipe } from './pipes/yes-or-no.pipe';
+import { TypePipe } from './pipes/type.pipe';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { AllOwnerHistoryComponent } from './component/all-owner-history/all-owne
     CommentsComponent,
     SideBarComponent,
     AllOwnerHistoryComponent,
+    YesOrNoPipe,
+    TypePipe,
 
 
 
@@ -99,7 +103,8 @@ import { AllOwnerHistoryComponent } from './component/all-owner-history/all-owne
     EditpersonaldataComponent,
     CommentsComponent,
     SideBarComponent,
-
+    YesOrNoPipe,
+    TypePipe
 
   ],
 
