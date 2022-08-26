@@ -148,11 +148,29 @@ export class HeaderComponent implements OnInit {
       console.log(this.isLogin);
 
      
-    }
     
+    const channel4 = await pusher.subscribe('NewChannel4');
+    await channel4.bind("RejectAdvertisement", (data) =>{
+      //check if is auther of the advertisement 
+      if(this.isLogin){
+          console.log(this.id);
+        console.log( data.user_id);
+      if(( this.id == data.user_id ) && ( this.isOwner )){
+        console.log(this.id);
+        console.log( data.user_id);
+           this.toastr.success( data.message,"لديك اشعار جديد");
+      } 
+    }
+    });
+    
+
+    console.log(this.isLogin);
+
+   
+  }
   
   
-  
+
 
 
     logout(){
