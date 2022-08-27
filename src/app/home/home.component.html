@@ -5,7 +5,7 @@
                 <mat-form-field appearance="fill" class="mt-3 ">
                     <mat-label>الموقع</mat-label>
                     <mat-select [disableOptionCentering]="true" id="eman" (selectionChange)="getFilterLocation($event)">
-                        <mat-option value="all">الكل</mat-option>
+                        <!-- <mat-option value="all">الكل</mat-option> -->
                         <mat-option *ngFor="let location of allLocations" [value]="location.id">
                             {{location.name}}
                         </mat-option>
@@ -16,7 +16,7 @@
                 <mat-form-field appearance="fill" class="mt-3">
                     <mat-label>النوع</mat-label>
                     <mat-select [disableOptionCentering]="true" (selectionChange)="getFilterType($event)">
-                        <mat-option value="all">الكل </mat-option>
+                        <!-- <mat-option value="all">الكل </mat-option> -->
                         <mat-option value="apartment">شقه</mat-option>
                         <mat-option value="room">غرفه</mat-option>
                         <mat-option value="studio">استوديو</mat-option>
@@ -27,7 +27,7 @@
                 <mat-form-field appearance="fill" class="mt-3">
                     <mat-label>عدد الغرف</mat-label>
                     <mat-select [disableOptionCentering]="true" id="ddlFruits" (selectionChange)="getFilterBeds($event)">
-                        <mat-option value="all">الكل</mat-option>
+                        <!-- <mat-option value="all">الكل</mat-option> -->
                         <mat-option value="1">1</mat-option>
                         <mat-option value="2">2</mat-option>
                         <mat-option value="3">3</mat-option>
