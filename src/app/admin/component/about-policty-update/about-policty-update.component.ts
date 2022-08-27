@@ -40,9 +40,9 @@ export class AboutPolictyUpdateComponent implements OnInit {
     })
     this.form = this.fb.group({
       title: ['' , [Validators.required,Validators.minLength(10),Validators.maxLength(300),
-      Validators.pattern('^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$')] ],
+      Validators.pattern('')] ],
       description: ['' ,[
-        Validators.pattern('^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_\.]*$')] ],
+        Validators.pattern('')] ],
         avatar1: [null],
     });
     this.invalidForm=this.form.status;

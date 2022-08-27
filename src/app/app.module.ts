@@ -60,6 +60,7 @@ import { HeaderComponent } from './header/header.component';
 // import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
 import { UserpayedRentedAdsComponent } from './components/userpayed-rented-ads/userpayed-rented-ads.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { EditPayedAdsforOwnerComponent } from './components/edit-payed-adsfor-owner/edit-payed-adsfor-owner.component';
 // import { AcceptedAdsComponent } from './admon/component/accepted-ads/accepted-ads.component';
 // import { RejectedAdsComponent } from './admon/component/rejected-ads/rejected-ads.component';
 // import { PayedAdsComponent } from './admon/component/payed-ads/payed-ads.component'
@@ -91,6 +92,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
         // UserpayedRentedAdsComponent,
 
         UserpayedRentedAdsComponent,
+        EditPayedAdsforOwnerComponent,
 
 
 

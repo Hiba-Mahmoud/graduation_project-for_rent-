@@ -97,7 +97,11 @@ mat-sidenav {
 
 
 
+
   .list{
     font-size: 1rem;
     font-weight: bold;
+  }
+  .imgp{
+    cursor: pointer;
   }
