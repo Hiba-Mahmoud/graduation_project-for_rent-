@@ -105,6 +105,9 @@ export class HomeComponent implements OnInit {
             // console.log(res);
             // console.log(this.location, this.beds, this.type);
             this.allAdvert = res;
+            this.totalNumber=res.length; 
+            console.log(this.allAdvert);
+            console.log(this.totalNumber);
 
         })
     }

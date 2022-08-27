@@ -17,13 +17,13 @@
           
           <div class="mt-2 m-auto text-center  justify-content-center align-items-center p-3">
             <!-- Facebook -->
-            <a class="btn btn-outline-light btn-floating m-1" (click)="navigateFacebook()"  ><fa-icon [icon]="faFacebook"></fa-icon>
+            <a  *ngIf="followUsInfo.facebook" class="btn btn-outline-light btn-floating m-1" (click)="navigateFacebook()"  ><fa-icon [icon]="faFacebook"></fa-icon>
             </a>            
             <!-- Twitter -->
-            <a class="btn btn-outline-light btn-floating m-1" (click)="navigateTwitter()" ><fa-icon [icon]="faTwitter"></fa-icon>
+            <a *ngIf="followUsInfo.twitter"  class="btn btn-outline-light btn-floating m-1" (click)="navigateTwitter()" ><fa-icon [icon]="faTwitter"></fa-icon>
             </a>
             <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" (click)="navigateInstagram()"  ><fa-icon [icon]="faSquareInstagram"></fa-icon>
+        <a *ngIf="followUsInfo.instagram"  class="btn btn-outline-light btn-floating m-1" (click)="navigateInstagram()"  ><fa-icon [icon]="faSquareInstagram"></fa-icon>
         </a>
           </div>
         </div>
@@ -35,11 +35,11 @@
           <ul class="fa-ul mt-4" style="margin-left: 1.65em;">
             
             <li class="mb-3 text-center">
-              <span>{{followUsInfo.email}} <mat-icon class="mx-2" style="position:relative; top:6px;">email</mat-icon> </span>
+              <span  *ngIf="followUsInfo.email">{{followUsInfo.email}} <mat-icon class="mx-2" style="position:relative; top:6px;">email</mat-icon> </span>
 
             </li>
             <li class="mb-3 text-center ">
-              <span>{{followUsInfo.phone}} <mat-icon class="mx-2" style="position:relative; top:5px;">phone</mat-icon></span>
+              <span *ngIf="followUsInfo.phone">{{followUsInfo.phone}} <mat-icon class="mx-2" style="position:relative; top:5px;">phone</mat-icon></span>
 
             </li>
             

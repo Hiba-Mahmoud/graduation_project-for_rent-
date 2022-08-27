@@ -41,14 +41,21 @@ flex-direction: column;
 }
 
  h2{
-  color:#FE6F41;
-  font-size: 4rem;
+  color: #FE6F41;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 5px;
 } 
 h4{
   margin-top: 5px;
-  color: #8b8383;
+  color: #615d5d;
   font-size: large;
   font-weight: bold;
 }
+
+h3{
+  color: #FE6F41;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+} 
