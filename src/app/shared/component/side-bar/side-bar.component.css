@@ -95,6 +95,13 @@ mat-sidenav {
     color: #FE6F41;
   }
 
+
+
+
+  .list{
+    font-size: 1rem;
+    font-weight: bold;
+  }
   .imgp{
     cursor: pointer;
   }

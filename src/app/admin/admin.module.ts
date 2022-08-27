@@ -33,8 +33,7 @@ import { FollowLinksUpdateComponent } from './component/follow-links-update/foll
 import { GenderPipe } from './pipes/gender.pipe';
 // import { TeamMemberUpdateComponent } from './component/team-member-update/team-member-update.component';
 import { PendingDetailsComponent } from './component/pending-details/pending-details.component';
-import { YesOrNoPipe } from 'src/app/shared/pipes/yes-or-no.pipe';
-
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     ReportsComponent,
@@ -75,7 +74,8 @@ import { YesOrNoPipe } from 'src/app/shared/pipes/yes-or-no.pipe';
     ModalModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
 
   exports:[

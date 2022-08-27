@@ -1,70 +1,91 @@
-
-
-  
-  button{
-    padding: 5px 5px;
-    border-style: none;
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: 700;
-    width: 11rem;
-    background: #FE6F41;
+button {
+  padding: 5px 5px;
+  border-style: none;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 11rem;
+  background: #FE6F41;
 
 }
-button:hover{
-    background: #585858;
 
-}  
+button:hover {
+  background: #585858;
 
-.search{
-  height: 70vh;
+}
+
+.search {
+  height: 100vh;
+  /* object-position: center;
+  object-fit:contain; */
   background-image: url(../../../../assets/download.jpg);
-  object-position: center;
-  object-fit:contain;
+
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  text-align: center;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-right: 2px;
 
 }
-.line{
+
+.line {
   height: 3px;
   width: 80%;
- background-color: #FE6F41;
+  background-color: #FE6F41;
 }
+h2{
+  color:#FE6F41;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+} 
 
 
 
 
-
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-.card-body h3 ,p{
+
+.card-body h3,
+p {
   text-overflow: ellipsis;
 
-    overflow: hidden;
+  overflow: hidden;
 }
-.card{
+
+.card {
   white-space: nowrap;
   overflow: hidden;
 }
 
- span ,.title{
+span,
+.title {
   color: #FE6F41;
 
 }
-.favorite{
 
-  position:absolute;
+.favorite {
+
+  position: absolute;
   top: 0;
   left: 0;
 }
-.photo{
+
+.photo {
   position: relative;
 }
-.notselected{
+
+.notselected {
   border-color: #FE6F41;
 
 }
-.selected ,mat-icon{
-  color: #FE6F41; 
+
+.selected,
+mat-icon {
+  color: #FE6F41;
 }
