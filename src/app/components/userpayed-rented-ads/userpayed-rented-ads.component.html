@@ -134,7 +134,7 @@
       >
         عرض</a
       >
-      <button mat-raised-button class="send m-2" >حذف</button>
+      <button mat-raised-button class="send m-2"  (click)="makePayment(ad.payment[0].amount,ad.id,ad.payment[0].user_id)">للدفع</button>
 
     </td>
 

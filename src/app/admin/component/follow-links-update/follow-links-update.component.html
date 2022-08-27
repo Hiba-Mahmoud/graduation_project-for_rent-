@@ -1,7 +1,7 @@
 <title>Report form</title>
 <div *ngIf="isvalid"  class="alert alert-danger text-center">من فضلك ادخل البيانات صحيحة</div>
  <!-- ------------------------------------------------------------------------------ -->
- <form action="" dir="rtl" class="w-100 mb-3 mt-3" style="text-align: center;" [formGroup]="images">
+ <!-- <form action="" dir="rtl" class="w-100 mb-3 mt-3" style="text-align: center;" [formGroup]="images">
 
   <div class="custom-file" style="margin-right: 109px;">
        <label for="logo">
@@ -11,9 +11,9 @@
          (change)="onFileChange($event)" style="margin-right: 19px;" 
          accept="image/png,image/jpg,image/jpeg"/>
          </div>
-   </form>    
+   </form>     -->
 <!-- ----------------------------------------------------------------------------------- -->
-<form class="form-signin" [formGroup]="form" (ngSubmit)="submitForm()"  >
+<form class="form-signin mt-4" [formGroup]="form" (ngSubmit)="submitForm()"  >
 
     <div class="form-label-group">
         <input type="text" id="facebook" formControlName="facebook" class="form-control"
@@ -67,6 +67,6 @@
           <strong *ngIf="form.controls['phone'].errors['pattern']" >  ادخل الرقم بطريقة صحيحة</strong>
         </div>
   </div>
-  <br> <br>
+  <br> 
       <button type="submit" class="send form-control"  >تعديل</button>
   </form>
