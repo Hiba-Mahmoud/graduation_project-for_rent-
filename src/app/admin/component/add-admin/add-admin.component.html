@@ -1,11 +1,11 @@
 
 <!-- Page Content -->
-<div class="container height">
-  
+<div class="container height" style="margin-top: 40px;">
+
   <div class="row justify-content-center">
     <!-- Team Member 1 -->
     <div class="col-sm-8 mb-4">
-      <div class="alret alert-danger" *ngIf="isvalid">برجاء ملئ البانات اولا</div>
+      <div class="alret alert-danger" *ngIf="isvalid" style="padding: 10px;">برجاء ملئ البيانات اولا</div>
       <form
       class="form-signin formbg"
       dir="rtl"
@@ -124,10 +124,10 @@
               >برجاء ادخال البريد الالكترونى</strong
             >
             <strong *ngIf="registeration.controls['email'].errors['email']"
-              >ادخل ايميل صحيح</strong
+              >ادخل بريد الكترونى صحيح</strong
             >
 
-            <!-- <strong *ngIf=" registeration.controls['email'].errors['pattern']">الاسم الاول يجب ان يكون عربى</strong> -->
+            <strong *ngIf=" registeration.controls['email'].errors['pattern']">ادخل بريد الكترونى صحيح</strong>
           </div>
           <small  id="email"></small>
         </div>
@@ -284,9 +284,7 @@
           </button>
         </div>
 
-        <div class="form-label-group">
-          <a routerLink="/login" style="width: 100%" class="link-dark">لدى حساب</a>
-        </div>
+
       </form>
     </div>
   </div>

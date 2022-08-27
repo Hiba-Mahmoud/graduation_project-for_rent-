@@ -74,36 +74,28 @@ export class HomeComponent implements OnInit {
 
     getFilterLocation(event: MatSelectChange) {
         this.location = event.value;
-        if (this.location == "all") {
-            this.getAll();
-        } else {
+        
             this.getBySearch();
-        }
+        
 
 
     }
 
     getFilterType(event: MatSelectChange) {
         this.type = event.value;
-        if (this.type == "all") {
-            this.getAll();
-
-        } else {
+      
             this.getBySearch();
 
-        }
+        
 
 
     }
     getFilterBeds(event: MatSelectChange) {
         this.beds = event.value;
-        if (this.beds == "all") {
-            this.getAll();
-
-        } else {
+       
             this.getBySearch();
 
-        }
+      
 
     }
 
@@ -113,6 +105,9 @@ export class HomeComponent implements OnInit {
             // console.log(res);
             // console.log(this.location, this.beds, this.type);
             this.allAdvert = res;
+            this.totalNumber=res.length; 
+            console.log(this.allAdvert);
+            console.log(this.totalNumber);
 
         })
     }

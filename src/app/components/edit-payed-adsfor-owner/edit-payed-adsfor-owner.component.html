@@ -12,72 +12,13 @@
             style="width:150px;height:110px"
             alt="example placeholder"
             /></label>
-            <input type="file" formControlName="imageone" style="display: none;"   id="image" name="imageone" (change)="onFileChange($event , image.id)"/>
+            <input type="file" formControlName="imageone" style="display: none;" disabled  id="image" name="imageone" (change)="onFileChange($event , image.id)"/>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-          <label for="image"><img
-            src={{imagetwo}}
-            class="img-fluid w-100"
-            alt="example placeholder"
-            /></label>
-            <input type="file" formControlName="imageone"   id="image" name="imageone" (change)="onFileChange($event)"/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-          <label for="image"><img
-            src={{imagethree}}
-            class="img-fluid w-100"
-            alt="example placeholder"
-            /></label>
-            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-12 col-md-3">
-        <div class="file-field">
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-          <label for="image"><img
-            src={{imageFour}}
-            class="img-fluid w-100"
-            alt="example placeholder"
-            /></label>
-            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-12 col-md-3" *ngIf="imageFive">
-        <div class="file-field">
-          <div class="d-flex justify-content-center">
-            <div class="btn btn-mdb-color btn-rounded float-left">
-          <label for="image"><img
-            src={{imageFive}}
-            class="img-fluid w-100"
-            alt="example placeholder"
-            /></label>
-            <input type="file" formControlName="imageone"   id="image" name="imageone"  (change)="onFileChange($event)"/>
-            </div>
-          </div>
-        </div>
-      </div>
- -->
+      
 
 
     </div>
@@ -93,6 +34,7 @@
         name="title"
         id="title"
         aria-describedby="passwordHelp"
+        disabled
 
       />
       <div
@@ -130,6 +72,7 @@
         name="description"
         id="description"
         rows="3"
+        disabled
 
       ></textarea>
       <div
@@ -160,7 +103,7 @@
     <div class="row mb-3">
       <div class="col-sm-12 col-md-4">
         <label for="price" class="form-label">السعر</label>
-        <input type="number" name="price"  formControlName="price"  class="form-control" id="price" />
+        <input type="number" name="price"  formControlName="price"  class="form-control" id="price" disabled/>
         <div
         class="alert alert-danger"
           role="alert"
@@ -184,6 +127,7 @@
           name="area"
           class="form-control"
           id="bathroom-num"
+          disabled
         />
         <div
         class="alert alert-danger"
@@ -202,7 +146,7 @@
       </div>
       <div class="col-sm-12 col-md-4">
         <label for="level" class="form-label">الطابق</label>
-        <input type="number" formControlName="level" name="level" class="form-control" id="level" />
+        <input type="number" formControlName="level" name="level" class="form-control" id="level" disabled/>
         <div
         class="alert alert-danger"
           role="alert"
@@ -228,6 +172,7 @@
           name="bedroomnum"
           class="form-control"
           id="bedroom-num"
+          disabled
         />
         <div
         class="alert alert-danger"
@@ -252,6 +197,7 @@
           name="bathroomnum"
           class="form-control"
           id="bathroom-num"
+          disabled
         />
         <div
         class="alert alert-danger"
@@ -273,7 +219,7 @@
 
       <div class="col-sm-12 col-md-4">
         <label for="bedsnum" class="form-label">عدد السرائر</label>
-        <input type="number" formControlName="bedsnum" name="bedsnum" class="beds-num" id="beds-num" />
+        <input type="number" formControlName="bedsnum" name="bedsnum" class="beds-num" id="beds-num" disabled />
         <div
         class="alert alert-danger"
           role="alert"
@@ -306,7 +252,7 @@
 
 
               <label class="form-label" for="gender" id="gender">مفروش</label>
-              <select
+              <select disabled
                 formControlName="furniture"
                 class="select w-100 form-control"
                 style="margin-left: 80px; padding-right: 95px"
@@ -338,7 +284,7 @@
 
             <div class="form-outline mb-4">
               <label class="form-label" for="gender" id="gender">النوع</label>
-              <select
+              <select disabled
                 formControlName="type"
                 class="select w-100 form-control"
                 style="margin-left: 80px; padding-right: 95px"
@@ -404,7 +350,7 @@
       <div class="col-sm-12 col-md-4 mt-2" >
 
           <label class="form-label" for="gender" id="gender">المحافظة</label>
-          <select
+          <select disabled
             formControlName="governate"
             class="select w-100 form-control"
             style="margin-left: 80px; padding-right: 95px"
@@ -434,7 +380,7 @@
 
       <div class="col-sm-12 col-md-8">
         <label for="address" class="form-label">العنوان بالتفصيل</label>
-        <input type="text" name="address"  formControlName="address" class="form-control" id="address" />
+        <input type="text" name="address"  formControlName="address" class="form-control" id="address" disabled/>
         <div
           class="alert alert-danger"
             role="alert"
@@ -492,7 +438,7 @@
 
 
     <div class="text-center mt-5">
-      <input class="send" type="submit" value="تعديل" (click)="onsubmit()"/>
+      <input class="send" type="submit" value="submit" (click)="onsubmit()"/>
     </div>
   </form>
 

@@ -1,12 +1,10 @@
 
 
-label{
-  display:flex;
-}
-.apply-page-header {
+
+/* .apply-page-header {
 
   background-image: url("../../../assets/17828.jpg") ;
-  background:#FE6F41;
+  background:#353535;
   background-attachment: fixed;
   background-position: top center;
   background-size: cover;
@@ -16,7 +14,7 @@ label{
 
 .apply-page-header-title-container {
   padding: 10px;
-  margin-top: 50px;
+  margin-top: 150px;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -49,7 +47,7 @@ label{
   grid-template-columns: 65% 30%;
   gap: 70px;
 }
-
+ */
 
 
 
@@ -59,7 +57,7 @@ label{
 
 /* ----------------------------------------- */
 
- .send {
+.send {
   width:100%;
   padding: 15px 20px;
   font-size: 16px;

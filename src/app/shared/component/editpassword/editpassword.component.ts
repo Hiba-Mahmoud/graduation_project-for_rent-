@@ -22,6 +22,7 @@ export class EditpasswordComponent implements OnInit {
   newpass:any;
   passchanged:any;
   confirmpass:any;
+  passNotchaned:any;
   constructor(
     public fb: FormBuilder,
     private http: HttpClient,
@@ -88,7 +89,12 @@ export class EditpasswordComponent implements OnInit {
       .subscribe({
         next: (succ: any) => {
           console.log('process is = ', succ);
-          this.passchanged=true;
+          if(succ.success === "flase"){
+            this.passNotchaned=succ.message
+          }else{
+
+            this.passchanged=true;
+          }
           // if(window.confirm('')){
           //   //put your delete method logic here
           //   this.router.navigate(['/adminhome']);

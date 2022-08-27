@@ -17,10 +17,21 @@ button:hover{
 }  
 
 .search{
-  height: 70vh;
-  background-image: url(../../assets/download.jpg);
-  object-position: center;
-  object-fit:contain;
+  height: 100vh;
+  /* object-position: center;
+  object-fit:contain; */
+  background-image: url(../../assets/interior-wall-mockup-with-sofa-cabinet-living-room-with-empty-white-wall-background-3d-rendering.jpg);
+  width:100vw;
+
+  background-position: center;
+  background-size:cover;
+display: flex;
+flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  
 
 }
 .line{
@@ -28,3 +39,23 @@ button:hover{
   width: 80%;
  background-color: #FE6F41;
 }
+
+ h2{
+  color: #FE6F41;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+} 
+h4{
+  margin-top: 5px;
+  color: #615d5d;
+  font-size: large;
+  font-weight: bold;
+}
+
+h3{
+  color: #FE6F41;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+} 
