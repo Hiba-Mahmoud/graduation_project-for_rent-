@@ -104,7 +104,7 @@
 
         </mat-list>
       </div>
-      <div class="col-md col-10 mx-auto  col-lg-5 mx-2" >
+      <div class="col-md col-10 mx-auto  col-lg-5 mx-2"  >
         <mat-list role="list " class="mt-4">
           <mat-list-item role="listitem">
             <h3 class="text-bold ownerInfo">سلامتك تهمنا </h3>
@@ -117,9 +117,9 @@
 
         </mat-list>
         <div class="d-grid gap-5 col-6  mt-4 mb-2">
-          <button *ngIf="!isLogin" class="btn payment" routerLink="/login" type="button">للدفع من خلال الموقع</button>
+          <button *ngIf="!isLogin && userPayment=='true' " class="btn payment" routerLink="/login" type="button">للدفع من خلال الموقع</button>
 
-          <button *ngIf="isLogin "  class="btn payment" type="button"
+          <button *ngIf="isLogin && userPayment=='true' && isRenter "  class="btn payment" type="button"
             (click)="makePayment(data.price,data.id,data.user_id)">للدفع من خلال الموقع</button>
         </div>
 
@@ -185,7 +185,7 @@
         </div>
 
         
-        <div class="col-lg-6 col-md-6 col-sm-10 offset-md-1 offset-sm-1 col-12 mt-5" *ngIf="isLogin ">
+        <div class="col-lg-6 col-md-6 col-sm-10 offset-md-1 offset-sm-1 col-12 mt-5" *ngIf="isLogin && isRenter ">
           <form id="algin-form" class="bg-light " [formGroup]="commentForm" (ngSubmit)="onSubmit()">
               <div class="form-group">
                   <h4>اترك تعليقك :</h4>

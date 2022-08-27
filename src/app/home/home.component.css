@@ -21,7 +21,7 @@ button:hover{
   /* object-position: center;
   object-fit:contain; */
   background-image: url(../../assets/interior-wall-mockup-with-sofa-cabinet-living-room-with-empty-white-wall-background-3d-rendering.jpg);
-  width:100vw;
+  width:100%;
 
   background-position: center;
   background-size:cover;

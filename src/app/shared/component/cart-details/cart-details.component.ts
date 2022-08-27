@@ -49,11 +49,23 @@ export class CartDetailsComponent implements OnInit {
 
   })
   role: string;
+  payment: any;
+  userPayment: string;
 
   constructor(private route:ActivatedRoute ,private advertismentService:AdvertismentService , private router:Router,private http:HttpClient
 
     ,private _AuthGuard:AuthGuard,private localstorage:TokenService ) {
     this.id=this.route.snapshot.paramMap.get("id");
+
+
+
+   }
+
+  ngOnInit(): void {
+
+ 
+
+    this.role = localStorage.getItem('role');
 
     if(this.role == 'admin'){
       this.isAdmin=true;
@@ -65,18 +77,10 @@ export class CartDetailsComponent implements OnInit {
       this.isOwner=true;
     }
 
-
-
-   }
-
-  ngOnInit(): void {
-
     this.checkLogin();
 
     this.getAdvertismentById();
     this.stripePaymentGateway();
-
-
   }
  getAdvertismentById(){
    this.advertismentService.getAdvertismentById("http://127.0.0.1:8000/api/show/advertisement/",this.id).subscribe((res:any)=>{
@@ -88,6 +92,9 @@ export class CartDetailsComponent implements OnInit {
     this.suggestion=res.suggestion;
     this.advertNumber=res.advertisement_num;
     this.result=res;
+    this.payment=res.advertisement[0].user.payment;
+    this. paymentCheck();
+    console.log(this.userPayment);
     this.loading=false;
     // this.suggesObgImage=this.suggestion[0].advertisement_image[0].image_name;
    })
@@ -95,8 +102,14 @@ export class CartDetailsComponent implements OnInit {
  }
 
 
-//  suggestionNavigate(id:any){
-//   this.router.navigateByUrl('/details/'+id).then();
+ paymentCheck(){
+  if(this.payment=='yes'){
+    this.userPayment='true';
+  }else{
+    this.userPayment='false';
+
+  }
+ }
 
 
 //  }
