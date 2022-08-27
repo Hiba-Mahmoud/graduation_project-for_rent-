@@ -1,20 +1,17 @@
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders,
-} from '@angular/common/http';
-import { OwnerService } from 'src/app/services/owner.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TokenService } from 'src/app/auth/service/token.service';
+import { OwnerService } from 'src/app/services/owner.service';
 
 @Component({
-  selector: 'app-update-properity-advertising',
-  templateUrl: './update-properity-advertising.component.html',
-  styleUrls: ['./update-properity-advertising.component.css'],
+  selector: 'app-edit-payed-adsfor-owner',
+  templateUrl: './edit-payed-adsfor-owner.component.html',
+  styleUrls: ['./edit-payed-adsfor-owner.component.css']
 })
-export class UpdateProperityAdvertisingComponent implements OnInit {
+export class EditPayedAdsforOwnerComponent implements OnInit {
+
   id: any;
   addproperity: FormGroup;
   images: FormGroup;

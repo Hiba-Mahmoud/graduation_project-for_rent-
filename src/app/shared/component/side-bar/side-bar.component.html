@@ -1,14 +1,21 @@
 <mat-sidenav-container class="mt-5 p-3" >
+
+
     <mat-sidenav #sidenav="matSidenav" mode="side"  opened>
-      <img
-        class="avatar mat-elevation-z8"
-       [src] ="image"/>
-       <mat-icon>camera_alt</mat-icon>
+        <form action="" [formGroup]="images">
+          <img class="avatar mat-elevation-z8" [src] ="profile.image"/>
+          <label for="fileInput">
+        <mat-icon class="imgp">camera_alt</mat-icon>
+        </label>
+        <input id="fileInput" type="file" formControlName="image" (change)="fileInput($event)" name="image" style="display:none;" />
       <h2 class="name">{{name}}</h2>
-
-
+    </form>
       <mat-divider></mat-divider>
-      <ul class="nav flex-column">
+
+      <!-- <ul class="nav flex-column"  *ngIf="isAdmin ||  isSuperAdmin"> -->
+
+      <ul class="nav flex-column" *ngIf="isAdmin ||  isSuperAdmin">
+
 
         <li class="nav-item">
           <a class="nav-link" routerLink="adminhome">
@@ -82,7 +89,7 @@
             معلومات عنا
           </a>
         </li>
-        
+
         <li class="nav-item">
           <a class="nav-link" routerLink="/team">
             <span data-feather="layers"></span>
@@ -146,18 +153,29 @@
 
       <mat-divider></mat-divider>
       <ul class="nav flex-column">
+
         <li class="nav-item" *ngIf="isRenter">
           <a class="nav-link" routerLink="/renter">
             <span data-feather="file"></span>
             الصفحه الرئيسيه
           </a>
         </li>
+
         <!-- <li class="nav-item" *ngIf="isRenter">
           <a class="nav-link" routerLink="userfavourites">
             <span data-feather="file"></span>
             المفضله
           </a>
         </li> -->
+
+
+        <li class="nav-item" *ngIf="isRenter">
+          <a class="nav-link" routerLink="payed-for-user">
+            <span data-feather="file"></span>
+            المدفوع من خلال الموقع
+          </a>
+        </li>
+
         <li class="nav-item">
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
             الحساب
