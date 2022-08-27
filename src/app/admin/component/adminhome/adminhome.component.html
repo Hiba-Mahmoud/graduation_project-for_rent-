@@ -43,78 +43,150 @@
   </div>
 </div> -->
 <div class="container gradient-form">
-  <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="message">
+  <div
+    class="alert alert-success alert-dismissible fade show"
+    role="alert"
+    *ngIf="message"
+  >
     تمت اضافة مسؤول بنجاح
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
   </div>
-  <div class="row content-center">
+  <div class="row justify-content-center">
     <div class="col-sm-12 content-center">
-      <div class="col-sm-10">
-        <h1 class="d-flex justify-content-center align-items-center" style="background-color:#383838;padding:10px;border-radius:10px; color:#fff;">الاعلانات</h1>
-       <div class="row w-100 handel justify-content-center align-items-center">
-        <div class="col-sm-12 col-md-2   d-flex justify-content-center align-items-center py-5 mt-2" style="background-color: #02D1A6;border-radius:10px; flex-direction: column;">
-          <p style="font-size: 25px; color:#fff;">{{acceptedAds}}</p>
-          <p style="font-size: 25px; color:#fff; ">المقبولة</p>
+      <div class="col-sm-">
+        <h1
+          class="d-flex justify-content-center align-items-center"
+          style="
+            background-color: #383838;
+            padding: 10px;
+            border-radius: 10px;
+            color: #fff;
+          "
+        >
+          الاعلانات
+        </h1>
+        <div class="row w-100 handel justify-content-center align-items-center">
+          <div
+            class="col-sm-12 col-md-2 d-flex justify-content-center align-items-center py-5 mt-2"
+            style="
+              background-color: #02d1a6;
+              border-radius: 10px;
+              flex-direction: column;
+            "
+          >
+            <p style="font-size: 1.3em; color: #fff">{{ acceptedAds }}</p>
+            <p style="font-size: 1.3em; color: #fff">المقبولة</p>
+          </div>
 
+          <div
+            class="col-sm-12 col-md-2 d-flex justify-content-center align-items-center py-5 mt-2"
+            style="
+              background-color: #ffd07e;
+              border-radius: 10px;
+              flex-direction: column;
+            "
+          >
+            <p style="font-size: 1.3em; color: #fff">{{ pendingdAds }}</p>
+            <p style="font-size: 1.3em; color: #fff">معلقة</p>
+          </div>
+          <div
+            class="col-sm-12 col-md-2 d-flex justify-content-center align-items-center py-5 mt-2"
+            style="
+              background-color: #ff8876;
+              border-radius: 10px;
+              flex-direction: column;
+            "
+          >
+            <p style="font-size: 1.3em; color: #fff">{{ payedAds }}</p>
+            <p style="font-size: 1.3em; color: #fff">المدفوعه</p>
+          </div>
+          <div
+            class="col-sm-12 col-md-2 d-flex justify-content-center align-items-center py-5 mt-2"
+            style="
+              background-color: #31647a;
+              border-radius: 10px;
+              flex-direction: column;
+            "
+          >
+            <p style="font-size: 1.3em; color: #fff">{{ rejectedAds }}</p>
+            <p style="font-size: 1.3em; color: #fff">المرفوضة</p>
+          </div>
         </div>
-
-        <div class="col-sm-12 col-md-2  d-flex justify-content-center align-items-center py-5 mt-2" style="background-color: #FFD07E;border-radius:10px;flex-direction: column;">
-          <p style="font-size: 25px; color:#fff;">{{pendingdAds}}</p>
-          <p style="font-size: 20px; color:#fff;"> معلقة</p>
-
-        </div>
-        <div class="col-sm-12 col-md-2  d-flex justify-content-center align-items-center py-5 mt-2" style="background-color: #FF8876;border-radius:10px;flex-direction: column;" >
-          <p style="font-size: 25px; color:#fff;">{{payedAds}}</p>
-          <p style="font-size: 20px; color:#fff;">  المدفوعه</p>
-
-        </div>
-        <div class="col-sm-12 col-md-2  d-flex justify-content-center align-items-center py-5 mt-2" style="background-color: #31647A;border-radius:10px;flex-direction: column;">
-          <p style="font-size: 25px; color:#fff;">{{rejectedAds}}</p>
-          <p style="font-size: 25px; color:#fff;">المرفوضة</p>
-
-        </div>
-       </div>
-
       </div>
     </div>
     <div class="col-sm-12 mt-5 content-center">
-      <div class="col-sm-10">
-        <h1 class="d-flex justify-content-center align-items-center" style="background-color:#383838;padding:10px;border-radius:10px; color:#fff;">المستخدمين</h1>
-       <div class="row w-100 handel justify-content-center align-items-center">
-        <div class="col-sm-12 col-md-2   d-flex justify-content-center align-items-center px-5 py-2 mt-2" style="background-color: #FF8876;border-radius:10px; flex-direction: column;">
-          <p style="font-size: 25px; color:#fff;">{{allowners}}</p>
-          <p style="font-size: 20px;padding: 0 30px !important; color:#fff;">الملاك</p>
-
+      <div class="col-sm-12 justify-content-center">
+        <h1
+          class="d-flex justify-content-center align-items-center"
+          style="
+            background-color: #383838;
+            padding: 10px;
+            border-radius: 10px;
+            color: #fff;
+          "
+        >
+          المستخدمين
+        </h1>
+        <div class="row w-100 handel justify-content-center align-items-center">
+          <div
+            class="col-sm-12 col-md-2 d-flex justify-content-center align-items-center px-5 py-2 mt-2"
+            style="
+              background-color: #ff8876;
+              border-radius: 10px;
+              flex-direction: column;
+            "
+          >
+            <p style="font-size: 1.3em; color: #fff">{{ allowners }}</p>
+            <p style="font-size: 1.3em; padding: 0 30px !important; color: #fff">
+              الملاك
+            </p>
+          </div>
+          <div
+            class="col-sm-12 col-md-2 d-flex justify-content-center align-items-center px-5 py-2 mt-2"
+            style="
+              background-color: #ff8876;
+              border-radius: 10px;
+              flex-direction: column;
+            "
+          >
+            <p style="font-size: 1.3em; color: #fff">{{ allRenters }}</p>
+            <p style="font-size: 1.3em; padding: 0 30px !important; color: #fff">
+              المستاجرين
+            </p>
+          </div>
+          <div
+            class="col-sm-12 col-md-2 d-flex justify-content-center align-items-center px-5 py-2 mt-2"
+            style="
+              background-color: #ff8876;
+              border-radius: 10px;
+              flex-direction: column;
+            "
+          >
+            <p style="font-size: 1.3em; color: #fff">{{ allAdmins }}</p>
+            <p style="font-size: 1.3em; padding: 0 30px !important; color: #fff">
+              المسؤلين
+            </p>
+          </div>
+          <div
+            class="col-sm-12 col-md-2 d-flex justify-content-center align-items-center px-5 py-2 mt-2"
+            style="
+              background-color: #ff8876;
+              border-radius: 10px;
+              flex-direction: column;
+            "
+          >
+            <p style="font-size: 25px; color: #fff">{{ allBlocked }}</p>
+            <p style="font-size: 20px; padding: 0 30px !important; color: #fff">
+              المحظورين
+            </p>
+          </div>
         </div>
-        <div class="col-sm-12 col-md-2  d-flex justify-content-center align-items-center px-5 py-2 mt-2" style="background-color: #FF8876;border-radius:10px;flex-direction: column;">
-          <p style="font-size: 25px; color:#fff;">{{allRenters}}</p>
-          <p style="font-size: 20px;padding: 0 30px !important; color:#fff;">المستاجرين</p>
-
-        </div>
-        <div class="col-sm-12 col-md-2  d-flex justify-content-center align-items-center px-5 py-2 mt-2" style="background-color: #FF8876;border-radius:10px;flex-direction: column;">
-          <p style="font-size: 25px; color:#fff;">{{allAdmins}}</p>
-          <p style="font-size: 20px;padding: 0 30px !important; color:#fff;">المسؤلين</p>
-
-        </div>
-        <div class="col-sm-12 col-md-2  d-flex justify-content-center align-items-center px-5 py-2 mt-2" style="background-color: #FF8876;border-radius:10px;flex-direction: column;">
-          <p style="font-size: 25px; color:#fff;">{{allBlocked}}</p>
-          <p style="font-size: 20px;padding: 0 30px !important; color:#fff;">المحظورين</p>
-
-        </div>
-       </div>
-
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-

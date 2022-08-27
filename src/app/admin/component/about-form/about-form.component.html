@@ -9,14 +9,14 @@
         <input type="text" id="name" formControlName="name" class="form-control"
          placeholder="Name" required autofocus >
 
-        <label for="inputName">الاسم</label>        
+        <label for="inputName">الاسم</label>
         <div class="alert alert-danger" role="alert" *ngIf="form.controls['name'].errors && form.controls['name'].touched" >
           <strong *ngIf="form.controls['name'].errors['required']">برجاء ادخال الاسم</strong>
           <strong *ngIf="form.controls['name'].errors['minlength']" >  الاسم  يجب الا يقل عن خمسه احرف</strong>
           <strong *ngIf="form.controls['name'].errors['maxlength']">  الحد الاقصى للحروف هو عشرون حرف</strong>
           <strong *ngIf="form.controls['name'].errors['pattern']" >   الاسم  يجب ان يكون حروف فقط</strong>
-        </div>       
-      </div>    
+        </div>
+      </div>
 
   <div class="form-label-group">
        <input type="text" id="jobTitle" formControlName="jobTitle" class="form-control"  required autofocus >
@@ -33,10 +33,10 @@
 
   <div class="custom-file">
     <label class="custom-file-label" for="customFile">الصورة الشخصية</label>
-    <input type="file" 
-    name="image" 
-    class="custom-file-input mx-3" 
-    id="customFile" 
+    <input type="file"
+    name="image"
+    class="custom-file-input mx-3"
+    id="customFile"
     (change)="uploadFile1($event)"
     accept="image/png.image/jpg,image/jpeg">
   </div>
@@ -46,7 +46,7 @@
 
   </form>
   </div>
-<!-- 
+<!--
   <p>Form value: {{ form.value | json }}</p>
 <p>Form status: {{ form.status | json }}</p> -->
 
