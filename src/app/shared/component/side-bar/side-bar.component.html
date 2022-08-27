@@ -20,13 +20,13 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="adminhome">
             <span data-feather="file"></span>
-            لوحة التحكم
+          الصفحه الرئيسيه
           </a>
         </li>
         <li class="nav-item" *ngIf="  isSuperAdmin">
           <a class="nav-link" routerLink="allRenters"  >
             <span data-feather="file"></span>
-            المستأجرين
+            المستخدمين
           </a>
         </li>
         <li class="nav-item" *ngIf="  isSuperAdmin">
@@ -68,7 +68,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/payed-ads">
             <span data-feather="bar-chart-2"></span>
-            الاعلانات المدفوعة
+            المدفوع من خلال الموقع
          </a>
         </li>
         <li class="nav-item" *ngIf="isSuperAdmin">
@@ -108,7 +108,12 @@
 <!-- owner  -->
       <mat-divider *ngIf="isOwner"></mat-divider>
       <ul class="nav flex-column" *ngIf="isOwner">
-
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="/owner">
+            <span data-feather="file"></span>
+            الصفحه الرئيسيه
+          </a>
+        </li>
         <li class="nav-item" >
           <a class="nav-link" routerLink="/addProperity">
             <span data-feather="file"></span>
@@ -136,7 +141,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/payed-rented">
             <span data-feather="file"></span>
-          العقارات المدفوعة
+            المدفوع من خلال الموقع
           </a>
         </li>
 
@@ -149,18 +154,28 @@
       <mat-divider></mat-divider>
       <ul class="nav flex-column">
 
+        <li class="nav-item" *ngIf="isRenter">
+          <a class="nav-link" routerLink="/renter">
+            <span data-feather="file"></span>
+            الصفحه الرئيسيه
+          </a>
+        </li>
+
         <!-- <li class="nav-item" *ngIf="isRenter">
           <a class="nav-link" routerLink="userfavourites">
             <span data-feather="file"></span>
             المفضله
           </a>
         </li> -->
+
+
         <li class="nav-item" *ngIf="isRenter">
           <a class="nav-link" routerLink="payed-for-user">
             <span data-feather="file"></span>
-            الاعلانات المدفوعه
+            المدفوع من خلال الموقع
           </a>
         </li>
+
         <li class="nav-item">
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
             الحساب
@@ -184,7 +199,7 @@
       *ngIf="sidenav.mode === 'over'"
       (click)="sidenav.toggle()"
     >
-    <span>  قائمة التحكم  <mat-icon *ngIf="!sidenav.opened" class="mx-2" style="position:relative; top:5px;">apps</mat-icon></span>
+    <span class="list mat-elevation-z8">  قائمة التحكم  <mat-icon *ngIf="!sidenav.opened" class="mx-2" style="position:relative; top:5px;">apps</mat-icon></span>
 <!--
       <mat-icon *ngIf="!sidenav.opened"> apps </mat-icon>
       <mat-icon *ngIf="sidenav.opened"> apps </mat-icon> -->

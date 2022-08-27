@@ -146,12 +146,34 @@ export class HeaderComponent implements OnInit {
       }
       });
 
-      console.log(this.isLogin);
-
+      
      
+
+    
+    const payment = await pusher.subscribe('payment');
+    await payment.bind("PaymentNotification", (data) =>{
+      // check if is auther of the advertisement 
+      if(this.isLogin){
+          console.log(this.id);
+        console.log( data.owner_id);
+      if(( this.id == data.owner_id ) && ( this.isOwner )){
+        console.log(this.id);
+        console.log( data.owner_id);
+         
+      } 
     }
+    
+    });
+    
+    }
+
+   
   
   
+
+    
+  
+
 
 
     logout(){

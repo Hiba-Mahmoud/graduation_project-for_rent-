@@ -1,11 +1,11 @@
-
-   <form class="example-form  mt-5">
+<div *ngIf="!loading">
+  <form class="example-form  mt-5">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>بحث</mat-label>
       <input matInput placeholder="ادخل الاسم"  #name (keyup)="findByName(name)">
     </mat-form-field>
 </form>
-    <div class="mat-elevation mt-2  m-auto table-responsive" *ngIf="length>0 else alter">
+    <div class="mat-elevation mt-2  m-auto table-responsive" >
         <table mat-table [dataSource]="dataSource"  matSort  class="m-auto border border-5  table table-bordered ">
       
           <!-- Position Column -->
@@ -71,11 +71,13 @@
                       
         </mat-paginator>
       </div>
+</div>
+ 
 
-      <!-- <div class="justify-content-center align-items-center" *ngIf="loading">
+    <div class="justify-content-center align-items-center" *ngIf="loading">
         <mat-spinner class="text-center w-50  mt-5 pt-5 " style="top: 30px;"></mat-spinner>
       
-      </div> -->
+      </div> 
 <!-- 
 <ng-template #template>
   <div class="modal-body text-center">
@@ -87,6 +89,6 @@
 
 
       
-<ng-template #alter  >
+<!-- <ng-template #alter  >
  <h1 class="bg-light text-center">لا يوجد مستأجرين حاليا</h1>
-</ng-template>
+</ng-template> -->

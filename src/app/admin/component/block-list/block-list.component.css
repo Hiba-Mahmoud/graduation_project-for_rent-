@@ -20,7 +20,7 @@
     text-align: center;
     align-items: center;
     justify-content: center !important;
-    background-color: black;
+    background-color: rgba(0,0,0,.55);
     color: white;
     font-size: 1.3em;
     text-align: center !important;
