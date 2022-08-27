@@ -124,10 +124,10 @@
               >برجاء ادخال البريد الالكترونى</strong
             >
             <strong *ngIf="registeration.controls['email'].errors['email']"
-              >ادخل ايميل صحيح</strong
+              >ادخل بريد الكترونى صحيح</strong
             >
 
-            <!-- <strong *ngIf=" registeration.controls['email'].errors['pattern']">الاسم الاول يجب ان يكون عربى</strong> -->
+            <strong *ngIf=" registeration.controls['email'].errors['pattern']">ادخل بريد الكترونى صحيح</strong>
           </div>
           <small  id="email"></small>
         </div>

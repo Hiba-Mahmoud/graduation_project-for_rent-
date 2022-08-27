@@ -57,7 +57,7 @@ export class AddAdminComponent implements OnInit {
           Validators.pattern('^[\u0621-\u064A0-9 ]+$'),
         ],
       ],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email,Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.+-]+\.com$')]],
       phone: [
         '',
         [
