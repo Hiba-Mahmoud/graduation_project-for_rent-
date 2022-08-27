@@ -1,91 +1,61 @@
-button {
-  padding: 5px 5px;
-  border-style: none;
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 700;
-  width: 11rem;
-  background: #FE6F41;
+
+
+  
+  button{
+    padding: 5px 5px;
+    border-style: none;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    width: 11rem;
+    background: #FE6F41;
 
 }
+button:hover{
+    background: #585858;
 
-button:hover {
-  background: #585858;
+}  
 
-}
-
-.search {
+.search{
   height: 100vh;
   /* object-position: center;
   object-fit:contain; */
-  background-image: url(../../../../assets/download.jpg);
+  background-image: url(../../../../assets/interior-wall-mockup-with-sofa-cabinet-living-room-with-empty-white-wall-background-3d-rendering.jpg);
+  width:100%;
 
   background-position: center;
-  background-size: cover;
-  display: flex;
+  background-size:cover;
+display: flex;
+flex-direction: column;
   text-align: center;
-  justify-content: center !important;
-  align-items: center !important;
-  margin-right: 2px;
+  justify-content: center;
+  align-items: center;
+
+  
 
 }
-
-.line {
+.line{
   height: 3px;
   width: 80%;
-  background-color: #FE6F41;
+ background-color: #FE6F41;
 }
-h2{
-  color:#FE6F41;
-  font-size: 4rem;
+
+ h2{
+  color: #FE6F41;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 5px;
 } 
-
-
-
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+h4{
+  margin-top: 5px;
+  color: #615d5d;
+  font-size: large;
+  font-weight: bold;
 }
 
-.card-body h3,
-p {
-  text-overflow: ellipsis;
-
-  overflow: hidden;
-}
-
-.card {
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-span,
-.title {
+h3{
   color: #FE6F41;
-
-}
-
-.favorite {
-
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.photo {
-  position: relative;
-}
-
-.notselected {
-  border-color: #FE6F41;
-
-}
-
-.selected,
-mat-icon {
-  color: #FE6F41;
-}
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+} 

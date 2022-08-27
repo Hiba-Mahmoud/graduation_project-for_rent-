@@ -85,6 +85,7 @@ getBySearch() {
       // console.log(res);
       // console.log(this.location, this.beds, this.type);
       this.advertisment = res;
+      this.totalNumber=res.length;
 
   })
 }
