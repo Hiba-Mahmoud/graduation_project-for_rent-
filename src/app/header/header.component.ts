@@ -146,34 +146,32 @@ export class HeaderComponent implements OnInit {
       }
       });
 
-      console.log(this.isLogin);
-
+      
      
-<<<<<<< HEAD
+
     
-    const channel4 = await pusher.subscribe('NewChannel4');
-    await channel4.bind("RejectAdvertisement", (data) =>{
-      //check if is auther of the advertisement 
+    const payment = await pusher.subscribe('payment');
+    await payment.bind("PaymentNotification", (data) =>{
+      // check if is auther of the advertisement 
       if(this.isLogin){
           console.log(this.id);
-        console.log( data.user_id);
-      if(( this.id == data.user_id ) && ( this.isOwner )){
+        console.log( data.owner_id);
+      if(( this.id == data.owner_id ) && ( this.isOwner )){
         console.log(this.id);
-        console.log( data.user_id);
-           this.toastr.success( data.message,"لديك اشعار جديد");
+        console.log( data.owner_id);
+         
       } 
     }
+    
     });
     
-
-    console.log(this.isLogin);
+    }
 
    
-  }
   
-=======
-    }
->>>>>>> e2fdc2fd2fb941ddfc91c4d721fa30ec788e404d
+  
+
+    
   
 
 
