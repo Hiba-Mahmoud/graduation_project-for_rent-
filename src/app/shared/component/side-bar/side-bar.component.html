@@ -19,7 +19,7 @@
         <li class="nav-item" *ngIf="  isSuperAdmin">
           <a class="nav-link" routerLink="allRenters"  >
             <span data-feather="file"></span>
-            المستأجرين
+            المستخدمين
           </a>
         </li>
         <li class="nav-item" *ngIf="  isSuperAdmin">
@@ -61,7 +61,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/payed-ads">
             <span data-feather="bar-chart-2"></span>
-            الاعلانات المدفوعة
+            المدفوع من خلال الموقع
          </a>
         </li>
         <li class="nav-item" *ngIf="isSuperAdmin">
@@ -134,7 +134,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/payed-rented">
             <span data-feather="file"></span>
-          العقارات المدفوعة
+            المدفوع من خلال الموقع
           </a>
         </li>
 
@@ -152,12 +152,12 @@
             الصفحه الرئيسيه
           </a>
         </li>
-        <li class="nav-item" *ngIf="isRenter">
+        <!-- <li class="nav-item" *ngIf="isRenter">
           <a class="nav-link" routerLink="userfavourites">
             <span data-feather="file"></span>
             المفضله
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
             الحساب
