@@ -115,4 +115,6 @@ export class OwnerComponent implements OnInit {
     this.route.navigate(['payed-rented'])
 
   }
+
+  
 }
